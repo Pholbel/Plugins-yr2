@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TestData>
+  <Assembly name ="GAMBPlugIn" action ="">
+    <Provider run ="0">
+      <Data key ="lic_no" value="073420"/>
+      <Data key ="drtitle" value="MD"/>
+      <Data key ="lic_exp" value="2016-07-31"/>
+    </Provider>
+    <Provider run ="0">
+      <Data key ="lic_no" value="054405"/>
+      <Data key ="drtitle" value="MD"/>
+      <Data key ="lic_exp" value="2016-07-31"/>
+    </Provider>
+    <Provider run ="0">
+      <Data key ="lic_no" value="028383"/>
+      <Data key ="drtitle" value="MD"/>
+      <Data key ="lic_exp" value="2016-07-31"/>
+    </Provider>
+    <Provider run ="0">
+      <Data key ="lic_no" value="006851"/>
+      <Data key ="drtitle" value="PA"/>
+      <Data key ="lic_exp" value="2/28/2017"/>
+    </Provider>
+    <Provider run ="0">
+      <Data key ="lic_no" value="006851"/>
+      <Data key ="drtitle" value="MD"/>
+      <Data key ="lic_exp" value="12/31/1900"/>
+    </Provider>
+    <Provider run ="0">
+      <Data key ="lic_no" value="000562"/>
+      <Data key ="drtitle" value="PA"/>
+      <Data key ="lic_exp" value="12/31/1904"/>
+    </Provider>
+    <Provider run ="0">
+      <Data key ="lic_no" value="000562"/>
+      <Data key ="drtitle" value="MD"/>
+      <Data key ="lic_exp" value="12/31/1965"/>
+    </Provider>
+    <Provider run ="1">
+      <Data key ="lic_no" value="002390"/>
+      <Data key ="drtitle" value="PA"/>
+      <Data key ="lic_exp" value="4/30/2016"/>
+    </Provider>
+    <Provider run ="1">
+      <Data key ="lic_no" value="asrgasgas"/>
+      <Data key ="drtitle" value="PA"/>
+      <Data key ="lic_exp" value="4/30/2016"/>
+    </Provider>
+    <Provider run ="1">
+      <Data key ="lic_no" value=""/>
+      <Data key ="drtitle" value="PA"/>
+      <Data key ="lic_exp" value="4/30/2016"/>
+    </Provider>
+    <Provider run ="0">
+      <Data key ="lic_no" value="000562"/>
+      <Data key ="drtitle" value=""/>
+      <Data key ="lic_exp" value="4/30/2016"/>
+    </Provider>
+    <Provider run ="0">
+      <Data key ="lic_no" value="000562"/>
+      <Data key ="drtitle" value="afadfa"/>
+      <Data key ="lic_exp" value="4/30/2016"/>
+    </Provider>
+  </Assembly>
+</TestData>
