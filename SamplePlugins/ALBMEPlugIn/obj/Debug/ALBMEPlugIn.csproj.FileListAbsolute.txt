@@ -1,0 +1,13 @@
+C:\Users\Paul Holbel\Desktop\Plugin Files\VerifyMonitor\SamplePlugins\ALBMEPlugIn\obj\Debug\ALBMEPlugIn.csprojResolveAssemblyReference.cache
+C:\Users\Paul Holbel\Desktop\Plugin Files\VerifyMonitor\SamplePlugins\ALBMEPlugIn\obj\Debug\ALBMEPlugIn.csproj.CoreCompileInputs.cache
+C:\Users\Paul Holbel\Desktop\Plugin Files\VerifyMonitor\SamplePlugins\ALBMEPlugIn\bin\Debug\ALBMEPlugIn.dll
+C:\Users\Paul Holbel\Desktop\Plugin Files\VerifyMonitor\SamplePlugins\ALBMEPlugIn\bin\Debug\ALBMEPlugIn.pdb
+C:\Users\Paul Holbel\Desktop\Plugin Files\VerifyMonitor\SamplePlugins\ALBMEPlugIn\bin\Debug\HtmlAgilityPack.dll
+C:\Users\Paul Holbel\Desktop\Plugin Files\VerifyMonitor\SamplePlugins\ALBMEPlugIn\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Paul Holbel\Desktop\Plugin Files\VerifyMonitor\SamplePlugins\ALBMEPlugIn\bin\Debug\PlugIn_NET4_5.dll
+C:\Users\Paul Holbel\Desktop\Plugin Files\VerifyMonitor\SamplePlugins\ALBMEPlugIn\bin\Debug\RestSharp.dll
+C:\Users\Paul Holbel\Desktop\Plugin Files\VerifyMonitor\SamplePlugins\ALBMEPlugIn\bin\Debug\PdfMetamorphosis.dll
+C:\Users\Paul Holbel\Desktop\Plugin Files\VerifyMonitor\SamplePlugins\ALBMEPlugIn\obj\Debug\ALBMEPlugIn.dll
+C:\Users\Paul Holbel\Desktop\Plugin Files\VerifyMonitor\SamplePlugins\ALBMEPlugIn\obj\Debug\ALBMEPlugIn.pdb
+C:\Users\Paul Holbel\Desktop\Plugin Files\VerifyMonitor\SamplePlugins\ALBMEPlugIn\bin\Debug\ABCpdf.dll
+C:\Users\Paul Holbel\Desktop\Plugin Files\VerifyMonitor\SamplePlugins\ALBMEPlugIn\bin\Debug\ABCpdf.xml

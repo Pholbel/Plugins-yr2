@@ -1,0 +1,5 @@
+SCC = This is a Source Code Control file
+
+[ALBMEPlugIn.csproj]
+SCC_Aux_Path = "\\ssafe\vss"
+SCC_Project_Name = "$/Echo/PSV/PlugIn/ALBMEPlugIn", HBGCAAAA

@@ -1,0 +1,11 @@
+C:\Users\Paul Holbel\Desktop\Plugin Files\VerifyMonitor\SamplePlugins\OBDPlugIn\OBDPlugIn\bin\Debug\OBDPlugIn.dll
+C:\Users\Paul Holbel\Desktop\Plugin Files\VerifyMonitor\SamplePlugins\OBDPlugIn\OBDPlugIn\bin\Debug\OBDPlugIn.pdb
+C:\Users\Paul Holbel\Desktop\Plugin Files\VerifyMonitor\SamplePlugins\OBDPlugIn\OBDPlugIn\bin\Debug\PlugIn_NET4_5.dll
+C:\Users\Paul Holbel\Desktop\Plugin Files\VerifyMonitor\SamplePlugins\OBDPlugIn\OBDPlugIn\bin\Debug\RestSharp.dll
+C:\Users\Paul Holbel\Desktop\Plugin Files\VerifyMonitor\SamplePlugins\OBDPlugIn\OBDPlugIn\bin\Debug\HtmlAgilityPack.dll
+C:\Users\Paul Holbel\Desktop\Plugin Files\VerifyMonitor\SamplePlugins\OBDPlugIn\OBDPlugIn\bin\Debug\ABCpdf.dll
+C:\Users\Paul Holbel\Desktop\Plugin Files\VerifyMonitor\SamplePlugins\OBDPlugIn\OBDPlugIn\bin\Debug\PdfMetamorphosis.dll
+C:\Users\Paul Holbel\Desktop\Plugin Files\VerifyMonitor\SamplePlugins\OBDPlugIn\OBDPlugIn\bin\Debug\ABCpdf.xml
+C:\Users\Paul Holbel\Desktop\Plugin Files\VerifyMonitor\SamplePlugins\OBDPlugIn\OBDPlugIn\obj\Debug\OBDPlugIn.csproj.CoreCompileInputs.cache
+C:\Users\Paul Holbel\Desktop\Plugin Files\VerifyMonitor\SamplePlugins\OBDPlugIn\OBDPlugIn\obj\Debug\OBDPlugIn.dll
+C:\Users\Paul Holbel\Desktop\Plugin Files\VerifyMonitor\SamplePlugins\OBDPlugIn\OBDPlugIn\obj\Debug\OBDPlugIn.pdb
