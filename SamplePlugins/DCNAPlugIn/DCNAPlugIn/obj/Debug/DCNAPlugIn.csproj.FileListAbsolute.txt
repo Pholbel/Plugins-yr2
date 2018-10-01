@@ -1,0 +1,44 @@
+C:\Users\tferido\Repos\Echo-Verify\VerifyMonitor\WorkInProgress\DCNAPlugIn\DCNAPlugIn\bin\Debug\DCNAPlugIn.dll.config
+C:\Users\tferido\Repos\Echo-Verify\VerifyMonitor\WorkInProgress\DCNAPlugIn\DCNAPlugIn\bin\Debug\DCNAPlugIn.dll
+C:\Users\tferido\Repos\Echo-Verify\VerifyMonitor\WorkInProgress\DCNAPlugIn\DCNAPlugIn\bin\Debug\DCNAPlugIn.pdb
+C:\Users\tferido\Repos\Echo-Verify\VerifyMonitor\WorkInProgress\DCNAPlugIn\DCNAPlugIn\bin\Debug\ABCpdf.dll
+C:\Users\tferido\Repos\Echo-Verify\VerifyMonitor\WorkInProgress\DCNAPlugIn\DCNAPlugIn\bin\Debug\HtmlAgilityPack.dll
+C:\Users\tferido\Repos\Echo-Verify\VerifyMonitor\WorkInProgress\DCNAPlugIn\DCNAPlugIn\bin\Debug\Newtonsoft.Json.dll
+C:\Users\tferido\Repos\Echo-Verify\VerifyMonitor\WorkInProgress\DCNAPlugIn\DCNAPlugIn\bin\Debug\PlugIn_NET4_5.dll
+C:\Users\tferido\Repos\Echo-Verify\VerifyMonitor\WorkInProgress\DCNAPlugIn\DCNAPlugIn\bin\Debug\RestSharp.dll
+C:\Users\tferido\Repos\Echo-Verify\VerifyMonitor\WorkInProgress\DCNAPlugIn\DCNAPlugIn\bin\Debug\PdfMetamorphosis.dll
+C:\Users\tferido\Repos\Echo-Verify\VerifyMonitor\WorkInProgress\DCNAPlugIn\DCNAPlugIn\bin\Debug\ABCpdf.xml
+C:\Users\tferido\Repos\Echo-Verify\VerifyMonitor\WorkInProgress\DCNAPlugIn\DCNAPlugIn\obj\Debug\DCNAPlugIn.csprojResolveAssemblyReference.cache
+C:\Users\tferido\Repos\Echo-Verify\VerifyMonitor\WorkInProgress\DCNAPlugIn\DCNAPlugIn\obj\Debug\DCNAPlugIn.Properties.Resources.resources
+C:\Users\tferido\Repos\Echo-Verify\VerifyMonitor\WorkInProgress\DCNAPlugIn\DCNAPlugIn\obj\Debug\DCNAPlugIn.csproj.GenerateResource.Cache
+C:\Users\tferido\Repos\Echo-Verify\VerifyMonitor\WorkInProgress\DCNAPlugIn\DCNAPlugIn\obj\Debug\DCNAPlugIn.csproj.CoreCompileInputs.cache
+C:\Users\tferido\Repos\Echo-Verify\VerifyMonitor\WorkInProgress\DCNAPlugIn\DCNAPlugIn\obj\Debug\DCNAPlugIn.dll
+C:\Users\tferido\Repos\Echo-Verify\VerifyMonitor\WorkInProgress\DCNAPlugIn\DCNAPlugIn\obj\Debug\DCNAPlugIn.pdb
+C:\Users\Paul Holbel\Desktop\Git Repos\Echo-Verify\VerifyMonitor\CompletedPlugins\DCNAPlugIn\DCNAPlugIn\bin\Debug\DCNAPlugIn.dll.config
+C:\Users\Paul Holbel\Desktop\Git Repos\Echo-Verify\VerifyMonitor\CompletedPlugins\DCNAPlugIn\DCNAPlugIn\bin\Debug\DCNAPlugIn.dll
+C:\Users\Paul Holbel\Desktop\Git Repos\Echo-Verify\VerifyMonitor\CompletedPlugins\DCNAPlugIn\DCNAPlugIn\bin\Debug\DCNAPlugIn.pdb
+C:\Users\Paul Holbel\Desktop\Git Repos\Echo-Verify\VerifyMonitor\CompletedPlugins\DCNAPlugIn\DCNAPlugIn\bin\Debug\ABCpdf.dll
+C:\Users\Paul Holbel\Desktop\Git Repos\Echo-Verify\VerifyMonitor\CompletedPlugins\DCNAPlugIn\DCNAPlugIn\bin\Debug\HtmlAgilityPack.dll
+C:\Users\Paul Holbel\Desktop\Git Repos\Echo-Verify\VerifyMonitor\CompletedPlugins\DCNAPlugIn\DCNAPlugIn\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Paul Holbel\Desktop\Git Repos\Echo-Verify\VerifyMonitor\CompletedPlugins\DCNAPlugIn\DCNAPlugIn\bin\Debug\PlugIn_NET4_5.dll
+C:\Users\Paul Holbel\Desktop\Git Repos\Echo-Verify\VerifyMonitor\CompletedPlugins\DCNAPlugIn\DCNAPlugIn\bin\Debug\RestSharp.dll
+C:\Users\Paul Holbel\Desktop\Git Repos\Echo-Verify\VerifyMonitor\CompletedPlugins\DCNAPlugIn\DCNAPlugIn\bin\Debug\PdfMetamorphosis.dll
+C:\Users\Paul Holbel\Desktop\Git Repos\Echo-Verify\VerifyMonitor\CompletedPlugins\DCNAPlugIn\DCNAPlugIn\bin\Debug\ABCpdf.xml
+C:\Users\Paul Holbel\Desktop\Git Repos\Echo-Verify\VerifyMonitor\CompletedPlugins\DCNAPlugIn\DCNAPlugIn\obj\Debug\DCNAPlugIn.csprojResolveAssemblyReference.cache
+C:\Users\Paul Holbel\Desktop\Git Repos\Echo-Verify\VerifyMonitor\CompletedPlugins\DCNAPlugIn\DCNAPlugIn\obj\Debug\DCNAPlugIn.Properties.Resources.resources
+C:\Users\Paul Holbel\Desktop\Git Repos\Echo-Verify\VerifyMonitor\CompletedPlugins\DCNAPlugIn\DCNAPlugIn\obj\Debug\DCNAPlugIn.csproj.GenerateResource.Cache
+C:\Users\Paul Holbel\Desktop\Git Repos\Echo-Verify\VerifyMonitor\CompletedPlugins\DCNAPlugIn\DCNAPlugIn\obj\Debug\DCNAPlugIn.csproj.CoreCompileInputs.cache
+C:\Users\Paul Holbel\Desktop\Git Repos\Echo-Verify\VerifyMonitor\CompletedPlugins\DCNAPlugIn\DCNAPlugIn\obj\Debug\DCNAPlugIn.dll
+C:\Users\Paul Holbel\Desktop\Git Repos\Echo-Verify\VerifyMonitor\CompletedPlugins\DCNAPlugIn\DCNAPlugIn\obj\Debug\DCNAPlugIn.pdb
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\SamplePlugins\DCNAPlugIn\DCNAPlugIn\bin\Debug\DCNAPlugIn.dll.config
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\SamplePlugins\DCNAPlugIn\DCNAPlugIn\bin\Debug\DCNAPlugIn.dll
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\SamplePlugins\DCNAPlugIn\DCNAPlugIn\bin\Debug\DCNAPlugIn.pdb
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\SamplePlugins\DCNAPlugIn\DCNAPlugIn\bin\Debug\ABCpdf.dll
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\SamplePlugins\DCNAPlugIn\DCNAPlugIn\bin\Debug\PdfMetamorphosis.dll
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\SamplePlugins\DCNAPlugIn\DCNAPlugIn\bin\Debug\ABCpdf.xml
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\SamplePlugins\DCNAPlugIn\DCNAPlugIn\obj\Debug\DCNAPlugIn.csprojResolveAssemblyReference.cache
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\SamplePlugins\DCNAPlugIn\DCNAPlugIn\obj\Debug\DCNAPlugIn.Properties.Resources.resources
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\SamplePlugins\DCNAPlugIn\DCNAPlugIn\obj\Debug\DCNAPlugIn.csproj.GenerateResource.Cache
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\SamplePlugins\DCNAPlugIn\DCNAPlugIn\obj\Debug\DCNAPlugIn.csproj.CoreCompileInputs.cache
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\SamplePlugins\DCNAPlugIn\DCNAPlugIn\obj\Debug\DCNAPlugIn.dll
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\SamplePlugins\DCNAPlugIn\DCNAPlugIn\obj\Debug\DCNAPlugIn.pdb
