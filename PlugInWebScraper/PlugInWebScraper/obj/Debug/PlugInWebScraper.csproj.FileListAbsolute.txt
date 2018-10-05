@@ -73,3 +73,45 @@ C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\PlugInWebScraper\PlugInWebScr
 C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\obj\Debug\PlugInWebScraper.csproj.CoreCompileInputs.cache
 C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\obj\Debug\PlugInWebScraper.exe
 C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\obj\Debug\PlugInWebScraper.pdb
+C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\TestDocuments\TestProviders3.xml
+C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\TestDocuments\TestM.xml
+C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\TestDocuments\TestNew.xml
+C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\TestDocuments\TestProviders.xml
+C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\TestDocuments\TestProviders2.xml
+C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\TestDocuments\TestProviders4.xml
+C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\TestDocuments\TestProviders5.xml
+C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\PlugInWebScraper.exe.config
+C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\PlugInWebScraper.exe
+C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\PlugInWebScraper.pdb
+C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\ALBMEPlugIn.dll
+C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\PlugIn_NET4_5.dll
+C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\ABCpdf.xml
+C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\ALBMEPlugIn.pdb
+C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\DLTCPlugIn.pdb
+C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\DLTCPlugIn.dll.config
+C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\MRLPPlugin.pdb
+C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\MRLPPlugin.dll.config
+C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\OBNPlugin.pdb
+C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\PBNAPlugIn.pdb
+C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\PBNAPlugIn.dll.config
+C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\THHSPlugIn.pdb
+C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\THHSPlugIn.dll.config
+C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\obj\Debug\PlugInWebScraper.csprojAssemblyReference.cache
+C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\obj\Debug\Views\MainWindow.g.cs
+C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\obj\Debug\App.g.cs
+C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\obj\Debug\PlugInWebScraper_Content.g.cs
+C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\obj\Debug\PlugInWebScraper_MarkupCompile.cache
+C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\obj\Debug\PlugInWebScraper_MarkupCompile.lref
+C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\obj\Debug\Views\MainWindow.baml
+C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\obj\Debug\PlugInWebScraper.g.resources
+C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\obj\Debug\PlugInWebScraper.Properties.Resources.resources
+C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\obj\Debug\PlugInWebScraper.csproj.GenerateResource.cache
+C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\obj\Debug\PlugInWebScraper.csproj.CoreCompileInputs.cache
+C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\obj\Debug\PlugInWebScraper.csproj.CopyComplete
+C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\obj\Debug\PlugInWebScraper.exe
+C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\obj\Debug\PlugInWebScraper.pdb
+C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\ABBHEPlugIn.dll
+C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\ABBHEPlugIn.pdb
+C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\ABBHEPlugIn.dll.config
+C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\ABCpdf.dll

@@ -3355,6 +3355,15 @@
     </Provider>
   </Assembly>
 
+  <Assembly name ="ABBHEPlugIn" action="">
+    
+     <Provider run="1">
+      <Data key ="dr_lname" value="Morrison"/>
+      <Data key ="dr_fname" value="Amy"/>
+    </Provider>
+  
+  </Assembly>
+  
   <Assembly name ="CDPHPlugIn" action ="">
 
     <!--Test case for just full name-->

@@ -3355,6 +3355,15 @@
     </Provider>
   </Assembly>
 
+  <Assembly name ="ABBHEPlugIn" action="">
+    
+     <Provider run="1">
+      <Data key ="dr_lname" value="Morrison"/>
+      <Data key ="dr_fname" value="Amy"/>
+    </Provider>
+  
+  </Assembly>
+  
   <Assembly name ="CDPHPlugIn" action ="">
 
     <!--Test case for just full name-->
@@ -3378,6 +3387,14 @@
 
   </Assembly>
 
+  <Assembly name ="OBEPPlugIn" action ="">
+    <!--Test case for just full name-->
+    <Provider run="1">
+      <Data key ="dr_lname" value="Smith"/>
+      <Data key ="dr_fname" value="David"/>
+    </Provider>
+  </Assembly>
+  
   <Assembly name ="INAPlugIn" action ="">
     <Provider run="1">
       <Data key ="lic_no" value="01026821A"/>
