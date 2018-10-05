@@ -1,0 +1,44 @@
+C:\Users\username\Repos\Echo-Verify\VerifyMonitor\WorkInProgress\CDPHPlugIn\CDPHPlugIn\bin\Debug\CDPHPlugIn.dll.config
+C:\Users\username\Repos\Echo-Verify\VerifyMonitor\WorkInProgress\CDPHPlugIn\CDPHPlugIn\bin\Debug\CDPHPlugIn.dll
+C:\Users\username\Repos\Echo-Verify\VerifyMonitor\WorkInProgress\CDPHPlugIn\CDPHPlugIn\bin\Debug\CDPHPlugIn.pdb
+C:\Users\username\Repos\Echo-Verify\VerifyMonitor\WorkInProgress\CDPHPlugIn\CDPHPlugIn\bin\Debug\ABCpdf.dll
+C:\Users\username\Repos\Echo-Verify\VerifyMonitor\WorkInProgress\CDPHPlugIn\CDPHPlugIn\bin\Debug\HtmlAgilityPack.dll
+C:\Users\username\Repos\Echo-Verify\VerifyMonitor\WorkInProgress\CDPHPlugIn\CDPHPlugIn\bin\Debug\Newtonsoft.Json.dll
+C:\Users\username\Repos\Echo-Verify\VerifyMonitor\WorkInProgress\CDPHPlugIn\CDPHPlugIn\bin\Debug\PlugIn_NET4_5.dll
+C:\Users\username\Repos\Echo-Verify\VerifyMonitor\WorkInProgress\CDPHPlugIn\CDPHPlugIn\bin\Debug\RestSharp.dll
+C:\Users\username\Repos\Echo-Verify\VerifyMonitor\WorkInProgress\CDPHPlugIn\CDPHPlugIn\bin\Debug\PdfMetamorphosis.dll
+C:\Users\username\Repos\Echo-Verify\VerifyMonitor\WorkInProgress\CDPHPlugIn\CDPHPlugIn\bin\Debug\ABCpdf.xml
+C:\Users\username\Repos\Echo-Verify\VerifyMonitor\WorkInProgress\CDPHPlugIn\CDPHPlugIn\obj\Debug\CDPHPlugIn.csprojResolveAssemblyReference.cache
+C:\Users\username\Repos\Echo-Verify\VerifyMonitor\WorkInProgress\CDPHPlugIn\CDPHPlugIn\obj\Debug\CDPHPlugIn.Properties.Resources.resources
+C:\Users\username\Repos\Echo-Verify\VerifyMonitor\WorkInProgress\CDPHPlugIn\CDPHPlugIn\obj\Debug\CDPHPlugIn.csproj.GenerateResource.Cache
+C:\Users\username\Repos\Echo-Verify\VerifyMonitor\WorkInProgress\CDPHPlugIn\CDPHPlugIn\obj\Debug\CDPHPlugIn.csproj.CoreCompileInputs.cache
+C:\Users\username\Repos\Echo-Verify\VerifyMonitor\WorkInProgress\CDPHPlugIn\CDPHPlugIn\obj\Debug\CDPHPlugIn.dll
+C:\Users\username\Repos\Echo-Verify\VerifyMonitor\WorkInProgress\CDPHPlugIn\CDPHPlugIn\obj\Debug\CDPHPlugIn.pdb
+C:\Users\username\Repos\Echo-Verify\VerifyMonitor\CompletedPlugins\CDPHPlugIn\CDPHPlugIn\bin\Debug\CDPHPlugIn.dll.config
+C:\Users\username\Repos\Echo-Verify\VerifyMonitor\CompletedPlugins\CDPHPlugIn\CDPHPlugIn\bin\Debug\CDPHPlugIn.dll
+C:\Users\username\Repos\Echo-Verify\VerifyMonitor\CompletedPlugins\CDPHPlugIn\CDPHPlugIn\bin\Debug\CDPHPlugIn.pdb
+C:\Users\username\Repos\Echo-Verify\VerifyMonitor\CompletedPlugins\CDPHPlugIn\CDPHPlugIn\bin\Debug\ABCpdf.dll
+C:\Users\username\Repos\Echo-Verify\VerifyMonitor\CompletedPlugins\CDPHPlugIn\CDPHPlugIn\bin\Debug\HtmlAgilityPack.dll
+C:\Users\username\Repos\Echo-Verify\VerifyMonitor\CompletedPlugins\CDPHPlugIn\CDPHPlugIn\bin\Debug\Newtonsoft.Json.dll
+C:\Users\username\Repos\Echo-Verify\VerifyMonitor\CompletedPlugins\CDPHPlugIn\CDPHPlugIn\bin\Debug\PlugIn_NET4_5.dll
+C:\Users\username\Repos\Echo-Verify\VerifyMonitor\CompletedPlugins\CDPHPlugIn\CDPHPlugIn\bin\Debug\RestSharp.dll
+C:\Users\username\Repos\Echo-Verify\VerifyMonitor\CompletedPlugins\CDPHPlugIn\CDPHPlugIn\bin\Debug\PdfMetamorphosis.dll
+C:\Users\username\Repos\Echo-Verify\VerifyMonitor\CompletedPlugins\CDPHPlugIn\CDPHPlugIn\bin\Debug\ABCpdf.xml
+C:\Users\username\Repos\Echo-Verify\VerifyMonitor\CompletedPlugins\CDPHPlugIn\CDPHPlugIn\obj\Debug\CDPHPlugIn.csprojResolveAssemblyReference.cache
+C:\Users\username\Repos\Echo-Verify\VerifyMonitor\CompletedPlugins\CDPHPlugIn\CDPHPlugIn\obj\Debug\CDPHPlugIn.Properties.Resources.resources
+C:\Users\username\Repos\Echo-Verify\VerifyMonitor\CompletedPlugins\CDPHPlugIn\CDPHPlugIn\obj\Debug\CDPHPlugIn.csproj.GenerateResource.Cache
+C:\Users\username\Repos\Echo-Verify\VerifyMonitor\CompletedPlugins\CDPHPlugIn\CDPHPlugIn\obj\Debug\CDPHPlugIn.csproj.CoreCompileInputs.cache
+C:\Users\username\Repos\Echo-Verify\VerifyMonitor\CompletedPlugins\CDPHPlugIn\CDPHPlugIn\obj\Debug\CDPHPlugIn.dll
+C:\Users\username\Repos\Echo-Verify\VerifyMonitor\CompletedPlugins\CDPHPlugIn\CDPHPlugIn\obj\Debug\CDPHPlugIn.pdb
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\SamplePlugins\CDPHPlugIn\CDPHPlugIn\bin\Debug\CDPHPlugIn.dll.config
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\SamplePlugins\CDPHPlugIn\CDPHPlugIn\bin\Debug\CDPHPlugIn.dll
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\SamplePlugins\CDPHPlugIn\CDPHPlugIn\bin\Debug\CDPHPlugIn.pdb
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\SamplePlugins\CDPHPlugIn\CDPHPlugIn\bin\Debug\ABCpdf.dll
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\SamplePlugins\CDPHPlugIn\CDPHPlugIn\bin\Debug\PdfMetamorphosis.dll
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\SamplePlugins\CDPHPlugIn\CDPHPlugIn\bin\Debug\ABCpdf.xml
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\SamplePlugins\CDPHPlugIn\CDPHPlugIn\obj\Debug\CDPHPlugIn.csprojResolveAssemblyReference.cache
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\SamplePlugins\CDPHPlugIn\CDPHPlugIn\obj\Debug\CDPHPlugIn.Properties.Resources.resources
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\SamplePlugins\CDPHPlugIn\CDPHPlugIn\obj\Debug\CDPHPlugIn.csproj.GenerateResource.Cache
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\SamplePlugins\CDPHPlugIn\CDPHPlugIn\obj\Debug\CDPHPlugIn.csproj.CoreCompileInputs.cache
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\SamplePlugins\CDPHPlugIn\CDPHPlugIn\obj\Debug\CDPHPlugIn.dll
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\SamplePlugins\CDPHPlugIn\CDPHPlugIn\obj\Debug\CDPHPlugIn.pdb
