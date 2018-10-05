@@ -1,0 +1,16 @@
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\SamplePlugins\PBNAPlugIn\PBNAPlugIn\bin\Debug\PBNAPlugIn.dll.config
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\SamplePlugins\PBNAPlugIn\PBNAPlugIn\bin\Debug\PBNAPlugIn.dll
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\SamplePlugins\PBNAPlugIn\PBNAPlugIn\bin\Debug\PBNAPlugIn.pdb
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\SamplePlugins\PBNAPlugIn\PBNAPlugIn\bin\Debug\ABCpdf.dll
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\SamplePlugins\PBNAPlugIn\PBNAPlugIn\bin\Debug\HtmlAgilityPack.dll
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\SamplePlugins\PBNAPlugIn\PBNAPlugIn\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\SamplePlugins\PBNAPlugIn\PBNAPlugIn\bin\Debug\PdfMetamorphosis.dll
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\SamplePlugins\PBNAPlugIn\PBNAPlugIn\bin\Debug\PlugIn_NET4_5.dll
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\SamplePlugins\PBNAPlugIn\PBNAPlugIn\bin\Debug\RestSharp.dll
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\SamplePlugins\PBNAPlugIn\PBNAPlugIn\bin\Debug\ABCpdf.xml
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\SamplePlugins\PBNAPlugIn\PBNAPlugIn\obj\Debug\PBNAPlugIn.csprojResolveAssemblyReference.cache
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\SamplePlugins\PBNAPlugIn\PBNAPlugIn\obj\Debug\PBNAPlugIn.Properties.Resources.resources
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\SamplePlugins\PBNAPlugIn\PBNAPlugIn\obj\Debug\PBNAPlugIn.csproj.GenerateResource.Cache
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\SamplePlugins\PBNAPlugIn\PBNAPlugIn\obj\Debug\PBNAPlugIn.csproj.CoreCompileInputs.cache
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\SamplePlugins\PBNAPlugIn\PBNAPlugIn\obj\Debug\PBNAPlugIn.dll
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\SamplePlugins\PBNAPlugIn\PBNAPlugIn\obj\Debug\PBNAPlugIn.pdb

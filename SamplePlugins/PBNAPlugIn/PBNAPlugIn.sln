@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PBNAPlugIn", "PBNAPlugIn\PBNAPlugIn.csproj", "{95D1FBE9-9E5A-4C59-83B6-6CEAC1826718}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{95D1FBE9-9E5A-4C59-83B6-6CEAC1826718}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95D1FBE9-9E5A-4C59-83B6-6CEAC1826718}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95D1FBE9-9E5A-4C59-83B6-6CEAC1826718}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95D1FBE9-9E5A-4C59-83B6-6CEAC1826718}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4F658D6D-3C20-4071-B292-1851BF7DF031}
+	EndGlobalSection
+EndGlobal
