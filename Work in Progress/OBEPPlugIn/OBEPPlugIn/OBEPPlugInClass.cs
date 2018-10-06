@@ -12,7 +12,7 @@ namespace OBEPPlugIn
 {
     /// <summary>
     /// EchoPSV Plugin for New Hamshire Board of Medicine
-    /// http://cvl.cdph.ca.gov/SearchPage.aspx
+    /// https://pay.apps.ok.gov/OSBEP/_app/search/index.php
     /// </summary>
     public class PlugInClass : IPlugIn
     {

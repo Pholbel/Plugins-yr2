@@ -43,10 +43,10 @@ namespace OBEPPlugIn
             string lastFocus = "";
             string eventTarget = "";
             string eventArgument = "";
-            string baseUrl = "http://cvl.cdph.ca.gov/";
+            string baseUrl = "https://pay.apps.ok.gov/OSBEP/_app/search/";
 
             //GET PARAMETERS AND COOKIES
-            RestClient client = new RestClient(baseUrl+"SearchPage.aspx");
+            RestClient client = new RestClient(baseUrl+ "index.php");
             RestRequest request = new RestRequest(Method.GET);
             IRestResponse response = client.Execute(request);
             
@@ -64,21 +64,17 @@ namespace OBEPPlugIn
             //FORMING NEW POST WITH OUR PARAMS
             request = new RestRequest(Method.POST);
 
-            string _param_prefix = "ctl00$ContentPlaceHolderMiddleColumn$";
+            request.AddParameter("LAST_NAME", provider.LastName);
+            request.AddParameter("FIRST_NAME", provider.FirstName);
+            request.AddParameter("CITY", "");
+            request.AddParameter("STATE", "");
+            request.AddParameter("ZIP", "");
+            request.AddParameter("LICENSE_NUM", provider.LicenseNumber);
+            request.AddParameter("STATUS_ID", "");
+            request.AddParameter("ISSUEDATE_FROM", "");
+            request.AddParameter("ISSUEDATE_TO", "");
+            request.AddParameter("button", "Search");
 
-            request.AddParameter("__EVENTTARGET", eventTarget);
-            request.AddParameter("__EVENTARGUMENT", eventArgument);
-            request.AddParameter("__LASTFOCUS", lastFocus);
-            request.AddParameter("__VIEWSTATE", viewState);
-            request.AddParameter("__VIEWSTATEGENERATOR", viewStateGenerator);
-            request.AddParameter("__EVENTVALIDATION", eventValidation);
-            request.AddParameter(_param_prefix + "ddCertType", "0");
-            request.AddParameter(_param_prefix + "CVLSearch", "rdoLastFirst");
-            request.AddParameter(_param_prefix + "txtLastName", provider.LastName);
-            request.AddParameter(_param_prefix + "txtFirstName", provider.FirstName);
-            request.AddParameter(_param_prefix + "txtLastNameStart", "");
-            request.AddParameter(_param_prefix + "btnSearch2", "Search");
-            
             foreach (var c in allCookies)
             {
                 request.AddCookie(c.Name, c.Value);
@@ -98,24 +94,20 @@ namespace OBEPPlugIn
 
             //CHECK IF WE HAVE MULTIPLE PROVIDERS
 
-            MatchCollection providerList = Regex.Matches(response.Content, "(?<=cert.*\">).*(?=</a>)", RegOpt);
-            HashSet<string> providerHash = new HashSet<string>();
+            MatchCollection providerList = Regex.Matches(response.Content, ">" + provider.LastName + "</a>", RegOpt);
 
-            foreach (var p in providerList)
-            {
-                providerHash.Add(p.ToString());
-            }
-
-            if (providerHash.Count == 0)
+            if (providerList.Count == 0)
             {
                 return Result<IRestResponse>.Failure(ErrorMsg.NoResultsFound);
             }
-            else if (providerHash.Count == 1)
+            else if (providerList.Count == 1)
             {
-                Match fields = Regex.Match(response.Content, "(?<QUERY>\"DetailPage.aspx?.*?\\\")", RegOpt);
+                string baseSubUrl = "psychologist.php\\?id=";
+                string searchRegex =  baseSubUrl + "(?<QUERY>.*?)\">" + provider.LastName;
+                Match fields = Regex.Match(response.Content, searchRegex, RegOpt);
                 string detailQuery = fields.Groups["QUERY"].ToString();
                 detailQuery = Regex.Replace(detailQuery, "\"", "", RegOpt);
-                client = new RestClient(baseUrl + detailQuery);
+                client = new RestClient(baseUrl + baseSubUrl + detailQuery);
                 request = new RestRequest(Method.GET);
 
                 foreach (var c in allCookies)
