@@ -3358,8 +3358,8 @@
   <Assembly name ="ABBHEPlugIn" action="">
     
      <Provider run="1">
+      <Data key ="lic_no" value="SW-0792M"/>
       <Data key ="dr_lname" value="Morrison"/>
-      <Data key ="dr_fname" value="Amy"/>
     </Provider>
   
   </Assembly>

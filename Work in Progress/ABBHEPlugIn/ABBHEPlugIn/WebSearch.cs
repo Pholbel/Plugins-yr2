@@ -12,7 +12,7 @@ namespace ABBHEPlugIn
 {
     public class WebSearch
     {
-        private RegexOptions RegOpt = RegexOptions.IgnoreCase | RegexOptions.Singleline;
+        private RegexOptions RegOpt = RegexOptions.IgnoreCase;
         private Provider provider { get; set; }
 
         public WebSearch(Provider _provider)
@@ -37,85 +37,34 @@ namespace ABBHEPlugIn
 
             // PARAMETERS AND COOKIES WE WILL GET WITH FIRST GET
             List<RestResponseCookie> allCookies = new List<RestResponseCookie>();
-            string viewState = "";
-            string viewStateGenerator = "";
-            string eventValidation = "";
-            string lastFocus = "";
-            string eventTarget = "";
-            string eventArgument = "";
-            string baseUrl = "http://cvl.cdph.ca.gov/";
+            RestRequest request = new RestRequest(Method.POST);
+            string baseUrl = "https://www.azbbhe.us/";
+            string searchQuery = "DaEngine.asp";
+            RestClient client = new RestClient(baseUrl + searchQuery);
 
-            //GET PARAMETERS AND COOKIES
-            RestClient client = new RestClient(baseUrl+"SearchPage.aspx");
-            RestRequest request = new RestRequest(Method.GET);
-            IRestResponse response = client.Execute(request);
-            
-            allCookies.AddRange(response.Cookies);
-
-            if (response.StatusCode == HttpStatusCode.OK)
-            {
-                GetViewStates(ref viewState, ref viewStateGenerator, ref eventValidation, ref lastFocus, ref eventTarget, ref eventArgument, response);
-            }
-            else
-            {
-                return Result<IRestResponse>.Failure(ErrorMsg.CannotAccessSite);
-            }
-
-            //FORMING NEW POST WITH OUR PARAMS
-            request = new RestRequest(Method.POST);
-
-            string _param_prefix = "ctl00$ContentPlaceHolderMiddleColumn$";
-
-            request.AddParameter("__EVENTTARGET", eventTarget);
-            request.AddParameter("__EVENTARGUMENT", eventArgument);
-            request.AddParameter("__LASTFOCUS", lastFocus);
-            request.AddParameter("__VIEWSTATE", viewState);
-            request.AddParameter("__VIEWSTATEGENERATOR", viewStateGenerator);
-            request.AddParameter("__EVENTVALIDATION", eventValidation);
-            request.AddParameter(_param_prefix + "ddCertType", "0");
-            request.AddParameter(_param_prefix + "CVLSearch", "rdoLastFirst");
-            request.AddParameter(_param_prefix + "txtLastName", provider.LastName);
-            request.AddParameter(_param_prefix + "txtFirstName", provider.FirstName);
-            request.AddParameter(_param_prefix + "txtLastNameStart", "");
-            request.AddParameter(_param_prefix + "btnSearch2", "Search");
+            // ADD PARAMETERS
+            request.AddParameter("LicSearch", "");
+            request.AddParameter("TypeSearch", "LicenseNo");
+            request.AddParameter("DaInBox", provider.LicenseNumber);
+            request.AddParameter("B1", "Submit");
             
             foreach (var c in allCookies)
             {
                 request.AddCookie(c.Name, c.Value);
             }
 
-            response = client.Execute(request);
+            IRestResponse response = client.Execute(request);
 
-            //LAND HO!
 
             //REFILL THE COOKIE JAR
             allCookies.AddRange(response.Cookies);
-            if (response.StatusCode == HttpStatusCode.OK)
-            {
-                GetViewStates(ref viewState, ref viewStateGenerator, ref eventValidation, ref lastFocus, ref eventTarget, ref eventArgument, response);
-            }
-            else { return Result<IRestResponse>.Failure(ErrorMsg.CannotAccessSite); }
 
-            //CHECK IF WE HAVE MULTIPLE PROVIDERS
-
-            MatchCollection providerList = Regex.Matches(response.Content, "(?<=cert.*\">).*(?=</a>)", RegOpt);
-            HashSet<string> providerHash = new HashSet<string>();
-
-            foreach (var p in providerList)
+            Match detailLink = Regex.Match(response.Content, @"ProDetail.*(?<==.*\d)", RegOpt);
+            
+            if (detailLink.Success)
             {
-                providerHash.Add(p.ToString());
-            }
-
-            if (providerHash.Count == 0)
-            {
-                return Result<IRestResponse>.Failure(ErrorMsg.NoResultsFound);
-            }
-            else if (providerHash.Count == 1)
-            {
-                Match fields = Regex.Match(response.Content, "(?<QUERY>\"DetailPage.aspx?.*?\\\")", RegOpt);
-                string detailQuery = fields.Groups["QUERY"].ToString();
-                detailQuery = Regex.Replace(detailQuery, "\"", "", RegOpt);
-                client = new RestClient(baseUrl + detailQuery);
+               
+                client = new RestClient(baseUrl + detailLink);
                 request = new RestRequest(Method.GET);
 
                 foreach (var c in allCookies)
@@ -138,43 +87,10 @@ namespace ABBHEPlugIn
             }
             else
             {
-                return Result<IRestResponse>.Failure(ErrorMsg.MultipleProvidersFound);
+                return Result<IRestResponse>.Failure(ErrorMsg.NoResultsFound);
             }
             
         }
 
-        private void GetViewStates(ref string viewState, ref string viewStateGenerator, ref string eventValidation, ref string lastFocus, ref string eventTarget, ref string eventArgument, IRestResponse response)
-        {
-            Match m = Regex.Match(response.Content, "id=\"__VIEWSTATE\" value=\"(?<VIEW>.*?)\"", RegOpt);
-            if (m.Success)
-            {
-                viewState = m.Groups["VIEW"].ToString();
-            }
-            m = Regex.Match(response.Content, "id=\"__VIEWSTATEGENERATOR\" value=\"(?<VIEWGEN>.*?)\"", RegOpt);
-            if (m.Success)
-            {
-                viewStateGenerator = m.Groups["VIEWGEN"].ToString();
-            }
-            m = Regex.Match(response.Content, "id=\"__EVENTVALIDATION\" value=\"(?<EVENT>.*?)\"", RegOpt);
-            if (m.Success)
-            {
-                eventValidation = m.Groups["EVENT"].ToString();
-            }
-            m = Regex.Match(response.Content, "id=\"__LASTFOCUS\" value=\"(?<EVENT>.*?)\"", RegOpt);
-            if (m.Success)
-            {
-                lastFocus = m.Groups["EVENT"].ToString();
-            }
-            m = Regex.Match(response.Content, "id=\"__EVENTTARGET\" value=\"(?<EVENTTAR>.*?)\"", RegOpt);
-            if (m.Success)
-            {
-                eventTarget = m.Groups["EVENTTAR"].ToString();
-            }
-            m = Regex.Match(response.Content, "id=\"__EVENTARGUMENT\" value=\"(?<EVENTARG>.*?)\"", RegOpt);
-            if (m.Success)
-            {
-                eventArgument = m.Groups["EVENTARG"].ToString();
-            }
-        }
     }
 }
