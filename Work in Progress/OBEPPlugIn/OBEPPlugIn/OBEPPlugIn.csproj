@@ -48,6 +48,10 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\..\..\CompletedPlugins\MHPPlugIn\MHPPlugIn\bin\Debug\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="PdfMetamorphosis, Version=5.7.8.12, Culture=neutral, PublicKeyToken=f77041e5caa5fc2f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\PdfMetamorphosis.dll</HintPath>
+    </Reference>
     <Reference Include="PlugIn_NET4_5">
       <HintPath>..\..\..\CompletedPlugins\MHPPlugIn\MHPPlugIn\bin\Debug\PlugIn_NET4_5.dll</HintPath>
     </Reference>

@@ -69,22 +69,35 @@ namespace OBEPPlugIn
 
         private Result<string> ParseResponse(string response)
         {
-            MatchCollection fields = Regex.Matches(response, "(?<=(id=\"ctl.*\">)).*(?=</s)");
-            List<string> headers = new List<string>(new string[] {"First Name", "Middle Name", "Last Name", "License Type", "License Number", "Title", "Effective Date", "Expiration Date", "Status", "Finding"});
+            MatchCollection fields1 = Regex.Matches(response, "(?<=(<td>)).*(?=</td)");
+            MatchCollection fields2 = Regex.Matches(response, "(?<=(<b>)).*(?=\n)");
+            //List<string> headers1 = new List<string>(new string[] { "Name", "Address Line1", "Address Line2", "Phone #" });
+            //List<string> headers = new List<string>(new string[] {"Area", "License #", "Status", "Issued", "HSP", "Special Certification", "University", "Department", "Graduated"});
 
-            if (fields.Count > 0)
+            if (fields1.Count > 3)
             {
                 StringBuilder builder = new StringBuilder();
 
-                for (int idx=0;idx<fields.Count;idx++)
+                for (int idx=3;idx<fields1.Count-5;idx++)
                 {
-                    string header = headers[idx % headers.Count];
-                    string text = fields[idx].ToString();
+                    //string header = headers1[idx];
+                    string text = CleanString(fields1[idx].ToString());
+
+                    builder.AppendFormat(TdSingle, text);
+                    builder.AppendLine();
+                }
+
+                for (int idx=2;idx<fields2.Count-1;idx++)
+                {
+                    string exp = fields2[idx].ToString();
+                    if (exp.Contains("<u>")) { continue; }
+                    List<string> pair = exp.Split(':').ToList();
+                    string header = CleanString(pair[0]);
+                    string text = CleanString(pair[1]);
 
                     builder.AppendFormat(TdPair, header, text);
                     builder.AppendLine();
                 }
-
 
                 return Result<string>.Success(builder.ToString());
             }
@@ -92,6 +105,17 @@ namespace OBEPPlugIn
             {
                 return Result<string>.Failure(ErrorMsg.CannotAccessDetailsPage);
             }
+        }
+
+        private string CleanString(string str)
+        {
+            str = str.Replace("<b>", "");
+            str = str.Replace("</b>", "");
+            str = str.Replace("<u>", "");
+            str = str.Replace("<br>", "");
+            str = str.Replace("</td>", "");
+
+            return str;
         }
     }
 }

@@ -3393,6 +3393,17 @@
       <Data key ="dr_lname" value="Smith"/>
       <Data key ="dr_fname" value="David"/>
     </Provider>
+    
+    <Provider run="1">
+      <Data key ="dr_lname" value="Cummins"/>
+      <Data key ="dr_fname" value="John"/>
+    </Provider>
+    
+    <!--Test case for multiple providers-->
+      <Provider run="1">
+        <Data key ="dr_lname" value="Smith"/>
+        <Data key ="dr_fname" value="r"/>
+      </Provider>
   </Assembly>
   
   <Assembly name ="INAPlugIn" action ="">
