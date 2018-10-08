@@ -3393,6 +3393,11 @@
       <Data key ="dr_lname" value="Smith"/>
       <Data key ="dr_fname" value="David"/>
     </Provider>
+    
+      <Provider run="1">
+        <Data key ="dr_lname" value="Smith"/>
+        <Data key ="dr_fname" value="r"/>
+      </Provider>
   </Assembly>
   
   <Assembly name ="INAPlugIn" action ="">
@@ -3487,5 +3492,30 @@
     </Provider>
   </Assembly>
   <!--Beggining of yr2 work--> 
+
+  <Assembly name ="IBPLPlugIn" action ="">
+    <Provider run="1">
+      <Data key ="lic_no" value="000646"/>
+      <Data key ="dr_lname" value="Smith"/>
+    </Provider>
+    <Provider run="1">
+      <Data key ="lic_no" value="28183"/>
+      <Data key ="dr_lname" value="Smith"/>
+    </Provider>
+    <Provider run="1">
+      <Data key ="lic_no" value="00305"/>
+      <Data key ="dr_lname" value="Black"/>
+    </Provider>
+    <Provider run="1">
+      <Data key ="lic_no" value="069798"/>
+      <Data key ="dr_lname" value="Brown"/>
+    </Provider>
+    <Provider run="1">
+      <Data key ="lic_no" value="00120"/>
+      <Data key ="dr_lname" value="Parker"/>
+    </Provider>
+
+  </Assembly>
 </TestData>
+
 
