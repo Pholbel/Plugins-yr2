@@ -3358,8 +3358,9 @@
   <Assembly name ="ABBHEPlugIn" action="">
     
      <Provider run="1">
+      <Data key ="lic_no" value="SW-0792M"/>
+      <Data key ="dr_fname" value="Annette"/>
       <Data key ="dr_lname" value="Morrison"/>
-      <Data key ="dr_fname" value="Amy"/>
     </Provider>
   
   </Assembly>
@@ -3394,6 +3395,12 @@
       <Data key ="dr_fname" value="David"/>
     </Provider>
     
+    <Provider run="1">
+      <Data key ="dr_lname" value="Cummins"/>
+      <Data key ="dr_fname" value="John"/>
+    </Provider>
+    
+    <!--Test case for multiple providers-->
       <Provider run="1">
         <Data key ="dr_lname" value="Smith"/>
         <Data key ="dr_fname" value="r"/>
