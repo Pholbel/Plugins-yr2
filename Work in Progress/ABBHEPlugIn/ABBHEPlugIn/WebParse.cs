@@ -29,6 +29,7 @@ namespace ABBHEPlugIn
         {
             try
             {
+                CheckLicenseDetails(response.Content);
                 return ParseResponse(response.Content);
             }
             catch (Exception e)
@@ -43,7 +44,7 @@ namespace ABBHEPlugIn
             MatchCollection exp = Regex.Matches(response, @"Closed - .*\w(?=</)", RegOpt);
             if (exp.Count != 0)
             {
-               // Expiration = exp.Groups["EXP"].ToString();
+               Expiration = exp.ToString();
             }
 
             //Does not support sanctions
@@ -52,21 +53,67 @@ namespace ABBHEPlugIn
 
         private Result<string> ParseResponse(string response)
         {
-            MatchCollection fields = Regex.Matches(response, "(?<=(id=\"ctl.*\">)).*(?=</s)");
-            List<string> headers = new List<string>(new string[] {"First Name", "Middle Name", "Last Name", "License Type", "License Number", "Title", "Effective Date", "Expiration Date", "Status", "Finding"});
 
-            if (fields.Count > 0)
+            var doc = new HtmlDocument();
+            doc.LoadHtml(response);
+            var body = doc.DocumentNode.SelectSingleNode("//body");
+            
+            if (body.InnerHtml != String.Empty)
             {
                 StringBuilder builder = new StringBuilder();
+                HtmlNode sec_info = body.SelectSingleNode("//div/table");
+                HtmlNode sec_licenses = body.SelectNodes("//table")[1];
 
-                for (int idx=0;idx<fields.Count;idx++)
+
+
+                //Handle info section
+                foreach (var detail in sec_info.ChildNodes)
                 {
-                    string header = headers[idx % headers.Count];
-                    string text = fields[idx].ToString();
-
-                    builder.AppendFormat(TdPair, header, text);
-                    builder.AppendLine();
+                    if (detail.Name == "tr")
+                    {
+                        HtmlNodeCollection cells = detail.ChildNodes;
+                        string h = cells[1].InnerText;
+                        string t = cells[3].InnerText.Replace("&nbsp;", " ");
+                        builder.AppendFormat(TdPair, h, t);
+                        builder.AppendLine();
+                    }
                 }
+
+                //Handle licenses section
+
+                //Get headers
+                HtmlNodeCollection headers = sec_licenses.ChildNodes[1].ChildNodes;
+                List<string> hList = new List<string>();
+                foreach (var header in headers)
+                {
+                    if (header.Name == "td")
+                    {
+                        hList.Add(header.InnerText.Replace("\n  ", "").Substring(2));
+                    }
+                }
+                hList.RemoveAt(0);
+
+                //get each license
+                HtmlNodeCollection licenses = sec_licenses.ChildNodes;
+                foreach (var license in licenses)
+                {
+                    if (license.Name == "tr" && license.PreviousSibling.PreviousSibling != null)
+                    {
+                        int count = 0;
+                        foreach (var cell in license.ChildNodes)
+                        {
+                            if (cell.Name == "td" && cell.PreviousSibling.PreviousSibling != null)
+                            {
+                                builder.AppendFormat(TdPair, hList[count], cell.InnerText);
+                                builder.AppendLine();
+                                count++;
+                            }
+                        }
+                        count = 0;
+                    }
+                }
+
+                
 
 
                 return Result<string>.Success(builder.ToString());
