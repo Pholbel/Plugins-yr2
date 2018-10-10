@@ -29,7 +29,6 @@ namespace ABBHEPlugIn
         {
             try
             {
-                CheckLicenseDetails(response.Content);
                 return ParseResponse(response.Content);
             }
             catch (Exception e)
@@ -41,7 +40,7 @@ namespace ABBHEPlugIn
         private void CheckLicenseDetails(string response)
         {
 
-            MatchCollection exp = Regex.Matches(response, @"Closed - .*\w(?=</)", RegOpt);
+            MatchCollection exp = Regex.Matches(response, @"ACTIVE", RegOpt);
             if (exp.Count != 0)
             {
                Expiration = exp.ToString();
@@ -100,19 +99,34 @@ namespace ABBHEPlugIn
                     if (license.Name == "tr" && license.PreviousSibling.PreviousSibling != null)
                     {
                         int count = 0;
+                        bool isActive = false;
                         foreach (var cell in license.ChildNodes)
                         {
                             if (cell.Name == "td" && cell.PreviousSibling.PreviousSibling != null)
                             {
+                                if (cell.InnerText.Contains("ACTIVE"))
+                                {
+                                    isActive = true;
+                                }
+                                if (count == 4 && isActive)
+                                {
+                                    Expiration = cell.InnerText;
+                                }
                                 builder.AppendFormat(TdPair, hList[count], cell.InnerText);
                                 builder.AppendLine();
                                 count++;
                             }
                         }
+                        isActive = false;
                         count = 0;
                     }
                 }
 
+                //handle sanctions
+                if (!response.Contains("There are no Board actions"))
+                {
+                    Sanction = SanctionType.Red;
+                }
                 
 
 
