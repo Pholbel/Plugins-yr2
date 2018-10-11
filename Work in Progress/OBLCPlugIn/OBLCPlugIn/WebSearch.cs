@@ -8,7 +8,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace IBPLPlugIn
+namespace OBLCPlugIn
 {
     public class WebSearch
     {
@@ -44,7 +44,7 @@ namespace IBPLPlugIn
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 
             //Set up client and request
-            RestClient client = new RestClient(baseUrl + "/publicsearch.jsp");
+            RestClient client = new RestClient(baseUrl + "index.asp");
             RestRequest request = new RestRequest(Method.GET);
             IRestResponse response = client.Execute(request);
             
@@ -55,12 +55,34 @@ namespace IBPLPlugIn
             if (response.StatusCode != HttpStatusCode.OK)
                 return Result<IRestResponse>.Failure(ErrorMsg.CannotAccessSite);
 
-            //FORMING NEW POST WITH OUR PARAMS
-            request = new RestRequest(Method.POST);
+            //Forming new get request with our parameters
+            request = new RestRequest(Method.GET);
 
-            //We perform the search using license numbers and last names
-            request.AddParameter("licenseNumber", provider.LicenseNumber);
-            request.AddParameter("lastName", provider.LastName);
+            string searchUrl = "searchdir.asp?";
+
+            //We perform the search using license numbers if available, last names otherwise
+            //Website does not allow both
+            if (provider.LicenseNumber != "")
+            {
+                string licenseType = LicenseType(provider.LicenseNumber);
+
+                if (licenseType == "")
+                    return Result<IRestResponse>.Failure(ErrorMsg.InvalidLicense);
+
+                searchUrl += "searchby=" + licenseType;
+
+                Match licenseNum = Regex.Match(provider.LicenseNumber, "\\d+");
+
+                searchUrl += "&searchfor=" + licenseNum.Value;
+            }
+            else
+            {
+                searchUrl += "searchby=lastName";
+                searchUrl += "&searchfor=" + provider.LastName;
+            }
+
+            searchUrl += "&stateselect=none&Submit=Search";
+            client = new RestClient(baseUrl + searchUrl);
 
             //Add cookies to our request
             foreach (RestResponseCookie c in allCookies)
@@ -72,37 +94,38 @@ namespace IBPLPlugIn
             allCookies.AddRange(response.Cookies);
 
             //Check that we accessed the site
-            if (response.StatusCode != HttpStatusCode.OK)
+            if (response.StatusCode != HttpStatusCode.OK && response.StatusCode != HttpStatusCode.Redirect)
                 return Result<IRestResponse>.Failure(ErrorMsg.CannotAccessSite);
 
-            MatchCollection providerList = Regex.Matches(response.Content, "(<tr class=\"FormtableData\">)", RegOpt);
+            MatchCollection providerList = Regex.Matches(response.Content, "(<tr valign='Middle'>)", RegOpt);
 
             //Check if we have multiple providers
-            if (providerList.Count == 0)
-                return Result<IRestResponse>.Failure(ErrorMsg.NoResultsFound);
-            else if (providerList.Count > 1)
+            if (providerList.Count > 1)
                 return Result<IRestResponse>.Failure(ErrorMsg.MultipleProvidersFound);
 
-            //Get the directory the details for this provider are in
-            Match fields = Regex.Match(response.Content, "id=\"licenseCheckBox_1\"\\svalue=\"(\\d+)\"", RegOpt);
-            string folderRsn = fields.Groups[1].ToString();
-            client = new RestClient(baseUrl + "/publicsearch_detail.jsp?folderRsn=" + folderRsn);
-            request = new RestRequest(Method.POST);
+            //Check if we have no providers
+            if (Regex.Match(response.Content, "No Records Found.", RegOpt).Success)
+                return Result<IRestResponse>.Failure(ErrorMsg.NoResultsFound);
 
-            //Add cookies to our request
-            foreach (RestResponseCookie c in allCookies)
-                request.AddCookie(c.Name, c.Value);
+            //We have been redirected to the details page
+            return Result<IRestResponse>.Success(response);
+        }
 
-            response = client.Execute(request);
+        private string LicenseType(string license)
+        {
+            Match licensePrefix = Regex.Match(license, "([ctr]){1}\\d+", RegOpt);
 
-            //Get new cookies
-            allCookies.AddRange(response.Cookies);
-
-            //Check result
-            if (response.StatusCode == HttpStatusCode.OK)
-                return Result<IRestResponse>.Success(response);
-            else
-                return Result<IRestResponse>.Failure(ErrorMsg.CannotAccessSearchResultsPage);
+            switch (licensePrefix.Groups[1].Value)
+            {
+                case "C":
+                    return "lpcnum";
+                case "T":
+                    return "lmftnum";
+                case "R":
+                    return "regnum";
+                default:
+                    return "";
+            }
         }
     }
 }

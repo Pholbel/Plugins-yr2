@@ -8,7 +8,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace IBPLPlugIn
+namespace OBLCPlugIn
 {
     /// <summary>
     /// OBLC Plugin for Oregon board of Licensed Counselors and Therapists
@@ -79,10 +79,9 @@ namespace IBPLPlugIn
 
             Boolean null_license = String.IsNullOrEmpty(provider.LicenseNumber);
             Boolean pending_license = Regex.IsMatch(provider.LicenseNumber, "Pending", RegexOptions.IgnoreCase);
-            Boolean null_fname = String.IsNullOrEmpty(provider.FirstName);
             Boolean null_lname = String.IsNullOrEmpty(provider.LastName);
 
-            if ( (null_license || pending_license) && (null_fname || null_lname) )
+            if ( (null_license || pending_license) && null_lname )
             {
                 return Result<string>.Failure(ErrorMsg.InvalidLicenseAndFirstLastName);
             }

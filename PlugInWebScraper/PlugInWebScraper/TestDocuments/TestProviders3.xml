@@ -3533,8 +3533,28 @@
       <Data key ="lic_no" value="00120"/>
       <Data key ="dr_lname" value="Parker"/>
     </Provider>
-
   </Assembly>
+
+  <Assembly name ="OBLCPlugIn" action ="">
+    <Provider run="1">
+      <Data key ="dr_lname" value="Black"/>
+    </Provider>
+    <Provider run="1">
+      <Data key ="lic_no" value="C2265"/>
+    </Provider>
+    <!-- LMFT numbers do NOT work on this site -->
+    <Provider run="1">
+      <Data key ="lic_no" value="T1051"/>
+    </Provider>
+    <Provider run="1">
+      <Data key ="lic_no" value="R2316"/>
+    </Provider>
+    <Provider run="1">
+      <Data key ="lic_no" value="R5459"/>
+      <Data key ="dr_lname" value="Smith"/>
+    </Provider>
+  </Assembly>
+  
 </TestData>
 
 

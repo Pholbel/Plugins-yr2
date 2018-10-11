@@ -8,7 +8,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace IBPLPlugIn
+namespace OBLCPlugIn
 {
     public class WebParse
     {
@@ -41,12 +41,17 @@ namespace IBPLPlugIn
         private void CheckLicenseDetails(string response)
         {
             //Get license dates
-            MatchCollection exp = Regex.Matches(response, "<td align=\"center\">(\\d*/\\d*/\\d*)</td>", RegOpt);
+            Match exp = Regex.Match(response, "<td><b>\\w+<b></td><td>(\\d*/\\d*/\\d*)</td>", RegOpt);
 
-            //There are two dates in the form data: one for date issued and one for expiration,
-            //but they do not have id tags to differentiate them
-            if (exp.Count == 2)
-                Expiration = exp[1].Groups[1].ToString();
+            if (exp.Success)
+                Expiration = exp.Groups[1].Value;
+            else
+            {
+                exp = Regex.Match(response, "License Expired:</b></td><td>(\\d*/\\d*/\\d*)</td>", RegOpt);
+
+                if (exp.Success)
+                    Expiration = exp.Groups[1].Value;
+            }
 
             //Get sanction status
             Match sanction = Regex.Match(response, "<td style=\"padding-left:5px;\">Disciplinary Action</td>\n*\\s*<td style=\"padding-left:5px;\">\n*\\s*(N)", RegOpt);
