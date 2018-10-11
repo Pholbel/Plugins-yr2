@@ -41,43 +41,36 @@ namespace OBLCPlugIn
         private void CheckLicenseDetails(string response)
         {
             //Get license dates
-            Match exp = Regex.Match(response, "<td><b>\\w+<b></td><td>(\\d*/\\d*/\\d*)</td>", RegOpt);
+            //Some providers have multiple licenses
+            MatchCollection exp = Regex.Matches(response, "(Until|Date|Expire[ds]):</b></td><td>(?<date>\\d+/\\d+/\\d+)", RegOpt);
 
-            if (exp.Success)
-                Expiration = exp.Groups[1].Value;
-            else
-            {
-                exp = Regex.Match(response, "License Expired:</b></td><td>(\\d*/\\d*/\\d*)</td>", RegOpt);
-
-                if (exp.Success)
-                    Expiration = exp.Groups[1].Value;
-            }
+            //We make the assumption that the license higher up in the list is the more recent one
+            //The website appears to follow this trend
+            if (exp.Count > 0)
+                Expiration = exp[0].Groups["date"].Value;
 
             //Get sanction status
-            Match sanction = Regex.Match(response, "<td style=\"padding-left:5px;\">Disciplinary Action</td>\n*\\s*<td style=\"padding-left:5px;\">\n*\\s*(N)", RegOpt);
+            Match sanction = Regex.Match(response, "Board Action\\?</b></td><td>Yes", RegOpt);
 
-            //The regex specifically looks for no sanctions
+            //The regex specifically looks for sanctions
             if (sanction.Success)
-                Sanction = SanctionType.None;
-            else
                 Sanction = SanctionType.Red;
+            else
+                Sanction = SanctionType.None;
         }
 
         private Result<string> ParseResponse(string response)
         {
             //Headers for all the relevant details
-            MatchCollection headers = Regex.Matches(response, "<th>([\\w\\s]*)</th>", RegOpt);
+            MatchCollection data = Regex.Matches(response, "<td><b>(?<header>[\\w\\s#\\?]+):*</b></td><td>(?<value>[\\w,\\s/.-]+)<", RegOpt);
 
-            //Values of the fields
-            MatchCollection fields = Regex.Matches(response, "<td align=\"center\">([\\d\\w\\s\\./]*)</td>", RegOpt);
-
-            if (fields.Count > 0)
+            if (data.Count > 0)
             {
                 StringBuilder builder = new StringBuilder();
 
-                for (int i = 0; i < fields.Count; i++)
+                for (int i = 0; i < data.Count; i++)
                 {
-                    builder.AppendFormat(TdPair, headers[i].Groups[1].ToString(), fields[i].Groups[1].ToString());
+                    builder.AppendFormat(TdPair, data[i].Groups["header"].Value, data[i].Groups["value"].Value);
                     builder.AppendLine();
                 }
 

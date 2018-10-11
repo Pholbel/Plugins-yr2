@@ -68,6 +68,8 @@ namespace OBLCPlugIn
 
                 if (licenseType == "")
                     return Result<IRestResponse>.Failure(ErrorMsg.InvalidLicense);
+                else if (licenseType == "lmftnum")
+                    return Result<IRestResponse>.Failure(ErrorMsg.Custom("This website does not support LMFT license numbers"));
 
                 searchUrl += "searchby=" + licenseType;
 
