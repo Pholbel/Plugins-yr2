@@ -86,6 +86,8 @@ namespace OBEPPlugIn
                     string header = headers1[idx-3];
                     string text = CleanString(fields1[idx].ToString());
 
+                    if (text == "") text = "N/A";
+
                     builder.AppendFormat(TdPair, header, text);
                     builder.AppendLine();
                 }

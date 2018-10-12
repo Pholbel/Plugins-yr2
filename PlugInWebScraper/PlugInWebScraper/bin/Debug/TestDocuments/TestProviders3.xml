@@ -3412,6 +3412,11 @@
       <Data key ="dr_fname" value="John"/>
     </Provider>
     
+    <Provider run="1">
+      <Data key ="dr_lname" value="Adcock"/>
+      <Data key ="dr_fname" value="Rebecca"/>
+    </Provider>
+    
     <!--Test case for multiple providers-->
       <Provider run="1">
         <Data key ="dr_lname" value="Smith"/>
