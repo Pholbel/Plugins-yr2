@@ -3516,22 +3516,27 @@
     <Provider run="1">
       <Data key ="lic_no" value="000646"/>
       <Data key ="dr_lname" value="Smith"/>
+      <Data key ="lic_exp" value="03/31/2013"/>
     </Provider>
     <Provider run="1">
       <Data key ="lic_no" value="28183"/>
       <Data key ="dr_lname" value="Smith"/>
+      <Data key ="lic_exp" value="03/31/2011"/>
     </Provider>
     <Provider run="1">
       <Data key ="lic_no" value="00305"/>
       <Data key ="dr_lname" value="Black"/>
+      <Data key ="lic_exp" value="05/15/2020"/>
     </Provider>
     <Provider run="1">
       <Data key ="lic_no" value="069798"/>
       <Data key ="dr_lname" value="Brown"/>
+      <Data key ="lic_exp" value="03/31/2020"/>
     </Provider>
     <Provider run="1">
       <Data key ="lic_no" value="00120"/>
       <Data key ="dr_lname" value="Parker"/>
+      <Data key ="lic_exp" value="12/31/2017"/>
     </Provider>
   </Assembly>
 
@@ -3541,6 +3546,7 @@
     </Provider>
     <Provider run="1">
       <Data key ="lic_no" value="C2265"/>
+      <Data key ="lic_exp" value="05/31/2019"/>
     </Provider>
     <!-- LMFT numbers do NOT work on this site -->
     <Provider run="1">
@@ -3548,18 +3554,22 @@
     </Provider>
     <Provider run="1">
       <Data key ="lic_no" value="R2316"/>
+      <Data key ="lic_exp" value="07/01/2013"/>
     </Provider>
     <Provider run="1">
       <Data key ="lic_no" value="R5459"/>
       <Data key ="dr_lname" value="Smith"/>
+      <Data key ="lic_exp" value="09/01/2019"/>
     </Provider>
     <!-- Has sanction -->
     <Provider run="1">
       <Data key ="lic_no" value="C4338"/>
+      <Data key ="lic_exp" value="03/31/2019"/>
     </Provider>
     <!-- Multiple licenses -->
     <Provider run="1">
       <Data key ="lic_no" value="R2326"/>
+      <Data key ="lic_exp" value="04/30/2019"/>
     </Provider>
   </Assembly>
   
