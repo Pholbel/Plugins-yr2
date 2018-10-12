@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace OBEPPlugIn
 {
     /// <summary>
-    /// EchoPSV Plugin for New Hamshire Board of Medicine
+    /// OBEP Plugin for Oklahoma Board of Examiners of Psychologists
     /// https://pay.apps.ok.gov/OSBEP/_app/search/index.php
     /// </summary>
     public class PlugInClass : IPlugIn

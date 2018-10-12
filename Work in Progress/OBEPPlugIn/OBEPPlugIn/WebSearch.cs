@@ -54,7 +54,7 @@ namespace OBEPPlugIn
 
             if (response.StatusCode == HttpStatusCode.OK)
             {
-                GetViewStates(ref viewState, ref viewStateGenerator, ref eventValidation, ref lastFocus, ref eventTarget, ref eventArgument, response);
+                // GetViewStates(ref viewState, ref viewStateGenerator, ref eventValidation, ref lastFocus, ref eventTarget, ref eventArgument, response);
             }
             else
             {
@@ -88,7 +88,7 @@ namespace OBEPPlugIn
             allCookies.AddRange(response.Cookies);
             if (response.StatusCode == HttpStatusCode.OK)
             {
-                GetViewStates(ref viewState, ref viewStateGenerator, ref eventValidation, ref lastFocus, ref eventTarget, ref eventArgument, response);
+                // GetViewStates(ref viewState, ref viewStateGenerator, ref eventValidation, ref lastFocus, ref eventTarget, ref eventArgument, response);
             }
             else { return Result<IRestResponse>.Failure(ErrorMsg.CannotAccessSite); }
 

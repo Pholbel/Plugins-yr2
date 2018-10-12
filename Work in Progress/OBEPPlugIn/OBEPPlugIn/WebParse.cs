@@ -47,6 +47,8 @@ namespace OBEPPlugIn
                     CheckLicenseDetails(response.Content);
                     return ParseResponse(response.Content);
                 }*/
+                
+                CheckLicenseDetails(response.Content);
                 return ParseResponse(response.Content);
             }
             catch (Exception e)
@@ -57,21 +59,22 @@ namespace OBEPPlugIn
 
         private void CheckLicenseDetails(string response)
         {
-            Match exp = Regex.Match(response, "Expiration date: </span>( |\t|\r|\v|\f|\n)*<span.*?>(?<EXP>.*?)</span>", RegOpt);
+            Match exp = Regex.Match(response, "Status: </b>(?<EXP>.*?)<br>", RegOpt);
             if (exp.Success)
             {
                 Expiration = exp.Groups["EXP"].ToString();
+                if (Expiration != "Active")
+                {
+                    Sanction = SanctionType.Red;
+                }
             }
-
-            //Does not support sanctions
-
         }
 
         private Result<string> ParseResponse(string response)
         {
             MatchCollection fields1 = Regex.Matches(response, "(?<=(<td>)).*(?=</td)");
             MatchCollection fields2 = Regex.Matches(response, "(?<=(<b>)).*(?=\n)");
-            //List<string> headers1 = new List<string>(new string[] { "Name", "Address Line1", "Address Line2", "Phone #" });
+            List<string> headers1 = new List<string>(new string[] { "Name", "Address Line1", "Address Line2", "Phone #" });
             //List<string> headers = new List<string>(new string[] {"Area", "License #", "Status", "Issued", "HSP", "Special Certification", "University", "Department", "Graduated"});
 
             if (fields1.Count > 3)
@@ -80,10 +83,10 @@ namespace OBEPPlugIn
 
                 for (int idx=3;idx<fields1.Count-5;idx++)
                 {
-                    //string header = headers1[idx];
+                    string header = headers1[idx-3];
                     string text = CleanString(fields1[idx].ToString());
 
-                    builder.AppendFormat(TdSingle, text);
+                    builder.AppendFormat(TdPair, header, text);
                     builder.AppendLine();
                 }
 
