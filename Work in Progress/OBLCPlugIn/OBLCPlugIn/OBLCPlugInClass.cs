@@ -8,11 +8,11 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace OBEPPlugIn
+namespace OBLCPlugIn
 {
     /// <summary>
-    /// OBEP Plugin for Oklahoma Board of Examiners of Psychologists
-    /// https://pay.apps.ok.gov/OSBEP/_app/search/index.php
+    /// OBLC Plugin for Oregon board of Licensed Counselors and Therapists
+    /// https://hrlb.oregon.gov/oblpct/licenseelookup/index.asp
     /// </summary>
     public class PlugInClass : IPlugIn
     {
@@ -79,10 +79,9 @@ namespace OBEPPlugIn
 
             Boolean null_license = String.IsNullOrEmpty(provider.LicenseNumber);
             Boolean pending_license = Regex.IsMatch(provider.LicenseNumber, "Pending", RegexOptions.IgnoreCase);
-            Boolean null_fname = String.IsNullOrEmpty(provider.FirstName);
             Boolean null_lname = String.IsNullOrEmpty(provider.LastName);
 
-            if ( (null_license || pending_license) && (null_fname || null_lname) )
+            if ( (null_license || pending_license) && null_lname )
             {
                 return Result<string>.Failure(ErrorMsg.InvalidLicenseAndFirstLastName);
             }
