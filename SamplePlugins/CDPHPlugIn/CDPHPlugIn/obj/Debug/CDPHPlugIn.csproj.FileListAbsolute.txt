@@ -42,3 +42,15 @@ C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\SamplePlugins\CDPHPlugIn\CDPH
 C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\SamplePlugins\CDPHPlugIn\CDPHPlugIn\obj\Debug\CDPHPlugIn.csproj.CoreCompileInputs.cache
 C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\SamplePlugins\CDPHPlugIn\CDPHPlugIn\obj\Debug\CDPHPlugIn.dll
 C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\SamplePlugins\CDPHPlugIn\CDPHPlugIn\obj\Debug\CDPHPlugIn.pdb
+C:\Users\44380\OneDrive\Documents\GitHub\Plugins-yr2\SamplePlugins\CDPHPlugIn\CDPHPlugIn\bin\Debug\CDPHPlugIn.dll.config
+C:\Users\44380\OneDrive\Documents\GitHub\Plugins-yr2\SamplePlugins\CDPHPlugIn\CDPHPlugIn\bin\Debug\CDPHPlugIn.dll
+C:\Users\44380\OneDrive\Documents\GitHub\Plugins-yr2\SamplePlugins\CDPHPlugIn\CDPHPlugIn\bin\Debug\CDPHPlugIn.pdb
+C:\Users\44380\OneDrive\Documents\GitHub\Plugins-yr2\SamplePlugins\CDPHPlugIn\CDPHPlugIn\bin\Debug\PdfMetamorphosis.dll
+C:\Users\44380\OneDrive\Documents\GitHub\Plugins-yr2\SamplePlugins\CDPHPlugIn\CDPHPlugIn\bin\Debug\ABCpdf.xml
+C:\Users\44380\OneDrive\Documents\GitHub\Plugins-yr2\SamplePlugins\CDPHPlugIn\CDPHPlugIn\obj\Debug\CDPHPlugIn.csprojAssemblyReference.cache
+C:\Users\44380\OneDrive\Documents\GitHub\Plugins-yr2\SamplePlugins\CDPHPlugIn\CDPHPlugIn\obj\Debug\CDPHPlugIn.Properties.Resources.resources
+C:\Users\44380\OneDrive\Documents\GitHub\Plugins-yr2\SamplePlugins\CDPHPlugIn\CDPHPlugIn\obj\Debug\CDPHPlugIn.csproj.GenerateResource.cache
+C:\Users\44380\OneDrive\Documents\GitHub\Plugins-yr2\SamplePlugins\CDPHPlugIn\CDPHPlugIn\obj\Debug\CDPHPlugIn.csproj.CoreCompileInputs.cache
+C:\Users\44380\OneDrive\Documents\GitHub\Plugins-yr2\SamplePlugins\CDPHPlugIn\CDPHPlugIn\obj\Debug\CDPHPlugIn.csproj.CopyComplete
+C:\Users\44380\OneDrive\Documents\GitHub\Plugins-yr2\SamplePlugins\CDPHPlugIn\CDPHPlugIn\obj\Debug\CDPHPlugIn.dll
+C:\Users\44380\OneDrive\Documents\GitHub\Plugins-yr2\SamplePlugins\CDPHPlugIn\CDPHPlugIn\obj\Debug\CDPHPlugIn.pdb

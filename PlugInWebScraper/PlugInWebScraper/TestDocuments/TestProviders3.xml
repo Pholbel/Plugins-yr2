@@ -179,6 +179,21 @@
   </Assembly>
 
   
+  <Assembly name ="IDCVPlugIn" action ="">
+    <Provider run="1">
+      <Data key ="lic_no" value="LPC-960"/>
+      <Data key ="lic_exp" value="2/8/2019"/>
+    </Provider>
+    <Provider run="1">
+      <Data key ="lic_no" value="LPC-678"/>
+      <Data key ="lic_exp" value="2/13/2014"/>
+    </Provider>
+    <Provider run="1">
+      <Data key ="lic_no" value="LPC-6087"/>
+      <Data key ="lic_exp" value="5/14/2019"/>
+    </Provider>
+  </Assembly>
+  
   <Assembly name ="GAMBPlugIn" action ="E">
     <Provider run="1">
       <Data key ="lic_no" value="062431"/>

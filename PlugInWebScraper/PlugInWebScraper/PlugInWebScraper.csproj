@@ -45,6 +45,10 @@
     <Reference Include="ALBMEPlugIn">
       <HintPath>..\..\SamplePlugins\ALBMEPlugIn\bin\Debug\ALBMEPlugIn.dll</HintPath>
     </Reference>
+    <Reference Include="CDPHPlugIn, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SamplePlugins\CDPHPlugIn\CDPHPlugIn\bin\Debug\CDPHPlugIn.dll</HintPath>
+    </Reference>
     <Reference Include="DLTCPlugIn">
       <HintPath>..\..\WorkInProgress\DLTCPlugIn\DLTCPlugIn\bin\Debug\DLTCPlugIn.dll</HintPath>
     </Reference>
@@ -53,6 +57,9 @@
     </Reference>
     <Reference Include="HtmlAgilityPack">
       <HintPath>..\..\..\Third Party Libraries\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="IDCVPlugIn">
+      <HintPath>..\..\Work in Progress\IDCVPlugIn\IDCVPlugIn\bin\Debug\IDCVPlugIn.dll</HintPath>
     </Reference>
     <Reference Include="IDPHPlugIn">
       <HintPath>..\..\IDPHPlugIn\IDPHPlugIn\bin\Debug\IDPHPlugIn.dll</HintPath>
