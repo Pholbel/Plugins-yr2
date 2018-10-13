@@ -110,7 +110,7 @@ namespace ABBHEPlugIn
                 }
 
                 //handle sanctions
-                if (Regex.Match(response, "There are no Board actions").Success)
+                if (!Regex.Match(response, "There are no Board actions").Success)
                 {
                     Sanction = SanctionType.Red;
                 }
