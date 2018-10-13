@@ -177,22 +177,6 @@
     </Provider>
 
   </Assembly>
-
-  
-  <Assembly name ="IDCVPlugIn" action ="">
-    <Provider run="1">
-      <Data key ="lic_no" value="LPC-960"/>
-      <Data key ="lic_exp" value="2/8/2019"/>
-    </Provider>
-    <Provider run="1">
-      <Data key ="lic_no" value="LPC-678"/>
-      <Data key ="lic_exp" value="2/13/2014"/>
-    </Provider>
-    <Provider run="1">
-      <Data key ="lic_no" value="LPC-6087"/>
-      <Data key ="lic_exp" value="5/14/2019"/>
-    </Provider>
-  </Assembly>
   
   <Assembly name ="GAMBPlugIn" action ="E">
     <Provider run="1">
@@ -3373,10 +3357,26 @@
   <Assembly name ="ABBHEPlugIn" action="">
     
      <Provider run="1">
+      <Data key ="lic_no" value="SW-0792M"/>
+      <Data key ="dr_fname" value="Annette"/>
       <Data key ="dr_lname" value="Morrison"/>
-      <Data key ="dr_fname" value="Amy"/>
+	<Data key ="lic_exp" value="6/30/2004"/>
     </Provider>
-  
+
+     <Provider run="1">
+	<Data key ="lic_no" value="LMSW-16060"/>
+	<Data key ="dr_fname" value="Amanda"/>
+	<Data key ="dr_lname" value="Johnson"/>
+	<Data key ="lic_exp" value="3/31/2020"/>
+     </Provider>
+
+
+     <Provider run="1">
+	<Data key ="lic_no" value="LAC-13739"/>
+	<Data key ="dr_fname" value="Steven"/>
+	<Data key ="dr_lname" value="Johnson"/>
+	<Data key ="lic_exp" value="8/31/2017"/>
+     </Provider>
   </Assembly>
   
   <Assembly name ="CDPHPlugIn" action ="">
@@ -3409,6 +3409,17 @@
       <Data key ="dr_fname" value="David"/>
     </Provider>
     
+    <Provider run="1">
+      <Data key ="dr_lname" value="Cummins"/>
+      <Data key ="dr_fname" value="John"/>
+    </Provider>
+    
+    <Provider run="1">
+      <Data key ="dr_lname" value="Adcock"/>
+      <Data key ="dr_fname" value="Rebecca"/>
+    </Provider>
+    
+    <!--Test case for multiple providers-->
       <Provider run="1">
         <Data key ="dr_lname" value="Smith"/>
         <Data key ="dr_fname" value="r"/>
@@ -3507,5 +3518,83 @@
     </Provider>
   </Assembly>
   <!--Beggining of yr2 work--> 
+
+  <Assembly name ="IBPLPlugIn" action ="">
+    <Provider run="1">
+      <Data key ="lic_no" value="000646"/>
+      <Data key ="dr_lname" value="Smith"/>
+      <Data key ="lic_exp" value="03/31/2013"/>
+    </Provider>
+    <Provider run="1">
+      <Data key ="lic_no" value="28183"/>
+      <Data key ="dr_lname" value="Smith"/>
+      <Data key ="lic_exp" value="03/31/2011"/>
+    </Provider>
+    <Provider run="1">
+      <Data key ="lic_no" value="00305"/>
+      <Data key ="dr_lname" value="Black"/>
+      <Data key ="lic_exp" value="05/15/2020"/>
+    </Provider>
+    <Provider run="1">
+      <Data key ="lic_no" value="069798"/>
+      <Data key ="dr_lname" value="Brown"/>
+      <Data key ="lic_exp" value="03/31/2020"/>
+    </Provider>
+    <Provider run="1">
+      <Data key ="lic_no" value="00120"/>
+      <Data key ="dr_lname" value="Parker"/>
+      <Data key ="lic_exp" value="12/31/2017"/>
+    </Provider>
+  </Assembly>
+
+  <Assembly name ="OBLCPlugIn" action ="S">
+    <Provider run="1">
+      <Data key ="dr_lname" value="Black"/>
+    </Provider>
+    <Provider run="1">
+      <Data key ="lic_no" value="C2265"/>
+      <Data key ="lic_exp" value="05/31/2019"/>
+    </Provider>
+    <!-- LMFT numbers do NOT work on this site -->
+    <Provider run="1">
+      <Data key ="lic_no" value="T1051"/>
+    </Provider>
+    <Provider run="1">
+      <Data key ="lic_no" value="R2316"/>
+      <Data key ="lic_exp" value="07/01/2013"/>
+    </Provider>
+    <Provider run="1">
+      <Data key ="lic_no" value="R5459"/>
+      <Data key ="dr_lname" value="Smith"/>
+      <Data key ="lic_exp" value="09/01/2019"/>
+    </Provider>
+    <!-- Has sanction -->
+    <Provider run="1">
+      <Data key ="lic_no" value="C4338"/>
+      <Data key ="lic_exp" value="03/31/2019"/>
+    </Provider>
+    <!-- Multiple licenses -->
+    <Provider run="1">
+      <Data key ="lic_no" value="R2326"/>
+      <Data key ="lic_exp" value="04/30/2019"/>
+    </Provider>
+  </Assembly>
+  
+  <Assembly name ="IDCVPlugIn" action ="">
+    <Provider run="1">
+      <Data key ="lic_no" value="LPC-960"/>
+      <Data key ="lic_exp" value="2/8/2019"/>
+    </Provider>
+    <Provider run="1">
+      <Data key ="lic_no" value="LPC-678"/>
+      <Data key ="lic_exp" value="2/13/2014"/>
+    </Provider>
+    <Provider run="1">
+      <Data key ="lic_no" value="LPC-6087"/>
+      <Data key ="lic_exp" value="5/14/2019"/>
+    </Provider>
+  </Assembly>
+  
 </TestData>
+
 

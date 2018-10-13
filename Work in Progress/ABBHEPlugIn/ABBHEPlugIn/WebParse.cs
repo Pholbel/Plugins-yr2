@@ -17,7 +17,7 @@ namespace ABBHEPlugIn
 
         private string TdPair = "<tr><td>{0}</td><td>{1}</td></tr>";
         private string TdSingle = "<td>{0}</td>";
-        private RegexOptions RegOpt = RegexOptions.IgnoreCase | RegexOptions.Singleline;
+        private RegexOptions RegOpt = RegexOptions.IgnoreCase;
 
         public WebParse()
         {
@@ -29,24 +29,6 @@ namespace ABBHEPlugIn
         {
             try
             {
-                /*
-                MatchCollection physicians = Regex.Matches(response.Content, "id=\"ctl00_cphMain_rptrPhysician_ctl00_lblLicense\"", RegOpt);
-                MatchCollection assistants = Regex.Matches(response.Content, "id=\"ctl00_cphMain_rptrAssistant_ctl00_lblLicense\"", RegOpt);
-
-                if (physicians.Count > 1 || assistants.Count > 1 || (physicians.Count > 0 && assistants.Count > 0))
-                {
-                    return Result<string>.Failure(ErrorMsg.MultipleProvidersFound);
-                }
-                else if (Regex.Match(response.Content, "No Physicians Match That License", RegOpt).Success 
-                    && Regex.Match(response.Content, "No Physician Assistants Match That License", RegOpt).Success)
-                {
-                    return Result<string>.Failure(ErrorMsg.NoResultsFound);
-                }
-                else // Returned successful query
-                {
-                    CheckLicenseDetails(response.Content);
-                    return ParseResponse(response.Content);
-                }*/
                 return ParseResponse(response.Content);
             }
             catch (Exception e)
@@ -55,36 +37,85 @@ namespace ABBHEPlugIn
             }
         }
 
-        private void CheckLicenseDetails(string response)
-        {
-            Match exp = Regex.Match(response, "Expiration date: </span>( |\t|\r|\v|\f|\n)*<span.*?>(?<EXP>.*?)</span>", RegOpt);
-            if (exp.Success)
-            {
-                Expiration = exp.Groups["EXP"].ToString();
-            }
-
-            //Does not support sanctions
-
-        }
-
         private Result<string> ParseResponse(string response)
         {
-            MatchCollection fields = Regex.Matches(response, "(?<=(id=\"ctl.*\">)).*(?=</s)");
-            List<string> headers = new List<string>(new string[] {"First Name", "Middle Name", "Last Name", "License Type", "License Number", "Title", "Effective Date", "Expiration Date", "Status", "Finding"});
 
-            if (fields.Count > 0)
+            var doc = new HtmlDocument();
+            doc.LoadHtml(response);
+            var body = doc.DocumentNode.SelectSingleNode("//body");
+            
+            if (body.InnerHtml != String.Empty)
             {
                 StringBuilder builder = new StringBuilder();
+                HtmlNode sec_info = body.SelectSingleNode("//div/table");
+                HtmlNode sec_licenses = body.SelectNodes("//table")[1];
 
-                for (int idx=0;idx<fields.Count;idx++)
+
+
+                //Handle info section
+                foreach (var detail in sec_info.ChildNodes)
                 {
-                    string header = headers[idx % headers.Count];
-                    string text = fields[idx].ToString();
-
-                    builder.AppendFormat(TdPair, header, text);
-                    builder.AppendLine();
+                    if (detail.Name == "tr")
+                    {
+                        HtmlNodeCollection cells = detail.ChildNodes;
+                        string h = cells[1].InnerText;
+                        string t = cells[3].InnerText.Replace("&nbsp;", " ");
+                        builder.AppendFormat(TdPair, h, t);
+                        builder.AppendLine();
+                    }
                 }
 
+                //Handle licenses section
+
+                //Get headers
+                HtmlNodeCollection headers = sec_licenses.ChildNodes[1].ChildNodes;
+                List<string> hList = new List<string>();
+                foreach (var header in headers)
+                {
+                    if (header.Name == "td")
+                    {
+                        hList.Add(header.InnerText.Replace("\n  ", "").Substring(2));
+                    }
+                }
+                hList.RemoveAt(0);
+
+                //get each license
+                HtmlNodeCollection licenses = sec_licenses.ChildNodes;
+                foreach (var license in licenses)
+                {
+                    if (license.Name == "tr" && license.PreviousSibling.PreviousSibling != null)
+                    {
+                        int count = 0;
+                        bool isActive = false;
+                        foreach (var cell in license.ChildNodes)
+                        {
+                            if (cell.Name == "td" && cell.PreviousSibling.PreviousSibling != null)
+                            {
+                                if (cell.InnerText.Contains("ACTIVE"))
+                                {
+                                    isActive = true;
+                                }
+                                if (count == 4 && isActive)
+                                {
+                                    Expiration = cell.InnerText;
+                                }
+                                builder.AppendFormat(TdPair, hList[count], cell.InnerText);
+                                builder.AppendLine();
+                                count++;
+                            }
+                        }
+                        isActive = false;
+                        count = 0;
+                    }
+                }
+
+                //handle sanctions
+                if (!Regex.Match(response, "There are no Board actions").Success)
+                {
+                    Sanction = SanctionType.Red;
+                }
+
+                
 
                 return Result<string>.Success(builder.ToString());
             }

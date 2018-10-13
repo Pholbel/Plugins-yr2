@@ -1,0 +1,24 @@
+D:\OneDrive\Dev\Verity\Plugins-yr2\Work in Progress\IBPLPlugin\IBPLPlugin\obj\Debug\IBPLPlugin.csproj.CoreCompileInputs.cache
+D:\OneDrive\Dev\Verity\Plugins-yr2\Work in Progress\IBPLPlugin\IBPLPlugin\bin\Debug\IBPLPlugin.dll
+D:\OneDrive\Dev\Verity\Plugins-yr2\Work in Progress\IBPLPlugin\IBPLPlugin\bin\Debug\IBPLPlugin.pdb
+D:\OneDrive\Dev\Verity\Plugins-yr2\Work in Progress\IBPLPlugin\IBPLPlugin\bin\Debug\HtmlAgilityPack.dll
+D:\OneDrive\Dev\Verity\Plugins-yr2\Work in Progress\IBPLPlugin\IBPLPlugin\bin\Debug\Newtonsoft.Json.dll
+D:\OneDrive\Dev\Verity\Plugins-yr2\Work in Progress\IBPLPlugin\IBPLPlugin\bin\Debug\PdfMetamorphosis.dll
+D:\OneDrive\Dev\Verity\Plugins-yr2\Work in Progress\IBPLPlugin\IBPLPlugin\bin\Debug\PlugIn_NET4_5.dll
+D:\OneDrive\Dev\Verity\Plugins-yr2\Work in Progress\IBPLPlugin\IBPLPlugin\bin\Debug\RestSharp.dll
+D:\OneDrive\Dev\Verity\Plugins-yr2\Work in Progress\IBPLPlugin\IBPLPlugin\obj\Debug\IBPLPlugin.csproj.CopyComplete
+D:\OneDrive\Dev\Verity\Plugins-yr2\Work in Progress\IBPLPlugin\IBPLPlugin\obj\Debug\IBPLPlugin.dll
+D:\OneDrive\Dev\Verity\Plugins-yr2\Work in Progress\IBPLPlugin\IBPLPlugin\obj\Debug\IBPLPlugin.pdb
+D:\OneDrive\Dev\Verity\Plugins-yr2\Work in Progress\IBPLPlugin\IBPLPlugin\obj\Debug\IBPLPlugin.csprojAssemblyReference.cache
+D:\One Drive\OneDrive\Dev\Verity\Plugins-yr2\Work in Progress\IBPLPlugin\IBPLPlugin\bin\Debug\IBPLPlugin.dll
+D:\One Drive\OneDrive\Dev\Verity\Plugins-yr2\Work in Progress\IBPLPlugin\IBPLPlugin\bin\Debug\IBPLPlugin.pdb
+D:\One Drive\OneDrive\Dev\Verity\Plugins-yr2\Work in Progress\IBPLPlugin\IBPLPlugin\bin\Debug\HtmlAgilityPack.dll
+D:\One Drive\OneDrive\Dev\Verity\Plugins-yr2\Work in Progress\IBPLPlugin\IBPLPlugin\bin\Debug\Newtonsoft.Json.dll
+D:\One Drive\OneDrive\Dev\Verity\Plugins-yr2\Work in Progress\IBPLPlugin\IBPLPlugin\bin\Debug\PdfMetamorphosis.dll
+D:\One Drive\OneDrive\Dev\Verity\Plugins-yr2\Work in Progress\IBPLPlugin\IBPLPlugin\bin\Debug\PlugIn_NET4_5.dll
+D:\One Drive\OneDrive\Dev\Verity\Plugins-yr2\Work in Progress\IBPLPlugin\IBPLPlugin\bin\Debug\RestSharp.dll
+D:\One Drive\OneDrive\Dev\Verity\Plugins-yr2\Work in Progress\IBPLPlugin\IBPLPlugin\obj\Debug\IBPLPlugIn.csprojAssemblyReference.cache
+D:\One Drive\OneDrive\Dev\Verity\Plugins-yr2\Work in Progress\IBPLPlugin\IBPLPlugin\obj\Debug\IBPLPlugIn.csproj.CoreCompileInputs.cache
+D:\One Drive\OneDrive\Dev\Verity\Plugins-yr2\Work in Progress\IBPLPlugin\IBPLPlugin\obj\Debug\IBPLPlugIn.csproj.CopyComplete
+D:\One Drive\OneDrive\Dev\Verity\Plugins-yr2\Work in Progress\IBPLPlugin\IBPLPlugin\obj\Debug\IBPLPlugin.dll
+D:\One Drive\OneDrive\Dev\Verity\Plugins-yr2\Work in Progress\IBPLPlugin\IBPLPlugin\obj\Debug\IBPLPlugin.pdb
