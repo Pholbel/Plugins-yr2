@@ -37,19 +37,6 @@ namespace ABBHEPlugIn
             }
         }
 
-        private void CheckLicenseDetails(string response)
-        {
-
-            MatchCollection exp = Regex.Matches(response, @"ACTIVE", RegOpt);
-            if (exp.Count != 0)
-            {
-               Expiration = exp.ToString();
-            }
-
-            //Does not support sanctions
-
-        }
-
         private Result<string> ParseResponse(string response)
         {
 
@@ -123,12 +110,12 @@ namespace ABBHEPlugIn
                 }
 
                 //handle sanctions
-                if (!response.Contains("There are no Board actions"))
+                if (Regex.Match(response, "There are no Board actions").Success)
                 {
                     Sanction = SanctionType.Red;
                 }
-                
 
+                
 
                 return Result<string>.Success(builder.ToString());
             }

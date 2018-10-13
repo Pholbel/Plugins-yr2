@@ -3361,12 +3361,14 @@
       <Data key ="lic_no" value="SW-0792M"/>
       <Data key ="dr_fname" value="Annette"/>
       <Data key ="dr_lname" value="Morrison"/>
+	<Data key ="lic_exp" value="6/30/2004"/>
     </Provider>
 
      <Provider run="1">
 	<Data key ="lic_no" value="LMSW-16060"/>
 	<Data key ="dr_fname" value="Amanda"/>
 	<Data key ="dr_lname" value="Johnson"/>
+	<Data key ="lic_exp" value="3/31/2020"/>
      </Provider>
 
 
@@ -3374,6 +3376,7 @@
 	<Data key ="lic_no" value="LAC-13739"/>
 	<Data key ="dr_fname" value="Steven"/>
 	<Data key ="dr_lname" value="Johnson"/>
+	<Data key ="lic_exp" value="8/31/2017"/>
      </Provider>
   </Assembly>
   
