@@ -44,7 +44,7 @@ namespace WVBOMPlugIn
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 
             //Set up client and request
-            RestClient client = new RestClient(baseUrl + "index.asp");
+            RestClient client = new RestClient(baseUrl);
             RestRequest request = new RestRequest(Method.GET);
             IRestResponse response = client.Execute(request);
             
@@ -55,36 +55,25 @@ namespace WVBOMPlugIn
             if (response.StatusCode != HttpStatusCode.OK)
                 return Result<IRestResponse>.Failure(ErrorMsg.CannotAccessSite);
 
-            //Forming new get request with our parameters
-            request = new RestRequest(Method.GET);
+            //Forming new post request with our parameters
+            request = new RestRequest(Method.POST);
 
-            string searchUrl = "searchdir.asp?";
+            //We perform the search using license numbers and last names, if available
+            if (provider.LastName != "")
+                request.AddParameter("lName", provider.LastName);
 
-            //We perform the search using license numbers if available, last names otherwise
-            //Website does not allow both
-            if (provider.LicenseNumber != "")
-            {
-                string licenseType = LicenseType(provider.LicenseNumber);
+            string providerType = LicenseType();
 
-                if (licenseType == "")
-                    return Result<IRestResponse>.Failure(ErrorMsg.InvalidLicense);
-                else if (licenseType == "lmftnum")
-                    return Result<IRestResponse>.Failure(ErrorMsg.Custom("This website does not support LMFT license numbers"));
+            //The site will not let us perform a search without a provider type
+            if (providerType == null)
+                return Result<IRestResponse>.Failure(ErrorMsg.Custom("Unable to determine license type. Please input a provider title."));
 
-                searchUrl += "searchby=" + licenseType;
+            request.AddParameter("licType", providerType);
+            request.AddParameter("licNo", provider.LicenseNumber);
 
-                Match licenseNum = Regex.Match(provider.LicenseNumber, "\\d+");
-
-                searchUrl += "&searchfor=" + licenseNum.Value;
-            }
-            else
-            {
-                searchUrl += "searchby=lastName";
-                searchUrl += "&searchfor=" + provider.LastName;
-            }
-
-            searchUrl += "&stateselect=none&Submit=Search";
-            client = new RestClient(baseUrl + searchUrl);
+            request.AddParameter("do", "submit");
+            request.AddParameter("action", "submit");
+            request.AddParameter("search", "Search");
 
             //Add cookies to our request
             foreach (RestResponseCookie c in allCookies)
@@ -95,39 +84,61 @@ namespace WVBOMPlugIn
             //Store new cookies
             allCookies.AddRange(response.Cookies);
 
+            //Have we hit the request limit?
+            if (Regex.Match(response.Content, "5 requests are permitted per 1 minute.", RegOpt).Success)
+                return Result<IRestResponse>.Failure(ErrorMsg.Custom("This site caps at 5 requests a minute. Please try again later."));
+
             //Check that we accessed the site
             if (response.StatusCode != HttpStatusCode.OK && response.StatusCode != HttpStatusCode.Redirect)
                 return Result<IRestResponse>.Failure(ErrorMsg.CannotAccessSite);
 
-            MatchCollection providerList = Regex.Matches(response.Content, "(<tr valign='Middle'>)", RegOpt);
+            MatchCollection providerList = Regex.Matches(response.Content, "javascript:details", RegOpt);
 
             //Check if we have multiple providers
             if (providerList.Count > 1)
                 return Result<IRestResponse>.Failure(ErrorMsg.MultipleProvidersFound);
 
             //Check if we have no providers
-            if (Regex.Match(response.Content, "No Records Found.", RegOpt).Success)
+            if (providerList.Count == 0)
                 return Result<IRestResponse>.Failure(ErrorMsg.NoResultsFound);
 
-            //We have been redirected to the details page
+            //Navigate to the details page
+            client = new RestClient(baseUrl + "details.asp");
+
+            //Forming new post request with our parameters
+            request = new RestRequest(Method.POST);
+
+            //Calls redirect form
+            request.AddParameter("t", "0");
+
+            //Add cookies to our request
+            foreach (RestResponseCookie c in allCookies)
+                request.AddCookie(c.Name, c.Value);
+
+            response = client.Execute(request);
+
             return Result<IRestResponse>.Success(response);
         }
 
-        private string LicenseType(string license)
+        private string LicenseType()
         {
-            Match licensePrefix = Regex.Match(license, "([ctr]){1}\\d+", RegOpt);
+            Match licensePrefix = Regex.Match(provider.LicenseNumber, "ED", RegOpt);
 
-            switch (licensePrefix.Groups[1].Value)
+            if (licensePrefix.Success)
+                return "Residents";
+
+            string title = provider.GetData("drtitle");
+
+            if (title != "")
             {
-                case "C":
-                    return "lpcnum";
-                case "T":
-                    return "lmftnum";
-                case "R":
-                    return "regnum";
-                default:
-                    return "";
+                if (title == "D.O.")
+                    return "BoardXP";
+
+                if (title == "PA-C")
+                    return "Physician Assistants";
             }
+
+            return null;
         }
     }
 }

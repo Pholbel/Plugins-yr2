@@ -3547,7 +3547,7 @@
     </Provider>
   </Assembly>
 
-  <Assembly name ="OBLCPlugIn" action ="S">
+  <Assembly name ="OBLCPlugIn" action ="">
     <Provider run="1">
       <Data key ="dr_lname" value="Black"/>
     </Provider>
@@ -3592,6 +3592,62 @@
     <Provider run="1">
       <Data key ="lic_no" value="LPC-6087"/>
       <Data key ="lic_exp" value="5/14/2019"/>
+    </Provider>
+  </Assembly>
+
+  <Assembly name ="WVBOMPlugIn" action="">
+    <!-- Site requires license type -->
+    <Provider run="1">
+      <Data key ="dr_lname" value="Smith" />
+    </Provider>
+    <!-- Only license (expired) -->
+    <Provider run="1">
+      <Data key ="lic_no" value="1133"/>
+      <Data key ="drtitle" value="D.O."/>
+      <Data key ="lic_exp" value="06/30/1992"/>
+    </Provider>
+    <!-- License plus last name (active) -->
+    <Provider run="1">
+      <Data key ="dr_lname" value="Smith" />
+      <Data key ="drtitle" value="D.O."/>
+      <Data key ="lic_no" value="882"/>
+      <Data key ="lic_exp" value="06/30/2019"/>
+    </Provider>
+    <!-- Resident w/o last name (active) No results found? -->
+    <Provider run="1">
+      <Data key ="lic_no" value="ED0753"/>
+      <Data key ="lic_exp" value="06/30/2019"/>
+    </Provider>
+    <!-- Resident plus last name (expired) No results found? -->
+    <Provider run="1">
+      <Data key ="dr_lname" value="Williams" />
+      <Data key ="lic_no" value="ED0482"/>
+      <Data key ="lic_exp" value="06/30/2016"/>
+    </Provider>
+    <!-- Complex education history No results found? -->
+    <Provider run="1">
+      <Data key ="dr_lname" value="Abbott" />
+      <Data key ="drtitle" value="D.O."/>
+      <Data key ="lic_no" value="2655"/>
+      <Data key ="lic_exp" value="06/30/2014"/>
+    </Provider>
+    <!-- Multiple licenses No results found? -->
+    <Provider run="1">
+      <Data key ="drtitle" value="D.O."/>
+      <Data key ="lic_no" value="2969"/>
+      <Data key ="lic_exp" value="06/30/2017"/>
+    </Provider>
+    <!-- Physician's assistant w/o last name (expired) License Type? -->
+    <Provider run="1">
+      <Data key ="drtitle" value="PA-C"/>
+      <Data key ="lic_no" value="169-T"/>
+      <Data key ="lic_exp" value="04/17/1998"/>
+    </Provider>
+    <!-- Physician's assistant w/ last name (active) License Type? -->
+    <Provider run="1">
+      <Data key ="drtitle" value="PA-C"/>
+      <Data key ="lic_no" value="784"/>
+      <Data key ="lic_exp" value="03/31/2020"/>
     </Provider>
   </Assembly>
   

@@ -40,37 +40,81 @@ namespace WVBOMPlugIn
 
         private void CheckLicenseDetails(string response)
         {
-            //Get license dates
-            //Some providers have multiple licenses
-            MatchCollection exp = Regex.Matches(response, "(Until|Date|Expire[ds]):</b></td><td>(?<date>\\d+/\\d+/\\d+)", RegOpt);
+            //Get license date
+            Match exp = Regex.Match(response, "<td>\\s+\\d+/\\d+/\\d+\\s+</td>\\s+<td>\\s+(?<date>\\d+/\\d+/\\d+)\\s+</td>", RegOpt);
 
-            //We make the assumption that the license higher up in the list is the more recent one
-            //The website appears to follow this trend
-            if (exp.Count > 0)
-                Expiration = exp[0].Groups["date"].Value;
+            if (exp.Success)
+                Expiration = exp.Groups["date"].Value;
 
             //Get sanction status
-            Match sanction = Regex.Match(response, "Board Action\\?</b></td><td>Yes", RegOpt);
+            Match sanction = Regex.Match(response, "<td>\\s+None\\s+</td>", RegOpt);
 
-            //The regex specifically looks for sanctions
+            //The regex specifically looks for no sanctions
             if (sanction.Success)
-                Sanction = SanctionType.Red;
-            else
                 Sanction = SanctionType.None;
+            else
+                Sanction = SanctionType.Red;
         }
 
+        //This site's way of displaying data is very inconsistent
         private Result<string> ParseResponse(string response)
         {
-            //Headers for all the relevant details
-            MatchCollection data = Regex.Matches(response, "<td><b>(?<header>[\\w\\s#\\?]+):*</b></td><td>(?<value>[\\w,\\s/.-]+)<", RegOpt);
+            //Headers
+            MatchCollection headers = Regex.Matches(response, "<th>(?<header>[\\w\\s]+)(<br>[\\s]+)?(?<extension>[-\\w\\s\\(\\)]*)</th>", RegOpt);
+            MatchCollection values = Regex.Matches(response, "<td>((?<value>[-\\w\\s\\./,#]+)(&nbsp;|<br />\\s*)*)*</td>", RegOpt);
 
-            if (data.Count > 0)
+            Match skipAction = Regex.Match(response, "<td colspan=\\\"2\\\">&nbsp;</td>", RegOpt);
+            Match skipHistory = Regex.Match(response, "<thead>\\s+<tr>\\s+<th>License History</th>\\s+<th>Date of Action</th>\\s+</tr>\\s+</thead>\\s+<tbody>\\s+</tbody>", RegOpt);
+
+            if (headers.Count > 0)
             {
                 StringBuilder builder = new StringBuilder();
 
-                for (int i = 0; i < data.Count; i++)
+                int skip = 0;
+                bool pac = false;
+
+                for (int i = 0; i < headers.Count; i++)
                 {
-                    builder.AppendFormat(TdPair, data[i].Groups["header"].Value, data[i].Groups["value"].Value);
+                    string header = string.Format("{0} {1}", headers[i].Groups["header"].Value, headers[i].Groups["extension"].Value).Trim();
+                    Match mValue = values[i - skip];
+                    string value = "";
+
+                    foreach (Capture c in values[i - skip].Groups["value"].Captures)
+                    {
+                        value += c.Value;
+                        value += " ";
+                    }
+
+                    value = value.Trim();
+
+                    if (values.Count > headers.Count && value == "")
+                    {
+                        skip--;
+                        i--;
+                        continue;
+                    }
+
+                    if (value == "PA-C")
+                        pac = true;
+                    else if (pac && value == "")
+                    {
+                        skip -= 2;
+                        pac = false;
+                    }
+
+                    if ((header == "Action Taken" || header == "Date Action Taken") && skipAction.Success)
+                    {
+                        builder.AppendFormat(TdPair, header, "");
+                        skip++;
+                    } else if ((header == "License History" || header == "Date of Action") && skipHistory.Success)
+                    {
+                        builder.AppendFormat(TdPair, header, "");
+                        skip++;
+                    } else
+                    {
+                        builder.AppendFormat(TdPair, header, value);
+                    }
+
                     builder.AppendLine();
                 }
 
