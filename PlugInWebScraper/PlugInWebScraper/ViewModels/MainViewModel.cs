@@ -1,5 +1,6 @@
 ﻿using PlugInWebScraper.Command;
 using PlugInWebScraper.Helpers;
+using PlugInWebScraper.Helpers.Loaders;
 using PlugInWebScraper.Models;
 using System;
 using System.Collections;
@@ -19,18 +20,27 @@ using System.Xml;
 
 namespace PlugInWebScraper.ViewModels
 {
+    public enum Operation
+    {
+        RUNSCRAPE,
+        GENERATETESTS,
+    }
     public class MainViewModel : ViewModelBase
     {
         private readonly BackgroundWorker worker = new BackgroundWorker();
         public ICommand CmdStartScrape { get; set; }
+        public ICommand CmdGenerateTests { get; set; }
+        public ICommand CmdCheckedTheme { get; set; }
 
         public MainViewModel()
         {
             CmdStartScrape = new RelayCommand(StartScrape);
+            CmdGenerateTests = new RelayCommand(GenerateTests);
+            //CmdCheckedTheme = new RelayCommand(ToggleTheme);
             SelectedDocument = Properties.Settings.Default["SelectedDocument"].ToString();
             SelectedPlugIn = Properties.Settings.Default["SelectedPlugIn"].ToString();
 
-            worker.DoWork += worker_StartScrape;
+            worker.DoWork += worker_StartOperation;
             worker.RunWorkerCompleted += worker_RunWorkerCompleted;
         }
 
@@ -47,9 +57,12 @@ namespace PlugInWebScraper.ViewModels
         {
             get
             {
-                DirectoryInfo d = new DirectoryInfo(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)) + "/TestDocuments");
-                FileInfo[] Files = d.GetFiles("*.xml");
-                return new ObservableCollection<string>(Files.Select(p => p.Name).ToList());
+                var files = Directory.GetFiles(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)) + "/TestDocuments", "*", SearchOption.AllDirectories)
+                    .Where(file => file.ToLower().EndsWith(".json") || file.ToLower().EndsWith(".xml"))
+                    .Select(file => new FileInfo(file))
+                    .ToList();
+
+                return new ObservableCollection<string>(files.Select(file => file.Name).ToList());
             }
         }
 
@@ -62,10 +75,15 @@ namespace PlugInWebScraper.ViewModels
             set
             {
                 SetProperty(ref selectedDocument, value);
+
                 if (!String.IsNullOrEmpty(value))
                 {
                     Properties.Settings.Default["SelectedDocument"] = value;
-                    TestPlugIns = new ObservableCollection<string>(XmlLoader.GetAssemblies(value));
+
+                    ILoader loader = Loader.GetLoader(value);
+
+                    TestPlugIns = new ObservableCollection<string>(loader.GetAssemblies(value));
+                    PSVResult = null;
                 }
             }
         }
@@ -94,6 +112,8 @@ namespace PlugInWebScraper.ViewModels
             {
                 SetProperty(ref selectedPlugIn, value);
                 Properties.Settings.Default["SelectedPlugIn"] = value;
+                PlugInWebScraper.Properties.Settings.Default.Save();
+                PSVResult = null;
             }
         }
         private string selectedPlugIn;
@@ -136,18 +156,84 @@ namespace PlugInWebScraper.ViewModels
             }
         }
         private bool showLoading;
+        public bool IsVisibleDetails
+        {
+            get
+            {
+                return isVisibleDetails;
+            }
+            set
+            {
+                SetProperty(ref isVisibleDetails, value);
+            }
+        }
+        private bool isVisibleDetails = true;
+        public bool IsDarkMode
+        {
+            get
+            {
+                return isDarkMode;
+            }
+            set
+            {
+                Properties.Settings.Default["IsDarkMode"] = value;
+                PlugInWebScraper.Properties.Settings.Default.Save();
+                App.ToggleTheme(value);
+                SetProperty(ref isDarkMode, value);
+            }
+        }
+        private bool isDarkMode = Convert.ToBoolean(Properties.Settings.Default["IsDarkMode"]);
 
+        
         private void StartScrape()
         {
+            IsVisibleDetails = true;
+            PSVResult = null;
             ShowLoading = true;
             StatusMessage = "Running...";
-            worker.RunWorkerAsync();
+            worker.RunWorkerAsync(Operation.RUNSCRAPE);
+        }
+
+        private void GenerateTests()
+        {
+            IsVisibleDetails = false;
+            PSVResult = null;
+            ShowLoading = true;
+            StatusMessage = "Running...";
+            worker.RunWorkerAsync(Operation.GENERATETESTS);
+        }
+
+
+        /// <summary>
+        /// Begins background task operation
+        /// </summary>
+        private void worker_StartOperation(object sender, DoWorkEventArgs e)
+        {
+            switch ((Operation)e.Argument)
+            {
+                case Operation.RUNSCRAPE:
+                    StartScrapeAction();
+                    break;
+                case Operation.GENERATETESTS:
+                    GenerateTestAction();
+                    break;
+            }
+        }
+
+        /// <summary>
+        /// Generates test cases
+        /// </summary>
+        private void GenerateTestAction()
+        {
+
+            providers = new WebCrawler(this.SelectedPlugIn, this.SelectedDocument, this.PlugInSupportsImage);
+            providers.GetTests();
         }
 
         /// <summary>
         /// Using the selected settings, load referenced data & begin web scrape
         /// </summary>
-        private void worker_StartScrape(object sender, DoWorkEventArgs e)
+        private void StartScrapeAction()
         {
             providers = new WebCrawler(this.SelectedPlugIn, this.SelectedDocument, this.PlugInSupportsImage);
             providers.GetResult();

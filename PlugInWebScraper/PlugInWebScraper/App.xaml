@@ -1,9 +1,27 @@
 ﻿<Application x:Class="PlugInWebScraper.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             StartupUri="Views/MainWindow.xaml"
+             xmlns:localex="clr-namespace:PlugInWebScraper.Helpers"
              Exit="OnExit">
     <Application.Resources>
-         
+        <ResourceDictionary>
+
+            <ResourceDictionary.MergedDictionaries>
+                <!--<ResourceDictionary>
+                    <localex:BooleanToVisibilityConverter x:Key="BoolToVis" />
+                    <localex:BooleanToVisibilityConverter x:Key="BoolToVisInv" IsReversed="True" />
+                </ResourceDictionary>-->
+
+                <ResourceDictionary Source="pack://application:,,,/Selen.Wpf.Core;component/MetroWindowResources.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.Tooltip.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.Buttons.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/Selen.Wpf.Core;component/Resources.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/Selen.Wpf.SystemStyles;component/Styles.xaml"/>
+
+                <ResourceDictionary Source="pack://application:,,,/PlugInWebScraper;component/Styles/DarkStyleDictionary.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/PlugInWebScraper;component/Styles/LightStyleDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

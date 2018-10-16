@@ -14,6 +14,26 @@
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
     <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <PublishUrl>C:\Users\achan\Desktop\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -34,63 +54,220 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <!--<PropertyGroup>
+    <ManifestCertificateThumbprint>132DC68B6FC1EFB516896C530E0D6D9BA1203EE5</ManifestCertificateThumbprint>
+  </PropertyGroup>-->
+  <!--<PropertyGroup>
+    <ManifestKeyFile>PlugInWebScraper_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>-->
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ABBHEPlugIn">
-      <HintPath>..\..\Work in Progress\ABBHEPlugIn\ABBHEPlugIn\bin\Debug\ABBHEPlugIn.dll</HintPath>
-    </Reference>
     <Reference Include="ABCpdf, Version=10.1.2.2, Culture=neutral, PublicKeyToken=a7a0b3f5184f2169, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\ABC\ABCpdf.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Projects\Echo PSV\Third Party Libraries\ABCpdf.dll</HintPath>
+    </Reference>
+    <Reference Include="AKSMLBPlugIn">
+      <HintPath>..\..\..\..\PlugIn\AKSMLBPlugIn\AKSMLBPlugIn\bin\Debug\AKSMLBPlugIn.dll</HintPath>
     </Reference>
     <Reference Include="ALBMEPlugIn">
-      <HintPath>..\..\SamplePlugins\ALBMEPlugIn\bin\Debug\ALBMEPlugIn.dll</HintPath>
+      <HintPath>..\..\..\..\PlugIn\ALBMEPlugIn\bin\Debug\ALBMEPlugIn.dll</HintPath>
+    </Reference>
+    <Reference Include="AMAPlugIn">
+      <HintPath>..\..\..\..\PlugIn\AMAPlugIn\AMAPlugin\AMAPlugIn\bin\Debug\AMAPlugIn.dll</HintPath>
+    </Reference>
+    <Reference Include="ARSMBPlugIn">
+      <HintPath>..\..\..\..\PlugIn\ARSMBPlugIn\ARSMBPlugIn\bin\Debug\ARSMBPlugIn.dll</HintPath>
+    </Reference>
+    <Reference Include="ASHAPlugIn">
+      <HintPath>..\..\..\..\PlugIn\ASHAPlugIn\ASHAPlugIn\bin\Debug\ASHAPlugIn.dll</HintPath>
+    </Reference>
+    <Reference Include="AZPAPlugIn">
+      <HintPath>..\..\..\..\PlugIn\AZPAPlugIn\bin\Debug\AZPAPlugIn.dll</HintPath>
+    </Reference>
+    <Reference Include="BoardCertPlugIn">
+      <HintPath>..\..\..\..\PlugIn\BoardCertPlugIn\bin\Debug\BoardCertPlugIn.dll</HintPath>
+    </Reference>
+    <Reference Include="CAMedBoardsPlugIn">
+      <HintPath>..\..\..\..\PlugIn\CAMedBoardsPlugIn\CAMedBoardsPlugIn\bin\Debug\CAMedBoardsPlugIn.dll</HintPath>
+    </Reference>
+    <Reference Include="CARHBPlugIn">
+      <HintPath>..\..\..\..\PlugIn\CARHBPlugIn\bin\Debug\CARHBPlugIn.dll</HintPath>
     </Reference>
     <Reference Include="CDPHPlugIn, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\SamplePlugins\CDPHPlugIn\CDPHPlugIn\bin\Debug\CDPHPlugIn.dll</HintPath>
+      <HintPath>..\..\..\..\PlugIn\CDPHPlugIn\CDPHPlugIn\bin\Debug\CDPHPlugIn.dll</HintPath>
+    </Reference>
+    <Reference Include="CertiFactsPlugIn">
+      <HintPath>..\..\..\..\PlugIn\CertiFactsPlugIn\bin\Debug\CertiFactsPlugIn.dll</HintPath>
+    </Reference>
+    <Reference Include="ControlzEx, Version=3.0.2.4, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ControlzEx.3.0.2.4\lib\net45\ControlzEx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DCDOHPlugIn">
+      <HintPath>..\..\..\..\PlugIn\DCDOHPlugIn\bin\Debug\DCDOHPlugIn.dll</HintPath>
+    </Reference>
+    <Reference Include="DCNAPlugIn, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\PlugIn\DCNAPlugIn\DCNAPlugIn\bin\Debug\DCNAPlugIn.dll</HintPath>
     </Reference>
     <Reference Include="DLTCPlugIn">
-      <HintPath>..\..\WorkInProgress\DLTCPlugIn\DLTCPlugIn\bin\Debug\DLTCPlugIn.dll</HintPath>
+      <HintPath>..\..\..\..\PlugIn\DLTCPlugIn\DLTCPlugIn\bin\Debug\DLTCPlugIn.dll</HintPath>
+    </Reference>
+    <Reference Include="EPLSPlugIn">
+      <HintPath>..\..\..\..\PlugIn\EPLSPlugIn\bin\Debug\EPLSPlugIn.dll</HintPath>
     </Reference>
     <Reference Include="FDHPlugIn">
-      <HintPath>..\..\WorkInProgress\FDHPlugIn\FDHPlugIn\bin\Debug\FDHPlugIn.dll</HintPath>
+      <HintPath>..\..\..\..\PlugIn\FDHPlugIn\FDHPlugIn\bin\Debug\FDHPlugIn.dll</HintPath>
+    </Reference>
+    <Reference Include="FlorPlugIn, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\PlugIn\FlorPlugIn\bin\Debug\FlorPlugIn.dll</HintPath>
+    </Reference>
+    <Reference Include="GASOSPlugin">
+      <HintPath>..\..\..\..\PlugIn\GASOSPlugin\bin\Debug\GASOSPlugin.dll</HintPath>
     </Reference>
     <Reference Include="HtmlAgilityPack">
-      <HintPath>..\..\..\Third Party Libraries\HtmlAgilityPack.dll</HintPath>
+      <HintPath>..\..\..\..\Third Party Libraries\HtmlAgilityPack.dll</HintPath>
     </Reference>
     <Reference Include="IDCVPlugIn">
-      <HintPath>..\..\Work in Progress\IDCVPlugIn\IDCVPlugIn\bin\Debug\IDCVPlugIn.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Users\prholbel\Documents\GitHub\Plugins-yr2\Work in Progress\IDCVPlugIn\IDCVPlugIn\bin\Debug\IDCVPlugIn.dll</HintPath>
     </Reference>
     <Reference Include="IDPHPlugIn">
-      <HintPath>..\..\IDPHPlugIn\IDPHPlugIn\bin\Debug\IDPHPlugIn.dll</HintPath>
+      <HintPath>..\..\..\..\PlugIn\IDPHPlugIn\IDPHPlugIn\bin\Debug\IDPHPlugIn.dll</HintPath>
+    </Reference>
+    <Reference Include="IDSBPPlugIn">
+      <HintPath>..\..\..\..\PlugIn\IDSBPPlugIn\bin\Debug\IDSBPPlugIn.dll</HintPath>
+    </Reference>
+    <Reference Include="INAPlugIn">
+      <HintPath>..\..\..\..\PlugIn\INAPlugIn\INAPlugIn\bin\Debug\INAPlugIn.dll</HintPath>
+    </Reference>
+    <Reference Include="INOLPlugIn">
+      <HintPath>..\..\..\..\PlugIn\INOLPlugIn\bin\Debug\INOLPlugIn.dll</HintPath>
     </Reference>
     <Reference Include="IResponsePlugIn">
       <HintPath>..\..\..\..\..\..\..\Projects\Echo PSV\PlugIn\IResponsePlugIn\IResponsePlugIn\bin\Debug\IResponsePlugIn.dll</HintPath>
     </Reference>
-    <Reference Include="MRLPPlugin">
-      <HintPath>..\..\WorkInProgress\MRLPPlugin\MRLPPlugin\bin\Debug\MRLPPlugin.dll</HintPath>
+    <Reference Include="MABDEPlugIn, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\PlugIn\MABDEPlugIn\MABDEPlugIn\bin\Debug\MABDEPlugIn.dll</HintPath>
+    </Reference>
+    <Reference Include="MahApps.Metro, Version=1.6.5.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.1.6.5\lib\net45\MahApps.Metro.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MAHCSQLPlugIn">
+      <HintPath>..\..\..\..\PlugIn\MAHCSQLPlugIn\bin\Debug\MAHCSQLPlugIn.dll</HintPath>
+    </Reference>
+    <Reference Include="MDCHPlugIn">
+      <HintPath>..\..\..\..\PlugIn\MDCHPlugIn\bin\Debug\MDCHPlugIn.dll</HintPath>
+    </Reference>
+    <Reference Include="MDHPlugIn">
+      <HintPath>..\..\..\..\PlugIn\MDHPlugIn\bin\Debug\MDHPlugIn.dll</HintPath>
+    </Reference>
+    <Reference Include="MHPPlugIn">
+      <HintPath>..\..\..\..\PlugIn\MHPPlugIn\MHPPlugIn\bin\Debug\MHPPlugIn.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MIDLRAPlugIn">
+      <HintPath>..\..\..\..\PlugIn\MIDLRAPlugIn\MIDLRAPlugIn\bin\Debug\MIDLRAPlugIn.dll</HintPath>
+    </Reference>
+    <Reference Include="MNARPlugIn">
+      <HintPath>..\..\..\..\PlugIn\MNARPlugIn\MNARPlugIn\bin\Debug\MNARPlugIn.dll</HintPath>
+    </Reference>
+    <Reference Include="MODPRPlugIn">
+      <HintPath>..\..\..\..\PlugIn\MODPRPlugIn\bin\Debug\MODPRPlugIn.dll</HintPath>
+    </Reference>
+    <Reference Include="MTBMEPlugIn">
+      <HintPath>..\..\..\..\PlugIn\MTBMEPlugIn\MTBMEPlugIn\bin\Debug\MTBMEPlugIn.dll</HintPath>
+    </Reference>
+    <Reference Include="NCMBPlugIn">
+      <HintPath>..\..\..\..\PlugIn\NCMBPlugIn\bin\Debug\NCMBPlugIn.dll</HintPath>
+    </Reference>
+    <Reference Include="NCPDPlugIn">
+      <HintPath>..\..\..\..\PlugIn\NCPDPlugIn\NCPDPlugIn\bin\Debug\NCPDPlugIn.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Third Party Libraries\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\..\..\..\Third Party Libraries\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NHMBPlugIn">
+      <HintPath>..\..\..\..\PlugIn\NHMBPlugIn\NHMBPlugIn\bin\Debug\NHMBPlugIn.dll</HintPath>
     </Reference>
     <Reference Include="NHOLPlugIn">
-      <HintPath>..\..\WorkInProgress\NHOLPlugIn\NHOLPlugIn\bin\Debug\NHOLPlugIn.dll</HintPath>
+      <HintPath>..\..\..\..\PlugIn\NHOLPlugIn\NHOLPlugIn\bin\Debug\NHOLPlugIn.dll</HintPath>
     </Reference>
-    <Reference Include="OBNPlugin">
-      <HintPath>..\..\CompletedPlugins\OBNPlugin\OBNPlugin\bin\Debug\OBNPlugIn.dll</HintPath>
+    <Reference Include="NNARPlugIn">
+      <HintPath>..\..\..\..\PlugIn\NNARPlugIn\NNARPlugIn\bin\Debug\NNARPlugIn.dll</HintPath>
     </Reference>
-    <Reference Include="PBNAPlugIn">
-      <HintPath>..\..\WorkInProgress\PBNAPlugIn\PBNAPlugIn\bin\Debug\PBNAPlugIn.dll</HintPath>
+    <Reference Include="NSOPWPlugIn">
+      <HintPath>..\..\..\..\PlugIn\NSOPWPlugIn\NSOPWPlugIn\bin\Debug\NSOPWPlugIn.dll</HintPath>
+    </Reference>
+    <Reference Include="NursysPlugIn">
+      <HintPath>..\..\..\..\PlugIn\NursysPlugIn\NursysPlugIn\bin\Debug\NursysPlugIn.dll</HintPath>
+    </Reference>
+    <Reference Include="NVPlugin">
+      <HintPath>..\..\..\..\PlugIn\NVPlugIn\bin\Debug\NVPlugin.dll</HintPath>
+    </Reference>
+    <Reference Include="OBDPlugIn">
+      <HintPath>..\..\..\..\PlugIn\OBDPlugIn\OBDPlugIn\bin\Debug\OBDPlugIn.dll</HintPath>
+    </Reference>
+    <Reference Include="OBNPlugIn">
+      <HintPath>..\..\..\..\PlugIn\OBNPlugin\OBNPlugin\bin\Debug\OBNPlugIn.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenPaymentsPlugIn">
+      <HintPath>..\..\..\..\PlugIn\OpenPaymentsPlugIn\OpenPaymentsPlugIn\bin\Debug\OpenPaymentsPlugIn.dll</HintPath>
+    </Reference>
+    <Reference Include="OptOutPlugIn">
+      <HintPath>..\..\..\..\PlugIn\OptOutPlugIn\OptOutPlugIn\bin\Debug\OptOutPlugIn.dll</HintPath>
+    </Reference>
+    <Reference Include="ORDBPlugIn">
+      <HintPath>..\..\..\..\PlugIn\ORDBPlugIn\bin\Debug\ORDBPlugIn.dll</HintPath>
     </Reference>
     <Reference Include="PdfMetamorphosis">
-      <HintPath>..\..\..\Third Party Libraries\PdfMetamorphosis.dll</HintPath>
+      <HintPath>..\..\..\..\Third Party Libraries\PdfMetamorphosis.dll</HintPath>
+    </Reference>
+    <Reference Include="PlugIn_NET4_5">
+      <HintPath>..\..\..\..\PlugIn\PlugIn_NET4_5\bin\Debug\PlugIn_NET4_5.dll</HintPath>
     </Reference>
     <Reference Include="RestSharp">
-      <HintPath>..\..\..\Third Party Libraries\RestSharp.dll</HintPath>
+      <HintPath>..\..\..\..\Third Party Libraries\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="RIBMLPlugIn">
+      <HintPath>..\..\..\..\PlugIn\RIBMLPlugIn\bin\Debug\RIBMLPlugIn.dll</HintPath>
+    </Reference>
+    <Reference Include="SCNAPlugIn">
+      <HintPath>..\..\..\..\PlugIn\SCNAPlugIn\SCNAPlugIn\bin\Debug\SCNAPlugIn.dll</HintPath>
     </Reference>
     <Reference Include="SDRPlugIn">
-      <HintPath>..\..\WorkInProgress\SDRPlugIn\SDRPlugIn\bin\Debug\SDRPlugIn.dll</HintPath>
+      <HintPath>..\..\..\..\PlugIn\SDRPlugIn\SDRPlugIn\bin\Debug\SDRPlugIn.dll</HintPath>
+    </Reference>
+    <Reference Include="Selen.Wpf.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=dc472ed4b6daaa58, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selen.Wpf.1.0.0\lib\net45\Selen.Wpf.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Selen.Wpf.GenericAppTree, Version=1.0.0.0, Culture=neutral, PublicKeyToken=dc472ed4b6daaa58, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selen.Wpf.1.0.0\lib\net45\Selen.Wpf.GenericAppTree.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Selen.Wpf.GenericAppTree.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=dc472ed4b6daaa58, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selen.Wpf.1.0.0\lib\net45\Selen.Wpf.GenericAppTree.Contracts.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Selen.Wpf.SystemStyles, Version=1.0.0.0, Culture=neutral, PublicKeyToken=dc472ed4b6daaa58, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selen.Wpf.1.0.0\lib\net45\Selen.Wpf.SystemStyles.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="StateLic2PlugIn">
+      <HintPath>..\..\..\..\PlugIn\StateLic2PlugIn\bin\Debug\StateLic2PlugIn.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -102,17 +279,30 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
-    <Reference Include="THHSPlugIn">
-      <HintPath>..\..\WorkInProgress\THHSPlugIn\THHSPlugIn\bin\Debug\THHSPlugIn.dll</HintPath>
+    <Reference Include="testCDPHPlugIn">
+      <HintPath>..\..\..\..\..\..\Users\prholbel\Desktop\plugins for peter\test-CDPHPlugIn\CDPHPlugIn\bin\Debug\testCDPHPlugIn.dll</HintPath>
     </Reference>
-    <Reference Include="TNDHPlugIn">
-      <HintPath>..\..\WorkInProgress\TNDHPlugIn\TNDHPlugIn\bin\Debug\TNDHPlugIn.dll</HintPath>
+    <Reference Include="TNDHAPlugIn">
+      <HintPath>..\..\..\..\PlugIn\TNDHAPlugIn\bin\Debug\TNDHAPlugIn.dll</HintPath>
+    </Reference>
+    <Reference Include="TNDHPlugin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\PlugIn\TNDHPlugIn\bin\Debug\TNDHPlugin.dll</HintPath>
+    </Reference>
+    <Reference Include="TXOBPlugIn">
+      <HintPath>..\..\..\..\PlugIn\TXOBPlugIn\TXOBPlugIn\bin\Debug\TXOBPlugIn.dll</HintPath>
+    </Reference>
+    <Reference Include="VTOPRPlugIn">
+      <HintPath>..\..\..\..\PlugIn\VTOPRPlugIn\VTOPRPlugIn\bin\Debug\VTOPRPlugIn.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="WNARPlugIn">
-      <HintPath>..\..\WorkInProgress\WNARPlugIn\WNARPlugIn\bin\Debug\WNARPlugIn.dll</HintPath>
+      <HintPath>..\..\..\..\PlugIn\WNARPlugIn\WNARPlugIn\bin\Debug\WNARPlugIn.dll</HintPath>
+    </Reference>
+    <Reference Include="WVRPNPlugIn">
+      <HintPath>..\..\..\..\PlugIn\WVRPNPlugIn\WVRPNPlugIn\bin\Debug\WVRPNPlugIn.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -120,6 +310,22 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Helpers\BooleanConverter.cs" />
+    <Compile Include="Views\PSVUserControl.xaml.cs">
+      <DependentUpon>PSVUserControl.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Styles\LightStyleDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\DarkStyleDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LightWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -130,19 +336,29 @@
     </Compile>
     <Compile Include="Command\RelayCommand.cs" />
     <Compile Include="Helpers\ExtensionMethods.cs" />
+    <Compile Include="Helpers\Loader.cs" />
+    <Compile Include="Helpers\Loaders\JsonLoader.cs" />
+    <Compile Include="Helpers\ILoader.cs" />
     <Compile Include="Helpers\Parser.cs" />
     <Compile Include="Helpers\Result.cs" />
     <Compile Include="Helpers\RichTextBoxHelper.cs" />
-    <Compile Include="Helpers\XmlLoader.cs" />
+    <Compile Include="Helpers\Loaders\XmlLoader.cs" />
     <Compile Include="Models\Credential.cs" />
     <Compile Include="Models\WebCrawler.cs" />
     <Compile Include="Models\PSV.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
+    <Compile Include="Views\LightWindow.xaml.cs">
+      <DependentUpon>LightWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\PSVUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -158,43 +374,67 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Content Include="TestDocuments\Xml\TestM.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDocuments\Xml\TestNew.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDocuments\Xml\TestProviders.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDocuments\Xml\TestProviders2.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDocuments\Xml\TestProviders3.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="TestDocuments\Xml\TestProviders4.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDocuments\Xml\TestProviders5.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="PlugInWebScraper_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <Content Include="TestDocuments\Json\TestCaseOne.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <Content Include="TestDocuments\TestM.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="TestDocuments\TestNew.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="TestDocuments\TestProviders.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="TestDocuments\TestProviders2.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="TestDocuments\TestProviders3.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="App.config">
       <SubType>Designer</SubType>
-    </Content>
-    <Content Include="TestDocuments\TestProviders4.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="TestDocuments\TestProviders5.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

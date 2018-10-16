@@ -64,7 +64,7 @@ namespace PlugInWebScraper.Models
 
         private string Decode(string action)
         {
-            switch (action.ToUpper())
+            switch (action != null ? action.ToUpper() : "")
             {
                 case "E":
                     action = "Expirables";
