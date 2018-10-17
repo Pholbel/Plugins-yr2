@@ -1,0 +1,40 @@
+﻿{
+  "Assemblies": [
+    {
+      "Action": "",
+      "Name": "NSCHPlugIn",
+      "Providers": [
+        {
+          "Data": [
+            {
+              "Enabled": true,
+              "Key": "alt_username",
+              "Value": "ECHOXML"
+            },
+            {
+              "Enabled": true,
+              "Key": "alt_password",
+              "Value": "l51fE@jL3VP4Szo"
+            },
+            {
+              "Enabled": true,
+              "Key": "dr_fname",
+              "Value": "John"
+            },
+            {
+              "Enabled": true,
+              "Key": "dr_lname",
+              "Value": "Smith"
+            },
+            {
+              "Enabled": true,
+              "Key": "NSC",
+              "Value": "{\"AccountId\":\"98765\",\"Ssn\":\"1234\",\"SchoolId\":\"1000\",\"SchoolName\":\"Harvard\"}"
+            }
+          ],
+          "Enabled": true
+        }
+      ]
+    }
+  ]
+}

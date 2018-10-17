@@ -1,4 +1,5 @@
 ﻿using PlugInWebScraper.Helpers;
+using PlugInWebScraper.Helpers.Loaders;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -17,7 +18,7 @@ namespace PlugInWebScraper.Models
         public DataTable Providers { get; private set; }
         private string AssemblyName { get; set; }
         private string SupportsImages { get; set; }
-
+        private string TestName { get; set; }
 
         public WebCrawler(DataTable table)
         {
@@ -28,9 +29,35 @@ namespace PlugInWebScraper.Models
         {
             this.SupportsImages = supportsImages;
             this.AssemblyName = assemblyName;
-            this.Providers = XmlLoader.LoadTest(assemblyName, testName);
+            this.TestName = testName;
+
+            ILoader loader = Loader.GetLoader(testName);
+
+            this.Providers = loader.Load(assemblyName, testName);
         }
 
+        public void GetTests()
+        {
+            try
+            {
+                ILoader loader = Loader.GetLoader(this.TestName);
+
+                var result = loader.GenerateTest(this.AssemblyName, this.TestName);
+                List<PSV> psvs = new List<PSV>()
+                {
+                    new PSV()
+                    {
+                        Result = result,
+                    }
+                };
+
+                ScrapeResult = Providers.Rows.Count > 0 ? Result<List<PSV>>.Success(psvs) : Result<List<PSV>>.Failure("No Providers selected to run");
+            }
+            catch (Exception e)
+            {
+                ScrapeResult = Result<List<PSV>>.Failure("An Exception occurred in GetTests(): " + e.Message);
+            }
+        }
 
         public void GetResult()
         {
@@ -81,6 +108,7 @@ namespace PlugInWebScraper.Models
             dr["drAliases"] = JsonConvert.SerializeObject(nickNames);
             */
 
+            SetFinalUrl(ref dr);
 
             StringBuilder ouput = new StringBuilder(String.Empty);
             Assembly assembly = Assembly.Load(this.AssemblyName);
@@ -110,6 +138,13 @@ namespace PlugInWebScraper.Models
             p.readDefFile();
 
             return "Pre-makeSql:\n\n" + p.tempHtml + "\n\n" + p.makeSql();
+        }
+
+        private void SetFinalUrl(ref DataRow row)
+        {
+            string finalUrl = row.Table.Columns.Contains("finalUrl") ? row["finalUrl"].ToString() : String.Empty;
+
+            row["finalUrl"] = (String.IsNullOrEmpty(finalUrl)) ? "https://www.google.com/" : finalUrl;
         }
     }
 }

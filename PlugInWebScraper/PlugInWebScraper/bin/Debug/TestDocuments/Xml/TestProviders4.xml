@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TestData>
+  <Assembly name ="OptOutPlugIn" action ="">
+    <Provider run ="1">
+      <Data key ="npi" value="1023130820"/>
+    </Provider>
+  </Assembly>
+</TestData>

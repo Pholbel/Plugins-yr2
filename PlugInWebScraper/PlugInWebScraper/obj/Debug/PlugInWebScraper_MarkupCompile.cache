@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\GitHub\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\obj\Debug\
+C:\tfs\Echo PSV\Utilities\Updated Tester\PlugInWebScraper\PlugInWebScraper\obj\Debug\
 PlugInWebScraper
 none
 false
 DEBUG;TRACE
-C:\GitHub\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\App.xaml
-11892971807
-7-1991201542
-16-701788463
-261967814947
-Views\MainWindow.xaml;
+C:\tfs\Echo PSV\Utilities\Updated Tester\PlugInWebScraper\PlugInWebScraper\App.xaml
+51264187657
+8508133355
+22-668494667
+49-1128796165
+Styles\LightStyleDictionary.xaml;Styles\DarkStyleDictionary.xaml;Views\LightWindow.xaml;Views\MainWindow.xaml;Views\PSVUserControl.xaml;
 
 False
 

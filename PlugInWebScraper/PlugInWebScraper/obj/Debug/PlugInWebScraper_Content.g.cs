@@ -8,12 +8,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("testdocuments/testm.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("testdocuments/testnew.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("testdocuments/testproviders.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("testdocuments/testproviders2.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("testdocuments/testproviders3.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("testdocuments/testproviders4.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("testdocuments/testproviders5.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("testdocuments/xml/testm.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("testdocuments/xml/testnew.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("testdocuments/xml/testproviders.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("testdocuments/xml/testproviders2.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("testdocuments/xml/testproviders3.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("testdocuments/xml/testproviders4.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("testdocuments/xml/testproviders5.xml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("testdocuments/json/testcaseone.json")]
 
 
