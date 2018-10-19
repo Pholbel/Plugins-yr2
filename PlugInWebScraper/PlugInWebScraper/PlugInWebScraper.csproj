@@ -67,6 +67,9 @@
     <SignManifests>false</SignManifests>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ABBHEPlugIn">
+      <HintPath>..\..\Completed Plugins\ABBHEPlugIn\ABBHEPlugIn\bin\Debug\ABBHEPlugIn.dll</HintPath>
+    </Reference>
     <Reference Include="ABCpdf, Version=10.1.2.2, Culture=neutral, PublicKeyToken=a7a0b3f5184f2169, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\Projects\Echo PSV\Third Party Libraries\ABCpdf.dll</HintPath>

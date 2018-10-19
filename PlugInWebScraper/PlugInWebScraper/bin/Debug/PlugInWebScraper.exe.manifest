@@ -42,8 +42,15 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
-      <assemblyIdentity name="HtmlAgilityPack" version="1.8.4.0" publicKeyToken="BD319B19EAF3B43A" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ABBHEPlugIn.dll" size="12800">
+      <assemblyIdentity name="ABBHEPlugIn" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>oFVHERywwmv8UlnwwfBwnLuRPinywyeMSM+Rx15pgsc=</dsig:DigestValue>
+      </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
@@ -366,7 +373,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Q2p9ijzEw6SgYoabcRi6vWjje8IUj7EQzmL4AD3DAgM=</dsig:DigestValue>
+        <dsig:DigestValue>a6IurOERBn945Z1NxuYBvpGZODyAj5LbIivkvZ3jPYM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -523,13 +530,13 @@
       <dsig:DigestValue>xnQlHbWW229es/ZHPKiDawOl9aIfCsz6KubOWUw7kK0=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="TestDocuments\Json\TestCaseOne.json" size="915">
+  <file name="TestDocuments\Json\TestCaseOne.json" size="954">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>4PteI9Fmh/UUMB87d0cAKUJBdIcQ7xHF8bi68baPsOM=</dsig:DigestValue>
+      <dsig:DigestValue>3ne352zWk9V0FH//EPrwqg8YuIPG4y0fBYGTa9AyXzQ=</dsig:DigestValue>
     </hash>
   </file>
   <file name="TestDocuments\Xml\TestM.xml" size="9882" writeableType="applicationData">
@@ -568,13 +575,13 @@
       <dsig:DigestValue>Z3zNIF+dbta1al8t0xFlg+pKb/3gi5/Tk29GTutLP0k=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="TestDocuments\Xml\TestProviders3.xml" size="141650" writeableType="applicationData">
+  <file name="TestDocuments\Xml\TestProviders3.xml" size="147242" writeableType="applicationData">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>3Mzhvy5F+ICH/mFVXilSgQkTXovBIoce6WiBs6Xus5M=</dsig:DigestValue>
+      <dsig:DigestValue>Ffyv77+irwb/+1DlrEYP0nUbVTnFYGDIlcZSL9IWz5o=</dsig:DigestValue>
     </hash>
   </file>
   <file name="TestDocuments\Xml\TestProviders4.xml" size="215" writeableType="applicationData">
