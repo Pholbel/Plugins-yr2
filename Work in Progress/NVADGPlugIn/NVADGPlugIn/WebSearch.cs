@@ -72,19 +72,10 @@ namespace NVADGPlugIn
 
             request.AddParameter(PREFIX + "ddlLicType", 0);
 
-            //request.AddHeader("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8");
-            //request.AddHeader("Content-Type", "application/x-www-form-urlencoded");
-
             //Event headers
-            string event_target = "", event_argument = "", event_validation = "", view_state = "", view_state_encrypted = "", view_state_generator =  "";
-            GetViewStates(ref event_target, ref event_argument, ref event_validation, ref view_state, ref view_state_encrypted, ref view_state_generator, response);
-
-            request.AddParameter("__EVENTTARGET", PREFIX + "btnSearch");
-            request.AddParameter("__EVENTARGUMENT", event_argument);
-            request.AddParameter("__EVENTVALIDATION", event_validation);
-            request.AddParameter("__VIEWSTATE", view_state);
-            request.AddParameter("__VIEWSTATEENCRYPTED", view_state_encrypted);
-            request.AddParameter("__VIEWSTATEGENERATOR", view_state_generator);
+            string event_argument = "", event_validation = "", view_state = "", view_state_encrypted = "", view_state_generator =  "";
+            GetViewStates(ref event_argument, ref event_validation, ref view_state, ref view_state_encrypted, ref view_state_generator, response);
+            SetViewStates("btnSearch", event_argument, event_validation, view_state, view_state_encrypted, view_state_generator, ref request);
 
             //Add cookies to our request
             foreach (RestResponseCookie c in allCookies)
@@ -99,7 +90,7 @@ namespace NVADGPlugIn
             if (response.StatusCode != HttpStatusCode.OK && response.StatusCode != HttpStatusCode.Redirect)
                 return Result<IRestResponse>.Failure(ErrorMsg.CannotAccessSite);
 
-            MatchCollection providerList = Regex.Matches(response.Content, "javascript:details", RegOpt);
+            MatchCollection providerList = Regex.Matches(response.Content, "ContentPlaceHolder1_dtgResults_btnDetails", RegOpt);
 
             //Check if we have multiple providers
             if (providerList.Count > 1)
@@ -110,13 +101,14 @@ namespace NVADGPlugIn
                 return Result<IRestResponse>.Failure(ErrorMsg.NoResultsFound);
 
             //Navigate to the details page
-            client = new RestClient(baseUrl + "details.asp");
+            client = new RestClient(baseUrl + "Results.aspx");
 
             //Forming new post request with our parameters
             request = new RestRequest(Method.POST);
 
-            //Calls redirect form
-            request.AddParameter("t", "0");
+            //Event headers
+            GetViewStates(ref event_argument, ref event_validation, ref view_state, ref view_state_encrypted, ref view_state_generator, response);
+            SetViewStates("dtgResults$ctl03$btnDetails", event_argument, event_validation, view_state, view_state_encrypted, view_state_generator, ref request);
 
             //Add cookies to our request
             foreach (RestResponseCookie c in allCookies)
@@ -127,14 +119,23 @@ namespace NVADGPlugIn
             return Result<IRestResponse>.Success(response);
         }
 
-        void GetViewStates(ref string target, ref string argument, ref string validation, ref string state, ref string encrypted, ref string generator, IRestResponse response)
+        void GetViewStates(ref string argument, ref string validation, ref string state, ref string encrypted, ref string generator, IRestResponse response)
         {
-            target = Regex.Match(response.Content, "id=\"__EVENTTARGET\"\\s*value=\"([\\w\\+/=]*)").Groups[1].Value;
             argument = Regex.Match(response.Content, "id=\"__EVENTARGUMENT\"\\s*value=\"([\\w\\+/=]*)").Groups[1].Value;
             validation = Regex.Match(response.Content, "id=\"__EVENTVALIDATION\"\\s*value=\"([\\w\\+/=]*)").Groups[1].Value;
             state = Regex.Match(response.Content, "id=\"__VIEWSTATE\"\\s*value=\"([\\w\\+/=]*)").Groups[1].Value;
             encrypted = Regex.Match(response.Content, "id=\"__VIEWSTATEENCRYPTED\"\\s*value=\"([\\w]*)").Groups[1].Value;
             generator = Regex.Match(response.Content, "id=\"__VIEWSTATEGENERATOR\"\\s*value=\"([\\w]*)").Groups[1].Value;
+        }
+
+        void SetViewStates(string target, string argument, string validation, string state, string encrypted, string generator, ref RestRequest request)
+        {
+            request.AddParameter("__EVENTTARGET", PREFIX + target);
+            request.AddParameter("__EVENTARGUMENT", argument);
+            request.AddParameter("__EVENTVALIDATION", validation);
+            request.AddParameter("__VIEWSTATE", state);
+            request.AddParameter("__VIEWSTATEENCRYPTED", encrypted);
+            request.AddParameter("__VIEWSTATEGENERATOR", generator);
         }
     }
 }
