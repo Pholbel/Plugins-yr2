@@ -16,6 +16,9 @@ namespace NVADGPlugIn
         private RegexOptions RegOpt = RegexOptions.IgnoreCase | RegexOptions.Singleline;
         private Provider provider { get; set; }
 
+        //Parameter prefix
+        private const string PREFIX = "ctl00$ContentPlaceHolder1$";
+
         public WebSearch(Provider _provider)
         {
             this.provider = _provider;
@@ -44,7 +47,7 @@ namespace NVADGPlugIn
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 
             //Set up client and request
-            RestClient client = new RestClient(baseUrl);
+            RestClient client = new RestClient(baseUrl+"Search.aspx");
             RestRequest request = new RestRequest(Method.GET);
             IRestResponse response = client.Execute(request);
             
@@ -58,22 +61,30 @@ namespace NVADGPlugIn
             //Forming new post request with our parameters
             request = new RestRequest(Method.POST);
 
-            //We perform the search using license numbers and last names, if available
+            //We perform the search using license numbers and/or full names, if available
             if (provider.LastName != "")
-                request.AddParameter("lName", provider.LastName);
+                request.AddParameter(PREFIX + "txtLastName", provider.LastName);
 
-            string providerType = LicenseType();
+            if (provider.FirstName != "")
+                request.AddParameter(PREFIX + "txtFirstName", provider.FirstName);
 
-            //The site will not let us perform a search without a provider type
-            if (providerType == null)
-                return Result<IRestResponse>.Failure(ErrorMsg.Custom("Unable to determine license type. Please input a provider title."));
+            request.AddParameter(PREFIX + "txtLicNum", provider.LicenseNumber);
 
-            request.AddParameter("licType", providerType);
-            request.AddParameter("licNo", provider.LicenseNumber);
+            request.AddParameter(PREFIX + "ddlLicType", 0);
 
-            request.AddParameter("do", "submit");
-            request.AddParameter("action", "submit");
-            request.AddParameter("search", "Search");
+            //request.AddHeader("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8");
+            //request.AddHeader("Content-Type", "application/x-www-form-urlencoded");
+
+            //Event headers
+            string event_target = "", event_argument = "", event_validation = "", view_state = "", view_state_encrypted = "", view_state_generator =  "";
+            GetViewStates(ref event_target, ref event_argument, ref event_validation, ref view_state, ref view_state_encrypted, ref view_state_generator, response);
+
+            request.AddParameter("__EVENTTARGET", PREFIX + "btnSearch");
+            request.AddParameter("__EVENTARGUMENT", event_argument);
+            request.AddParameter("__EVENTVALIDATION", event_validation);
+            request.AddParameter("__VIEWSTATE", view_state);
+            request.AddParameter("__VIEWSTATEENCRYPTED", view_state_encrypted);
+            request.AddParameter("__VIEWSTATEGENERATOR", view_state_generator);
 
             //Add cookies to our request
             foreach (RestResponseCookie c in allCookies)
@@ -83,10 +94,6 @@ namespace NVADGPlugIn
 
             //Store new cookies
             allCookies.AddRange(response.Cookies);
-
-            //Have we hit the request limit?
-            if (Regex.Match(response.Content, "5 requests are permitted per 1 minute.", RegOpt).Success)
-                return Result<IRestResponse>.Failure(ErrorMsg.Custom("This site caps at 5 requests a minute. Please try again later."));
 
             //Check that we accessed the site
             if (response.StatusCode != HttpStatusCode.OK && response.StatusCode != HttpStatusCode.Redirect)
@@ -120,25 +127,14 @@ namespace NVADGPlugIn
             return Result<IRestResponse>.Success(response);
         }
 
-        private string LicenseType()
+        void GetViewStates(ref string target, ref string argument, ref string validation, ref string state, ref string encrypted, ref string generator, IRestResponse response)
         {
-            Match licensePrefix = Regex.Match(provider.LicenseNumber, "ED", RegOpt);
-
-            if (licensePrefix.Success)
-                return "Residents";
-
-            string title = provider.GetData("drtitle");
-
-            if (title != "")
-            {
-                if (title == "D.O.")
-                    return "BoardXP";
-
-                if (title == "PA-C")
-                    return "Physician Assistants";
-            }
-
-            return null;
+            target = Regex.Match(response.Content, "id=\"__EVENTTARGET\"\\s*value=\"([\\w\\+/=]*)").Groups[1].Value;
+            argument = Regex.Match(response.Content, "id=\"__EVENTARGUMENT\"\\s*value=\"([\\w\\+/=]*)").Groups[1].Value;
+            validation = Regex.Match(response.Content, "id=\"__EVENTVALIDATION\"\\s*value=\"([\\w\\+/=]*)").Groups[1].Value;
+            state = Regex.Match(response.Content, "id=\"__VIEWSTATE\"\\s*value=\"([\\w\\+/=]*)").Groups[1].Value;
+            encrypted = Regex.Match(response.Content, "id=\"__VIEWSTATEENCRYPTED\"\\s*value=\"([\\w]*)").Groups[1].Value;
+            generator = Regex.Match(response.Content, "id=\"__VIEWSTATEGENERATOR\"\\s*value=\"([\\w]*)").Groups[1].Value;
         }
     }
 }

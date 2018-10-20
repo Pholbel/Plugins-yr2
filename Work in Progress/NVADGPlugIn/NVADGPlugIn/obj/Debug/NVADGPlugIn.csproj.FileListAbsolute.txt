@@ -10,3 +10,5 @@ D:\One Drive\OneDrive\Dev\Verity\Plugins-yr2\Work in Progress\NVADGPlugIn\NVADGP
 D:\One Drive\OneDrive\Dev\Verity\Plugins-yr2\Work in Progress\NVADGPlugIn\NVADGPlugIn\obj\Debug\NVADGPlugIn.csproj.CopyComplete
 D:\One Drive\OneDrive\Dev\Verity\Plugins-yr2\Work in Progress\NVADGPlugIn\NVADGPlugIn\obj\Debug\NVADGPlugIn.dll
 D:\One Drive\OneDrive\Dev\Verity\Plugins-yr2\Work in Progress\NVADGPlugIn\NVADGPlugIn\obj\Debug\NVADGPlugIn.pdb
+D:\One Drive\OneDrive\Dev\Verity\Plugins-yr2\Work in Progress\NVADGPlugIn\NVADGPlugIn\bin\Debug\ABCpdf.dll
+D:\One Drive\OneDrive\Dev\Verity\Plugins-yr2\Work in Progress\NVADGPlugIn\NVADGPlugIn\bin\Debug\ABCpdf.xml
