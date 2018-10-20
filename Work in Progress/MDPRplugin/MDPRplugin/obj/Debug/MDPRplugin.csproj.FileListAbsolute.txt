@@ -1,0 +1,12 @@
+C:\Users\ucsd\Desktop\Plugins-yr2-master\Plugins-yr2-master\Work in Progress\MDPRplugin\MDPRplugin\obj\Debug\MDPRplugin.csprojAssemblyReference.cache
+C:\Users\ucsd\Desktop\Plugins-yr2-master\Plugins-yr2-master\Work in Progress\MDPRplugin\MDPRplugin\obj\Debug\MDPRplugin.csproj.CoreCompileInputs.cache
+C:\Users\ucsd\Desktop\Plugins-yr2-master\Plugins-yr2-master\Work in Progress\MDPRplugin\MDPRplugin\bin\Debug\MDPRplugin.dll
+C:\Users\ucsd\Desktop\Plugins-yr2-master\Plugins-yr2-master\Work in Progress\MDPRplugin\MDPRplugin\bin\Debug\MDPRplugin.pdb
+C:\Users\ucsd\Desktop\Plugins-yr2-master\Plugins-yr2-master\Work in Progress\MDPRplugin\MDPRplugin\bin\Debug\HtmlAgilityPack.dll
+C:\Users\ucsd\Desktop\Plugins-yr2-master\Plugins-yr2-master\Work in Progress\MDPRplugin\MDPRplugin\bin\Debug\Newtonsoft.Json.dll
+C:\Users\ucsd\Desktop\Plugins-yr2-master\Plugins-yr2-master\Work in Progress\MDPRplugin\MDPRplugin\bin\Debug\PdfMetamorphosis.dll
+C:\Users\ucsd\Desktop\Plugins-yr2-master\Plugins-yr2-master\Work in Progress\MDPRplugin\MDPRplugin\bin\Debug\PlugIn_NET4_5.dll
+C:\Users\ucsd\Desktop\Plugins-yr2-master\Plugins-yr2-master\Work in Progress\MDPRplugin\MDPRplugin\bin\Debug\RestSharp.dll
+C:\Users\ucsd\Desktop\Plugins-yr2-master\Plugins-yr2-master\Work in Progress\MDPRplugin\MDPRplugin\obj\Debug\MDPRplugin.csproj.CopyComplete
+C:\Users\ucsd\Desktop\Plugins-yr2-master\Plugins-yr2-master\Work in Progress\MDPRplugin\MDPRplugin\obj\Debug\MDPRplugin.dll
+C:\Users\ucsd\Desktop\Plugins-yr2-master\Plugins-yr2-master\Work in Progress\MDPRplugin\MDPRplugin\obj\Debug\MDPRplugin.pdb
