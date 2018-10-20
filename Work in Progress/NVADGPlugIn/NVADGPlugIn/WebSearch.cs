@@ -121,11 +121,11 @@ namespace NVADGPlugIn
 
         void GetViewStates(ref string argument, ref string validation, ref string state, ref string encrypted, ref string generator, IRestResponse response)
         {
-            argument = Regex.Match(response.Content, "id=\"__EVENTARGUMENT\"\\s*value=\"([\\w\\+/=]*)").Groups[1].Value;
-            validation = Regex.Match(response.Content, "id=\"__EVENTVALIDATION\"\\s*value=\"([\\w\\+/=]*)").Groups[1].Value;
-            state = Regex.Match(response.Content, "id=\"__VIEWSTATE\"\\s*value=\"([\\w\\+/=]*)").Groups[1].Value;
-            encrypted = Regex.Match(response.Content, "id=\"__VIEWSTATEENCRYPTED\"\\s*value=\"([\\w]*)").Groups[1].Value;
-            generator = Regex.Match(response.Content, "id=\"__VIEWSTATEGENERATOR\"\\s*value=\"([\\w]*)").Groups[1].Value;
+            argument = Regex.Match(response.Content, "id=\"__EVENTARGUMENT\"\\s*value=\"([\\w\\+/=]*)", RegOpt).Groups[1].Value;
+            validation = Regex.Match(response.Content, "id=\"__EVENTVALIDATION\"\\s*value=\"([\\w\\+/=]*)", RegOpt).Groups[1].Value;
+            state = Regex.Match(response.Content, "id=\"__VIEWSTATE\"\\s*value=\"([\\w\\+/=]*)", RegOpt).Groups[1].Value;
+            encrypted = Regex.Match(response.Content, "id=\"__VIEWSTATEENCRYPTED\"\\s*value=\"([\\w]*)", RegOpt).Groups[1].Value;
+            generator = Regex.Match(response.Content, "id=\"__VIEWSTATEGENERATOR\"\\s*value=\"([\\w]*)", RegOpt).Groups[1].Value;
         }
 
         void SetViewStates(string target, string argument, string validation, string state, string encrypted, string generator, ref RestRequest request)

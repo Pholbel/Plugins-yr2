@@ -40,81 +40,40 @@ namespace NVADGPlugIn
 
         private void CheckLicenseDetails(string response)
         {
-            //Get license date
-            Match exp = Regex.Match(response, "<td>\\s+\\d+/\\d+/\\d+\\s+</td>\\s+<td>\\s+(?<date>\\d+/\\d+/\\d+)\\s+</td>", RegOpt);
+            //Get license dates
+            MatchCollection exp = Regex.Matches(response, "<td class=\"td\">\\d+/\\d+/\\d+</td><td class=\"td\">(?<expiration>\\d+/\\d+/\\d+)</td>", RegOpt);
 
-            if (exp.Success)
-                Expiration = exp.Groups["date"].Value;
+            //Set the expiration date to the expiration date of the latest one
+            if (exp.Count > 0)
+                Expiration = exp[exp.Count - 1].Groups["expiration"].Value;
 
-            //Get sanction status
-            Match sanction = Regex.Match(response, "<td>\\s+None\\s+</td>", RegOpt);
-
-            //The regex specifically looks for no sanctions
-            if (sanction.Success)
-                Sanction = SanctionType.None;
-            else
-                Sanction = SanctionType.Red;
+            //Site does not support sanctions
         }
 
-        //This site's way of displaying data is very inconsistent
         private Result<string> ParseResponse(string response)
         {
-            //Headers
-            MatchCollection headers = Regex.Matches(response, "<th>(?<header>[\\w\\s]+)(<br>[\\s]+)?(?<extension>[-\\w\\s\\(\\)]*)</th>", RegOpt);
-            MatchCollection values = Regex.Matches(response, "<td>((?<value>[-\\w\\s\\./,#]+)(&nbsp;|<br />\\s*)*)*</td>", RegOpt);
+            //Headers and values
+            MatchCollection headers = Regex.Matches(response, "<td><h3>(?<header>[\\w]+):</h3></td>", RegOpt);
+            MatchCollection values = Regex.Matches(response, "<span id=\"ContentPlaceHolder1_\\w+\">(?<value>[\\w\\s]+)</span>", RegOpt);
+            Match employer = Regex.Match(response, "<tr class=\"employer\">\\s*<td>(?<employer>[\\w\\s]+)</td>\\s*</tr>", RegOpt);
 
-            Match skipAction = Regex.Match(response, "<td colspan=\\\"2\\\">&nbsp;</td>", RegOpt);
-            Match skipHistory = Regex.Match(response, "<thead>\\s+<tr>\\s+<th>License History</th>\\s+<th>Date of Action</th>\\s+</tr>\\s+</thead>\\s+<tbody>\\s+</tbody>", RegOpt);
+            //License details
+            MatchCollection licenseHeaders = Regex.Matches(response, "<td class=\"th\">(?<header>[\\w\\s]+)</td>", RegOpt);
+            MatchCollection licenseValues = Regex.Matches(response, "<td class=\"td\">(?<value>[-/\\w\\s]*)</td>", RegOpt);
 
             if (headers.Count > 0)
             {
                 StringBuilder builder = new StringBuilder();
 
-                int skip = 0;
-                bool pac = false;
-
                 for (int i = 0; i < headers.Count; i++)
                 {
-                    string header = string.Format("{0} {1}", headers[i].Groups["header"].Value, headers[i].Groups["extension"].Value).Trim();
-                    Match mValue = values[i - skip];
-                    string value = "";
+                    builder.AppendFormat(TdPair, headers[i].Groups["header"].Value, (i < values.Count) ? values[i].Groups["value"].Value : employer.Groups["employer"].Value);
+                    builder.AppendLine();
+                }
 
-                    foreach (Capture c in values[i - skip].Groups["value"].Captures)
-                    {
-                        value += c.Value;
-                        value += " ";
-                    }
-
-                    value = value.Trim();
-
-                    if (values.Count > headers.Count && value == "")
-                    {
-                        skip--;
-                        i--;
-                        continue;
-                    }
-
-                    if (value == "PA-C")
-                        pac = true;
-                    else if (pac && value == "")
-                    {
-                        skip -= 2;
-                        pac = false;
-                    }
-
-                    if ((header == "Action Taken" || header == "Date Action Taken") && skipAction.Success)
-                    {
-                        builder.AppendFormat(TdPair, header, "");
-                        skip++;
-                    } else if ((header == "License History" || header == "Date of Action") && skipHistory.Success)
-                    {
-                        builder.AppendFormat(TdPair, header, "");
-                        skip++;
-                    } else
-                    {
-                        builder.AppendFormat(TdPair, header, value);
-                    }
-
+                for (int i = 0; i < licenseValues.Count; i++)
+                {
+                    builder.AppendFormat(TdPair, licenseHeaders[i % licenseHeaders.Count].Groups["header"].Value, licenseValues[i].Groups["value"].Value);
                     builder.AppendLine();
                 }
 
