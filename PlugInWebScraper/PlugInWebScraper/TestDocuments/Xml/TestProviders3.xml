@@ -4221,5 +4221,48 @@
     </Provider>
   </Assembly>
 
+  <Assembly name ="NVADGPlugIn" action="">
+    <!-- License number | Expired | Type: P -->
+    <Provider run="1">
+      <Data key="lic_no" value="0343-P" />
+    </Provider>
+    <!-- License number | Active | Type: L -->
+    <Provider run="1">
+      <Data key="lic_no" value="01478-L" />
+    </Provider>
+    <!-- Full name | Expired | Type: LC -->
+    <Provider run="1">
+      <Data key="dr_fname" value="Crystal"/>
+      <Data key="dr_lname" value="Smith"/>
+    </Provider>
+    <!-- Full name | Expired | Type: LCIntern -->
+    <Provider run="1">
+      <Data key="dr_fname" value="Taryn"/>
+      <Data key="dr_lname" value="Smith"/>
+    </Provider>
+    <!-- License number & full name | Active | Type: I -->
+    <Provider run="1">
+      <Data key="dr_fname" value="Donna"/>
+      <Data key="dr_lname" value="Smith" />
+      <Data key="lic_no" value="02127-I"/>
+    </Provider>
+    <!-- License number & full name | Active | Type: C -->
+    <Provider run="1">
+      <Data key="dr_fname" value="Anita"/>
+      <Data key="dr_lname" value="Smith"/>
+      <Data key="lic_no" value="183-C"/>
+    </Provider>
+    <!-- Multiple response -->
+    <Provider run="1">
+      <Data key="dr_fname" value="Cynthia"/>
+      <Data key="dr_lname" value="Smith"/>
+    </Provider>
+    <!-- Multiple response -->
+    <Provider run="1">
+      <Data key="dr_fname" value="Tenea"/>
+      <Data key="dr_lname" value="Smith"/>
+    </Provider>
+  </Assembly>
+
 </TestData>
 
