@@ -4221,5 +4221,29 @@
     </Provider>
   </Assembly>
 
+  <Assembly name ="WICVPlugIn" action ="">
+    <!--Test case for just full name-->
+    <Provider run="1">
+      <Data key ="dr_lname" value="John"/>
+      <Data key ="dr_fname" value="Christa"/>
+    </Provider>
+
+    <Provider run="0">
+      <Data key ="dr_lname" value="Cummins"/>
+      <Data key ="dr_fname" value="John"/>
+    </Provider>
+
+    <Provider run="0">
+      <Data key ="dr_lname" value="Adcock"/>
+      <Data key ="dr_fname" value="Rebecca"/>
+    </Provider>
+
+    <!--Test case for multiple providers-->
+    <Provider run="0">
+      <Data key ="dr_lname" value="Smith"/>
+      <Data key ="dr_fname" value="r"/>
+    </Provider>
+  </Assembly>
+
 </TestData>
 
