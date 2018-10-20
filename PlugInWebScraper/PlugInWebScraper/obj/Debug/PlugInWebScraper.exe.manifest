@@ -49,7 +49,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>oFVHERywwmv8UlnwwfBwnLuRPinywyeMSM+Rx15pgsc=</dsig:DigestValue>
+        <dsig:DigestValue>Nk3ONFNKgLmc65uLxLkKkIZKX+opKg1EUyiTF2G55us=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -146,6 +146,18 @@
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
         <dsig:DigestValue>XH0MTgrjsVol/leRhjvTnBR0ve6f+u6XugfywnkOGxM=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="IDBPPlugIn.dll" size="11264">
+      <assemblyIdentity name="IDBPPlugIn" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>6N+HqQdb9b/agr1atiPVnP3YO50ccsMH29h2nLZPiWA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -373,7 +385,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>a6IurOERBn945Z1NxuYBvpGZODyAj5LbIivkvZ3jPYM=</dsig:DigestValue>
+        <dsig:DigestValue>TcTn1BWfjnAPZtfGu8l1DjT06MHU/rB/MSyT8p6AZHc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -575,13 +587,13 @@
       <dsig:DigestValue>Z3zNIF+dbta1al8t0xFlg+pKb/3gi5/Tk29GTutLP0k=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="TestDocuments\Xml\TestProviders3.xml" size="147242" writeableType="applicationData">
+  <file name="TestDocuments\Xml\TestProviders3.xml" size="147837" writeableType="applicationData">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>Ffyv77+irwb/+1DlrEYP0nUbVTnFYGDIlcZSL9IWz5o=</dsig:DigestValue>
+      <dsig:DigestValue>L0NR1N5HK/59c6F/mRqiUefuwi7R6GFfMimoM2wGo5I=</dsig:DigestValue>
     </hash>
   </file>
   <file name="TestDocuments\Xml\TestProviders4.xml" size="215" writeableType="applicationData">

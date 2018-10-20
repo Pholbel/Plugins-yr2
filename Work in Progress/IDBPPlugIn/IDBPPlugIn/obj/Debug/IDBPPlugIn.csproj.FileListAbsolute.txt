@@ -1,0 +1,14 @@
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\IDBPPlugIn\IDBPPlugIn\bin\Debug\IDBPPlugIn.dll
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\IDBPPlugIn\IDBPPlugIn\bin\Debug\IDBPPlugIn.pdb
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\IDBPPlugIn\IDBPPlugIn\obj\Debug\IDBPPlugIn.csprojAssemblyReference.cache
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\IDBPPlugIn\IDBPPlugIn\obj\Debug\IDBPPlugIn.csproj.CoreCompileInputs.cache
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\IDBPPlugIn\IDBPPlugIn\obj\Debug\IDBPPlugIn.dll
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\IDBPPlugIn\IDBPPlugIn\obj\Debug\IDBPPlugIn.pdb
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\IDBPPlugIn\IDBPPlugIn\bin\Debug\HtmlAgilityPack.dll
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\IDBPPlugIn\IDBPPlugIn\bin\Debug\Newtonsoft.Json.dll
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\IDBPPlugIn\IDBPPlugIn\bin\Debug\PdfMetamorphosis.dll
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\IDBPPlugIn\IDBPPlugIn\bin\Debug\PlugIn_NET4_5.dll
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\IDBPPlugIn\IDBPPlugIn\bin\Debug\RestSharp.dll
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\IDBPPlugIn\IDBPPlugIn\bin\Debug\ABCpdf.dll
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\IDBPPlugIn\IDBPPlugIn\bin\Debug\ABCpdf.xml
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\IDBPPlugIn\IDBPPlugIn\obj\Debug\IDBPPlugIn.csproj.CopyComplete

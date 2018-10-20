@@ -4221,29 +4221,23 @@
     </Provider>
   </Assembly>
 
-  <Assembly name ="WICVPlugIn" action ="">
-    <!--Test case for just full name-->
+<Assembly name ="IDBPPlugIn" action ="">
     <Provider run="1">
-      <Data key ="dr_lname" value="John"/>
-      <Data key ="dr_fname" value="Christa"/>
+      <Data key ="lic_no" value="LPC-960"/>
+      <Data key ="lic_exp" value="2/8/2019"/>
     </Provider>
-
-    <Provider run="0">
-      <Data key ="dr_lname" value="Cummins"/>
-      <Data key ="dr_fname" value="John"/>
+    <Provider run="1">
+      <Data key ="lic_no" value="LPC-678"/>
+      <Data key ="lic_exp" value="2/13/2014"/>
     </Provider>
-
-    <Provider run="0">
-      <Data key ="dr_lname" value="Adcock"/>
-      <Data key ="dr_fname" value="Rebecca"/>
+    <Provider run="1">
+      <Data key ="lic_no" value="LPC-6087"/>
+      <Data key ="lic_exp" value="5/14/2019"/>
     </Provider>
-
-    <!--Test case for multiple providers-->
-    <Provider run="0">
-      <Data key ="dr_lname" value="Smith"/>
-      <Data key ="dr_fname" value="r"/>
+    <Provider run="1">
+      <Data key ="lic_no" value="LCPC-3122"/>
+      <Data key ="lic_exp" value="4/29/2019"/>
     </Provider>
   </Assembly>
-
 </TestData>
 
