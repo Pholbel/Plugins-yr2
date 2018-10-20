@@ -4221,36 +4221,43 @@
     </Provider>
   </Assembly>
 
+  <!-- Site does not support sanctions -->
   <Assembly name ="NVADGPlugIn" action="">
     <!-- License number | Expired | Type: P -->
     <Provider run="1">
-      <Data key="lic_no" value="0343-P" />
+      <Data key="lic_no" value="0343-P"/>
+      <Data key="lic_exp" value="4/30/2012"/>
     </Provider>
     <!-- License number | Active | Type: L -->
     <Provider run="1">
-      <Data key="lic_no" value="01478-L" />
+      <Data key="lic_no" value="01478-L"/>
+      <Data key="lic_exp" value="8/31/2020"/>
     </Provider>
     <!-- Full name | Expired | Type: LC -->
     <Provider run="1">
       <Data key="dr_fname" value="Crystal"/>
       <Data key="dr_lname" value="Smith"/>
+      <Data key="lic_exp" value="1/29/2014"/>
     </Provider>
-    <!-- Full name | Expired | Type: LCIntern -->
+    <!-- Full name | Active | Type: LCIntern -->
     <Provider run="1">
       <Data key="dr_fname" value="Taryn"/>
       <Data key="dr_lname" value="Smith"/>
+      <Data key="lic_exp" value="1/15/2019"/>
     </Provider>
     <!-- License number & full name | Active | Type: I -->
     <Provider run="1">
       <Data key="dr_fname" value="Donna"/>
-      <Data key="dr_lname" value="Smith" />
+      <Data key="dr_lname" value="Smith"/>
       <Data key="lic_no" value="02127-I"/>
+      <Data key="lic_exp" value="2/28/2019"/>
     </Provider>
     <!-- License number & full name | Active | Type: C -->
     <Provider run="1">
       <Data key="dr_fname" value="Anita"/>
       <Data key="dr_lname" value="Smith"/>
       <Data key="lic_no" value="183-C"/>
+      <Data key="lic_exp" value="1/30/2019"/>
     </Provider>
     <!-- Multiple response -->
     <Provider run="1">

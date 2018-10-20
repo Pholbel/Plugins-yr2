@@ -59,7 +59,7 @@ namespace NVADGPlugIn
 
             //License details
             MatchCollection licenseHeaders = Regex.Matches(response, "<td class=\"th\">(?<header>[\\w\\s]+)</td>", RegOpt);
-            MatchCollection licenseValues = Regex.Matches(response, "<td class=\"td\">(?<value>[-/\\w\\s]*)</td>", RegOpt);
+            MatchCollection licenseValues = Regex.Matches(response, "<td class=\"td\">(?<value>([-/\\w]+\\s*)+)</td>", RegOpt);
 
             if (headers.Count > 0)
             {
