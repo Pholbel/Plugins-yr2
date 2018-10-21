@@ -40,11 +40,11 @@ namespace WICVPlugIn
 
         private void CheckLicenseDetails(string response)
         {
-            Match exp = Regex.Match(response, "Status: </b>(?<EXP>.*?)<br>", RegOpt);
-            if (exp.Success)
+            Match ACT = Regex.Match(response, "Status:</strong>(?<ACT>.*)<br");
+            if (ACT.Success)
             {
-                Expiration = exp.Groups["EXP"].ToString();
-                if (Expiration != "Active")
+                string activity = ACT.Groups["ACT"].ToString();
+                if (!activity.Contains("Active"))
                 {
                     Sanction = SanctionType.Red;
                 }
@@ -53,37 +53,39 @@ namespace WICVPlugIn
 
         private Result<string> ParseResponse(string response)
         {
-            MatchCollection fields1 = Regex.Matches(response, "(?<=(<strong>)).*(?=:)");
-            MatchCollection fields2 = Regex.Matches(response, "(?<=(<b>)).*(?=\n)");
-            List<string> headers1 = new List<string>(new string[] { "Name", "Address Line1", "Address Line2", "Phone #" });
-            //List<string> headers = new List<string>(new string[] {"Area", "License #", "Status", "Issued", "HSP", "Special Certification", "University", "Department", "Graduated"});
+            MatchCollection headers = Regex.Matches(response, "(?<=(<strong>)).*(?=:)");
+            MatchCollection fields = Regex.Matches(response, "(?<=(</strong>)).*(?=<br)");
+            Match otherNames = Regex.Match(response, "(?<=(Other Names:</strong>)).*(?= </p>)", RegOpt);
 
-            if (fields1.Count > 3)
+            if (headers.Count == 13)
             {
                 StringBuilder builder = new StringBuilder();
 
-                for (int idx=3;idx<fields1.Count-5;idx++)
+                // Headers and Fields
+                for (int idx = 0; idx < headers.Count-1; idx++)
                 {
-                    string header = headers1[idx-3];
-                    string text = CleanString(fields1[idx].ToString());
-
-                    if (text == "") text = "N/A";
+                    string header = headers[idx].ToString();
+                    string text = fields[idx].ToString();
 
                     builder.AppendFormat(TdPair, header, text);
                     builder.AppendLine();
                 }
 
-                for (int idx=2;idx<fields2.Count-1;idx++)
+                // Get Other Names
+                string[] names = CleanNamesString(otherNames.ToString()).Split(',');
+                if (names.Length == 1)
                 {
-                    string exp = fields2[idx].ToString();
-                    if (exp.Contains("<u>")) { continue; }
-                    List<string> pair = exp.Split(':').ToList();
-                    string header = CleanString(pair[0]);
-                    string text = CleanString(pair[1]);
-
-                    builder.AppendFormat(TdPair, header, text);
+                    builder.AppendFormat(TdPair, headers[12], names[0]);
                     builder.AppendLine();
                 }
+                else
+                {
+                    string outputNames = "";
+                    for (int idx = 0; idx < names.Length - 1; idx++) { outputNames += (names[idx] + ','); }
+                    builder.AppendFormat(TdPair, headers[12], outputNames.Substring(0, outputNames.Length - 1));
+                    builder.AppendLine();
+                }
+                
 
                 return Result<string>.Success(builder.ToString());
             }
@@ -93,13 +95,12 @@ namespace WICVPlugIn
             }
         }
 
-        private string CleanString(string str)
+        private string CleanNamesString(string str)
         {
-            str = str.Replace("<b>", "");
-            str = str.Replace("</b>", "");
-            str = str.Replace("<u>", "");
-            str = str.Replace("<br>", "");
-            str = str.Replace("</td>", "");
+            str = str.Replace("\n", "");
+            str = str.Replace("\t", "");
+            str = str.Replace("\r", "");
+            str = str.Replace(" <br />", ",");
 
             return str;
         }
