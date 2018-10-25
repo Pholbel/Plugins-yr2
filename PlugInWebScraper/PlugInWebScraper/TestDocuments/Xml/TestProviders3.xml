@@ -4222,22 +4222,30 @@
   </Assembly>
 
 <Assembly name ="IDBPPlugIn" action ="">
+    <!-- active license -->
     <Provider run="1">
-      <Data key ="lic_no" value="LPC-960"/>
-      <Data key ="lic_exp" value="2/8/2019"/>
+      <Data key ="dr_lname" value="Pant" />
+      <Data key ="dr_fname" value="Sushma" />
+      <Data key ="lic_no" value="CS6085"/>
+      <Data key ="lic_exp" value="12/31/2018"/>
     </Provider>
+    
+    <!-- expired license -->
     <Provider run="1">
-      <Data key ="lic_no" value="LPC-678"/>
-      <Data key ="lic_exp" value="2/13/2014"/>
+      <Data key ="dr_lname" value="Pantaleo" />
+      <Data key ="dr_fname" value="Tisha" />
+      <Data key ="lic_no" value="T3321"/>
+      <Data key ="lic_exp" value="6/30/2008"/>
     </Provider>
+
+    <!-- sanction red -->
     <Provider run="1">
-      <Data key ="lic_no" value="LPC-6087"/>
-      <Data key ="lic_exp" value="5/14/2019"/>
-    </Provider>
-    <Provider run="1">
-      <Data key ="lic_no" value="LCPC-3122"/>
-      <Data key ="lic_exp" value="4/29/2019"/>
+      <Data key ="dr_lname" value="Smith" />
+      <Data key ="dr_fname" value="Kellie" />
+      <Data key ="lic_no" value="EI2811"/>
+      <Data key ="lic_exp" value="7/7/2003"/>
     </Provider>
   </Assembly>
+
 </TestData>
 

@@ -12,7 +12,7 @@ namespace IDBPPlugIn
 {
     /// <summary>
     /// EchoPSV Plugin for New Hamshire Board of Medicine
-    /// https://www.azbbhe.us/node/3
+    /// https://idbop.mylicense.com/verification/Search.aspx
     /// </summary>
     public class PlugInClass : IPlugIn
     {
