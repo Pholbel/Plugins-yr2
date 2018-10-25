@@ -92,7 +92,7 @@ namespace WICVPlugIn
 
             //CHECK IF WE HAVE MULTIPLE PROVIDERS
 
-            MatchCollection providerList = Regex.Matches(response.Content, ">" + provider.LastName.ToUpper() + ".*</a>", RegOpt);
+            MatchCollection providerList = Regex.Matches(response.Content, provider.LastName.ToUpper() + "</a", RegOpt);
 
             if (providerList.Count == 0)
             {
@@ -100,7 +100,7 @@ namespace WICVPlugIn
             }
             else if (providerList.Count == 1)
             {
-                Match fields = Regex.Match(response.Content, "<a href=\"(?<QUERY>.*?)\">" + provider.FirstName.ToUpper());
+                Match fields = Regex.Match(response.Content, "<a href=\"(?<QUERY>.*?)\">.*" + provider.LastName.ToUpper());
                 string detailQuery = fields.Groups["QUERY"].ToString();
                 detailQuery = Regex.Replace(detailQuery, "\"", "", RegOpt);
                 client = new RestClient(baseUrl + detailQuery);
