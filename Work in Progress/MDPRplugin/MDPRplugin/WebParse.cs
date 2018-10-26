@@ -40,10 +40,11 @@ namespace MDPRplugin
 
         private void CheckLicenseDetails(string response)
         {
-            Match exp = Regex.Match(response, "Expiration date: </span>( |\t|\r|\v|\f|\n)*<span.*?>(?<EXP>.*?)</span>", RegOpt);
+            Match exp = Regex.Match(response, "<strong>Expiration.*?#ececec>(?<i>.*?)&", RegOpt);
             if (exp.Success)
             {
-                Expiration = exp.Groups["EXP"].ToString();
+                Expiration = exp.Groups["i"].ToString();
+                
             }
 
             //Does not support sanctions
@@ -59,6 +60,7 @@ namespace MDPRplugin
             //MatchCollection fields = Regex.Matches(response, "(?<=(id=\"ctl.*\">)).*(?=</s)");
             //List<string> headers = new List<string>(new string[] {"Licensee Name", "Profession Name", "Licensee Number",
             //  "Expiration Date", "License Number", "Title", "Effective Date", "Expiration Date", "Status", "Finding"});
+
 
 
             if (fields.Count > 0)
