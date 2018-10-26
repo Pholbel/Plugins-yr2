@@ -47,66 +47,34 @@ namespace IDBPPlugIn
             if (body.InnerHtml != String.Empty)
             {
                 StringBuilder builder = new StringBuilder();
-                HtmlNode sec_info = body.SelectSingleNode("//div/table");
-                HtmlNode sec_licenses = body.SelectNodes("//table")[1];
 
+                //remember to set expiration date
 
-
-                //Handle info section
-                foreach (var detail in sec_info.ChildNodes)
+                MatchCollection labelsRgx = Regex.Matches(body.InnerHtml, @"(?<=_label.*>+).*(?=:)");
+                MatchCollection dataRgx = Regex.Matches(body.InnerHtml, @"(?<=rdata.*\d\d.>).*(?=</span)");
+                List<string> labels = new List<string>();
+                List<string> data = new List<string>();
+                List<string> dont = new List<string>()
                 {
-                    if (detail.Name == "tr")
+                    "Middle",
+                    "Suffix",
+                    "Facility Name",
+                    "Ownership Type",
+                    "Fax",
+                    "DBA"
+                };
+
+                foreach (var m in labelsRgx)
+                {
+                    if (dont.Contains(m.ToString()))
                     {
-                        HtmlNodeCollection cells = detail.ChildNodes;
-                        string h = cells[1].InnerText;
-                        string t = cells[3].InnerText.Replace("&nbsp;", " ");
-                        builder.AppendFormat(TdPair, h, t);
-                        builder.AppendLine();
+                        labels.Add(m.ToString());
                     }
                 }
-
-                //Handle licenses section
-
-                //Get headers
-                HtmlNodeCollection headers = sec_licenses.ChildNodes[1].ChildNodes;
-                List<string> hList = new List<string>();
-                foreach (var header in headers)
+                
+                foreach (var m in dataRgx)
                 {
-                    if (header.Name == "td")
-                    {
-                        hList.Add(header.InnerText.Replace("\n  ", "").Substring(2));
-                    }
-                }
-                hList.RemoveAt(0);
 
-                //get each license
-                HtmlNodeCollection licenses = sec_licenses.ChildNodes;
-                foreach (var license in licenses)
-                {
-                    if (license.Name == "tr" && license.PreviousSibling.PreviousSibling != null)
-                    {
-                        int count = 0;
-                        bool isActive = false;
-                        foreach (var cell in license.ChildNodes)
-                        {
-                            if (cell.Name == "td" && cell.PreviousSibling.PreviousSibling != null)
-                            {
-                                if (cell.InnerText.Contains("ACTIVE"))
-                                {
-                                    isActive = true;
-                                }
-                                if (count == 4 && isActive)
-                                {
-                                    Expiration = cell.InnerText;
-                                }
-                                builder.AppendFormat(TdPair, hList[count], cell.InnerText);
-                                builder.AppendLine();
-                                count++;
-                            }
-                        }
-                        isActive = false;
-                        count = 0;
-                    }
                 }
 
                 //handle sanctions

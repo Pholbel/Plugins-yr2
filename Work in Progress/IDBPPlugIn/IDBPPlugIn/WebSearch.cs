@@ -45,8 +45,9 @@ namespace IDBPPlugIn
             List<RestResponseCookie> allCookies = new List<RestResponseCookie>();
             RestRequest request1 = new RestRequest(Method.GET);
             RestRequest request2 = new RestRequest(Method.POST);
-            string baseUrl = "https://idbop.mylicense.com/verification/Search.aspx";
-            RestClient client = new RestClient(baseUrl);
+            string baseUrl = "https://idbop.mylicense.com/verification/";
+            string searchUrl = "Search.aspx";
+            RestClient client = new RestClient(baseUrl + searchUrl);
 
 
             //FIRST REQUEST TO GET COOKIE AND VIEW STATE
@@ -79,7 +80,7 @@ namespace IDBPPlugIn
             //SECOND REQUEST TO GET TO SEARCH RESULTS
             IRestResponse response2 = client.Execute(request2);
 
-            Match detailLink = Regex.Match(response.Content, @"ProDetail.*(?<==.*\d)", RegOpt);
+            Match detailLink = Regex.Match(response2.Content, "Details.aspx.*(?=..target)");
             
 
 
@@ -88,20 +89,20 @@ namespace IDBPPlugIn
             {
                
                 client = new RestClient(baseUrl + detailLink);
-                request2 = new RestRequest(Method.GET);
+                RestRequest request3 = new RestRequest(Method.GET);
 
                 foreach (var c in allCookies)
                 {
-                    request2.AddCookie(c.Name, c.Value);
+                    request3.AddCookie(c.Name, c.Value);
                 }
 
-                response = client.Execute(request2);
+                IRestResponse response3 = client.Execute(request3);
 
-                allCookies.AddRange(response.Cookies);
+                allCookies.AddRange(response3.Cookies);
 
-                if (response.StatusCode == HttpStatusCode.OK)
+                if (response3.StatusCode == HttpStatusCode.OK)
                 {
-                    return Result<IRestResponse>.Success(response);
+                    return Result<IRestResponse>.Success(response3);
                 }
                 else
                 {
