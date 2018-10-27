@@ -40,41 +40,55 @@ namespace MBBHTPlugIn
 
         private void CheckLicenseDetails(string response)
         {
-            //Get license dates
-            MatchCollection exp = Regex.Matches(response, "<td class=\"td\">\\d+/\\d+/\\d+</td><td class=\"td\">(?<expiration>\\d+/\\d+/\\d+)</td>", RegOpt);
+            //If they have multiple licenses, we return the expiration date of the license searched for
+            Match exp = Regex.Match(response, "<b>Expiration\\s+Date:(</b></span>){3}</td>\\s+<td width=\"\\d+\"><span id=\"[_\\w]+\" class=\"normal\"( style=\"[;:\\w]+\")?>(?<date>\\d+-\\d+-\\d+)</span>", RegOpt);
 
             //Set the expiration date to the expiration date of the latest one
-            if (exp.Count > 0)
-                Expiration = exp[exp.Count - 1].Groups["expiration"].Value;
+            if (exp.Success)
+                Expiration = exp.Groups["date"].Value;
 
-            //Site does not support sanctions
+            //Site has sections for disciplinary action and corrective action
+            Match disc = Regex.Match(response, "Disciplinary Action:[:;_\"=/<>\\w\\s]+No</span></td>\\s+<td vAlign", RegOpt);
+            Match corr = Regex.Match(response, "Corrective\\s+Action:[:;_\"=/<>\\w\\s]+No</span></td>\\s+</tr>", RegOpt);
+
+            //We check for the absence of disciplinary/corrective action
+            if (disc.Success && corr.Success)
+                Sanction = SanctionType.None;
+            else
+                Sanction = SanctionType.Red;
         }
 
         private Result<string> ParseResponse(string response)
         {
             //Headers and values
-            MatchCollection headers = Regex.Matches(response, "<td><h3>(?<header>[\\w]+):</h3></td>", RegOpt);
-            MatchCollection values = Regex.Matches(response, "<span id=\"ContentPlaceHolder1_\\w+\">(?<value>[\\w\\s]+)</span>", RegOpt);
-            Match employer = Regex.Match(response, "<tr class=\"employer\">\\s*<td>(?<employer>[\\w\\s]+)</td>\\s*</tr>", RegOpt);
+            MatchCollection data = Regex.Matches(response, "<span class=\"Normal\"><b>(?<header>[()\\s\\w,:]+)(</b>\\s*</span>)+</td>\\s*<td( vAlign=\"top\")?( width=\"\\d+\")?><span id=\"[_\\w]+\" class=\"normal\"( style=\"[;:\\w]+\")?>(?<value>[-,()\\w\\s]*)</span>", RegOpt);
 
-            //License details
-            MatchCollection licenseHeaders = Regex.Matches(response, "<td class=\"th\">(?<header>[\\w\\s]+)</td>", RegOpt);
-            MatchCollection licenseValues = Regex.Matches(response, "<td class=\"td\">(?<value>([-/\\w]+\\s*)+)</td>", RegOpt);
-
-            if (headers.Count > 0)
+            if (data.Count > 0)
             {
+                //Multiple licenses
+                string licNo = data[3].Groups["value"].Value;
+                Match licHeaders = Regex.Match(response, "(<td>(?<header>[\\w\\s]+)</td>){5}", RegOpt);
+                MatchCollection licDetails = Regex.Matches(response, "(<td (style=\"[:;\\w]+\")?(width=\"\\d+\")?>(?<value>[-()\\s\\w]+)</td>){5}", RegOpt);
+
+                //Details
                 StringBuilder builder = new StringBuilder();
 
-                for (int i = 0; i < headers.Count; i++)
+                for (int i = 0; i < data.Count; i++)
                 {
-                    builder.AppendFormat(TdPair, headers[i].Groups["header"].Value, (i < values.Count) ? values[i].Groups["value"].Value : employer.Groups["employer"].Value);
+                    builder.AppendFormat(TdPair, data[i].Groups["header"].Value, data[i].Groups["value"].Value);
                     builder.AppendLine();
                 }
 
-                for (int i = 0; i < licenseValues.Count; i++)
+                //Multiple licenses
+                for (int i = 0; i < licDetails.Count; i++)
                 {
-                    builder.AppendFormat(TdPair, licenseHeaders[i % licenseHeaders.Count].Groups["header"].Value, licenseValues[i].Groups["value"].Value);
-                    builder.AppendLine();
+                    if (licDetails[i].Groups["value"].Captures[1].Value == licNo)
+                        continue;
+                    for (int j = 0; j < 5; j++)
+                    {
+                        builder.AppendFormat(TdPair, licHeaders.Groups["header"].Captures[j].Value, licDetails[i].Groups["value"].Captures[j].Value);
+                        builder.AppendLine();
+                    }
                 }
 
                 return Result<string>.Success(builder.ToString());
