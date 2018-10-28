@@ -46,36 +46,61 @@ namespace IDBPPlugIn
             
             if (body.InnerHtml != String.Empty)
             {
-                StringBuilder builder = new StringBuilder();
+
 
                 //remember to set expiration date
 
-                MatchCollection labelsRgx = Regex.Matches(body.InnerHtml, @"(?<=_label.*>+).*(?=:)");
-                MatchCollection dataRgx = Regex.Matches(body.InnerHtml, @"(?<=rdata.*\d\d.>).*(?=</span)");
+
+                //declarations
+                StringBuilder builder = new StringBuilder();
+                MatchCollection labelsRgx = Regex.Matches(body.InnerHtml, @"(?<=_label.*>+).*(?=:)", RegOpt);
+                MatchCollection dataRgx = Regex.Matches(body.InnerHtml, @"(?<=rdata.*\d\d.>).*(?=</span)", RegOpt);
                 List<string> labels = new List<string>();
                 List<string> data = new List<string>();
                 List<string> dont = new List<string>()
                 {
+                    "Title",
                     "Middle",
                     "Suffix",
+                    "DOB",
+                    "Gender",
                     "Facility Name",
                     "Ownership Type",
                     "Fax",
-                    "DBA"
+                    "DBA",
+                    "Country"
+                };
+                List<int> dont2 = new List<int>()
+                {
+                    1,3,4,5,6,8,14
                 };
 
+
+                //gather data
                 foreach (var m in labelsRgx)
                 {
-                    if (dont.Contains(m.ToString()))
+                    if (!dont.Contains(m.ToString()))
                     {
                         labels.Add(m.ToString());
                     }
                 }
                 
-                foreach (var m in dataRgx)
+                for (var i = 0; i < dataRgx.Count; i++)
                 {
-
+                    if (!dont2.Contains(i))
+                    {
+                        data.Add(dataRgx[i].ToString());
+                    }
                 }
+
+
+                //handle data
+                for (var j = 0; j < labels.Count; j++)
+                {
+                    builder.AppendFormat(TdPair, labels[j], data[j]);
+                    builder.AppendLine();
+                }
+
 
                 //handle sanctions
                 if (!Regex.Match(response, "There are no Board actions").Success)
