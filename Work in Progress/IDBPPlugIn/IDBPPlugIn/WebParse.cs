@@ -53,57 +53,63 @@ namespace IDBPPlugIn
 
                 //declarations
                 StringBuilder builder = new StringBuilder();
-                MatchCollection labelsRgx = Regex.Matches(body.InnerHtml, @"(?<=_label.*>+).*(?=:)", RegOpt);
-                MatchCollection dataRgx = Regex.Matches(body.InnerHtml, @"(?<=rdata.*\d\d.>).*(?=</span)", RegOpt);
-                List<string> labels = new List<string>();
+                //MatchCollection labelsRgx = Regex.Matches(body.InnerHtml, @"(?<=_label.*>+).*(?=:)", RegOpt);
+                //MatchCollection dataRgx = Regex.Matches(body.InnerHtml, @"(?<=rdata.*\d\d.>).*(?=</span)", RegOpt);
+                MatchCollection dataRgx = Regex.Matches(body.InnerHtml, @"(?<=ctl.*>+).*(?=</span)", RegOpt);
+                //List<string> labels = new List<string>();
                 List<string> data = new List<string>();
-                List<string> dont = new List<string>()
-                {
-                    "Title",
-                    "Middle",
-                    "Suffix",
-                    "DOB",
-                    "Gender",
-                    "Facility Name",
-                    "Ownership Type",
-                    "Fax",
-                    "DBA",
-                    "Country"
-                };
-                List<int> dont2 = new List<int>()
-                {
-                    1,3,4,5,6,8,14
-                };
+                //List<string> dont = new List<string>()
+                //{
+                //    "Title",
+                //    "Middle",
+                //    "Suffix",
+                //    "DOB",
+                //    "Gender",
+                //    "Facility Name",
+                //    "Ownership Type",
+                //    "Fax",
+                //    "DBA",
+                //    "Country"
+                //};
+                //List<int> dont2 = new List<int>()
+                //{
+                //    1,3,4,5,6,8,14
+                //};
 
 
                 //gather data
-                foreach (var m in labelsRgx)
-                {
-                    if (!dont.Contains(m.ToString()))
-                    {
-                        labels.Add(m.ToString());
-                    }
-                }
+                //foreach (var m in labelsRgx)
+                //{
+                //    if (!dont.Contains(m.ToString()))
+                //    {
+                //        labels.Add(m.ToString());
+                //    }
+                //}
                 
-                for (var i = 0; i < dataRgx.Count; i++)
+                for (var i = 0; i < dataRgx.Count-1; i+=2)
                 {
-                    if (!dont2.Contains(i))
+                    if (dataRgx[i+1].ToString() != "")
                     {
                         data.Add(dataRgx[i].ToString());
+                        data.Add(dataRgx[i+1].ToString());
                     }
                 }
 
 
                 //handle data
-                for (var j = 0; j < labels.Count; j++)
+                for (var j = 0; j < data.Count-1; j+=2)
                 {
-                    builder.AppendFormat(TdPair, labels[j], data[j]);
+                    if (data[j].Contains("Expiry"))
+                    {
+                        Expiration = data[j + 1];
+                    }
+                    builder.AppendFormat(TdPair, data[j], data[j+1]);
                     builder.AppendLine();
                 }
 
 
                 //handle sanctions
-                if (!Regex.Match(response, "There are no Board actions").Success)
+                if (Regex.Match(response, "Has Discipline").Success)
                 {
                     Sanction = SanctionType.Red;
                 }
