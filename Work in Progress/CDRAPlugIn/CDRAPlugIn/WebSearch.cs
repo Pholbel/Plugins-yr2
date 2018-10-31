@@ -17,7 +17,7 @@ namespace CDRAPlugIn
         private Provider provider { get; set; }
 
         //Parameter prefix
-        private const string PREFIX = "_ctl7:";
+        private const string PREFIX = "ctl00$MainContentPlaceHolder$ucLicenseLookup$";
 
         public WebSearch(Provider _provider)
         {
@@ -61,49 +61,73 @@ namespace CDRAPlugIn
             //Forming new post request with our parameters
             request = new RestRequest(Method.POST);
 
-            //We perform the search using license numbers if available, otherwise full names
+            //We perform the search using license numbers and/or names
             string licNo = provider.LicenseNumber;
-            string type = GetLicenseType(ref licNo);
+
+            //Licenses can have sub types
+            Tuple<string, string> type = GetLicenseType(ref licNo);
+
+        /* BEGIN ADD PARAMETERS */
+            request.AddParameter("ctl100$ScriptManager1", "ctl00$MainContentPlaceHolder$ucLicenseLookup$UpdtPanelGridLookup|ctl00$MainContentPlaceHolder$ucLicenseLookup$UpdtPanelGridLookup");
+
+            //Search details
+            request.AddParameter(PREFIX + "ctl03$ddCredPrefix", type.Item1);
+            request.AddParameter(PREFIX + "ctl03$tbLicenseNumber", licNo);
+            request.AddParameter(PREFIX + "ctl03$ddSubCategory", type.Item2);
+            request.AddParameter(PREFIX + "ctl03$tbFirstName_Contact", provider.FirstName);
+            request.AddParameter(PREFIX + "ctl03$tbLastName_Contact", provider.LastName);
+
+            request.AddParameter(PREFIX + "ctl03$tbDBA_Contact", "");
+            request.AddParameter(PREFIX + "ctl03$tbCity_ContactAddress", "");
+            request.AddParameter(PREFIX + "ctl03$ddStates", "");
+            request.AddParameter(PREFIX + "ctl03$tbZipCode_ContactAddress", "");
+
+            request.AddParameter(PREFIX + "ResizeLicDetailPopupID_ClientState", "0,0");
+            request.AddParameter("ctl00$OutsidePlaceHolder$ucLicenseDetailPopup$ResizeLicDetailPopupID_ClientState", "0,0");
+            /* END ADD PARAMETERS */
 
             //Event headers
-            string event_target = "", event_argument = "", event_validation = "", view_state = "", view_state_generator = "", last_focus = "";
+            string event_target = "", event_argument = "", event_validation = "", view_state = "", view_state_generator = "", async = "";
+            event_target = "ctl00$MainContentPlaceHolder$ucLicenseLookup$UpdtPanelGridLookup";
+            event_argument = "1";
+            async = "true";
 
-            if (type != "")
-            {
-                request.AddParameter(PREFIX + "ddlbLicenseType", type);
-                request.AddParameter(PREFIX + "txtLicenseNumber", licNo);
-                request.AddParameter(PREFIX + "rbtnSearch", "1");
-            } else
-            {
-                //Switch to name mode
-                request.AddParameter(PREFIX + "txtLicenseNumber", "");
-                request.AddParameter(PREFIX + "ddlbLicenseType", "CD");
-                request.AddParameter(PREFIX + "rbtnSearch", "2");
-                GetViewStates(ref event_target, ref event_argument, ref event_validation, ref view_state, ref view_state_generator, ref last_focus, response);
-                SetViewStates("_ctl7$rbtnSearch$1", event_argument, event_validation, view_state, view_state_generator, last_focus, ref request);
-                //Add cookies to our request
-                foreach (RestResponseCookie c in allCookies)
-                    request.AddCookie(c.Name, c.Value);
-                response = client.Execute(request);
+            GetViewStates(ref event_validation, ref view_state, ref view_state_generator, response);
+            SetViewStates(event_target, event_argument, event_validation, view_state, view_state_generator, async, ref request);
 
-                //Store new cookies
-                allCookies.AddRange(response.Cookies);
+            //if (type != "")
+            //{
+            //    request.AddParameter(PREFIX + "ddlbLicenseType", type);
+            //    request.AddParameter(PREFIX + "txtLicenseNumber", licNo);
+            //    request.AddParameter(PREFIX + "rbtnSearch", "1");
+            //} else
+            //{
+            //    //Switch to name mode
+            //    request.AddParameter(PREFIX + "txtLicenseNumber", "");
+            //    request.AddParameter(PREFIX + "ddlbLicenseType", "CD");
+            //    request.AddParameter(PREFIX + "rbtnSearch", "2");
+            //    GetViewStates(ref event_target, ref event_argument, ref event_validation, ref view_state, ref view_state_generator, ref last_focus, response);
+            //    SetViewStates("_ctl7$rbtnSearch$1", event_argument, event_validation, view_state, view_state_generator, last_focus, ref request);
+            //    //Add cookies to our request
+            //    foreach (RestResponseCookie c in allCookies)
+            //        request.AddCookie(c.Name, c.Value);
+            //    response = client.Execute(request);
 
-                //Check that we accessed the site
-                if (response.StatusCode != HttpStatusCode.OK)
-                    return Result<IRestResponse>.Failure(ErrorMsg.CannotAccessSearchForm);
+            //    //Store new cookies
+            //    allCookies.AddRange(response.Cookies);
 
-                //Forming new post request with our parameters
-                request = new RestRequest(Method.POST);
+            //    //Check that we accessed the site
+            //    if (response.StatusCode != HttpStatusCode.OK)
+            //        return Result<IRestResponse>.Failure(ErrorMsg.CannotAccessSearchForm);
 
-                //Get new parameters
-                request.AddParameter(PREFIX + "txtLastName", provider.LastName);
-                request.AddParameter(PREFIX + "txtFirstName", provider.FirstName);
-                request.AddParameter(PREFIX + "rbtnSearch", "2");
-            }
+            //    //Forming new post request with our parameters
+            //    request = new RestRequest(Method.POST);
 
-            GetViewStates(ref event_target, ref event_argument, ref event_validation, ref view_state, ref view_state_generator, ref last_focus, response);
-            SetViewStates("_ctl7$cmdSearch", event_argument, event_validation, view_state, view_state_generator, last_focus, ref request);
+            //    //Get new parameters
+            //    request.AddParameter(PREFIX + "txtLastName", provider.LastName);
+            //    request.AddParameter(PREFIX + "txtFirstName", provider.FirstName);
+            //    request.AddParameter(PREFIX + "rbtnSearch", "2");
+            //}
 
             //Add cookies to our request
             foreach (RestResponseCookie c in allCookies)
@@ -121,8 +145,8 @@ namespace CDRAPlugIn
                 return Result<IRestResponse>.Failure(ErrorMsg.CannotAccessSite);
 
             //If we searched by license number, site automatically redirects us to details page
-            if (type != "")
-                return Result<IRestResponse>.Success(response);
+            //if (type != "")
+            //    return Result<IRestResponse>.Success(response);
 
             MatchCollection providerList = Regex.Matches(response.Content, "_ctl7_grdSearchResults__ctl[\\d]_Hyperlink1", RegOpt);
 
@@ -153,58 +177,31 @@ namespace CDRAPlugIn
             return Result<IRestResponse>.Success(response);
         }
 
-        string GetLicenseType(ref string licNo)
+        Tuple<string, string> GetLicenseType(ref string licNo)
         {
-            Match m = Regex.Match(licNo, "(?<type>[A-Za-z]*)[-]?(?<num>[\\d]+)", RegOpt);
+            Match m = Regex.Match(licNo, "(?<type>[-A-Za-z]*?)[-.]?(?<num>[\\d]+)[-.]?(?<subtype>[-A-Za-z]*)", RegOpt);
             string type = m.Groups["type"].Value;
+            string subtype = m.Groups["subtype"].Value;
             licNo = m.Groups["num"].Value;
 
-            if (type == "")
-                type = provider.GetData("drtitle");
-
-            switch (type.ToLower())
-            {
-                case "professional counselor":
-                case "licensed professional counselor":
-                case "lpc":
-                    type = "PC";
-                    break;
-                case "professional clinical counselor":
-                case "licensed professional clinical counselor":
-                case "lpcc":
-                    type = "CC";
-                    break;
-                case "alcohol and drug counselor":
-                case "licensed alcohol and drug counselor":
-                case "ladc":
-                    type = "CD";
-                    break;
-                default:
-                    type = "";
-                    break;
-            }
-
-            return type;
+            return new Tuple<string, string>(type, subtype);
         }
 
-        void GetViewStates(ref string target, ref string argument, ref string validation, ref string state, ref string generator, ref string focus, IRestResponse response)
+        void GetViewStates(ref string validation, ref string state, ref string generator, IRestResponse response)
         {
-            target = Regex.Match(response.Content, "id=\"__EVENTTARGET\"\\s*value=\"([\\w\\+/=]*)", RegOpt).Groups[1].Value;
-            argument = Regex.Match(response.Content, "id=\"__EVENTARGUMENT\"\\s*value=\"([\\w\\+/=]*)", RegOpt).Groups[1].Value;
             validation = Regex.Match(response.Content, "id=\"__EVENTVALIDATION\"\\s*value=\"([\\w\\+/=]*)", RegOpt).Groups[1].Value;
             generator = Regex.Match(response.Content, "id=\"__VIEWSTATEGENERATOR\"\\s*value=\"([\\w]*)", RegOpt).Groups[1].Value;
             state = Regex.Match(response.Content, "id=\"__VIEWSTATE\"\\s*value=\"([\\w\\+/=]*)", RegOpt).Groups[1].Value;
-            focus = "";
         }
 
-        void SetViewStates(string target, string argument, string validation, string state, string generator, string focus, ref RestRequest request)
+        void SetViewStates(string target, string argument, string validation, string state, string generator, string async, ref RestRequest request)
         {
             request.AddParameter("__EVENTTARGET", target);
             request.AddParameter("__EVENTARGUMENT", argument);
             request.AddParameter("__EVENTVALIDATION", validation);
             request.AddParameter("__VIEWSTATE", state);
             request.AddParameter("__VIEWSTATEGENERATOR", generator);
-            request.AddParameter("__LASTFOCUS", focus);
+            request.AddParameter("__ASYNCPOST", async);
         }
     }
 }
