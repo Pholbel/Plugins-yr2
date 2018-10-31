@@ -211,3 +211,6 @@ C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\obj\Debug\
 C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\obj\Debug\PlugInWebScraper.csproj.CopyComplete
 C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\obj\Debug\PlugInWebScraper.exe
 C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\obj\Debug\PlugInWebScraper.pdb
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\IDBPPlugIn.dll
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\IDBPPlugIn.pdb
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\obj\Debug\PlugInWebScraper.csprojResolveAssemblyReference.cache

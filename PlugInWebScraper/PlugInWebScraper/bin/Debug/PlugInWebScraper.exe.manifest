@@ -378,14 +378,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PlugInWebScraper.exe" size="67584">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PlugInWebScraper.exe" size="68096">
       <assemblyIdentity name="PlugInWebScraper" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>0xqSjsFeC8w6DzAdSJ5jJYx3p+sGTUEOSH+RfbZNdCQ=</dsig:DigestValue>
+        <dsig:DigestValue>QgORaH9gKj9PpkrVuqLna+wvHhgjbn6ppGg77OkR0pg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -587,13 +587,13 @@
       <dsig:DigestValue>Z3zNIF+dbta1al8t0xFlg+pKb/3gi5/Tk29GTutLP0k=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="TestDocuments\Xml\TestProviders3.xml" size="148073" writeableType="applicationData">
+  <file name="TestDocuments\Xml\TestProviders3.xml" size="149062" writeableType="applicationData">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>PNekQPO/rdVEVwscgL9y/GTD72m9/9+zbIuaXf9aL5A=</dsig:DigestValue>
+      <dsig:DigestValue>9JLAGwjbe/DrSyW1qdH8Dilyh5ECB/W9SOoIjU+qHeE=</dsig:DigestValue>
     </hash>
   </file>
   <file name="TestDocuments\Xml\TestProviders4.xml" size="215" writeableType="applicationData">
