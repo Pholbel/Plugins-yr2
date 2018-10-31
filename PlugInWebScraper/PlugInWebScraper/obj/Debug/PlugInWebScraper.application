@@ -7,14 +7,14 @@
     <framework targetVersion="4.5.2" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="PlugInWebScraper.exe.manifest" size="33203">
+    <dependentAssembly dependencyType="install" codebase="PlugInWebScraper.exe.manifest" size="33843">
       <assemblyIdentity name="PlugInWebScraper.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>1BTIXYZf0iJJpMIHxS+0/Ezv0O/8sYBWrmmENN2Qp60=</dsig:DigestValue>
+        <dsig:DigestValue>DSj0lMzCz236+8KjPSHSFRdYyu0ijEuccCIRsmwdCE0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

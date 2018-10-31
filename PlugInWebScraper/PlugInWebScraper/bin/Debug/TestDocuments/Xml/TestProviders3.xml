@@ -4268,7 +4268,9 @@
     <Provider run="1">
       <Data key="dr_fname" value="Tenea"/>
       <Data key="dr_lname" value="Smith"/>
-=======
+    </Provider>
+  </Assembly>
+
 <Assembly name ="IDBPPlugIn" action ="">
     <!-- active license -->
     <Provider run="1">
@@ -4320,5 +4322,6 @@
       <Data key ="dr_fname" value="A"/>
     </Provider>
   </Assembly>
+
 </TestData>
 

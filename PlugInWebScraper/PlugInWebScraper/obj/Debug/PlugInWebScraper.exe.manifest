@@ -342,6 +342,18 @@
     </dependentAssembly>
   </dependency>
   <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="NVADGPlugIn.dll" size="13312">
+      <assemblyIdentity name="NVADGPlugIn" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>ObVGD8CFQz6QjLjOexrbSwhboJv3Ijj0jaCJ/nA83y8=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="OBNPlugIn.dll" size="22016">
       <assemblyIdentity name="OBNPlugIn" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
@@ -378,14 +390,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PlugInWebScraper.exe" size="68096">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PlugInWebScraper.exe" size="67584">
       <assemblyIdentity name="PlugInWebScraper" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>QgORaH9gKj9PpkrVuqLna+wvHhgjbn6ppGg77OkR0pg=</dsig:DigestValue>
+        <dsig:DigestValue>ofaTbDNi24xPegsDWPrh60Ezvj2laxdIWFQUG4AhA/U=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -587,13 +599,13 @@
       <dsig:DigestValue>Z3zNIF+dbta1al8t0xFlg+pKb/3gi5/Tk29GTutLP0k=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="TestDocuments\Xml\TestProviders3.xml" size="149062" writeableType="applicationData">
+  <file name="TestDocuments\Xml\TestProviders3.xml" size="150860" writeableType="applicationData">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>9JLAGwjbe/DrSyW1qdH8Dilyh5ECB/W9SOoIjU+qHeE=</dsig:DigestValue>
+      <dsig:DigestValue>bs2cwhVl2OS5DbdHbFMg13AjCog/jGq8ZcHwH7Wc2Gw=</dsig:DigestValue>
     </hash>
   </file>
   <file name="TestDocuments\Xml\TestProviders4.xml" size="215" writeableType="applicationData">
