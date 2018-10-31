@@ -138,6 +138,9 @@
     <Reference Include="HtmlAgilityPack">
       <HintPath>..\..\..\..\Third Party Libraries\HtmlAgilityPack.dll</HintPath>
     </Reference>
+    <Reference Include="IDBPPlugIn">
+      <HintPath>..\..\Work in Progress\IDBPPlugIn\IDBPPlugIn\bin\Debug\IDBPPlugIn.dll</HintPath>
+    </Reference>
     <Reference Include="IDCVPlugIn">
       <HintPath>..\..\..\..\..\..\Users\prholbel\Documents\GitHub\Plugins-yr2\Work in Progress\IDCVPlugIn\IDCVPlugIn\bin\Debug\IDCVPlugIn.dll</HintPath>
     </Reference>

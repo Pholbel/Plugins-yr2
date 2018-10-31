@@ -4271,5 +4271,57 @@
     </Provider>
   </Assembly>
 
+<Assembly name ="IDBPPlugIn" action ="">
+    <!-- active license -->
+    <Provider run="1">
+      <Data key ="dr_lname" value="Pant" />
+      <Data key ="dr_fname" value="Sushma" />
+      <Data key ="lic_no" value="CS6085"/>
+      <Data key ="lic_exp" value="12/31/2018"/>
+    </Provider>
+    
+    <!-- expired license -->
+    <Provider run="1">
+      <Data key ="dr_lname" value="Pantaleo" />
+      <Data key ="dr_fname" value="Tisha" />
+      <Data key ="lic_no" value="T3321"/>
+      <Data key ="lic_exp" value="6/30/2008"/>
+    </Provider>
+
+    <!-- sanction red -->
+    <Provider run="1">
+      <Data key ="dr_lname" value="Smith" />
+      <Data key ="dr_fname" value="Kellie" />
+      <Data key ="lic_no" value="EI2811"/>
+      <Data key ="lic_exp" value="7/7/2003"/>
+    </Provider>
+  </Assembly>
+
+  <Assembly name ="WICVPlugIn" action ="">
+    <!--Test case for just full name (w/ None other names)-->
+    <Provider run="1">
+      <Data key ="dr_lname" value="John"/>
+      <Data key ="dr_fname" value="Christa"/>
+      <Data key ="lic_exp" value= "03/09/1978"/>
+    </Provider>
+    <!--Test case for last name and license number (w/ multiple other names)-->
+    <Provider run="1">
+      <Data key ="dr_lname" value="Smith"/>
+      <Data key ="lic_no" value="56395"/>
+      <Data key ="lic_exp" value="12/14/2018"/>
+    </Provider>
+    <!--Test case for last name and license number (w/ one other names)-->
+    <Provider run =" 1">
+      <Data key ="dr_lname" value="John"/>
+      <Data key ="lic_no" value="49777"/>
+      <Data key ="lic_exp" value="10/31/2019"/>
+    </Provider>
+    <!--Test case for multiple providers-->
+    <Provider run="1">
+      <Data key ="dr_lname" value="John"/>
+      <Data key ="dr_fname" value="A"/>
+    </Provider>
+  </Assembly>
+
 </TestData>
 
