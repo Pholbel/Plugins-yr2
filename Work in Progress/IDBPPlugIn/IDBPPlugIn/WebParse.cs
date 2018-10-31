@@ -46,39 +46,36 @@ namespace IDBPPlugIn
             
             if (body.InnerHtml != String.Empty)
             {
+
+                //declarations
                 StringBuilder builder = new StringBuilder();
-
-                //remember to set expiration date
-
-                MatchCollection labelsRgx = Regex.Matches(body.InnerHtml, @"(?<=_label.*>+).*(?=:)");
-                MatchCollection dataRgx = Regex.Matches(body.InnerHtml, @"(?<=rdata.*\d\d.>).*(?=</span)");
-                List<string> labels = new List<string>();
+                MatchCollection dataRgx = Regex.Matches(body.InnerHtml, @"(?<=ctl.*>+).*(?=</span)", RegOpt);
                 List<string> data = new List<string>();
-                List<string> dont = new List<string>()
+                
+                for (var i = 0; i < dataRgx.Count-1; i+=2)
                 {
-                    "Middle",
-                    "Suffix",
-                    "Facility Name",
-                    "Ownership Type",
-                    "Fax",
-                    "DBA"
-                };
-
-                foreach (var m in labelsRgx)
-                {
-                    if (dont.Contains(m.ToString()))
+                    if (dataRgx[i+1].ToString() != "")
                     {
-                        labels.Add(m.ToString());
+                        data.Add(dataRgx[i].ToString());
+                        data.Add(dataRgx[i+1].ToString());
                     }
                 }
-                
-                foreach (var m in dataRgx)
-                {
 
+
+                //handle data
+                for (var j = 0; j < data.Count-1; j+=2)
+                {
+                    if (data[j].Contains("Expiry"))
+                    {
+                        Expiration = data[j + 1];
+                    }
+                    builder.AppendFormat(TdPair, data[j], data[j+1]);
+                    builder.AppendLine();
                 }
 
+
                 //handle sanctions
-                if (!Regex.Match(response, "There are no Board actions").Success)
+                if (Regex.Match(response, "Has Discipline").Success)
                 {
                     Sanction = SanctionType.Red;
                 }

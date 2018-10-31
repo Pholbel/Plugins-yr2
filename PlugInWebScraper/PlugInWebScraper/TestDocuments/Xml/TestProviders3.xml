@@ -4221,6 +4221,56 @@
     </Provider>
   </Assembly>
 
+  <!-- Site does not support sanctions -->
+  <Assembly name ="NVADGPlugIn" action="">
+    <!-- License number | Expired | Type: P -->
+    <Provider run="1">
+      <Data key="lic_no" value="0343-P"/>
+      <Data key="lic_exp" value="4/30/2012"/>
+    </Provider>
+    <!-- License number | Active | Type: L -->
+    <Provider run="1">
+      <Data key="lic_no" value="01478-L"/>
+      <Data key="lic_exp" value="8/31/2020"/>
+    </Provider>
+    <!-- Full name | Expired | Type: LC -->
+    <Provider run="1">
+      <Data key="dr_fname" value="Crystal"/>
+      <Data key="dr_lname" value="Smith"/>
+      <Data key="lic_exp" value="1/29/2014"/>
+    </Provider>
+    <!-- Full name | Active | Type: LCIntern -->
+    <Provider run="1">
+      <Data key="dr_fname" value="Taryn"/>
+      <Data key="dr_lname" value="Smith"/>
+      <Data key="lic_exp" value="1/15/2019"/>
+    </Provider>
+    <!-- License number & full name | Active | Type: I -->
+    <Provider run="1">
+      <Data key="dr_fname" value="Donna"/>
+      <Data key="dr_lname" value="Smith"/>
+      <Data key="lic_no" value="02127-I"/>
+      <Data key="lic_exp" value="2/28/2019"/>
+    </Provider>
+    <!-- License number & full name | Active | Type: C -->
+    <Provider run="1">
+      <Data key="dr_fname" value="Anita"/>
+      <Data key="dr_lname" value="Smith"/>
+      <Data key="lic_no" value="183-C"/>
+      <Data key="lic_exp" value="1/30/2019"/>
+    </Provider>
+    <!-- Multiple response -->
+    <Provider run="1">
+      <Data key="dr_fname" value="Cynthia"/>
+      <Data key="dr_lname" value="Smith"/>
+    </Provider>
+    <!-- Multiple response -->
+    <Provider run="1">
+      <Data key="dr_fname" value="Tenea"/>
+      <Data key="dr_lname" value="Smith"/>
+    </Provider>
+  </Assembly>
+
 <Assembly name ="IDBPPlugIn" action ="">
     <!-- active license -->
     <Provider run="1">
@@ -4246,6 +4296,7 @@
       <Data key ="lic_exp" value="7/7/2003"/>
     </Provider>
   </Assembly>
+
 
   <Assembly name="MBBHTPlugIn" action="">
     <!-- Full name (voluntary inactive) -->
@@ -4300,6 +4351,31 @@
     <!-- Multiple results -->
     <Provider run="1">
       <Data key="dr_lname" value="Smith" />
+=======
+  <Assembly name ="WICVPlugIn" action ="">
+    <!--Test case for just full name (w/ None other names)-->
+    <Provider run="1">
+      <Data key ="dr_lname" value="John"/>
+      <Data key ="dr_fname" value="Christa"/>
+      <Data key ="lic_exp" value= "03/09/1978"/>
+    </Provider>
+    <!--Test case for last name and license number (w/ multiple other names)-->
+    <Provider run="1">
+      <Data key ="dr_lname" value="Smith"/>
+      <Data key ="lic_no" value="56395"/>
+      <Data key ="lic_exp" value="12/14/2018"/>
+    </Provider>
+    <!--Test case for last name and license number (w/ one other names)-->
+    <Provider run =" 1">
+      <Data key ="dr_lname" value="John"/>
+      <Data key ="lic_no" value="49777"/>
+      <Data key ="lic_exp" value="10/31/2019"/>
+    </Provider>
+    <!--Test case for multiple providers-->
+    <Provider run="1">
+      <Data key ="dr_lname" value="John"/>
+      <Data key ="dr_fname" value="A"/>
+      
     </Provider>
   </Assembly>
 
