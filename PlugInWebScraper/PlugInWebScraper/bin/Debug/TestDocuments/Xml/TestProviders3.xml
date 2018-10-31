@@ -4221,7 +4221,6 @@
     </Provider>
   </Assembly>
 
-
   <!-- Site does not support sanctions -->
   <Assembly name ="NVADGPlugIn" action="">
     <!-- License number | Expired | Type: P -->
@@ -4271,7 +4270,6 @@
       <Data key="dr_lname" value="Smith"/>
     </Provider>
   </Assembly>
-
 
 <Assembly name ="IDBPPlugIn" action ="">
     <!-- active license -->
@@ -4353,7 +4351,9 @@
     <!-- Multiple results -->
     <Provider run="1">
       <Data key="dr_lname" value="Smith" />
-=======
+    </Provider>
+  </Assembly>
+  
   <Assembly name ="WICVPlugIn" action ="">
     <!--Test case for just full name (w/ None other names)-->
     <Provider run="1">
@@ -4379,6 +4379,6 @@
       <Data key ="dr_fname" value="A"/>
     </Provider>
   </Assembly>
-
+    
 </TestData>
 

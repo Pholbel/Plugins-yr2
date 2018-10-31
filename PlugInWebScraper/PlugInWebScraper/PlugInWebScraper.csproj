@@ -170,6 +170,9 @@
     <Reference Include="MAHCSQLPlugIn">
       <HintPath>..\..\..\..\PlugIn\MAHCSQLPlugIn\bin\Debug\MAHCSQLPlugIn.dll</HintPath>
     </Reference>
+    <Reference Include="MBBHTPlugIn">
+      <HintPath>..\..\Work in Progress\MBBHTPlugIn\MBBHTPlugIn\bin\Debug\MBBHTPlugIn.dll</HintPath>
+    </Reference>
     <Reference Include="MDCHPlugIn">
       <HintPath>..\..\..\..\PlugIn\MDCHPlugIn\bin\Debug\MDCHPlugIn.dll</HintPath>
     </Reference>

@@ -4351,7 +4351,9 @@
     <!-- Multiple results -->
     <Provider run="1">
       <Data key="dr_lname" value="Smith" />
-=======
+    </Provider>
+  </Assembly>
+  
   <Assembly name ="WICVPlugIn" action ="">
     <!--Test case for just full name (w/ None other names)-->
     <Provider run="1">
@@ -4375,9 +4377,8 @@
     <Provider run="1">
       <Data key ="dr_lname" value="John"/>
       <Data key ="dr_fname" value="A"/>
-      
     </Provider>
   </Assembly>
-
+    
 </TestData>
 
