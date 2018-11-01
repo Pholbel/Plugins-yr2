@@ -42,6 +42,11 @@
     </dependentAssembly>
   </dependency>
   <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Newtonsoft.Json" version="9.0.0.0" publicKeyToken="30AD4FE6B2A6AEED" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ABBHEPlugIn.dll" size="12800">
       <assemblyIdentity name="ABBHEPlugIn" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
@@ -306,14 +311,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Newtonsoft.Json.dll" size="526336">
-      <assemblyIdentity name="Newtonsoft.Json" version="9.0.0.0" publicKeyToken="30AD4FE6B2A6AEED" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Newtonsoft.Json.dll" size="504320">
+      <assemblyIdentity name="Newtonsoft.Json" version="6.0.0.0" publicKeyToken="30AD4FE6B2A6AEED" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>V14w+Y5OpCyeUW7ci7sprYtQsXOj5rNrW6OeEzzOlAY=</dsig:DigestValue>
+        <dsig:DigestValue>eL7dn86HenGo2P+agTZi2CSDYeRnBcTvevxh1ED/Lus=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -402,14 +407,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PlugInWebScraper.exe" size="67584">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PlugInWebScraper.exe" size="68096">
       <assemblyIdentity name="PlugInWebScraper" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>+QF1xbrFtn+FdfxyKb2w34n2dhjX2MrG2cqtCpZHA5o=</dsig:DigestValue>
+        <dsig:DigestValue>F0jf3FQaHfAQfIzNcVZVRz2bISsHoZ92ReftiypK2jA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -557,85 +562,85 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="PlugInWebScraper.exe.config" size="1789">
+  <file name="PlugInWebScraper.exe.config" size="1753">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>xnQlHbWW229es/ZHPKiDawOl9aIfCsz6KubOWUw7kK0=</dsig:DigestValue>
+      <dsig:DigestValue>64kuXhLMRtOIZueeInjY5UXBjgHB1UOyjyqAya172gg=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="TestDocuments\Json\TestCaseOne.json" size="954">
+  <file name="TestDocuments\Json\TestCaseOne.json" size="915">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>3ne352zWk9V0FH//EPrwqg8YuIPG4y0fBYGTa9AyXzQ=</dsig:DigestValue>
+      <dsig:DigestValue>4PteI9Fmh/UUMB87d0cAKUJBdIcQ7xHF8bi68baPsOM=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="TestDocuments\Xml\TestM.xml" size="9882" writeableType="applicationData">
+  <file name="TestDocuments\Xml\TestM.xml" size="9605" writeableType="applicationData">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>1TpnsVXLsHpK4dquxuFRcotVXJwsMZXtQlBQhG4Uzrs=</dsig:DigestValue>
+      <dsig:DigestValue>dfacao1PFqiz7Qsbkp5YDALMfmk02Jlpv3z5BXWl52o=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="TestDocuments\Xml\TestNew.xml" size="26000" writeableType="applicationData">
+  <file name="TestDocuments\Xml\TestNew.xml" size="25226" writeableType="applicationData">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>vFzSO8e/vw+WYVyHIGZjY0zUwXEEEUQI/0DA6GNaN1s=</dsig:DigestValue>
+      <dsig:DigestValue>LtCE3Jlx3ok1ObhVcytElrk4UpLMLaS2T9MNvlF5ziE=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="TestDocuments\Xml\TestProviders.xml" size="27006" writeableType="applicationData">
+  <file name="TestDocuments\Xml\TestProviders.xml" size="26227" writeableType="applicationData">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>h5g43v7qLV6BXDmJEDy3Q1bkycO1u/m/XbZYyGxpu5o=</dsig:DigestValue>
+      <dsig:DigestValue>rVaT8U42wI8eUQ8zkFz7GrjGN+cp48LtzCM3/kRRXaI=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="TestDocuments\Xml\TestProviders2.xml" size="2231" writeableType="applicationData">
+  <file name="TestDocuments\Xml\TestProviders2.xml" size="2167" writeableType="applicationData">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>Z3zNIF+dbta1al8t0xFlg+pKb/3gi5/Tk29GTutLP0k=</dsig:DigestValue>
+      <dsig:DigestValue>EIEsSGNevv+CNquyg4zEiikN9upGyOmYJW9FRk7Ls20=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="TestDocuments\Xml\TestProviders3.xml" size="152993" writeableType="applicationData">
+  <file name="TestDocuments\Xml\TestProviders3.xml" size="149164" writeableType="applicationData">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>qEdUjPFmFjmOn0plCe45b8PpxybT8Vpvq96GBiNKwhw=</dsig:DigestValue>
+      <dsig:DigestValue>LUvC3YXSsYsDqp7FtBvHxabcOyB2wsULwa8VAkOYbQk=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="TestDocuments\Xml\TestProviders4.xml" size="215" writeableType="applicationData">
+  <file name="TestDocuments\Xml\TestProviders4.xml" size="208" writeableType="applicationData">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>3+pz/Cq6/u2wzRrhwOb/qtFhLyV8dU0qlyNNrgRMlbA=</dsig:DigestValue>
+      <dsig:DigestValue>KtcI9bRZRhoM2MfU9dZ9sO3MVyAxe/LruKTJzufZlkE=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="TestDocuments\Xml\TestProviders5.xml" size="6452" writeableType="applicationData">
+  <file name="TestDocuments\Xml\TestProviders5.xml" size="6243" writeableType="applicationData">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>j35gwts/fOk2hL6ZKhw8UKgmI7uaRKzLX2dWzdNkUsE=</dsig:DigestValue>
+      <dsig:DigestValue>D5xZycSMbzeVpXkOAwHEbG5D63wUGqsFmCU69fqSSRA=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>
