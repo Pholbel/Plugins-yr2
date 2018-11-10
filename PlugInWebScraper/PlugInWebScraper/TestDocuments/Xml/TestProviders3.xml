@@ -4297,6 +4297,55 @@
     </Provider>
   </Assembly>
 
+  <Assembly name="CDRAPlugIn" action="">
+    <!-- License no. only (Retired) -->
+    <Provider run="1">
+      <Data key="lic_no" value="000902970"/>
+      <Data key="lic_exp" value="02/29/2020"/>
+    </Provider>
+    <!-- License no. w/ prefix hyphen (Active) -->
+    <Provider run="1">
+      <Data key="lic_no" value="CSW-00001564"/>
+      <Data key="lic_exp" value="08/31/2019"/>
+    </Provider>
+    <!-- License no. w/ prefix period (Expired) -->
+    <Provider run="1">
+      <Data key="lic_no" value="RN.0120296"/>
+      <Data key="lic_exp" value="09/30/2006"/>
+    </Provider>
+    <!-- License no. w/ name (Cancelled) -->
+    <Provider run="1">
+      <Data key="lic_no" value="APE0990086"/>
+      <Data key="dr_lname" value="Black"/>
+      <Data key="dr_fname" value="Alan"/>
+    </Provider>
+    <!-- License no. w/ name (Type Ended) -->
+    <Provider run="1">
+      <Data key="lic_no" value="2773181"/>
+      <Data key="lic_exp" value="03/30/2010"/>
+      <Data key="dr_lname" value="Black"/>
+      <Data key="dr_fname" value="Carol"/>
+    </Provider>
+    <!-- License no. w/ prefix period (Discplinary Action) -->
+    <Provider run="1">
+      <Data key="lic_no" value="PN.0016214"/>
+      <Data key="lic_exp" value="03/30/2010"/>
+    </Provider>
+    <!-- Multiple Results (Name) -->
+    <Provider run="1">
+      <Data key="dr_lname" value="Smith"/>
+      <Data key="dr_fname" value="Aaron"/>
+    </Provider>
+    <!-- Multiple Results (Lic no.) -->
+    <Provider run="1">
+      <Data key="lic_no" value="0016214"/>
+    </Provider>
+    <!-- No Results -->
+    <Provider run="1">
+      <Data key="dr_lname" value="Baggins"/>
+      <Data key="dr_fname" value="Bilbo"/>
+    </Provider>
+  </Assembly>
 
   <Assembly name="MBBHTPlugIn" action="">
     <!-- Full name (voluntary inactive) -->
@@ -4397,18 +4446,5 @@
     </Provider>
   </Assembly>
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-    
 </TestData>
 
