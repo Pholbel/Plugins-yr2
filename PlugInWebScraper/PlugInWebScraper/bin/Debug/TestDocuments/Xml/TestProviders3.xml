@@ -4251,6 +4251,7 @@
     <!-- License no. only (Retired) -->
     <Provider run="1">
       <Data key="lic_no" value="000902970"/>
+      <Data key="lic_exp" value="02/29/2020"/>
     </Provider>
   </Assembly>
 

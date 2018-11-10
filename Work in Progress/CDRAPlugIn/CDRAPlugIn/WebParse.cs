@@ -40,19 +40,18 @@ namespace CDRAPlugIn
 
         private void CheckLicenseDetails(string response)
         {
-            //If they have multiple licenses, we return the expiration date of the license searched for
-            Match exp = Regex.Match(response, "<b>Expiration\\s+Date:(</b></span>){3}</td>\\s+<td width=\"\\d+\"><span id=\"[_\\w]+\" class=\"normal\"( style=\"[;:\\w]+\")?>(?<date>\\d+-\\d+-\\d+)</span>", RegOpt);
+            //Ensure we get the expiration date of the license
+            Match exp = Regex.Match(response, "<td>\\w*\\.\\d+</td>(<td>(<font color=green>)?[\\w ]+(</font>)?</td>){3}(<td>\\d+/\\d+/\\d+</td>){2}<td>(?<date>\\d+/\\d+/\\d+)</td>", RegOpt);
 
             //Set the expiration date to the expiration date of the latest one
             if (exp.Success)
                 Expiration = exp.Groups["date"].Value;
 
-            //Site has sections for disciplinary action and corrective action
-            Match disc = Regex.Match(response, "Disciplinary Action:[:;_\"=/<>\\w\\s]+No</span></td>\\s+<td vAlign", RegOpt);
-            Match corr = Regex.Match(response, "Corrective\\s+Action:[:;_\"=/<>\\w\\s]+No</span></td>\\s+</tr>", RegOpt);
+            //Disciplinary action
+            Match disc = Regex.Match(response, "There is no Discipline or Board Actions on file for this credential", RegOpt);
 
             //We check for the absence of disciplinary/corrective action
-            if (disc.Success && corr.Success)
+            if (disc.Success)
                 Sanction = SanctionType.None;
             else
                 Sanction = SanctionType.Red;
@@ -60,35 +59,19 @@ namespace CDRAPlugIn
 
         private Result<string> ParseResponse(string response)
         {
-            //Headers and values
-            MatchCollection data = Regex.Matches(response, "<span class=\"Normal\"><b>(?<header>[()\\s\\w,:]+)(</b>\\s*</span>)+</td>\\s*<td( vAlign=\"top\")?( width=\"\\d+\")?><span id=\"[_\\w]+\" class=\"normal\"( style=\"[;:\\w]+\")?>(?<value>[-,()\\w\\s]*)</span>", RegOpt);
+            //Headers
+            MatchCollection headers = Regex.Matches(response, "<th scope=\"col\">(?<header>[\\w ]+)</th>", RegOpt);
+            MatchCollection values = Regex.Matches(response, "<td>(<font color=green>)?(?<value>[,/\\.\\w ]*)(&nbsp;)?(</font>)?</td>", RegOpt);
 
-            if (data.Count > 0)
+            if (values.Count > 0)
             {
-                //Multiple licenses
-                string licNo = data[3].Groups["value"].Value;
-                Match licHeaders = Regex.Match(response, "(<td>(?<header>[\\w\\s]+)</td>){5}", RegOpt);
-                MatchCollection licDetails = Regex.Matches(response, "(<td (style=\"[:;\\w]+\")?(width=\"\\d+\")?>(?<value>[-()\\s\\w]+)</td>){5}", RegOpt);
-
                 //Details
                 StringBuilder builder = new StringBuilder();
 
-                for (int i = 0; i < data.Count; i++)
+                for (int i = 0; i < headers.Count; i++)
                 {
-                    builder.AppendFormat(TdPair, data[i].Groups["header"].Value, data[i].Groups["value"].Value);
+                    builder.AppendFormat(TdPair, headers[i].Groups["header"].Value, values[i].Groups["value"].Value);
                     builder.AppendLine();
-                }
-
-                //Multiple licenses
-                for (int i = 0; i < licDetails.Count; i++)
-                {
-                    if (licDetails[i].Groups["value"].Captures[1].Value == licNo)
-                        continue;
-                    for (int j = 0; j < 5; j++)
-                    {
-                        builder.AppendFormat(TdPair, licHeaders.Groups["header"].Captures[j].Value, licDetails[i].Groups["value"].Captures[j].Value);
-                        builder.AppendLine();
-                    }
                 }
 
                 return Result<string>.Success(builder.ToString());
