@@ -170,6 +170,9 @@
     <Reference Include="MAHCSQLPlugIn">
       <HintPath>..\..\..\..\PlugIn\MAHCSQLPlugIn\bin\Debug\MAHCSQLPlugIn.dll</HintPath>
     </Reference>
+    <Reference Include="MBBHTPlugIn">
+      <HintPath>..\..\Work in Progress\MBBHTPlugIn\MBBHTPlugIn\bin\Debug\MBBHTPlugIn.dll</HintPath>
+    </Reference>
     <Reference Include="MDCHPlugIn">
       <HintPath>..\..\..\..\PlugIn\MDCHPlugIn\bin\Debug\MDCHPlugIn.dll</HintPath>
     </Reference>
@@ -219,6 +222,9 @@
     </Reference>
     <Reference Include="NursysPlugIn">
       <HintPath>..\..\..\..\PlugIn\NursysPlugIn\NursysPlugIn\bin\Debug\NursysPlugIn.dll</HintPath>
+    </Reference>
+    <Reference Include="NVADGPlugIn">
+      <HintPath>..\..\Work in Progress\NVADGPlugIn\NVADGPlugIn\bin\Debug\NVADGPlugIn.dll</HintPath>
     </Reference>
     <Reference Include="NVPlugin">
       <HintPath>..\..\..\..\PlugIn\NVPlugIn\bin\Debug\NVPlugin.dll</HintPath>

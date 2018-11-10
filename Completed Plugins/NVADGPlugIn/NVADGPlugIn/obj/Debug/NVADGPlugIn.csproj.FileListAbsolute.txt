@@ -1,0 +1,27 @@
+D:\One Drive\OneDrive\Dev\Verity\Plugins-yr2\Work in Progress\NVADGPlugIn\NVADGPlugIn\obj\Debug\NVADGPlugIn.csprojAssemblyReference.cache
+D:\One Drive\OneDrive\Dev\Verity\Plugins-yr2\Work in Progress\NVADGPlugIn\NVADGPlugIn\obj\Debug\NVADGPlugIn.csproj.CoreCompileInputs.cache
+D:\One Drive\OneDrive\Dev\Verity\Plugins-yr2\Work in Progress\NVADGPlugIn\NVADGPlugIn\bin\Debug\NVADGPlugIn.dll
+D:\One Drive\OneDrive\Dev\Verity\Plugins-yr2\Work in Progress\NVADGPlugIn\NVADGPlugIn\bin\Debug\NVADGPlugIn.pdb
+D:\One Drive\OneDrive\Dev\Verity\Plugins-yr2\Work in Progress\NVADGPlugIn\NVADGPlugIn\bin\Debug\HtmlAgilityPack.dll
+D:\One Drive\OneDrive\Dev\Verity\Plugins-yr2\Work in Progress\NVADGPlugIn\NVADGPlugIn\bin\Debug\Newtonsoft.Json.dll
+D:\One Drive\OneDrive\Dev\Verity\Plugins-yr2\Work in Progress\NVADGPlugIn\NVADGPlugIn\bin\Debug\PdfMetamorphosis.dll
+D:\One Drive\OneDrive\Dev\Verity\Plugins-yr2\Work in Progress\NVADGPlugIn\NVADGPlugIn\bin\Debug\PlugIn_NET4_5.dll
+D:\One Drive\OneDrive\Dev\Verity\Plugins-yr2\Work in Progress\NVADGPlugIn\NVADGPlugIn\bin\Debug\RestSharp.dll
+D:\One Drive\OneDrive\Dev\Verity\Plugins-yr2\Work in Progress\NVADGPlugIn\NVADGPlugIn\obj\Debug\NVADGPlugIn.csproj.CopyComplete
+D:\One Drive\OneDrive\Dev\Verity\Plugins-yr2\Work in Progress\NVADGPlugIn\NVADGPlugIn\obj\Debug\NVADGPlugIn.dll
+D:\One Drive\OneDrive\Dev\Verity\Plugins-yr2\Work in Progress\NVADGPlugIn\NVADGPlugIn\obj\Debug\NVADGPlugIn.pdb
+D:\One Drive\OneDrive\Dev\Verity\Plugins-yr2\Work in Progress\NVADGPlugIn\NVADGPlugIn\bin\Debug\ABCpdf.dll
+D:\One Drive\OneDrive\Dev\Verity\Plugins-yr2\Work in Progress\NVADGPlugIn\NVADGPlugIn\bin\Debug\ABCpdf.xml
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\Work in Progress\NVADGPlugIn\NVADGPlugIn\obj\Debug\NVADGPlugIn.csprojResolveAssemblyReference.cache
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\Work in Progress\NVADGPlugIn\NVADGPlugIn\obj\Debug\NVADGPlugIn.csproj.CoreCompileInputs.cache
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\Work in Progress\NVADGPlugIn\NVADGPlugIn\obj\Debug\NVADGPlugIn.pdb
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\Work in Progress\NVADGPlugIn\NVADGPlugIn\bin\Debug\NVADGPlugIn.dll
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\Work in Progress\NVADGPlugIn\NVADGPlugIn\bin\Debug\NVADGPlugIn.pdb
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\Work in Progress\NVADGPlugIn\NVADGPlugIn\bin\Debug\HtmlAgilityPack.dll
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\Work in Progress\NVADGPlugIn\NVADGPlugIn\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\Work in Progress\NVADGPlugIn\NVADGPlugIn\bin\Debug\PdfMetamorphosis.dll
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\Work in Progress\NVADGPlugIn\NVADGPlugIn\bin\Debug\PlugIn_NET4_5.dll
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\Work in Progress\NVADGPlugIn\NVADGPlugIn\bin\Debug\RestSharp.dll
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\Work in Progress\NVADGPlugIn\NVADGPlugIn\bin\Debug\ABCpdf.dll
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\Work in Progress\NVADGPlugIn\NVADGPlugIn\bin\Debug\ABCpdf.xml
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\Work in Progress\NVADGPlugIn\NVADGPlugIn\obj\Debug\NVADGPlugIn.dll

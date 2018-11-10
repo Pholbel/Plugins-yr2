@@ -211,3 +211,67 @@ C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\obj\Debug\
 C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\obj\Debug\PlugInWebScraper.csproj.CopyComplete
 C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\obj\Debug\PlugInWebScraper.exe
 C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\obj\Debug\PlugInWebScraper.pdb
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\IDBPPlugIn.dll
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\IDBPPlugIn.pdb
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\NVADGPlugIn.pdb
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\MBBHTPlugIn.dll
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\MBBHTPlugIn.pdb
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\obj\Debug\PlugInWebScraper.csprojResolveAssemblyReference.cache
+C:\Users\ucsd\Desktop\gitMDPR\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\TestDocuments\Xml\TestNew.xml
+C:\Users\ucsd\Desktop\gitMDPR\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\TestDocuments\Xml\TestProviders.xml
+C:\Users\ucsd\Desktop\gitMDPR\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\TestDocuments\Xml\TestProviders2.xml
+C:\Users\ucsd\Desktop\gitMDPR\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\TestDocuments\Xml\TestProviders4.xml
+C:\Users\ucsd\Desktop\gitMDPR\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\TestDocuments\Xml\TestProviders5.xml
+C:\Users\ucsd\Desktop\gitMDPR\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\TestDocuments\Xml\TestProviders3.xml
+C:\Users\ucsd\Desktop\gitMDPR\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\TestDocuments\Xml\TestM.xml
+C:\Users\ucsd\Desktop\gitMDPR\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\TestDocuments\Json\TestCaseOne.json
+C:\Users\ucsd\Desktop\gitMDPR\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\PlugInWebScraper.exe.config
+C:\Users\ucsd\Desktop\gitMDPR\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\PlugInWebScraper.exe.manifest
+C:\Users\ucsd\Desktop\gitMDPR\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\PlugInWebScraper.application
+C:\Users\ucsd\Desktop\gitMDPR\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\PlugInWebScraper.exe
+C:\Users\ucsd\Desktop\gitMDPR\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\PlugInWebScraper.pdb
+C:\Users\ucsd\Desktop\gitMDPR\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\ABBHEPlugIn.dll
+C:\Users\ucsd\Desktop\gitMDPR\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\ControlzEx.dll
+C:\Users\ucsd\Desktop\gitMDPR\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\IDBPPlugIn.dll
+C:\Users\ucsd\Desktop\gitMDPR\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\MahApps.Metro.dll
+C:\Users\ucsd\Desktop\gitMDPR\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\Users\ucsd\Desktop\gitMDPR\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\Newtonsoft.Json.dll
+C:\Users\ucsd\Desktop\gitMDPR\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\Selen.Wpf.Core.dll
+C:\Users\ucsd\Desktop\gitMDPR\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\Selen.Wpf.GenericAppTree.Contracts.dll
+C:\Users\ucsd\Desktop\gitMDPR\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\Selen.Wpf.GenericAppTree.dll
+C:\Users\ucsd\Desktop\gitMDPR\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\Selen.Wpf.SystemStyles.dll
+C:\Users\ucsd\Desktop\gitMDPR\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\ucsd\Desktop\gitMDPR\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\ABBHEPlugIn.pdb
+C:\Users\ucsd\Desktop\gitMDPR\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\ABBHEPlugIn.dll.config
+C:\Users\ucsd\Desktop\gitMDPR\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\ABCpdf.xml
+C:\Users\ucsd\Desktop\gitMDPR\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\ControlzEx.pdb
+C:\Users\ucsd\Desktop\gitMDPR\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\IDBPPlugIn.pdb
+C:\Users\ucsd\Desktop\gitMDPR\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\MahApps.Metro.pdb
+C:\Users\ucsd\Desktop\gitMDPR\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\MahApps.Metro.xml
+C:\Users\ucsd\Desktop\gitMDPR\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\MBBHTPlugIn.pdb
+C:\Users\ucsd\Desktop\gitMDPR\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+C:\Users\ucsd\Desktop\gitMDPR\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\NVADGPlugIn.pdb
+C:\Users\ucsd\Desktop\gitMDPR\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\obj\Debug\PlugInWebScraper.csprojAssemblyReference.cache
+C:\Users\ucsd\Desktop\gitMDPR\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\obj\Debug\Views\LightWindow.g.cs
+C:\Users\ucsd\Desktop\gitMDPR\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\obj\Debug\Views\MainWindow.g.cs
+C:\Users\ucsd\Desktop\gitMDPR\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\obj\Debug\Views\PSVUserControl.g.cs
+C:\Users\ucsd\Desktop\gitMDPR\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\obj\Debug\App.g.cs
+C:\Users\ucsd\Desktop\gitMDPR\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\obj\Debug\PlugInWebScraper_Content.g.cs
+C:\Users\ucsd\Desktop\gitMDPR\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\ucsd\Desktop\gitMDPR\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\obj\Debug\PlugInWebScraper_MarkupCompile.cache
+C:\Users\ucsd\Desktop\gitMDPR\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\obj\Debug\PlugInWebScraper_MarkupCompile.lref
+C:\Users\ucsd\Desktop\gitMDPR\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\obj\Debug\App.baml
+C:\Users\ucsd\Desktop\gitMDPR\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\obj\Debug\Styles\LightStyleDictionary.baml
+C:\Users\ucsd\Desktop\gitMDPR\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\obj\Debug\Styles\DarkStyleDictionary.baml
+C:\Users\ucsd\Desktop\gitMDPR\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\obj\Debug\Views\LightWindow.baml
+C:\Users\ucsd\Desktop\gitMDPR\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\obj\Debug\Views\MainWindow.baml
+C:\Users\ucsd\Desktop\gitMDPR\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\obj\Debug\Views\PSVUserControl.baml
+C:\Users\ucsd\Desktop\gitMDPR\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\obj\Debug\PlugInWebScraper.g.resources
+C:\Users\ucsd\Desktop\gitMDPR\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\obj\Debug\PlugInWebScraper.Properties.Resources.resources
+C:\Users\ucsd\Desktop\gitMDPR\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\obj\Debug\PlugInWebScraper.csproj.GenerateResource.cache
+C:\Users\ucsd\Desktop\gitMDPR\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\obj\Debug\PlugInWebScraper.csproj.CoreCompileInputs.cache
+C:\Users\ucsd\Desktop\gitMDPR\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\obj\Debug\PlugInWebScraper.exe.manifest
+C:\Users\ucsd\Desktop\gitMDPR\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\obj\Debug\PlugInWebScraper.application
+C:\Users\ucsd\Desktop\gitMDPR\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\obj\Debug\PlugInWebScraper.csproj.CopyComplete
+C:\Users\ucsd\Desktop\gitMDPR\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\obj\Debug\PlugInWebScraper.exe
+C:\Users\ucsd\Desktop\gitMDPR\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\obj\Debug\PlugInWebScraper.pdb
