@@ -4445,36 +4445,18 @@
       <!--<Data key ="lic_exp" value="06/30/2019"/>-->
     </Provider>
   </Assembly>
-  
-<<<<<<< HEAD
+ 
   
   <Assembly name ="ARBECPlugIn" action ="">
+
+    <!-- Active -->
     <Provider run="1">
-      <Data key ="lic_no" value="2004037077"/>
-      <!--<Data key ="lic_exp" value="06/30/2019"/>-->
-      <!-- Will work if its 2019/06/30-->
+      <Data key ="lic_no" value="P0510063"/>
+      <Data key ="dr_lname" value="Craig"/>
+      <Data key ="lic_exp" value="06/30/2019"/>
     </Provider>
-    <Provider run="1">
-      <Data key ="lic_no" value="000032"/>
-      <!--<Data key ="lic_exp" value="06/30/2019"/>-->
-    </Provider>
-    <Provider run="1">
-      <Data key ="lic_no" value="002671"/>
-      <!--<Data key ="lic_exp" value="06/30/2019"/>-->
-    </Provider>
+
   </Assembly>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-    
-=======
->>>>>>> 9ab819846592a578ba63e56fe1c5c1b44fda5782
+ 
 </TestData>
 

@@ -12,7 +12,7 @@ namespace ARBECPlugIn
 {
     /// <summary>
     /// EchoPSV Plugin for New Hamshire Board of Medicine
-    /// http://cvl.ARBEC.ca.gov/SearchPage.aspx
+    /// http://search.statesolutions.us/?A=ABEC&AID=RS
     /// </summary>
     public class PlugInClass : IPlugIn
     {
