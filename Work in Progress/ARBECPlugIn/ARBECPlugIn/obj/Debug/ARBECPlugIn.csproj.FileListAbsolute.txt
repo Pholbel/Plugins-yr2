@@ -1,0 +1,8 @@
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\ARBECPlugIn\ARBECPlugIn\bin\Debug\ARBECPlugIn.dll
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\ARBECPlugIn\ARBECPlugIn\bin\Debug\ARBECPlugIn.pdb
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\ARBECPlugIn\ARBECPlugIn\bin\Debug\ABCpdf.xml
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\ARBECPlugIn\ARBECPlugIn\obj\Debug\ARBECPlugIn.csprojAssemblyReference.cache
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\ARBECPlugIn\ARBECPlugIn\obj\Debug\ARBECPlugIn.csproj.CoreCompileInputs.cache
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\ARBECPlugIn\ARBECPlugIn\obj\Debug\ARBECPlugIn.csproj.CopyComplete
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\ARBECPlugIn\ARBECPlugIn\obj\Debug\ARBECPlugIn.dll
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\ARBECPlugIn\ARBECPlugIn\obj\Debug\ARBECPlugIn.pdb
