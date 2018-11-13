@@ -83,6 +83,9 @@
     <Reference Include="AMAPlugIn">
       <HintPath>..\..\..\..\PlugIn\AMAPlugIn\AMAPlugin\AMAPlugIn\bin\Debug\AMAPlugIn.dll</HintPath>
     </Reference>
+    <Reference Include="ARBECPlugIn">
+      <HintPath>..\..\Work in Progress\ARBECPlugIn\ARBECPlugIn\bin\Debug\ARBECPlugIn.dll</HintPath>
+    </Reference>
     <Reference Include="ARSMBPlugIn">
       <HintPath>..\..\..\..\PlugIn\ARSMBPlugIn\ARSMBPlugIn\bin\Debug\ARSMBPlugIn.dll</HintPath>
     </Reference>
@@ -204,9 +207,9 @@
     <Reference Include="NCPDPlugIn">
       <HintPath>..\..\..\..\PlugIn\NCPDPlugIn\NCPDPlugIn\bin\Debug\NCPDPlugIn.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Third Party Libraries\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\..\Third Party Libraries\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="NHMBPlugIn">
       <HintPath>..\..\..\..\PlugIn\NHMBPlugIn\NHMBPlugIn\bin\Debug\NHMBPlugIn.dll</HintPath>

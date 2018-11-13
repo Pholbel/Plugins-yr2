@@ -4398,7 +4398,21 @@
   </Assembly>
   
   
-  
+  <Assembly name ="ARBECPlugIn" action ="">
+    <Provider run="1">
+      <Data key ="lic_no" value="2004037077"/>
+      <!--<Data key ="lic_exp" value="06/30/2019"/>-->
+      <!-- Will work if its 2019/06/30-->
+    </Provider>
+    <Provider run="1">
+      <Data key ="lic_no" value="000032"/>
+      <!--<Data key ="lic_exp" value="06/30/2019"/>-->
+    </Provider>
+    <Provider run="1">
+      <Data key ="lic_no" value="002671"/>
+      <!--<Data key ="lic_exp" value="06/30/2019"/>-->
+    </Provider>
+  </Assembly>
   
   
   
