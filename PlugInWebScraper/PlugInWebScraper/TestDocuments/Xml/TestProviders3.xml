@@ -4457,6 +4457,20 @@
     </Provider>
 
   </Assembly>
+
+  <Assembly name="VTCVPlugIn" action="">
+    <!-- Full Name (Expired) -->
+    <Provider run="1">
+      <Data key="dr_lname" value="Smith" />
+      <Data key="dr_fname" value="Everett" />
+      <Data key ="lic_exp" value="07/31/1999"/>
+    </Provider>
+
+    <!-- Multiple Results (Last name) -->
+    <Provider run="1">
+      <Data key="dr_lname" value="Smith" />
+    </Provider>
+  </Assembly>
  
 </TestData>
 

@@ -1,0 +1,14 @@
+D:\Dev\Verity\Plugins-yr2\Work in Progress\VTCVPlugIn\VRCVPlugIn\bin\Debug\HtmlAgilityPack.dll
+D:\Dev\Verity\Plugins-yr2\Work in Progress\VTCVPlugIn\VRCVPlugIn\bin\Debug\Newtonsoft.Json.dll
+D:\Dev\Verity\Plugins-yr2\Work in Progress\VTCVPlugIn\VRCVPlugIn\bin\Debug\PdfMetamorphosis.dll
+D:\Dev\Verity\Plugins-yr2\Work in Progress\VTCVPlugIn\VRCVPlugIn\bin\Debug\PlugIn_NET4_5.dll
+D:\Dev\Verity\Plugins-yr2\Work in Progress\VTCVPlugIn\VRCVPlugIn\bin\Debug\RestSharp.dll
+D:\Dev\Verity\Plugins-yr2\Work in Progress\VTCVPlugIn\VRCVPlugIn\bin\Debug\ABCpdf.dll
+D:\Dev\Verity\Plugins-yr2\Work in Progress\VTCVPlugIn\VRCVPlugIn\bin\Debug\ABCpdf.xml
+D:\Dev\Verity\Plugins-yr2\Work in Progress\VTCVPlugIn\VRCVPlugIn\obj\Debug\VTCVPlugIn.csprojAssemblyReference.cache
+D:\Dev\Verity\Plugins-yr2\Work in Progress\VTCVPlugIn\VRCVPlugIn\obj\Debug\VTCVPlugIn.csproj.CoreCompileInputs.cache
+D:\Dev\Verity\Plugins-yr2\Work in Progress\VTCVPlugIn\VRCVPlugIn\obj\Debug\VTCVPlugIn.csproj.CopyComplete
+D:\Dev\Verity\Plugins-yr2\Work in Progress\VTCVPlugIn\VRCVPlugIn\bin\Debug\VTCVPlugIn.dll
+D:\Dev\Verity\Plugins-yr2\Work in Progress\VTCVPlugIn\VRCVPlugIn\bin\Debug\VTCVPlugIn.pdb
+D:\Dev\Verity\Plugins-yr2\Work in Progress\VTCVPlugIn\VRCVPlugIn\obj\Debug\VTCVPlugIn.dll
+D:\Dev\Verity\Plugins-yr2\Work in Progress\VTCVPlugIn\VRCVPlugIn\obj\Debug\VTCVPlugIn.pdb
