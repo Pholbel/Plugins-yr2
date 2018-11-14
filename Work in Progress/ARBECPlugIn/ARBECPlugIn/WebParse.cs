@@ -69,20 +69,30 @@ namespace ARBECPlugIn
 
         private Result<string> ParseResponse(string response)
         {
-            MatchCollection fields = Regex.Matches(response, "(?<=(id=\"ctl.*\">)).*(?=</s)");
-            List<string> headers = new List<string>(new string[] {"First Name", "Middle Name", "Last Name", "License Type", "License Number", "Title", "Effective Date", "Expiration Date", "Status", "Finding"});
+            //MatchCollection fields = Regex.Matches(response, "(?<=(id=\"ctl.*\">)).*(?=</s)");
+            List<string> headers = new List<string>(new string[] {"Name", "License Number", "License Type", "Status", "City", "Zip", "Date of issue", "Date of expiration", "Standing"});
 
-            if (fields.Count > 0)
+            Match licenseContentTag = Regex.Match(response, @"LICENSEE CONTENT HERE");
+
+            if (licenseContentTag.Success)
             {
                 StringBuilder builder = new StringBuilder();
 
-                for (int idx=0;idx<fields.Count;idx++)
-                {
-                    string header = headers[idx % headers.Count];
-                    string text = fields[idx].ToString();
+                var doc = new HtmlDocument();
+                doc.LoadHtml(response);
 
-                    builder.AppendFormat(TdPair, header, text);
-                    builder.AppendLine();
+                var nodes = doc.DocumentNode.SelectNodes("//*[contains(@class,'col-xs-12')]");
+                var wrapper = nodes[nodes.Count - 1];
+                var tags = wrapper.ChildNodes;
+
+
+
+                foreach (var tag in tags)
+                {
+                    if (!tag.Name.Contains("#"))
+                    {
+                        builder.AppendFormat(TdPair, "entry", tag.InnerText);
+                    }
                 }
 
 
