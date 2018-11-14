@@ -4457,6 +4457,13 @@
     </Provider>
 
   </Assembly>
+
+  <Assembly name="VRCVPlugIn" action="">
+    <!-- Multiple Results (Last name) -->
+    <Provider run="1">
+      <Data key="dr_lname" value="Smith"/>
+    </Provider>
+  </Assembly>
  
 </TestData>
 
