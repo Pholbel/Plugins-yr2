@@ -16,8 +16,28 @@ namespace VRCVPlugIn
         private RegexOptions RegOpt = RegexOptions.IgnoreCase | RegexOptions.Singleline;
         private Provider provider { get; set; }
 
-        //Parameter prefix
-        private const string PREFIX = "ctl00$MainContentPlaceHolder$ucLicenseLookup$";
+        //Prefix
+        const string DISPLAY_PREFIX = "$PpyDisplayHarness$";
+
+        //Parameter dictionary
+        readonly Dictionary<string, string> parameters = new Dictionary<string, string>
+        {
+            { "pyActivity", "ReloadSection" },
+            { "pzFromFrame", "pyDisplayHarness" },
+            { "pzPrimaryPageName", "pyDisplayHarness" },
+            { "pyEncodedParameters", "true" },
+            { "pyKeepPageMessages", "false" },
+            { "UITemplatingStatus", "N" },
+            { "StreamName", "SearchLicenseLookupForGuest" },
+            { "BaseReference", "" },
+            { "StreamClass", "Rule-HTML-Section" },
+            { "bClientValidation", "true" },
+            { "FormError", "NONE" },
+            { "pyCustomError", "DisplayErrors" },
+            { "HeaderButtonSectionName", "SubSectionSearchLicenseLookupForGuestB" },
+            { "ReadOnly", "-1" },
+            { "inStandardsMode", "true" }
+        };
 
         public WebSearch(Provider _provider)
         {
@@ -41,7 +61,7 @@ namespace VRCVPlugIn
 
             // PARAMETERS AND COOKIES WE WILL GET WITH FIRST GET
             List<RestResponseCookie> allCookies = new List<RestResponseCookie>();
-            string baseUrl = "https://apps.colorado.gov/dora/licensing/Lookup";
+            string baseUrl = "https://secure.professionals.vermont.gov/prweb/PRServletCustom/V9csDxL3sXkkjMC_FR2HrA%5B%5B*/!STANDARD";
 
             //Set up security protocol
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
@@ -49,72 +69,63 @@ namespace VRCVPlugIn
             //Set up client and request
             RestClient client = new RestClient(baseUrl);
             client.UserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64)";
-            RestRequest request = new RestRequest("LicenseLookup.aspx", Method.GET);
-            IRestResponse response = client.Execute(request);
-            
-            //Store new cookies
-            allCookies.AddRange(response.Cookies);
+            RestRequest request = new RestRequest(Method.GET);
+            request.AddQueryParameter("UserIdentifier", "LicenseLookupGuestUser");
 
-            //Check that we accessed the site
-            if (response.StatusCode != HttpStatusCode.OK)
+            //Execute request
+            if (!ExecuteRequest(client, request, ref allCookies, out IRestResponse response))
                 return Result<IRestResponse>.Failure(ErrorMsg.CannotAccessSite);
 
-            //Forming new post request with our parameters
-            request = new RestRequest("LicenseLookup.aspx", Method.POST);
+            //Global parameters
+            string transactionID = Search(response.Content, "&pzTransactionId=(\\w+)");
+            string harnessID = Search(response.Content, "id='pzHarnessID' value='(\\w+)'");
+            string id = (int.Parse(Search(response.Content, "AJAXCT' data-json='{\"ID\":(\\d+),")) - 1).ToString();
 
-            //Headers
-            request.AddHeader("X-MicrosoftAjax", "Delta=true");
-            request.AddHeader("X-Requested-With", "XMLHttpRequest");
-            //request.AddHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
+            //Search By
+            NewPostRequest(allCookies, out request);
 
-            //Add cookies to our request
-            foreach (RestResponseCookie c in allCookies)
-                request.AddCookie(c.Name, c.Value);
+            Dictionary<string, string> formData = new Dictionary<string, string>();
+            formData.Add("PreActivitiesList", "<pagedata><dataTransforms REPEATINGTYPE=\"PageList\"><rowdata REPEATINGINDEX=\"1\"><dataTransform></dataTransform></rowdata></dataTransforms></pagedata>");
+            formData.Add("ActivityParams", "&ApplicantType=&Age=&PrimaryState=&LicenseType=&ProductIDs=");
+            AddParameters(transactionID, harnessID, id, "SetEligibleProductIDForInternal", formData, response, ref request);
+            formData.Clear();
 
-            //Event headers
-            string event_target = "", event_argument = "", view_state = "", view_state_generator = "", async = "";
-            event_target = "ctl00$MainContentPlaceHolder$ucLicenseLookup$UpdtPanelGridLookup";
-            event_argument = "1";
-            async = "true";
+            //Execute request
+            if (!ExecuteRequest(client, request, ref allCookies, out response))
+                return Result<IRestResponse>.Failure(ErrorMsg.CannotAccessSearchForm);
 
-            GetViewStates(ref view_state, ref view_state_generator, response);
-            SetViewStates(event_target, event_argument, view_state, view_state_generator, async, ref request);
+            //Select By
+            NewPostRequest(allCookies, out request);
 
-            //We perform the search using license numbers and/or names
-            string licNo = provider.LicenseNumber;
+            formData.Add(DISPLAY_PREFIX + "pSelectProfessions", "Search by Profession Type");
+            formData.Add("PreActivitiesList", "<pagedata><dataTransforms REPEATINGTYPE=\"PageList\"><rowdata REPEATINGINDEX=\"1\"><dataTransform>ShowResultsByProfession</dataTransform></rowdata></dataTransforms></pagedata>");
+            formData.Add("ActivityParams", "");
+            AddParameters(transactionID, harnessID, id, "", formData, response, ref request);
+            formData.Clear();
 
-            //Licenses can have sub types
-            Tuple<string, string> type = GetLicenseType(ref licNo);
+            //Execute request
+            if (!ExecuteRequest(client, request, ref allCookies, out response))
+                return Result<IRestResponse>.Failure(ErrorMsg.CannotAccessSearchForm);
 
-            /* BEGIN ADD PARAMETERS */
-            request.AddParameter("ctl00$ScriptManager1", "ctl00$MainContentPlaceHolder$ucLicenseLookup$UpdtPanelGridLookup|ctl00$MainContentPlaceHolder$ucLicenseLookup$UpdtPanelGridLookup");
+            //Display Results
+            NewPostRequest(allCookies, out request);
 
-            //Search details
-            request.AddParameter(PREFIX + "ctl03$ddCredPrefix", type.Item1);
-            request.AddParameter(PREFIX + "ctl03$tbLicenseNumber", licNo);
-            request.AddParameter(PREFIX + "ctl03$ddSubCategory", type.Item2);
-            request.AddParameter(PREFIX + "ctl03$tbFirstName_Contact", provider.FirstName);
-            request.AddParameter(PREFIX + "ctl03$tbLastName_Contact", provider.LastName);
+            formData.Add(DISPLAY_PREFIX + "pSelectProfessions", "Search by Profession Type");
+            formData.Add("D_EligibleLicenseLookupPpxResults1colWidthGBL", "");
+            formData.Add("D_EligibleLicenseLookupPpxResults1colWidthGBR", "");
+            for (int i = 1; i <= 10; i++)
+                formData.Add("$PD_EligibleLicenseLookup_pa1026841396639549pz$ppxResults$l" + i.ToString() + "$ppySelected", "false");
+            formData.Add(DISPLAY_PREFIX + "pFirstName", provider.FirstName);
+            formData.Add(DISPLAY_PREFIX + "pLastName", provider.LastName);
+            formData.Add(DISPLAY_PREFIX + "pLicenseNumber", GetLicenseNum(provider.LicenseNumber));
+            formData.Add("PreActivitiesList", "<pagedata><dataTransforms REPEATINGTYPE=\"PageList\"><rowdata REPEATINGINDEX=\"1\"><dataTransform></dataTransform></rowdata></dataTransforms></pagedata>");
+            formData.Add("ActivityParams", "&ProductID=&TempID=");
+            AddParameters(transactionID, harnessID, id, "InternalLookupResults", formData, response, ref request);
+            formData.Clear();
 
-            request.AddParameter(PREFIX + "ctl03$tbDBA_Contact", "");
-            request.AddParameter(PREFIX + "ctl03$tbCity_ContactAddress", "");
-            request.AddParameter(PREFIX + "ctl03$ddStates", "");
-            request.AddParameter(PREFIX + "ctl03$tbZipCode_ContactAddress", "");
-
-            request.AddParameter(PREFIX + "ResizeLicDetailPopupID_ClientState", "0,0");
-            request.AddParameter("ctl00$OutsidePlaceHolder$ucLicenseDetailPopup$ResizeLicDetailPopupID_ClientState", "0,0");
-            /* END ADD PARAMETERS */
-
-            //Site uses a modal window with an async request
-            response = client.Execute(request);
-
-            //Store new cookies
-            allCookies.AddRange(response.Cookies);
-
-            //Check that we accessed the site
-            if ((response.StatusCode != HttpStatusCode.OK && response.StatusCode != HttpStatusCode.Redirect)||
-                Regex.Match(response.Content, "ErrorPage.aspx").Success)
-                return Result<IRestResponse>.Failure(ErrorMsg.CannotAccessSite);
+            //Execute request
+            if (!ExecuteRequest(client, request, ref allCookies, out response))
+                return Result<IRestResponse>.Failure(ErrorMsg.CannotAccessSearchForm);
 
             MatchCollection providerList = Regex.Matches(response.Content, "DisplayLicenceDetail\\(&#39;(?<Detail>[;\\w ]+)&#39;\\)");
 
@@ -143,29 +154,58 @@ namespace VRCVPlugIn
             return Result<IRestResponse>.Success(response);
         }
 
-        Tuple<string, string> GetLicenseType(ref string licNo)
+        string GetLicenseNum(string licNo)
         {
-            Match m = Regex.Match(licNo, "(?<type>[-A-Za-z]*?)[-.]?(?<num>[\\d]+)[-.]?(?<subtype>[-A-Za-z]*)", RegOpt);
-            string type = m.Groups["type"].Value;
-            string subtype = m.Groups["subtype"].Value;
-            licNo = m.Groups["num"].Value;
-
-            return new Tuple<string, string>(type, subtype);
+            Match m = Regex.Match(licNo, "([-A-Za-z]*?)[-.]?(?<num>[\\d]+)[-.]?([-A-Za-z]*)", RegOpt);
+            return m.Groups["num"].Value;
         }
 
-        void GetViewStates(ref string state, ref string generator, IRestResponse response)
+        void AddParameters(string transactionID, string harnessID, string trackID, string preActivity, Dictionary<string, string> formData, IRestResponse response, ref RestRequest request)
         {
-            generator = Regex.Match(response.Content, "id=\"__VIEWSTATEGENERATOR\"\\s*value=\"([\\w]*)", RegOpt).Groups[1].Value;
-            state = Regex.Match(response.Content, "id=\"__VIEWSTATE\"\\s*value=\"([\\w\\+/=]*)", RegOpt).Groups[1].Value;
+            //Query params
+            foreach (KeyValuePair<string, string> par in parameters)
+                request.AddQueryParameter(par.Key, par.Value);
+
+            request.AddQueryParameter("pzTransactionId", transactionID);
+            request.AddQueryParameter("pzHarnessID", harnessID);
+            request.AddQueryParameter("AJAXTrackID", trackID);
+            request.AddQueryParameter("PreActivity", preActivity);
+
+            //Form data
+            foreach (KeyValuePair<string, string> dat in formData)
+                request.AddParameter(dat.Key, dat.Value);
+
+            request.AddParameter("$PpyDisplayHarness$pSearchCategory", "Constituent");
+            request.AddParameter("EXPANDEDSubSectionSearchLicenseLookupForGuestB", "true");
         }
 
-        void SetViewStates(string target, string argument, string state, string generator, string async, ref RestRequest request)
+        string Search(string input, string expression)
         {
-            request.AddParameter("__EVENTTARGET", target);
-            request.AddParameter("__EVENTARGUMENT", argument);
-            request.AddParameter("__VIEWSTATE", state);
-            request.AddParameter("__VIEWSTATEGENERATOR", generator);
-            request.AddParameter("__ASYNCPOST", async);
+            return Regex.Match(input, expression).Groups[1].Value;
+        }
+
+        void NewPostRequest(List<RestResponseCookie> cookies, out RestRequest request)
+        {
+            //Forming new post request with our parameters
+            request = new RestRequest(Method.POST);
+
+            //Headers
+            request.AddHeader("X-Requested-With", "XMLHttpRequest");
+
+            //Add cookies to our request
+            foreach (RestResponseCookie c in cookies)
+                request.AddCookie(c.Name, c.Value);
+        }
+
+        bool ExecuteRequest(RestClient client, RestRequest request, ref List<RestResponseCookie> cookies, out IRestResponse response)
+        {
+            //Execute our request
+            response = client.Execute(request);
+
+            //Store new cookies
+            cookies.AddRange(response.Cookies);
+
+            return response.StatusCode == HttpStatusCode.OK;
         }
     }
 }
