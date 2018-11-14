@@ -4458,6 +4458,7 @@
 
   </Assembly>
 
+<<<<<<< HEAD
   <Assembly name="VTCVPlugIn" action="">
     <!-- Full Name (Expired) -->
     <Provider run="1">
@@ -4469,6 +4470,12 @@
     <!-- Multiple Results (Last name) -->
     <Provider run="1">
       <Data key="dr_lname" value="Smith" />
+=======
+  <Assembly name="VRCVPlugIn" action="">
+    <!-- Multiple Results (Last name) -->
+    <Provider run="1">
+      <Data key="dr_lname" value="Smith"/>
+>>>>>>> 87f4e52c6e8ccc311d1d0d016ce58ffcb8bd78da
     </Provider>
   </Assembly>
  
