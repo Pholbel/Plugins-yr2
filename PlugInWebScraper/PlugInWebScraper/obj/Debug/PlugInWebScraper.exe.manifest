@@ -66,14 +66,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ARBECPlugIn.dll" size="10752">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ARBECPlugIn.dll" size="11776">
       <assemblyIdentity name="ARBECPlugIn" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>KEFjypFvYRUMPe7x9PoZV+iPpCovB+HHKNdDG6Js1XQ=</dsig:DigestValue>
+        <dsig:DigestValue>V/J3tO0MBwdjgOMXlYuSzy+eLaaL2jSLNaJlOyvyMz0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -421,7 +421,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>sZuHahHZl8N/LSLiWJ7/Lapwt0Jf6Hl6tSL/7ItNrW4=</dsig:DigestValue>
+        <dsig:DigestValue>iV/CxQP2NrYdtdPeLLDTUHN2DQ1Q0WpN3wkS3ea41EY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

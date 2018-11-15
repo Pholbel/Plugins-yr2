@@ -84,15 +84,41 @@ namespace ARBECPlugIn
                 var nodes = doc.DocumentNode.SelectNodes("//*[contains(@class,'col-xs-12')]");
                 var wrapper = nodes[nodes.Count - 1];
                 var tags = wrapper.ChildNodes;
+                var count = 0;
 
+                var licInfo = new string[6];
 
 
                 foreach (var tag in tags)
                 {
                     if (!tag.Name.Contains("#"))
                     {
-                        builder.AppendFormat(TdPair, "entry", tag.InnerText);
+                        if (headers[count].Contains("Number"))
+                        {
+                            licInfo = tag.InnerText.Split(new Char[] { ':', '|' });
+                            var number = licInfo[1];
+                            builder.AppendFormat(TdPair, headers[count], number);
+                            count++;
+                        }
+                        else if (headers[count].Contains("Type"))
+                        {
+                            var type = licInfo[3];
+                            builder.AppendFormat(TdPair, headers[count], type);
+                            count++;
+                        }
+                        else if (headers[count].Contains("Status"))
+                        {
+                            var status = licInfo[5];
+                            builder.AppendFormat(TdPair, headers[count], status);
+                            count++;
+                        }
+                        else
+                        {
+                            builder.AppendFormat(TdPair, headers[count], tag.InnerText);
+                            count++;
+                        }
                     }
+                    
                 }
 
 
