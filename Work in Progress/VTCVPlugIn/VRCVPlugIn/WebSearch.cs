@@ -132,13 +132,7 @@ namespace VTCVPlugIn
                 formData.Add("$PD_EligibleLicenseLookup_pa1026841396639549pz$ppxResults$l" + i.ToString() + "$ppySelected", "false");
             formData.Add(DISPLAY_PREFIX + "pFirstName", provider.FirstName);
             formData.Add(DISPLAY_PREFIX + "pLastName", provider.LastName);
-
-            string licNo = GetLicenseNum(provider.LicenseNumber);
-
-            if (licNo.Length == 0)
-                return Result<IRestResponse>.Failure(ErrorMsg.InvalidLicense);
-
-            formData.Add(DISPLAY_PREFIX + "pLicenseNumber", licNo);
+            formData.Add(DISPLAY_PREFIX + "pLicenseNumber", GetLicenseNum(provider.LicenseNumber));
             formData.Add("PreActivitiesList", "<pagedata><dataTransforms REPEATINGTYPE=\"PageList\"><rowdata REPEATINGINDEX=\"1\"><dataTransform></dataTransform></rowdata></dataTransforms></pagedata>");
             formData.Add("ActivityParams", "&ProductID=&TempID=");
 

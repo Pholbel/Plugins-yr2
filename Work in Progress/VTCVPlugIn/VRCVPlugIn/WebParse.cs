@@ -41,14 +41,19 @@ namespace VTCVPlugIn
         private void CheckLicenseDetails(string response)
         {
             //Ensure we get the expiration date of the license
-            Match exp = Regex.Match(response, "<td>\\w*\\.\\d+</td>(<td>(<font color=\\w+>)?[&;\\w ]+(</font>)?</td>){3}(<td>((\\d+/\\d+/\\d+)|(&nbsp;))</td>){2}<td>(?<date>\\d+/\\d+/\\d+)</td>", RegOpt);
+            Match exp = Regex.Match(response, "Expiration Date</span><[-='\\w ]+><span[-='\\w ]+>(?<date>[,\\w ]+)", RegOpt);
 
-            //Set the expiration date to the expiration date of the latest one
-            if (exp.Success)
-                Expiration = exp.Groups["date"].Value;
+            //Set the expiration date
+            try
+            {
+                Expiration = Convert.ToDateTime(exp.Groups["date"].Value).ToShortDateString();
+            } catch (FormatException e)
+            {
+                Expiration = "01/01/1970";
+            }
 
             //Disciplinary action
-            Match disc = Regex.Match(response, "There is no Discipline or Board Actions on file for this credential", RegOpt);
+            Match disc = Regex.Match(response, "No cases", RegOpt);
 
             //We check for the absence of disciplinary/corrective action
             if (disc.Success)
@@ -60,36 +65,61 @@ namespace VTCVPlugIn
         private Result<string> ParseResponse(string response)
         {
             //Headers
-            MatchCollection headers = Regex.Matches(response, "<th scope=\"col\">(?<header>[\\w ]+)</th>", RegOpt);
-            MatchCollection values = Regex.Matches(response, "<td>(<font color=\\w+>)?((?<value>[-&,/\\.\\w ]+)|(&nbsp;)?(<br>)*)+(</font>)?</td>", RegOpt);
-            Match sanctionHeaders = Regex.Match(response, "Board/Program Actions[-;:/\"=<>/\\w\\s]+?(<th scope=\"col\">(?<header>[\\w ]+)</th>)+", RegOpt);
-            Match sanctionValues = Regex.Match(response, "Board/Program Actions[-;:/\"=<>/\\w\\s]+?((<td>(?<value>[-&,/\\.\\w]*)(&nbsp;)?</td>)+[=\"<>/\\s\\w]*?(<td>(?<value>[-&,/\\.\\w ]*)(&nbsp;)?</td>)*)+\\s*</tr>\\s*</tbody>", RegOpt);
+            MatchCollection data = Regex.Matches(response, "<span[-'=\\w ]+class='field-caption[-\\w ]+'\\s*>(?<header>[\\w ]+)</span><div class='field-item[\\w ]+'>[-='<\\w ]*?>?(?<value>[-,\\.\\w ]*)(</span>)?</div>", RegOpt);
+            MatchCollection cases = Regex.Matches(response, "<td\\s*title[-:;='\\w ]+><div\\s*class[-:;='\\w ]+><span\\s*data[-:;='\\w ]+>(?<case>[-,\\w ]+)</span></div></td>", RegOpt);
+            string[] sanctionHeaders = { "Case Number", "Date Opened", "Date Closed", "Status" };
 
-            if (values.Count > 0)
+            if (data.Count > 0)
             {
                 //Details
                 StringBuilder builder = new StringBuilder();
 
-                for (int i = 0; i < headers.Count; i++)
+                builder.AppendFormat(TdPair, "Personal Information", "");
+                builder.AppendLine();
+
+                for (int i = 0; i < data.Count && i < 3; i++)
                 {
-                    //We handle sanctions in a separate loop
-                    if (headers[i].Groups["header"].Value == "Case Number")
-                        break;
-
-                    string value = "";
-
-                    for (int j = 0; j < values[i].Groups["value"].Captures.Count; j++)
-                        value += values[i].Groups["value"].Captures[j].Value + " ";
-
-                    builder.AppendFormat(TdPair, headers[i].Groups["header"].Value, value);
+                    builder.AppendFormat(TdPair, data[i].Groups["header"].Value, data[i].Groups["value"].Value);
                     builder.AppendLine();
                 }
 
-                int headerCount = sanctionHeaders.Groups["header"].Captures.Count;
+                builder.AppendFormat(TdPair, "Address Details", "");
+                builder.AppendLine();
 
-                for (int i = 0; i < sanctionValues.Groups["value"].Captures.Count; i++)
+                for (int i = 3; i < data.Count && i < 15; i++)
                 {
-                    builder.AppendFormat(TdPair, sanctionHeaders.Groups["header"].Captures[i % headerCount], sanctionValues.Groups["value"].Captures[i]);
+                    builder.AppendFormat(TdPair, data[i].Groups["header"].Value, data[i].Groups["value"].Value);
+                    builder.AppendLine();
+                }
+
+                builder.AppendFormat(TdPair, "License Information", "");
+                builder.AppendLine();
+
+                for (int i = 15; i < data.Count && i < 22; i++)
+                {
+                    builder.AppendFormat(TdPair, data[i].Groups["header"].Value, data[i].Groups["value"].Value);
+                    builder.AppendLine();
+                }
+
+                builder.AppendFormat(TdPair, "Other Information", "");
+                builder.AppendLine();
+
+                for (int i = 22; i < data.Count; i++)
+                {
+                    builder.AppendFormat(TdPair, data[i].Groups["header"].Value, data[i].Groups["value"].Value);
+                    builder.AppendLine();
+                }
+
+                if (cases.Count == 0)
+                    builder.AppendFormat(TdPair, "Cases", "None");
+                else
+                    builder.AppendFormat(TdPair, "Cases", "");
+
+                builder.AppendLine();
+
+                for (int i = 0; i < cases.Count; i++)
+                {
+                    builder.AppendFormat(TdPair, sanctionHeaders[i % sanctionHeaders.Length], cases[i].Groups["case"].Value);
                     builder.AppendLine();
                 }
 
