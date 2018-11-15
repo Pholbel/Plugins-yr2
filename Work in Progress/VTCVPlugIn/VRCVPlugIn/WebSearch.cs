@@ -188,7 +188,7 @@ namespace VTCVPlugIn
 
         string GetLicenseNum(string licNo)
         {
-            Match m = Regex.Match(licNo, "(?<num>\\d+\\.\\d+)", RegOpt);
+            Match m = Regex.Match(licNo, "(?<num>\\d+\\.\\d+-?[A-Za-z]*)", RegOpt);
             return (m.Success) ? m.Groups["num"].Value : "";
         }
 

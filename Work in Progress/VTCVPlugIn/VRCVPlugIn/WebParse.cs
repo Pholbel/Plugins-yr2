@@ -49,7 +49,7 @@ namespace VTCVPlugIn
                 Expiration = Convert.ToDateTime(exp.Groups["date"].Value).ToShortDateString();
             } catch (FormatException e)
             {
-                Expiration = "01/01/1970";
+                Expiration = "01/01/1492";
             }
 
             //Disciplinary action
@@ -74,37 +74,7 @@ namespace VTCVPlugIn
                 //Details
                 StringBuilder builder = new StringBuilder();
 
-                builder.AppendFormat(TdPair, "Personal Information", "");
-                builder.AppendLine();
-
-                for (int i = 0; i < data.Count && i < 3; i++)
-                {
-                    builder.AppendFormat(TdPair, data[i].Groups["header"].Value, data[i].Groups["value"].Value);
-                    builder.AppendLine();
-                }
-
-                builder.AppendFormat(TdPair, "Address Details", "");
-                builder.AppendLine();
-
-                for (int i = 3; i < data.Count && i < 15; i++)
-                {
-                    builder.AppendFormat(TdPair, data[i].Groups["header"].Value, data[i].Groups["value"].Value);
-                    builder.AppendLine();
-                }
-
-                builder.AppendFormat(TdPair, "License Information", "");
-                builder.AppendLine();
-
-                for (int i = 15; i < data.Count && i < 22; i++)
-                {
-                    builder.AppendFormat(TdPair, data[i].Groups["header"].Value, data[i].Groups["value"].Value);
-                    builder.AppendLine();
-                }
-
-                builder.AppendFormat(TdPair, "Other Information", "");
-                builder.AppendLine();
-
-                for (int i = 22; i < data.Count; i++)
+                for (int i = 0; i < data.Count; i++)
                 {
                     builder.AppendFormat(TdPair, data[i].Groups["header"].Value, data[i].Groups["value"].Value);
                     builder.AppendLine();
