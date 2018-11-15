@@ -70,7 +70,7 @@ namespace ARBECPlugIn
         private Result<string> ParseResponse(string response)
         {
             //MatchCollection fields = Regex.Matches(response, "(?<=(id=\"ctl.*\">)).*(?=</s)");
-            List<string> headers = new List<string>(new string[] {"First Name", "Last Name", "License Number", "License Type", "Status", "City", "Zip", "Date of issue", "Date of expiration", "Standing"});
+            List<string> headers = new List<string>(new string[] {"First Name", "Last Name", "License Number", "License Type", "Status", "City", "Zip", "Date of issue", "Date of expiration", "Standing", "Specialty"});
 
             Match licenseContentTag = Regex.Match(response, @"LICENSEE CONTENT HERE");
 
@@ -103,12 +103,39 @@ namespace ARBECPlugIn
                 foreach (var n in nameInfo) { val.Add(n.Trim()); }
                 foreach (var l in licInfo) { if (!l.Contains("LICENSE") && !l.Contains("TYPE") && !l.Contains("STATUS")) { val.Add(l.Trim()); } }
                 foreach (var c in cityInfo) { val.Add(c.Trim()); }
-                foreach (var a in addInfo) { if (!a.Contains("ADDITIONAL")) { if (a.Any(char.IsDigit)) { val.Add(Regex.Match(a, @"\d+/\d+/\d+").ToString()); continue; } val.Add(a.Trim()); } }
+                foreach (var a in addInfo) {
+                    if (!a.Contains("ADDITIONAL"))
+                    {
+                        if (a.Contains("Speciality"))
+                        {
+                            val.Add(Regex.Replace(a, "Speciality", "").ToString().Trim());
+                        }
+                        else if (a.Any(char.IsDigit))
+                        {
+                            val.Add(Regex.Match(a, @"\d+/\d+/\d+").ToString());
+                            if (a.Contains("Expiration"))
+                            {
+                                Expiration = Regex.Match(a, @"\d+/\d+/\d+").ToString();
+                            }
+                        }
+                        else
+                        {
+                            val.Add(a.Trim());
+                        }
+                    }
+                }
+                
 
                 for (var i=0; i < val.Count; i++)
                 {
                     builder.AppendFormat(TdPair, headers[i], val[i]);
                     builder.AppendLine();
+                }
+
+                //check for standing
+                if (!val.Contains("Good Standing"))
+                {
+                    Sanction = SanctionType.Red;
                 }
 
                 return Result<string>.Success(builder.ToString());
