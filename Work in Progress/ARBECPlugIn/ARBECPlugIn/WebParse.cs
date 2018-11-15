@@ -70,7 +70,7 @@ namespace ARBECPlugIn
         private Result<string> ParseResponse(string response)
         {
             //MatchCollection fields = Regex.Matches(response, "(?<=(id=\"ctl.*\">)).*(?=</s)");
-            List<string> headers = new List<string>(new string[] {"Name", "License Number", "License Type", "Status", "City", "Zip", "Date of issue", "Date of expiration", "Standing"});
+            List<string> headers = new List<string>(new string[] {"First Name", "Last Name", "License Number", "License Type", "Status", "City", "Zip", "Date of issue", "Date of expiration", "Standing"});
 
             Match licenseContentTag = Regex.Match(response, @"LICENSEE CONTENT HERE");
 
@@ -84,43 +84,32 @@ namespace ARBECPlugIn
                 var nodes = doc.DocumentNode.SelectNodes("//*[contains(@class,'col-xs-12')]");
                 var wrapper = nodes[nodes.Count - 1];
                 var tags = wrapper.ChildNodes;
-                var count = 0;
-
-                var licInfo = new string[6];
-
-
+                List<string> entries = new List<string>();
                 foreach (var tag in tags)
                 {
-                    if (!tag.Name.Contains("#"))
+                    if (!tag.Name.Contains('#'))
                     {
-                        if (headers[count].Contains("Number"))
-                        {
-                            licInfo = tag.InnerText.Split(new Char[] { ':', '|' });
-                            var number = licInfo[1];
-                            builder.AppendFormat(TdPair, headers[count], number);
-                            count++;
-                        }
-                        else if (headers[count].Contains("Type"))
-                        {
-                            var type = licInfo[3];
-                            builder.AppendFormat(TdPair, headers[count], type);
-                            count++;
-                        }
-                        else if (headers[count].Contains("Status"))
-                        {
-                            var status = licInfo[5];
-                            builder.AppendFormat(TdPair, headers[count], status);
-                            count++;
-                        }
-                        else
-                        {
-                            builder.AppendFormat(TdPair, headers[count], tag.InnerText);
-                            count++;
-                        }
+                        entries.Add(tag.InnerText);
                     }
-                    
                 }
 
+
+                var licInfo = entries[1].Split(new Char[] { ':', '|' });
+                var nameInfo = entries[0].Split(new String[] {"&nbsp;"}, StringSplitOptions.None);
+                var cityInfo = entries[2].Split(new String[] { ", &nbsp;" }, StringSplitOptions.None);
+                var addInfo = entries[3].Split(':');
+
+                List<string> val = new List<string>();
+                foreach (var n in nameInfo) { val.Add(n.Trim()); }
+                foreach (var l in licInfo) { if (!l.Contains("LICENSE") && !l.Contains("TYPE") && !l.Contains("STATUS")) { val.Add(l.Trim()); } }
+                foreach (var c in cityInfo) { val.Add(c.Trim()); }
+                foreach (var a in addInfo) { if (!a.Contains("ADDITIONAL")) { if (a.Any(char.IsDigit)) { val.Add(Regex.Match(a, @"\d+/\d+/\d+").ToString()); continue; } val.Add(a.Trim()); } }
+
+                for (var i=0; i < val.Count; i++)
+                {
+                    builder.AppendFormat(TdPair, headers[i], val[i]);
+                    builder.AppendLine();
+                }
 
                 return Result<string>.Success(builder.ToString());
             }
