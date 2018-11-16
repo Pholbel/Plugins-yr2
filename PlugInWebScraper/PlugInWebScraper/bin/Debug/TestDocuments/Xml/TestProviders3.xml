@@ -4469,6 +4469,29 @@
     </Provider>
 
   </Assembly>
+  
+  <Assembly name ="ABECPlugIn" action ="">
+
+    <!-- Active -->
+    <Provider run="1">
+      <Data key ="lic_no" value="1738"/>
+      <Data key ="dr_fname" value="Sharmen"/>
+      <Data key ="lic_exp" value="12/20/2018"/>
+    </Provider>
+
+    <Provider run="0">
+      <Data key ="lic_no" value=""/>
+      <Data key ="dr_lname" value=""/>
+      <Data key ="lic_exp" value=""/>
+    </Provider>
+
+    <Provider run="0">
+      <Data key ="lic_no" value=""/>
+      <Data key ="dr_lname" value=""/>
+      <Data key ="lic_exp" value=""/>
+    </Provider>
+
+  </Assembly>
  
 </TestData>
 

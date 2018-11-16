@@ -1,0 +1,12 @@
+C:\Users\Dian\Documents\GitHub\Plugins-yr2\Work in Progress\ABECPlugIn\ABECPlugIn\obj\Debug\ABECPlugIn.Properties.Resources.resources
+C:\Users\Dian\Documents\GitHub\Plugins-yr2\Work in Progress\ABECPlugIn\ABECPlugIn\obj\Debug\ABECPlugIn.csproj.GenerateResource.cache
+C:\Users\Dian\Documents\GitHub\Plugins-yr2\Work in Progress\ABECPlugIn\ABECPlugIn\obj\Debug\ABECPlugIn.csproj.CoreCompileInputs.cache
+C:\Users\Dian\Documents\GitHub\Plugins-yr2\Work in Progress\ABECPlugIn\ABECPlugIn\bin\Debug\ABECPlugIn.dll.config
+C:\Users\Dian\Documents\GitHub\Plugins-yr2\Work in Progress\ABECPlugIn\ABECPlugIn\bin\Debug\ABECPlugIn.dll
+C:\Users\Dian\Documents\GitHub\Plugins-yr2\Work in Progress\ABECPlugIn\ABECPlugIn\bin\Debug\ABECPlugIn.pdb
+C:\Users\Dian\Documents\GitHub\Plugins-yr2\Work in Progress\ABECPlugIn\ABECPlugIn\bin\Debug\ABCpdf.dll
+C:\Users\Dian\Documents\GitHub\Plugins-yr2\Work in Progress\ABECPlugIn\ABECPlugIn\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Dian\Documents\GitHub\Plugins-yr2\Work in Progress\ABECPlugIn\ABECPlugIn\bin\Debug\ABCpdf.xml
+C:\Users\Dian\Documents\GitHub\Plugins-yr2\Work in Progress\ABECPlugIn\ABECPlugIn\obj\Debug\ABECPlugIn.csproj.CopyComplete
+C:\Users\Dian\Documents\GitHub\Plugins-yr2\Work in Progress\ABECPlugIn\ABECPlugIn\obj\Debug\ABECPlugIn.dll
+C:\Users\Dian\Documents\GitHub\Plugins-yr2\Work in Progress\ABECPlugIn\ABECPlugIn\obj\Debug\ABECPlugIn.pdb
