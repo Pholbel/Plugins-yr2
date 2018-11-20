@@ -217,7 +217,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ypz9GBRABjC+8YWh9UhIOlvdQmcB2Nz5KcXv6oKF728=</dsig:DigestValue>
+        <dsig:DigestValue>r/q0CyJOsRrvDQrLk6bceSpUUx0pOW4KpPH4tvgCWnc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -421,7 +421,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>+UkxjeN21z2YESzHoEOAG/H8869wUB7Tna+lmO7o6Qk=</dsig:DigestValue>
+        <dsig:DigestValue>Y07+9q15HqW+J3zlPVIztUTn+vPqoL/3prZSsIWCCiE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -623,13 +623,13 @@
       <dsig:DigestValue>Z3zNIF+dbta1al8t0xFlg+pKb/3gi5/Tk29GTutLP0k=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="TestDocuments\Xml\TestProviders3.xml" size="156543" writeableType="applicationData">
+  <file name="TestDocuments\Xml\TestProviders3.xml" size="156713" writeableType="applicationData">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>eNlDo5zz1vyG51be2yGJWo+w87HiZpKiUbKNAxJn8dk=</dsig:DigestValue>
+      <dsig:DigestValue>CvFUu9H4A4XhAEtJgFrwicJiCsPjR6w5B4jTxoKrPdw=</dsig:DigestValue>
     </hash>
   </file>
   <file name="TestDocuments\Xml\TestProviders4.xml" size="215" writeableType="applicationData">

@@ -15,6 +15,7 @@ namespace KSBNPlugIn
         private RegexOptions RegOpt = RegexOptions.IgnoreCase | RegexOptions.Singleline;
         private Provider provider { get; set; }
 
+
         public WebSearch(Provider _provider)
         {
             this.provider = _provider;
@@ -34,50 +35,38 @@ namespace KSBNPlugIn
 
         private Result<IRestResponse> Search()
         {
+            ServicePointManager.Expect100Continue = true;
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 
-            // PARAMETERS AND COOKIES WE WILL GET WITH FIRST GET
+            //COOKIES WE WILL GET WITH FIRST GET
             List<RestResponseCookie> allCookies = new List<RestResponseCookie>();
-            string viewState = "";
-            string viewStateGenerator = "";
-            string eventValidation = "";
-            string lastFocus = "";
-            string eventTarget = "";
-            string eventArgument = "";
-            string baseUrl = "http://cvl.KSBN.ca.gov/";
+            string baseUrl = "https://www.kansas.gov/ksbn-verifications/search/";
 
             //GET PARAMETERS AND COOKIES
-            RestClient client = new RestClient(baseUrl+"SearchPage.aspx");
+            RestClient client = new RestClient(baseUrl);
             RestRequest request = new RestRequest(Method.GET);
+            request.AddParameter("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8");
             IRestResponse response = client.Execute(request);
-            
+
+            //GET TOKEN
+            string csrfToken = Regex.Match(response.Content, "(?<=TOKEN..value=.).*(?=..id)").ToString();
+
             allCookies.AddRange(response.Cookies);
 
-            if (response.StatusCode == HttpStatusCode.OK)
-            {
-                GetViewStates(ref viewState, ref viewStateGenerator, ref eventValidation, ref lastFocus, ref eventTarget, ref eventArgument, response);
-            }
-            else
+            if (response.StatusCode != HttpStatusCode.OK)
             {
                 return Result<IRestResponse>.Failure(ErrorMsg.CannotAccessSite);
             }
 
             //FORMING NEW POST WITH OUR PARAMS
+            client = new RestClient(baseUrl + "search");
             request = new RestRequest(Method.POST);
 
-            string _param_prefix = "ctl00$ContentPlaceHolderMiddleColumn$";
 
-            request.AddParameter("__EVENTTARGET", eventTarget);
-            request.AddParameter("__EVENTARGUMENT", eventArgument);
-            request.AddParameter("__LASTFOCUS", lastFocus);
-            request.AddParameter("__VIEWSTATE", viewState);
-            request.AddParameter("__VIEWSTATEGENERATOR", viewStateGenerator);
-            request.AddParameter("__EVENTVALIDATION", eventValidation);
-            request.AddParameter(_param_prefix + "ddCertType", "0");
-            request.AddParameter(_param_prefix + "CVLSearch", "rdoLastFirst");
-            request.AddParameter(_param_prefix + "txtLastName", provider.LastName);
-            request.AddParameter(_param_prefix + "txtFirstName", provider.FirstName);
-            request.AddParameter(_param_prefix + "txtLastNameStart", "");
-            request.AddParameter(_param_prefix + "btnSearch2", "Search");
+            request.AddParameter("SYNCHRONIZER_TOKEN", csrfToken);
+            request.AddParameter("SYNCHRONIZER_URI", "/ksbn-verifications/search/");
+            request.AddParameter("licenseNumber", provider.LicenseNumber);
+            request.AddParameter("_eventId_submit", "Issue Search");
             
             foreach (var c in allCookies)
             {
@@ -86,55 +75,26 @@ namespace KSBNPlugIn
 
             response = client.Execute(request);
 
-            //LAND HO!
+            //WE MADE IT
 
             //REFILL THE COOKIE JAR
             allCookies.AddRange(response.Cookies);
-            if (response.StatusCode == HttpStatusCode.OK)
+            if (response.StatusCode != HttpStatusCode.OK)
             {
-                GetViewStates(ref viewState, ref viewStateGenerator, ref eventValidation, ref lastFocus, ref eventTarget, ref eventArgument, response);
-            }
-            else { return Result<IRestResponse>.Failure(ErrorMsg.CannotAccessSite); }
+             return Result<IRestResponse>.Failure(ErrorMsg.CannotAccessSite); }
 
             //CHECK IF WE HAVE MULTIPLE PROVIDERS
 
-            MatchCollection providerList = Regex.Matches(response.Content, "(?<=cert.*\">).*(?=</a>)", RegOpt);
-            HashSet<string> providerHash = new HashSet<string>();
+            MatchCollection providerList = Regex.Matches(response.Content, "License Method");
+     
 
-            foreach (var p in providerList)
-            {
-                providerHash.Add(p.ToString());
-            }
-
-            if (providerHash.Count == 0)
+            if (providerList.Count == 0)
             {
                 return Result<IRestResponse>.Failure(ErrorMsg.NoResultsFound);
             }
-            else if (providerHash.Count == 1)
+            else if (providerList.Count == 1)
             {
-                Match fields = Regex.Match(response.Content, "(?<QUERY>\"DetailPage.aspx?.*?\\\")", RegOpt);
-                string detailQuery = fields.Groups["QUERY"].ToString();
-                detailQuery = Regex.Replace(detailQuery, "\"", "", RegOpt);
-                client = new RestClient(baseUrl + detailQuery);
-                request = new RestRequest(Method.GET);
-
-                foreach (var c in allCookies)
-                {
-                    request.AddCookie(c.Name, c.Value);
-                }
-
-                response = client.Execute(request);
-
-                allCookies.AddRange(response.Cookies);
-
-                if (response.StatusCode == HttpStatusCode.OK)
-                {
                     return Result<IRestResponse>.Success(response);
-                }
-                else
-                {
-                    return Result<IRestResponse>.Failure(ErrorMsg.CannotAccessSearchResultsPage);
-                }
             }
             else
             {
