@@ -4469,6 +4469,29 @@
     </Provider>
 
   </Assembly>
+
+  <Assembly name ="KSBNPlugIn" action ="">
+
+    <!-- Active -->
+    <Provider run="1">
+      <Data key ="lic_no" value="P0510063"/>
+      <Data key ="dr_lname" value="Craig"/>
+      <Data key ="lic_exp" value="06/30/2019"/>
+    </Provider>
+
+    <Provider run="1">
+      <Data key ="lic_no" value="P1609126"/>
+      <Data key ="dr_lname" value="Smith"/>
+      <Data key ="lic_exp" value="6/30/2020"/>
+    </Provider>
+
+    <Provider run="1">
+      <Data key ="lic_no" value="P1403029"/>
+      <Data key ="dr_lname" value="Elkins"/>
+      <Data key ="lic_exp" value="6/30/2020"/>
+    </Provider>
+
+  </Assembly>
  
 </TestData>
 

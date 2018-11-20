@@ -83,9 +83,6 @@
     <Reference Include="AMAPlugIn">
       <HintPath>..\..\..\..\PlugIn\AMAPlugIn\AMAPlugin\AMAPlugIn\bin\Debug\AMAPlugIn.dll</HintPath>
     </Reference>
-    <Reference Include="ARBECPlugIn">
-      <HintPath>..\..\Work in Progress\ARBECPlugIn\ARBECPlugIn\bin\Debug\ARBECPlugIn.dll</HintPath>
-    </Reference>
     <Reference Include="ARSMBPlugIn">
       <HintPath>..\..\..\..\PlugIn\ARSMBPlugIn\ARSMBPlugIn\bin\Debug\ARSMBPlugIn.dll</HintPath>
     </Reference>
@@ -162,6 +159,9 @@
     <Reference Include="IResponsePlugIn">
       <HintPath>..\..\..\..\..\..\..\Projects\Echo PSV\PlugIn\IResponsePlugIn\IResponsePlugIn\bin\Debug\IResponsePlugIn.dll</HintPath>
     </Reference>
+    <Reference Include="KSBNPlugIn">
+      <HintPath>..\..\Work in Progress\KSBNPlugIn\KSBNPlugIn\bin\Debug\KSBNPlugIn.dll</HintPath>
+    </Reference>
     <Reference Include="MABDEPlugIn, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\PlugIn\MABDEPlugIn\MABDEPlugIn\bin\Debug\MABDEPlugIn.dll</HintPath>
@@ -207,7 +207,7 @@
     <Reference Include="NCPDPlugIn">
       <HintPath>..\..\..\..\PlugIn\NCPDPlugIn\NCPDPlugIn\bin\Debug\NCPDPlugIn.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Third Party Libraries\Newtonsoft.Json.dll</HintPath>
     </Reference>
