@@ -29,24 +29,6 @@ namespace KSBNPlugIn
         {
             try
             {
-                /*
-                MatchCollection physicians = Regex.Matches(response.Content, "id=\"ctl00_cphMain_rptrPhysician_ctl00_lblLicense\"", RegOpt);
-                MatchCollection assistants = Regex.Matches(response.Content, "id=\"ctl00_cphMain_rptrAssistant_ctl00_lblLicense\"", RegOpt);
-
-                if (physicians.Count > 1 || assistants.Count > 1 || (physicians.Count > 0 && assistants.Count > 0))
-                {
-                    return Result<string>.Failure(ErrorMsg.MultipleProvidersFound);
-                }
-                else if (Regex.Match(response.Content, "No Physicians Match That License", RegOpt).Success 
-                    && Regex.Match(response.Content, "No Physician Assistants Match That License", RegOpt).Success)
-                {
-                    return Result<string>.Failure(ErrorMsg.NoResultsFound);
-                }
-                else // Returned successful query
-                {
-                    CheckLicenseDetails(response.Content);
-                    return ParseResponse(response.Content);
-                }*/
                 return ParseResponse(response.Content);
             }
             catch (Exception e)
@@ -69,22 +51,34 @@ namespace KSBNPlugIn
 
         private Result<string> ParseResponse(string response)
         {
-            MatchCollection fields = Regex.Matches(response, "(?<=(id=\"ctl.*\">)).*(?=</s)");
-            List<string> headers = new List<string>(new string[] {"First Name", "Middle Name", "Last Name", "License Type", "License Number", "Title", "Effective Date", "Expiration Date", "Status", "Finding"});
+            var doc = new HtmlDocument();
+            doc.LoadHtml(response);
+
+            //handle sanctions
+            if (doc.DocumentNode.InnerHtml.Contains("Revoked"))
+            {
+                Sanction = SanctionType.Red;
+            }
+
+            var table = doc.DocumentNode.SelectSingleNode("//table[@id='search-results']");
+            var fields = table.ChildNodes;
 
             if (fields.Count > 0)
             {
                 StringBuilder builder = new StringBuilder();
-
-                for (int idx=0;idx<fields.Count;idx++)
+                
+                foreach (var k in fields)
                 {
-                    string header = headers[idx % headers.Count];
-                    string text = fields[idx].ToString();
-
-                    builder.AppendFormat(TdPair, header, text);
-                    builder.AppendLine();
+                    if (!k.Name.Contains("#"))
+                    {
+                        if (k.ChildNodes[1].InnerText.Contains("Expiration"))
+                        {
+                            Expiration = k.ChildNodes[3].InnerText;
+                        }
+                        builder.AppendFormat(TdPair, k.ChildNodes[1].InnerText, k.ChildNodes[3].InnerText);
+                        builder.AppendLine();
+                    }
                 }
-
 
                 return Result<string>.Success(builder.ToString());
             }
