@@ -4458,7 +4458,6 @@
 
   </Assembly>
 
-
   <Assembly name="VTCVPlugIn" action="">
     <!-- Full Name (Expired) -->
     <Provider run="1">
@@ -4501,6 +4500,13 @@
       <Data key="dr_fname" value="Mary"/>
     </Provider>
 
+    <!-- Multiple Results (Last name) -->
+    <Provider run="1">
+      <Data key="dr_lname" value="Smith"/>
+    </Provider>
+  </Assembly>
+
+  <Assembly name="DCAPlugIn" action="">
     <!-- Multiple Results (Last name) -->
     <Provider run="1">
       <Data key="dr_lname" value="Smith"/>

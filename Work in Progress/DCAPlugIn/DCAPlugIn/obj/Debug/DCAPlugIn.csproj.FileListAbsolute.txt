@@ -1,0 +1,14 @@
+D:\Dev\Verity\Plugins-yr2\Work in Progress\DCAPlugIn\DCAPlugIn\obj\Debug\DCAPlugIn.csprojAssemblyReference.cache
+D:\Dev\Verity\Plugins-yr2\Work in Progress\DCAPlugIn\DCAPlugIn\obj\Debug\DCAPlugIn.csproj.CoreCompileInputs.cache
+D:\Dev\Verity\Plugins-yr2\Work in Progress\DCAPlugIn\DCAPlugIn\bin\Debug\DCAPlugIn.dll
+D:\Dev\Verity\Plugins-yr2\Work in Progress\DCAPlugIn\DCAPlugIn\bin\Debug\DCAPlugIn.pdb
+D:\Dev\Verity\Plugins-yr2\Work in Progress\DCAPlugIn\DCAPlugIn\bin\Debug\HtmlAgilityPack.dll
+D:\Dev\Verity\Plugins-yr2\Work in Progress\DCAPlugIn\DCAPlugIn\bin\Debug\Newtonsoft.Json.dll
+D:\Dev\Verity\Plugins-yr2\Work in Progress\DCAPlugIn\DCAPlugIn\bin\Debug\PdfMetamorphosis.dll
+D:\Dev\Verity\Plugins-yr2\Work in Progress\DCAPlugIn\DCAPlugIn\bin\Debug\PlugIn_NET4_5.dll
+D:\Dev\Verity\Plugins-yr2\Work in Progress\DCAPlugIn\DCAPlugIn\bin\Debug\RestSharp.dll
+D:\Dev\Verity\Plugins-yr2\Work in Progress\DCAPlugIn\DCAPlugIn\bin\Debug\ABCpdf.dll
+D:\Dev\Verity\Plugins-yr2\Work in Progress\DCAPlugIn\DCAPlugIn\bin\Debug\ABCpdf.xml
+D:\Dev\Verity\Plugins-yr2\Work in Progress\DCAPlugIn\DCAPlugIn\obj\Debug\DCAPlugIn.csproj.CopyComplete
+D:\Dev\Verity\Plugins-yr2\Work in Progress\DCAPlugIn\DCAPlugIn\obj\Debug\DCAPlugIn.dll
+D:\Dev\Verity\Plugins-yr2\Work in Progress\DCAPlugIn\DCAPlugIn\obj\Debug\DCAPlugIn.pdb
