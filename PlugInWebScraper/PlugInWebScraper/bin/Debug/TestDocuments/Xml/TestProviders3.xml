@@ -4499,6 +4499,13 @@
     </Provider>
 
   </Assembly>
+
+  <Assembly name="DCAPlugIn" action="">
+    <!-- Multiple results (Last name) -->
+    <Provider run="1">
+      <Data key="dr_lname" value="Smith" />
+    </Provider>
+  </Assembly>
  
 </TestData>
 
