@@ -65,14 +65,30 @@ namespace DCAPlugIn
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 
             //Set up client and request
-            RestClient client = new RestClient(baseUrl);
-            client.UserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64)";
+            RestClient client = new RestClient(baseUrl)
+            {
+                UserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36"
+            };
             RestRequest request = new RestRequest(Method.GET);
-            request.AddQueryParameter("UserIdentifier", "LicenseLookupGuestUser");
 
             //Execute request
             if (!ExecuteRequest(client, request, ref allCookies, out IRestResponse response))
                 return Result<IRestResponse>.Failure(ErrorMsg.CannotAccessSite);
+
+            //Search By
+            NewPostRequest("results", allCookies, out request);
+
+            request.AddParameter("boardCode", "0");
+            request.AddParameter("licenseType", "0");
+            request.AddParameter("licenseNumber", "");
+            request.AddParameter("busName", "");
+            request.AddParameter("firstName", provider.FirstName);
+            request.AddParameter("lastName",provider.LastName);
+            request.AddParameter("registryNumber", "");
+
+            //Execute request
+            if (!ExecuteRequest(client, request, ref allCookies, out response))
+                return Result<IRestResponse>.Failure(ErrorMsg.CannotAccessSearchForm);
 
             //Global parameters
             string transactionID = Search(response.Content, "&pzTransactionId=(\\w+)");
@@ -219,8 +235,15 @@ namespace DCAPlugIn
             //Forming new post request with our parameters
             request = new RestRequest(Method.POST);
 
-            //Headers
-            request.AddHeader("X-Requested-With", "XMLHttpRequest");
+            //Add cookies to our request
+            foreach (RestResponseCookie c in cookies)
+                request.AddCookie(c.Name, c.Value);
+        }
+
+        void NewPostRequest(string resource, List<RestResponseCookie> cookies, out RestRequest request)
+        {
+            //Forming new post request with our parameters
+            request = new RestRequest(resource, Method.POST);
 
             //Add cookies to our request
             foreach (RestResponseCookie c in cookies)
@@ -235,7 +258,7 @@ namespace DCAPlugIn
             //Store new cookies
             cookies.AddRange(response.Cookies);
 
-            return response.StatusCode == HttpStatusCode.OK;
+            return response.StatusCode == HttpStatusCode.OK || response.StatusCode == HttpStatusCode.NotModified;
         }
     }
 }
