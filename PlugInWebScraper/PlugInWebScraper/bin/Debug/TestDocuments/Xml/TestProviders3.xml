@@ -4499,6 +4499,55 @@
     </Provider>
 
   </Assembly>
+
+
+  <Assembly name="VTCVPlugIn" action="">
+    <!-- Full Name (Expired) -->
+    <Provider run="1">
+      <Data key="dr_lname" value="Smith"/>
+      <Data key="dr_fname" value="Everett"/>
+      <Data key ="lic_exp" value="07/31/1999"/>
+    </Provider>
+
+    <!-- License Number (Temp) -->
+    <Provider run="1">
+      <Data key="lic_no" value="025.0008059-TEMP"/>
+      <Data key="lic_exp" value="09/18/2001"/>
+    </Provider>
+    
+    <!-- License Number (Sanctioned) -->
+    <Provider run="1">
+      <Data key="lic_no" value="001.0000326"/>
+      <Data key="lic_exp" value="07/31/2005"/>
+    </Provider>
+
+    <!-- Full Name & License Number (Revoked) -->
+    <Provider run="1">
+      <Data key="dr_lname" value="Smith"/>
+      <Data key="dr_fname" value="Claire"/>
+      <Data key="lic_no" value="026.0003201"/>
+      <Data key="lic_exp" value="03/23/1962"/>
+    </Provider>
+
+    <!-- Full Name & License Number (No address) -->
+    <Provider run="1">
+      <Data key="dr_lname" value="Smith"/>
+      <Data key="dr_fname" value="Susan"/>
+      <Data key="lic_no" value="001.0000361"/>
+      <Data key="lic_exp" value="07/31/2019"/>
+    </Provider>
+
+    <!-- Multiple Results (Full name) -->
+    <Provider run="1">
+      <Data key="dr_lname" value="Smith"/>
+      <Data key="dr_fname" value="Mary"/>
+    </Provider>
+
+    <!-- Multiple Results (Last name) -->
+    <Provider run="1">
+      <Data key="dr_lname" value="Smith"/>
+    </Provider>
+  </Assembly>
  
 </TestData>
 
