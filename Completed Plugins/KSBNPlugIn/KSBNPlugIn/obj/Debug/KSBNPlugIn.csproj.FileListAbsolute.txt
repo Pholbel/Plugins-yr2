@@ -1,0 +1,14 @@
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\KSBNPlugIn\KSBNPlugIn\bin\Debug\KSBNPlugIn.dll
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\KSBNPlugIn\KSBNPlugIn\bin\Debug\KSBNPlugIn.pdb
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\KSBNPlugIn\KSBNPlugIn\bin\Debug\HtmlAgilityPack.dll
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\KSBNPlugIn\KSBNPlugIn\bin\Debug\Newtonsoft.Json.dll
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\KSBNPlugIn\KSBNPlugIn\bin\Debug\PdfMetamorphosis.dll
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\KSBNPlugIn\KSBNPlugIn\bin\Debug\PlugIn_NET4_5.dll
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\KSBNPlugIn\KSBNPlugIn\bin\Debug\RestSharp.dll
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\KSBNPlugIn\KSBNPlugIn\bin\Debug\ABCpdf.dll
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\KSBNPlugIn\KSBNPlugIn\bin\Debug\ABCpdf.xml
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\KSBNPlugIn\KSBNPlugIn\obj\Debug\KSBNPlugIn.csprojAssemblyReference.cache
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\KSBNPlugIn\KSBNPlugIn\obj\Debug\KSBNPlugIn.csproj.CoreCompileInputs.cache
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\KSBNPlugIn\KSBNPlugIn\obj\Debug\KSBNPlugIn.csproj.CopyComplete
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\KSBNPlugIn\KSBNPlugIn\obj\Debug\KSBNPlugIn.dll
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\KSBNPlugIn\KSBNPlugIn\obj\Debug\KSBNPlugIn.pdb
