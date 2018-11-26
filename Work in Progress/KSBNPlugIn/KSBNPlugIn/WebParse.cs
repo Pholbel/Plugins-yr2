@@ -54,12 +54,6 @@ namespace KSBNPlugIn
             var doc = new HtmlDocument();
             doc.LoadHtml(response);
 
-            //handle sanctions
-            if (doc.DocumentNode.InnerHtml.Contains("Revoked"))
-            {
-                Sanction = SanctionType.Red;
-            }
-
             var table = doc.DocumentNode.SelectSingleNode("//table[@id='search-results']");
             var fields = table.ChildNodes;
 
@@ -74,6 +68,10 @@ namespace KSBNPlugIn
                         if (k.ChildNodes[1].InnerText.Contains("Expiration"))
                         {
                             Expiration = k.ChildNodes[3].InnerText;
+                        }
+                        if (k.ChildNodes[3].InnerText.Contains("Revoked"))
+                        {
+                            Sanction = SanctionType.Red;
                         }
                         builder.AppendFormat(TdPair, k.ChildNodes[1].InnerText, k.ChildNodes[3].InnerText);
                         builder.AppendLine();
