@@ -37,17 +37,17 @@ namespace KSBNPlugIn
             }
         }
 
-        private void CheckLicenseDetails(string response)
-        {
-            Match exp = Regex.Match(response, "Expiration date: </span>( |\t|\r|\v|\f|\n)*<span.*?>(?<EXP>.*?)</span>", RegOpt);
-            if (exp.Success)
-            {
-                Expiration = exp.Groups["EXP"].ToString();
-            }
+        //private void CheckLicenseDetails(string response)
+        //{
+        //    Match exp = Regex.Match(response, "Expiration date: </span>( |\t|\r|\v|\f|\n)*<span.*?>(?<EXP>.*?)</span>", RegOpt);
+        //    if (exp.Success)
+        //    {
+        //        Expiration = exp.Groups["EXP"].ToString();
+        //    }
 
-            //Does not support sanctions
+        //    //Does not support sanctions
 
-        }
+        //}
 
         private Result<string> ParseResponse(string response)
         {

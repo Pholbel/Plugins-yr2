@@ -12,3 +12,16 @@ C:\Users\username\Repos\Plugins-yr2\Work in Progress\KSBNPlugIn\KSBNPlugIn\obj\D
 C:\Users\username\Repos\Plugins-yr2\Work in Progress\KSBNPlugIn\KSBNPlugIn\obj\Debug\KSBNPlugIn.csproj.CopyComplete
 C:\Users\username\Repos\Plugins-yr2\Work in Progress\KSBNPlugIn\KSBNPlugIn\obj\Debug\KSBNPlugIn.dll
 C:\Users\username\Repos\Plugins-yr2\Work in Progress\KSBNPlugIn\KSBNPlugIn\obj\Debug\KSBNPlugIn.pdb
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\Completed Plugins\KSBNPlugIn\KSBNPlugIn\bin\Debug\KSBNPlugIn.dll
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\Completed Plugins\KSBNPlugIn\KSBNPlugIn\bin\Debug\KSBNPlugIn.pdb
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\Completed Plugins\KSBNPlugIn\KSBNPlugIn\bin\Debug\HtmlAgilityPack.dll
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\Completed Plugins\KSBNPlugIn\KSBNPlugIn\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\Completed Plugins\KSBNPlugIn\KSBNPlugIn\bin\Debug\PdfMetamorphosis.dll
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\Completed Plugins\KSBNPlugIn\KSBNPlugIn\bin\Debug\PlugIn_NET4_5.dll
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\Completed Plugins\KSBNPlugIn\KSBNPlugIn\bin\Debug\RestSharp.dll
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\Completed Plugins\KSBNPlugIn\KSBNPlugIn\bin\Debug\ABCpdf.dll
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\Completed Plugins\KSBNPlugIn\KSBNPlugIn\bin\Debug\ABCpdf.xml
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\Completed Plugins\KSBNPlugIn\KSBNPlugIn\obj\Debug\KSBNPlugIn.csprojResolveAssemblyReference.cache
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\Completed Plugins\KSBNPlugIn\KSBNPlugIn\obj\Debug\KSBNPlugIn.csproj.CoreCompileInputs.cache
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\Completed Plugins\KSBNPlugIn\KSBNPlugIn\obj\Debug\KSBNPlugIn.dll
+C:\Users\Paul Holbel\Desktop\Plugins 2\Plugins-yr2\Completed Plugins\KSBNPlugIn\KSBNPlugIn\obj\Debug\KSBNPlugIn.pdb

@@ -4483,8 +4483,6 @@
     <!-- Multipler Providers -->
     <Provider run="1">
       <Data key ="lic_no" value="77416"/>
-      <Data key ="dr_fname" value="Meagan"/>
-      <Data key ="dr_lname" value="Sackenheim"/>
       <Data key ="lic_exp" value="04/30/2018"/>
     </Provider>
 
