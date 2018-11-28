@@ -1,8 +1,9 @@
+﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2041
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DPFRPlugIn", "DPFRPlugIn.csproj", "{8DC8EF04-B76F-4C92-A05C-3473BF59FB58}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DPFRPlugIn", "DPFRPlugIn\DPFRPlugIn.csproj", "{DFDE7C17-CA59-4441-9914-710CE00E236D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -10,12 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8DC8EF04-B76F-4C92-A05C-3473BF59FB58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8DC8EF04-B76F-4C92-A05C-3473BF59FB58}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8DC8EF04-B76F-4C92-A05C-3473BF59FB58}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8DC8EF04-B76F-4C92-A05C-3473BF59FB58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFDE7C17-CA59-4441-9914-710CE00E236D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFDE7C17-CA59-4441-9914-710CE00E236D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFDE7C17-CA59-4441-9914-710CE00E236D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFDE7C17-CA59-4441-9914-710CE00E236D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C4699A81-D95A-4190-9060-B6028AE1A042}
 	EndGlobalSection
 EndGlobal

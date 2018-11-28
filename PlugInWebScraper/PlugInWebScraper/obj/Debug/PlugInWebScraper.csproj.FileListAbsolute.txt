@@ -277,5 +277,5 @@ C:\Users\ucsd\Desktop\gitMDPR\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\obj\
 C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\MBBHTPlugIn.pdb
 C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\NVADGPlugIn.pdb
 C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\Newtonsoft.Json.dll
-C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\KSBNPlugIn.dll
-C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\KSBNPlugIn.pdb
+C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\DPFRPlugIn.dll
+C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\DPFRPlugIn.pdb

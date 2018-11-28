@@ -122,6 +122,10 @@
     <Reference Include="DLTCPlugIn">
       <HintPath>..\..\..\..\PlugIn\DLTCPlugIn\DLTCPlugIn\bin\Debug\DLTCPlugIn.dll</HintPath>
     </Reference>
+    <Reference Include="DPFRPlugIn, Version=1.0.6905.35975, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Work in Progress\DPFRPlugIn\DPFRPlugIn\bin\Debug\DPFRPlugIn.dll</HintPath>
+    </Reference>
     <Reference Include="EPLSPlugIn">
       <HintPath>..\..\..\..\PlugIn\EPLSPlugIn\bin\Debug\EPLSPlugIn.dll</HintPath>
     </Reference>
@@ -158,9 +162,6 @@
     </Reference>
     <Reference Include="IResponsePlugIn">
       <HintPath>..\..\..\..\..\..\..\Projects\Echo PSV\PlugIn\IResponsePlugIn\IResponsePlugIn\bin\Debug\IResponsePlugIn.dll</HintPath>
-    </Reference>
-    <Reference Include="KSBNPlugIn">
-      <HintPath>..\..\Work in Progress\KSBNPlugIn\KSBNPlugIn\bin\Debug\KSBNPlugIn.dll</HintPath>
     </Reference>
     <Reference Include="MABDEPlugIn, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

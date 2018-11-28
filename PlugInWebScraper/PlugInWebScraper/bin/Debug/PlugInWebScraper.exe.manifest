@@ -114,6 +114,18 @@
     </dependentAssembly>
   </dependency>
   <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DPFRPlugIn.dll" size="12288">
+      <assemblyIdentity name="DPFRPlugIn" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>2jZMDpSSXjjutSlsmQfboNO0mhYEqBY0mNe7XZ23WLM=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="FDHPlugIn.dll" size="13312">
       <assemblyIdentity name="FDHPlugIn" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
@@ -206,18 +218,6 @@
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
         <dsig:DigestValue>ScDsIMxzE+bX1Z7MhwHLFwcVPP9xiurzXOlg8bmbnCs=</dsig:DigestValue>
-      </hash>
-    </dependentAssembly>
-  </dependency>
-  <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="KSBNPlugIn.dll" size="12288">
-      <assemblyIdentity name="KSBNPlugIn" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
-      <hash>
-        <dsig:Transforms>
-          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-        </dsig:Transforms>
-        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>v4ri8px2QKYR+6XWcdQCYSVXskBOzlrvrAdVZ8UmPKk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -421,7 +421,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>3gIOaBEJWRyzWjEuPHP5UHA1IxjhitdrD4dbl3azIfc=</dsig:DigestValue>
+        <dsig:DigestValue>Xt2hAEWI27k8KSUzJmTjm8PuZ3gUOa3xj1d3SCRkDRk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -623,13 +623,13 @@
       <dsig:DigestValue>Z3zNIF+dbta1al8t0xFlg+pKb/3gi5/Tk29GTutLP0k=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="TestDocuments\Xml\TestProviders3.xml" size="158267" writeableType="applicationData">
+  <file name="TestDocuments\Xml\TestProviders3.xml" size="158356" writeableType="applicationData">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>2ntrx6dXyOPVPIWHQ11ylAtszqbfSyoXMrybTDm6PG4=</dsig:DigestValue>
+      <dsig:DigestValue>hiAowmBNTKMuol5lwK6pp7+pjgVr8a78omRXLw85pig=</dsig:DigestValue>
     </hash>
   </file>
   <file name="TestDocuments\Xml\TestProviders4.xml" size="215" writeableType="applicationData">
