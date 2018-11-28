@@ -114,14 +114,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DPFRPlugIn.dll" size="12288">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DPFRPlugIn.dll" size="15872">
       <assemblyIdentity name="DPFRPlugIn" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>2jZMDpSSXjjutSlsmQfboNO0mhYEqBY0mNe7XZ23WLM=</dsig:DigestValue>
+        <dsig:DigestValue>c0PhWY4SVad6h9S3MAG4Trchk0U1eV17tzUNvez1XPs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -421,7 +421,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Xt2hAEWI27k8KSUzJmTjm8PuZ3gUOa3xj1d3SCRkDRk=</dsig:DigestValue>
+        <dsig:DigestValue>hDJAR5GL9LWLvmuetkXGVeiFqAkflOdjlbD9Xzm4Sds=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

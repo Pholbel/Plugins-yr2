@@ -7,12 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-
+ 
 namespace DPFRPlugIn
 {
     /// <summary>
     /// EchoPSV Plugin for New Hamshire Board of Medicine
-    /// https://www.kansas.gov/DPFR-verifications/search/records
+    /// https://www.pfr.maine.gov/ALMSOnline/ALMSQuery/SearchIndividual.aspx
     /// </summary>
     public class PlugInClass : IPlugIn
     {
