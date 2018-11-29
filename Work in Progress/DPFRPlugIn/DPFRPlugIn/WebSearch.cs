@@ -122,23 +122,16 @@ namespace DPFRPlugIn
 
             //CHECK IF WE HAVE MULTIPLE PROVIDERS
 
-            MatchCollection providerList = Regex.Matches(response.Content, "(?<=cert.*\">).*(?=</a>)", RegOpt);
-            HashSet<string> providerHash = new HashSet<string>();
+            MatchCollection providerList = Regex.Matches(response.Content, @"ShowDetail.*(?<=TOKEN.)\w*");
+         
 
-            foreach (var p in providerList)
-            {
-                providerHash.Add(p.ToString());
-            }
-
-            if (providerHash.Count == 0)
+            if (providerList.Count == 0)
             {
                 return Result<IRestResponse>.Failure(ErrorMsg.NoResultsFound);
             }
-            else if (providerHash.Count == 1)
+            else if (providerList.Count == 1)
             {
-                Match fields = Regex.Match(response.Content, "(?<QUERY>\"DetailPage.aspx?.*?\\\")", RegOpt);
-                string detailQuery = fields.Groups["QUERY"].ToString();
-                detailQuery = Regex.Replace(detailQuery, "\"", "", RegOpt);
+                string detailQuery = Regex.Match(response.Content, @"ShowDetail.*(?<=TOKEN.)\w*").ToString();
                 client = new RestClient(baseUrl + detailQuery);
                 request = new RestRequest(Method.GET);
 
