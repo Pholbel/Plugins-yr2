@@ -36,47 +36,52 @@ namespace DPFRPlugIn
                 return Result<string>.Exception(e);
             }
         }
-
-        //private void CheckLicenseDetails(string response)
-        //{
-        //    Match exp = Regex.Match(response, "Expiration date: </span>( |\t|\r|\v|\f|\n)*<span.*?>(?<EXP>.*?)</span>", RegOpt);
-        //    if (exp.Success)
-        //    {
-        //        Expiration = exp.Groups["EXP"].ToString();
-        //    }
-
-        //    //Does not support sanctions
-
-        //}
-
+        
         private Result<string> ParseResponse(string response)
         {
             var doc = new HtmlDocument();
             doc.LoadHtml(response);
 
-            var table = doc.DocumentNode.SelectSingleNode("//table[@id='search-results']");
-            var fields = table.ChildNodes;
+            var nodes = doc.DocumentNode.SelectNodes("//div[contains(@class,'DetailGroup')]");
+            
 
-            if (fields.Count > 0)
+            if (nodes.Count > 0)
             {
                 StringBuilder builder = new StringBuilder();
                 
-                foreach (var k in fields)
+                //Handle general details
+                foreach (var k in nodes[0].ChildNodes)
                 {
-                    if (!k.Name.Contains("#"))
+                    if (k.Name.Contains("div"))
                     {
-                        if (k.ChildNodes[1].InnerText.Contains("Expiration"))
-                        {
-                            Expiration = k.ChildNodes[3].InnerText;
-                        }
-                        if (k.ChildNodes[3].InnerText.Contains("Revoked"))
-                        {
-                            Sanction = SanctionType.Red;
-                        }
                         builder.AppendFormat(TdPair, k.ChildNodes[1].InnerText, k.ChildNodes[3].InnerText);
-                        builder.AppendLine();
                     }
                 }
+
+                //Handle history
+                var histTable = nodes[1].ChildNodes["table"].ChildNodes["tbody"];
+                foreach (var tr in histTable.ChildNodes)
+                {
+                    if (tr.Name.Contains("tr"))
+                    {
+                        for (var j = 0; j < tr.ChildNodes.Count; j++)
+                        {
+                            if (j == 1)
+                            {
+                                builder.AppendFormat(TdPair, "License Type", tr.ChildNodes[j].InnerText);
+                            } else if (j == 3)
+                            {
+                                builder.AppendFormat(TdPair, "Start Date", tr.ChildNodes[j].InnerText);
+                            } else if (j == 5)
+                            {
+                                builder.AppendFormat(TdPair, "End Date", tr.ChildNodes[j].InnerText);
+                            }
+                        }
+                    }
+                }
+
+                //Handle Authority Section
+                var authTable = nodes[3].ChildNodes["table"].ChildNodes["tbody"];
 
                 return Result<string>.Success(builder.ToString());
             }
