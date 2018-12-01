@@ -82,6 +82,28 @@ namespace DPFRPlugIn
 
                 //Handle Authority Section
                 var authTable = nodes[3].ChildNodes["table"].ChildNodes["tbody"];
+                foreach (var c in authTable.ChildNodes)
+                {
+                    if (c.Name.Contains("tr"))
+                    {
+                        for (var k = 0; k < c.ChildNodes.Count; k++)
+                        {
+                            if (k == 1)
+                            {
+                                builder.AppendFormat(TdPair, "Description", c.ChildNodes[k].InnerText);
+                            } else if (k == 3)
+                            {
+                                builder.AppendFormat(TdPair, "Issue Date", c.ChildNodes[k].InnerText);
+                            } else if (k == 5)
+                            {
+                                builder.AppendFormat(TdPair, "Termination Date", c.ChildNodes[k].InnerText);
+                            } else if (k == 7)
+                            {
+                                builder.AppendFormat(TdPair, "Status", c.ChildNodes[k].InnerText);
+                            }
+                        }
+                    }
+                }
 
                 return Result<string>.Success(builder.ToString());
             }
