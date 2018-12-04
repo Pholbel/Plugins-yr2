@@ -40,22 +40,20 @@ namespace AMCBPlugIn
 
         private void CheckLicenseDetails(string response)
         {
-            //TODO: Expiry
             //Ensure we get the expiration date of the license
-            Match exp = Regex.Match(response, "Expiration Date</span><[-='\\w ]+><span[-='\\w ]+>(?<date>[,\\w ]+)", RegOpt);
+            Match exp = Regex.Match(response, "td\\s+headers=\"CURRENT_EXP_DATE_\\d+\">(?<date>[#&;\\w]+)</td>", RegOpt);
 
             //Set the expiration date
             try
             {
-                Expiration = Convert.ToDateTime(exp.Groups["date"].Value).ToShortDateString();
+                Expiration = Convert.ToDateTime(CleanDate(exp.Groups["date"].Value)).ToShortDateString();
             } catch (FormatException e)
             {
                 Expiration = "01/01/1492";
             }
 
-            //TODO: Sanctions
             //Disciplinary action
-            Match disc = Regex.Match(response, "No cases", RegOpt);
+            Match disc = Regex.Match(response, "<td\\s+headers=\"C\\d+_\\d+\">N</td>", RegOpt);
 
             //We check for the absence of disciplinary/corrective action
             if (disc.Success)
@@ -66,33 +64,18 @@ namespace AMCBPlugIn
 
         private Result<string> ParseResponse(string response)
         {
-            //TODO: Parse result
             //Headers
-            MatchCollection data = Regex.Matches(response, "<span[-'=\\w ]+class='field-caption[-\\w ]+'\\s*>(?<header>[\\w ]+)</span><div class='field-item[\\w ]+'>[-='<\\w ]*?>?(?<value>[-,\\.\\w ]*)(</span>)?</div>", RegOpt);
-            MatchCollection cases = Regex.Matches(response, "<td\\s*title[-:;='\\w ]+><div\\s*class[-:;='\\w ]+><span\\s*data[-:;='\\w ]+>(?<case>[-,\\w ]+)</span></div></td>", RegOpt);
-            string[] sanctionHeaders = { "Case Number", "Date Opened", "Date Closed", "Status" };
+            MatchCollection headers = Regex.Matches(response, "<th\\s+align=\"left\"\\s+id=\"[_\\w]+\"\\s*>(?<header>[\\w ]+)</th>", RegOpt);
+            MatchCollection values = Regex.Matches(response, "<td\\s+headers=\"[\\w ]+\">(?<value>[#&;\\w ]+)</td>", RegOpt);
 
-            if (data.Count > 0)
+            if (values.Count > 0)
             {
                 //Details
                 StringBuilder builder = new StringBuilder();
 
-                for (int i = 0; i < data.Count; i++)
+                for (int i = 0; i < headers.Count; i+=1)
                 {
-                    builder.AppendFormat(TdPair, data[i].Groups["header"].Value, data[i].Groups["value"].Value);
-                    builder.AppendLine();
-                }
-
-                if (cases.Count == 0)
-                    builder.AppendFormat(TdPair, "Cases", "None");
-                else
-                    builder.AppendFormat(TdPair, "Cases", "");
-
-                builder.AppendLine();
-
-                for (int i = 0; i < cases.Count; i++)
-                {
-                    builder.AppendFormat(TdPair, sanctionHeaders[i % sanctionHeaders.Length], cases[i].Groups["case"].Value);
+                    builder.AppendFormat(TdPair, headers[i].Groups["header"].Value, CleanDate(values[i].Groups["value"].Value));
                     builder.AppendLine();
                 }
 
@@ -102,6 +85,11 @@ namespace AMCBPlugIn
             {
                 return Result<string>.Failure(ErrorMsg.CannotAccessDetailsPage);
             }
+        }
+
+        private string CleanDate(string date)
+        {
+            return Regex.Replace(date, "&#x2F;", "/", RegOpt);
         }
     }
 }

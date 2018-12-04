@@ -57,9 +57,6 @@ namespace AMCBPlugIn
             client.BaseUrl = new Uri("https://ams.amcbmidwife.org/amcbssa/wwv_flow.show");
             NewPostRequest(allCookies, out request);
 
-            //TODO: Remove if unnecessary 
-            //request.AddParameter("p_request", "PLUGIN=" + Regex.Match(response.Content, "ajaxIdentifier\":\"(?<identifier>[0-9A-Z]+)\"", RegOpt).Groups["identifier"].Value);
-
             string step_id = Regex.Match(response.Content, "p_flow_step_id\" value=\"(?<id>\\d+)\"", RegOpt).Groups["id"].Value;
             string[] args = { "FIRSTNAME", "LASTNAME", "SEARCH_FLG", "CERT_NUMBER" };
 
