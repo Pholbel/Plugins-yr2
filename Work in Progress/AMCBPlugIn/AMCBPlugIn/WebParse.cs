@@ -40,6 +40,7 @@ namespace AMCBPlugIn
 
         private void CheckLicenseDetails(string response)
         {
+            //TODO: Expiry
             //Ensure we get the expiration date of the license
             Match exp = Regex.Match(response, "Expiration Date</span><[-='\\w ]+><span[-='\\w ]+>(?<date>[,\\w ]+)", RegOpt);
 
@@ -52,6 +53,7 @@ namespace AMCBPlugIn
                 Expiration = "01/01/1492";
             }
 
+            //TODO: Sanctions
             //Disciplinary action
             Match disc = Regex.Match(response, "No cases", RegOpt);
 
@@ -64,6 +66,7 @@ namespace AMCBPlugIn
 
         private Result<string> ParseResponse(string response)
         {
+            //TODO: Parse result
             //Headers
             MatchCollection data = Regex.Matches(response, "<span[-'=\\w ]+class='field-caption[-\\w ]+'\\s*>(?<header>[\\w ]+)</span><div class='field-item[\\w ]+'>[-='<\\w ]*?>?(?<value>[-,\\.\\w ]*)(</span>)?</div>", RegOpt);
             MatchCollection cases = Regex.Matches(response, "<td\\s*title[-:;='\\w ]+><div\\s*class[-:;='\\w ]+><span\\s*data[-:;='\\w ]+>(?<case>[-,\\w ]+)</span></div></td>", RegOpt);

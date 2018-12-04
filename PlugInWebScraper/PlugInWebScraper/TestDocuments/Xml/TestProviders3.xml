@@ -4554,6 +4554,11 @@
   </Assembly>
 
   <Assembly name="AMCBPlugIn" action="">
+    <!-- License Number (Certified Midwife) -->
+    <Provider run="1">
+      <Data key="lic_no" value="CM0004"/>
+    </Provider>
+    
     <!-- Multiple Results (Last name) -->
     <Provider run="1">
       <Data key="dr_lname" value="Smith"/>
