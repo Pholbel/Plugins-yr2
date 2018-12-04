@@ -85,6 +85,10 @@ namespace AMCBPlugIn
             if (!ExecuteRequest(client, request, ref allCookies, out response))
                 return Result<IRestResponse>.Failure(ErrorMsg.CannotAccessDetailsPage);
 
+            //Check for no responses
+            if (Regex.Match(response.Content, "No records match your search criteria.", RegOpt).Success)
+                return Result<IRestResponse>.Failure(ErrorMsg.NoResultsFound);
+
             //Check for multiple responses
             if (!Regex.Match(response.Content, @"row\(s\) 1 - 1 of 1", RegOpt).Success)
                 return Result<IRestResponse>.Failure(ErrorMsg.MultipleProvidersFound);

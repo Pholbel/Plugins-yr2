@@ -66,7 +66,7 @@ namespace AMCBPlugIn
         {
             //Headers
             MatchCollection headers = Regex.Matches(response, "<th\\s+align=\"left\"\\s+id=\"[_\\w]+\"\\s*>(?<header>[\\w ]+)</th>", RegOpt);
-            MatchCollection values = Regex.Matches(response, "<td\\s+headers=\"[\\w ]+\">(?<value>[#&;\\w ]+)</td>", RegOpt);
+            MatchCollection values = Regex.Matches(response, "<td\\s+headers=\"[\\w ]+\">(<a href=\"[-?\\.:/\\w]+\">)?(?<value>[-#&;\\w ]+)(</a>)?</td>", RegOpt);
 
             if (values.Count > 0)
             {
