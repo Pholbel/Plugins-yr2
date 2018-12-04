@@ -4554,6 +4554,13 @@
   </Assembly>
 
   <Assembly name="IDFPRPlugIn" action="">
+    <!-- Full Name (Single license) -->
+    <Provider run="1">
+      <Data key="dr_fname" value="A Ryan"/>
+      <Data key="dr_lname" value="Smith"/>
+      <Data key="lic_exp" value="05/31/1997"/>
+    </Provider>
+    
     <!-- Multiple Results (Last name) -->
     <Provider run="1">
       <Data key="dr_lname" value="Smith"/>
