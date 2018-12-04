@@ -17,7 +17,7 @@ namespace IDFPRPlugIn
         private Provider provider { get; set; }
 
         //Prefix
-        const string DISPLAY_PREFIX = "$PpyDisplayHarness$";
+        const string PREFIX = "ctl00$MainContentPlaceHolder$ucLicenseLookup$ctl03";
 
         //Parameter dictionary
         readonly Dictionary<string, string> parameters = new Dictionary<string, string>
@@ -69,11 +69,50 @@ namespace IDFPRPlugIn
             RestClient client = new RestClient(baseUrl);
             client.UserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64)";
             RestRequest request = new RestRequest(Method.GET);
-            request.AddQueryParameter("UserIdentifier", "LicenseLookupGuestUser");
 
             //Execute request
             if (!ExecuteRequest(client, request, ref allCookies, out IRestResponse response))
                 return Result<IRestResponse>.Failure(ErrorMsg.CannotAccessSite);
+
+            //Search By
+            NewPostRequest(allCookies, out request);
+
+            Dictionary<string, string> formData = new Dictionary<string, string>
+            {
+                { "ctl00$ScriptManager1", "ctl00$MainContentPlaceHolder$ucLicenseLookup$UpdtPanelGridLookup|ctl00$MainContentPlaceHolder$ucLicenseLookup$UpdtPanelGridLookup" },
+                { $"{PREFIX}$ddStatus", "" },
+                { $"{PREFIX}$tbCredentialNumber_Credential", provider.LicenseNumber },
+                { $"{PREFIX}$tbDBA_Contact", "" },
+                { $"{PREFIX}$tbDBAAlias_ContactAlias", "" },
+                { $"{PREFIX}$tbFirstName_Contact", provider.FirstName },
+                { $"{PREFIX}$tbLastName_Contact", provider.LastName },
+                { $"{PREFIX}$tbCity_ContactAddress", "" },
+                { $"{PREFIX}$ddStates", "" },
+                { $"{PREFIX}$ddCounty", "" },
+                { $"{PREFIX}$tbZipCode_ContactAddress", "" },
+                { "ctl00$MainContentPlaceHolder$ucLicenseLookup$ResizeLicDetailPopupID_ClientState", "0,0" }
+            };
+
+            //Event arguments
+            string viewState = Regex.Match(response.Content, "<input\\s+type=\"hidden\"\\s+name=\"__VIEWSTATE\"\\s+id=\"__VIEWSTATE\"\\s+value=\"(?<state>[+=/\\w]+)\"\\s*/>", RegOpt).Groups["state"].Value;
+            string viewStateGen = Regex.Match(response.Content, "<input\\s+type=\"hidden\"\\s+name=\"__VIEWSTATEGENERATOR\"\\s+id=\"__VIEWSTATEGENERATOR\"\\s+value=\"(?<gen>[\\w]+)\"\\s*/>", RegOpt).Groups["gen"].Value;
+            Dictionary<string, string> eventArgs = new Dictionary<string, string>
+            {
+                { "__EVENTTARGET", "ctl00$MainContentPlaceHolder$ucLicenseLookup$UpdtPanelGridLookup" },
+                { "__EVENTARGUMENT", "5" }, //TODO: Make sure this is correct or remove it
+                { "__VIEWSTATE", viewState },
+                { "__VIEWSTATEGENERATOR", viewStateGen },
+                { "__ASYNCPOST", "true" }
+            };
+
+            foreach (KeyValuePair<string, string> data in formData)
+                request.AddParameter(data.Key, data.Value);
+
+            foreach (KeyValuePair<string, string> arg in eventArgs)
+                request.AddParameter(arg.Key, arg.Value);
+
+            if (!ExecuteRequest(client, request, ref allCookies, out response))
+                return Result<IRestResponse>.Failure(ErrorMsg.CannotAccessSearchForm);
 
             //Global parameters
             string transactionID = Search(response.Content, "&pzTransactionId=(\\w+)");
@@ -83,11 +122,11 @@ namespace IDFPRPlugIn
             //Search By
             NewPostRequest(allCookies, out request);
 
-            Dictionary<string, string> formData = new Dictionary<string, string>
-            {
-                { "PreActivitiesList", "<pagedata><dataTransforms REPEATINGTYPE=\"PageList\"><rowdata REPEATINGINDEX=\"1\"><dataTransform></dataTransform></rowdata></dataTransforms></pagedata>" },
-                { "ActivityParams", "&ApplicantType=&Age=&PrimaryState=&LicenseType=&ProductIDs=" }
-            };
+            //Dictionary<string, string> formData = new Dictionary<string, string>
+            //{
+            //    { "PreActivitiesList", "<pagedata><dataTransforms REPEATINGTYPE=\"PageList\"><rowdata REPEATINGINDEX=\"1\"><dataTransform></dataTransform></rowdata></dataTransforms></pagedata>" },
+            //    { "ActivityParams", "&ApplicantType=&Age=&PrimaryState=&LicenseType=&ProductIDs=" }
+            //};
 
             Dictionary<string, string> queryParams = new Dictionary<string, string>(parameters)
             {
@@ -105,7 +144,7 @@ namespace IDFPRPlugIn
             //Select By
             NewPostRequest(allCookies, out request);
 
-            formData.Add(DISPLAY_PREFIX + "pSelectProfessions", "Search by Profession Type");
+            formData.Add(PREFIX + "pSelectProfessions", "Search by Profession Type");
             formData.Add("PreActivitiesList", "<pagedata><dataTransforms REPEATINGTYPE=\"PageList\"><rowdata REPEATINGINDEX=\"1\"><dataTransform>ShowResultsByProfession</dataTransform></rowdata></dataTransforms></pagedata>");
             formData.Add("ActivityParams", "");
 
@@ -125,14 +164,14 @@ namespace IDFPRPlugIn
             //Display Results
             NewPostRequest(allCookies, out request);
 
-            formData.Add(DISPLAY_PREFIX + "pSelectProfessions", "Search by Profession Type");
+            formData.Add(PREFIX + "pSelectProfessions", "Search by Profession Type");
             formData.Add("D_EligibleLicenseLookupPpxResults1colWidthGBL", "");
             formData.Add("D_EligibleLicenseLookupPpxResults1colWidthGBR", "");
             for (int i = 1; i <= 10; i++)
                 formData.Add("$PD_EligibleLicenseLookup_pa1026841396639549pz$ppxResults$l" + i.ToString() + "$ppySelected", "false");
-            formData.Add(DISPLAY_PREFIX + "pFirstName", provider.FirstName);
-            formData.Add(DISPLAY_PREFIX + "pLastName", provider.LastName);
-            formData.Add(DISPLAY_PREFIX + "pLicenseNumber", GetLicenseNum(provider.LicenseNumber));
+            formData.Add(PREFIX + "pFirstName", provider.FirstName);
+            formData.Add(PREFIX + "pLastName", provider.LastName);
+            formData.Add(PREFIX + "pLicenseNumber", GetLicenseNum(provider.LicenseNumber));
             formData.Add("PreActivitiesList", "<pagedata><dataTransforms REPEATINGTYPE=\"PageList\"><rowdata REPEATINGINDEX=\"1\"><dataTransform></dataTransform></rowdata></dataTransforms></pagedata>");
             formData.Add("ActivityParams", "&ProductID=&TempID=");
 
