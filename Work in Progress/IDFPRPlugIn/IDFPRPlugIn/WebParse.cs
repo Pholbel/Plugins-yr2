@@ -16,8 +16,10 @@ namespace IDFPRPlugIn
         public SanctionType Sanction { get; private set; }
 
         private string TdPair = "<tr><td>{0}</td><td>{1}</td></tr>";
-        private string TdSingle = "<td>{0}</td>";
+        private string TdSingle = "<tr><td>{0}</td><td></td></tr>";
         private RegexOptions RegOpt = RegexOptions.IgnoreCase | RegexOptions.Singleline;
+
+        private Match data;
 
         public WebParse()
         {
@@ -40,23 +42,13 @@ namespace IDFPRPlugIn
 
         private void CheckLicenseDetails(string response)
         {
+            data = Regex.Match(response, "<div[='\\w ]+>License Information</div><div>\\s*<table[-=:;\"\\w ]+>\\s*<thead>\\s*<tr[=\"\\w ]+>\\s*(<th[\"=\\w ]+>(?<header>[\\w ]+)</th>){7}\\s*</tr>\\s*</thead>\\s*<tbody>\\s*<tr[=\"\\w ]+>\\s*(<td>(?<value>[/\\w ]*)(&nbsp;)?</td>){7}\\s*</tr>\\s*</tbody>\\s*</table>", RegOpt);
+
             //Ensure we get the expiration date of the license
-            Match exp = Regex.Match(response, "Expiration Date</span><[-='\\w ]+><span[-='\\w ]+>(?<date>[,\\w ]+)", RegOpt);
-
-            //Set the expiration date
-            try
-            {
-                Expiration = Convert.ToDateTime(exp.Groups["date"].Value).ToShortDateString();
-            } catch (FormatException e)
-            {
-                Expiration = "01/01/1492";
-            }
-
-            //Disciplinary action
-            Match disc = Regex.Match(response, "No cases", RegOpt);
+            Expiration = data.Groups["value"].Captures[5].Value;
 
             //We check for the absence of disciplinary/corrective action
-            if (disc.Success)
+            if (data.Groups["value"].Captures[6].Value == "N")
                 Sanction = SanctionType.None;
             else
                 Sanction = SanctionType.Red;
@@ -64,41 +56,63 @@ namespace IDFPRPlugIn
 
         private Result<string> ParseResponse(string response)
         {
-            //Headers
-            MatchCollection data = Regex.Matches(response, "<span[-'=\\w ]+class='field-caption[-\\w ]+'\\s*>(?<header>[\\w ]+)</span><div class='field-item[\\w ]+'>[-='<\\w ]*?>?(?<value>[-,\\.\\w ]*)(</span>)?</div>", RegOpt);
-            MatchCollection cases = Regex.Matches(response, "<td\\s*title[-:;='\\w ]+><div\\s*class[-:;='\\w ]+><span\\s*data[-:;='\\w ]+>(?<case>[-,\\w ]+)</span></div></td>", RegOpt);
-            string[] sanctionHeaders = { "Case Number", "Date Opened", "Date Closed", "Status" };
+            Match contact = Regex.Match(response, "<div[='\\w ]+>Contact Information</div><div>\\s*<table[-=:;\"\\w ]+>\\s*<thead>\\s*<tr[=\"\\w ]+>\\s*(<th[=\"\\w ]+>(?<header>[/\\w ]+)</th>)+\\s*</tr>\\s*</thead>\\s*<tbody>\\s*<tr[=\"\\w ]+>\\s*(<td>(?<value>[,/\\w ]*)(&nbsp;)?</td>)+\\s*</tr>\\s*</tbody>\\s*</table>", RegOpt);
+            Match otherLicenses = Regex.Match(response, "<div[='\\w ]+>Other Licenses</div><div>\\s*<table[-=:;\"\\w ]+>\\s*<thead>\\s*<tr[=\"\\w ]+>\\s*(<th[\"=\\w ]+>(?<header>[\\w ]+)</th>)+\\s*</tr>\\s*</thead>\\s*<tbody>\\s*(<tr[=\"\\w ]+>\\s*(<td>(?<value>[/\\w ]*)</td>)+\\s*</tr>)+\\s*</tbody>\\s*</table>", RegOpt);
+            Match sanctions = Regex.Match(response, "<b>Disciplinary Actions</b><div[='\\w ]+>[=':/\\.,<>\\w\\s]+</div><div>\\s*<table[-=;:\"\\w ]+>\\s*<thead>\\s*<tr[=\"\\w ]+>\\s*(<th[=\"\\w ]+>(?<header>[\\w ]+)</th>)+\\s*</tr>\\s*</thead><tbody>\\s*(<tr[=\"\\w ]+>\\s*(<td>(?<value>[,\\./\\w ]*)(&nbsp;)?</td>)+\\s*</tr>)+\\s*</tbody>\\s*</table>", RegOpt);
 
-            if (data.Count > 0)
+            if (data.Success)
             {
-                //Details
                 StringBuilder builder = new StringBuilder();
 
-                for (int i = 0; i < data.Count; i++)
+                //Contact info
+                for (int i = 0; i < contact.Groups["header"].Captures.Count; i++)
                 {
-                    builder.AppendFormat(TdPair, data[i].Groups["header"].Value, data[i].Groups["value"].Value);
+                    builder.AppendFormat(TdPair, contact.Groups["header"].Captures[i].Value, contact.Groups["value"].Captures[i].Value);
                     builder.AppendLine();
                 }
 
-                if (cases.Count == 0)
-                    builder.AppendFormat(TdPair, "Cases", "None");
-                else
-                    builder.AppendFormat(TdPair, "Cases", "");
-
-                builder.AppendLine();
-
-                for (int i = 0; i < cases.Count; i++)
+                //License details
+                for (int i = 0; i < data.Groups["header"].Captures.Count; i++)
                 {
-                    builder.AppendFormat(TdPair, sanctionHeaders[i % sanctionHeaders.Length], cases[i].Groups["case"].Value);
+                    builder.AppendFormat(TdPair, data.Groups["header"].Captures[i].Value, data.Groups["value"].Captures[i].Value);
+                    builder.AppendLine();
+                }
+
+                //Other licenses, if present
+                if (otherLicenses.Success)
+                {
+                    builder.AppendFormat(TdSingle, "Other Licenses");
+                    builder.AppendLine();
+                }
+
+                int length = otherLicenses.Groups["header"].Captures.Count;
+
+                for (int i = 0; i < otherLicenses.Groups["value"].Captures.Count; i++)
+                {
+                    builder.AppendFormat(TdPair, otherLicenses.Groups["header"].Captures[i % length].Value, otherLicenses.Groups["value"].Captures[i].Value);
+                    builder.AppendLine();
+                }
+
+                //Sanctions, if present
+                if (sanctions.Success)
+                {
+                    builder.AppendFormat(TdSingle, "Sanctions");
+                    builder.AppendLine();
+                }
+
+                length = sanctions.Groups["header"].Captures.Count;
+
+                for (int i = 0; i < sanctions.Groups["value"].Captures.Count; i++)
+                {
+                    builder.AppendFormat(TdPair, sanctions.Groups["header"].Captures[i % length].Value, sanctions.Groups["value"].Captures[i].Value);
                     builder.AppendLine();
                 }
 
                 return Result<string>.Success(builder.ToString());
             }
-            else // Error parsing table
-            {
-                return Result<string>.Failure(ErrorMsg.CannotAccessDetailsPage);
-            }
+
+            //Error parsing table
+            return Result<string>.Failure(ErrorMsg.CannotAccessDetailsPage);
         }
     }
 }

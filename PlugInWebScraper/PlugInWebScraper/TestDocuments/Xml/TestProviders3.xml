@@ -4554,16 +4554,52 @@
   </Assembly>
 
   <Assembly name="IDFPRPlugIn" action="">
+    <!-- License Number (Multiple Licenses) -->
+    <Provider run="1">
+      <Data key="lic_no" value="230019645"/>
+      <Data key="lic_exp" value="01/01/2099"/>
+    </Provider>
+    <!-- License Number (No expiration date) -->
+    <Provider run="1">
+      <Data key="lic_no" value="230106732"/>
+    </Provider>
+    
     <!-- Full Name (Single license) -->
     <Provider run="1">
-      <Data key="dr_fname" value="A Ryan"/>
       <Data key="dr_lname" value="Smith"/>
+      <Data key="dr_fname" value="A Ryan"/>
       <Data key="lic_exp" value="05/31/1997"/>
+    </Provider>
+    
+    <!-- Full Name & License Number (Sanctioned) -->
+    <Provider run="1">
+      <Data key="dr_lname" value="Smith"/>
+      <Data key="dr_fname" value="Abra"/>
+      <Data key="lic_no" value="235000162"/>
+      <Data key="lic_exp" value="04/30/2020"/>
     </Provider>
     
     <!-- Multiple Results (Last name) -->
     <Provider run="1">
       <Data key="dr_lname" value="Smith"/>
+    </Provider>
+    
+    <!-- Multiple Results (Full name) -->
+    <Provider run="1">
+      <Data key="dr_lname" value="Smith"/>
+      <Data key="dr_fname" value="Adam"/>
+    </Provider>
+    
+    <!-- Multiple Results (Multiple licenses) -->
+    <Provider run="1">
+      <Data key="dr_lname" value="Smith"/>
+      <Data key="dr_fname" value="Adele I"/>
+    </Provider>
+    
+    <!-- No Results (Full name) -->
+    <Provider run="1">
+      <Data key="dr_lname" value="Skywalker"/>
+      <Data key="dr_fname" value="Anakin"/>
     </Provider>
   </Assembly>
  
