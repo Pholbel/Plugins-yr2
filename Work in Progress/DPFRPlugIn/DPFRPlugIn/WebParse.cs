@@ -49,58 +49,84 @@ namespace DPFRPlugIn
             {
                 StringBuilder builder = new StringBuilder();
                 
-                //Handle general details
-                foreach (var k in nodes[0].ChildNodes)
+                foreach (var n in nodes)
                 {
-                    if (k.Name.Contains("div"))
+                    foreach (var m in n.ChildNodes)
                     {
-                        builder.AppendFormat(TdPair, k.ChildNodes[1].InnerText, k.ChildNodes[3].InnerText);
-                    }
-                }
-
-                //Handle history
-                var histTable = nodes[1].ChildNodes["table"].ChildNodes["tbody"];
-                foreach (var tr in histTable.ChildNodes)
-                {
-                    if (tr.Name.Contains("tr"))
-                    {
-                        for (var j = 0; j < tr.ChildNodes.Count; j++)
+                        if (m.Attributes.Contains("class") && m.Attributes["class"].Value == "attributeRow")
                         {
-                            if (j == 1)
+                            //handle cells
+                            List<string> vp = new List<string>();
+                            foreach (var k in m.ChildNodes)
                             {
-                                builder.AppendFormat(TdPair, "License Type", tr.ChildNodes[j].InnerText);
-                            } else if (j == 3)
+                                if (k.Attributes.Contains("class") && k.Attributes["class"].Value == "attributeCell")
+                                {
+                                    vp.Add(k.InnerText);
+                                }
+                            }
+                            //TODO: skip if not matching license number
+                            builder.AppendFormat(TdPair, vp[0], vp[1]);
+                        }
+                        else if (m.Attributes.Contains("class") && m.Attributes["class"].Value.Contains("tbstriped"))
+                        {
+                            //handle table
+                            List<string> headers = new List<string>();
+                            List<string> values = new List<string>();
+                            HtmlNode theaders = null;
+                            string caption = m.ChildNodes["caption"].InnerText;
+                            
+
+                            if (m.ChildNodes["thead"] != null)
                             {
-                                builder.AppendFormat(TdPair, "Start Date", tr.ChildNodes[j].InnerText);
-                            } else if (j == 5)
+                                theaders = m.ChildNodes["thead"].ChildNodes["tr"];
+                                builder.AppendFormat(TdPair, "Section:", caption);
+                            }
+                            var tbody = m.ChildNodes["tbody"];
+
+                            //grab headers
+                            if (theaders != null)
                             {
-                                builder.AppendFormat(TdPair, "End Date", tr.ChildNodes[j].InnerText);
+                                foreach (var h in theaders.ChildNodes)
+                                {
+                                    if (!h.Name.Contains("#"))
+                                    {
+                                        headers.Add(h.InnerText);
+                                    }
+                                }
+                            }
+
+                            //grab values
+                            foreach (var tr in tbody.ChildNodes)
+                            {
+                                if (tr.Name.Contains("tr"))
+                                {
+                                    foreach (var td in tr.ChildNodes)
+                                    {
+                                        if (td.Name.Contains("td"))
+                                        {
+                                            values.Add(td.InnerText);
+                                        }
+                                    }
+                                }
+                            }
+
+
+                            //handle table
+                            for (var i = 0; i < values.Count; i++)
+                            {
+                                if (headers.Count > 0)
+                                {
+                                    builder.AppendFormat(TdPair, headers[i % headers.Count], values[i]);
+                                }
+                                else
+                                {
+                                    builder.AppendFormat(TdPair, caption, values[i]);
+                                }
                             }
                         }
-                    }
-                }
-
-                //Handle Authority Section
-                var authTable = nodes[3].ChildNodes["table"].ChildNodes["tbody"];
-                foreach (var c in authTable.ChildNodes)
-                {
-                    if (c.Name.Contains("tr"))
-                    {
-                        for (var k = 0; k < c.ChildNodes.Count; k++)
+                        else
                         {
-                            if (k == 1)
-                            {
-                                builder.AppendFormat(TdPair, "Description", c.ChildNodes[k].InnerText);
-                            } else if (k == 3)
-                            {
-                                builder.AppendFormat(TdPair, "Issue Date", c.ChildNodes[k].InnerText);
-                            } else if (k == 5)
-                            {
-                                builder.AppendFormat(TdPair, "Termination Date", c.ChildNodes[k].InnerText);
-                            } else if (k == 7)
-                            {
-                                builder.AppendFormat(TdPair, "Status", c.ChildNodes[k].InnerText);
-                            }
+                            continue;
                         }
                     }
                 }
