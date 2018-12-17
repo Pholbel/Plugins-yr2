@@ -1,0 +1,14 @@
+D:\Dev\Verity\Plugins-yr2\Work in Progress\IDFPRPlugIn\IDFPRPlugIn\obj\Debug\IDFPRPlugIn.csprojAssemblyReference.cache
+D:\Dev\Verity\Plugins-yr2\Work in Progress\IDFPRPlugIn\IDFPRPlugIn\obj\Debug\IDFPRPlugIn.csproj.CoreCompileInputs.cache
+D:\Dev\Verity\Plugins-yr2\Work in Progress\IDFPRPlugIn\IDFPRPlugIn\bin\Debug\IDFPRPlugIn.dll
+D:\Dev\Verity\Plugins-yr2\Work in Progress\IDFPRPlugIn\IDFPRPlugIn\bin\Debug\IDFPRPlugIn.pdb
+D:\Dev\Verity\Plugins-yr2\Work in Progress\IDFPRPlugIn\IDFPRPlugIn\bin\Debug\HtmlAgilityPack.dll
+D:\Dev\Verity\Plugins-yr2\Work in Progress\IDFPRPlugIn\IDFPRPlugIn\bin\Debug\Newtonsoft.Json.dll
+D:\Dev\Verity\Plugins-yr2\Work in Progress\IDFPRPlugIn\IDFPRPlugIn\bin\Debug\PdfMetamorphosis.dll
+D:\Dev\Verity\Plugins-yr2\Work in Progress\IDFPRPlugIn\IDFPRPlugIn\bin\Debug\PlugIn_NET4_5.dll
+D:\Dev\Verity\Plugins-yr2\Work in Progress\IDFPRPlugIn\IDFPRPlugIn\bin\Debug\RestSharp.dll
+D:\Dev\Verity\Plugins-yr2\Work in Progress\IDFPRPlugIn\IDFPRPlugIn\bin\Debug\ABCpdf.dll
+D:\Dev\Verity\Plugins-yr2\Work in Progress\IDFPRPlugIn\IDFPRPlugIn\bin\Debug\ABCpdf.xml
+D:\Dev\Verity\Plugins-yr2\Work in Progress\IDFPRPlugIn\IDFPRPlugIn\obj\Debug\IDFPRPlugIn.csproj.CopyComplete
+D:\Dev\Verity\Plugins-yr2\Work in Progress\IDFPRPlugIn\IDFPRPlugIn\obj\Debug\IDFPRPlugIn.dll
+D:\Dev\Verity\Plugins-yr2\Work in Progress\IDFPRPlugIn\IDFPRPlugIn\obj\Debug\IDFPRPlugIn.pdb
