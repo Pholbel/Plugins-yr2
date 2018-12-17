@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2050
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AMCBPlugIn", "AMCBPlugIn\AMCBPlugIn.csproj", "{ABF655CA-BECE-4CFB-BB29-43261C6D08BC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ABF655CA-BECE-4CFB-BB29-43261C6D08BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABF655CA-BECE-4CFB-BB29-43261C6D08BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABF655CA-BECE-4CFB-BB29-43261C6D08BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABF655CA-BECE-4CFB-BB29-43261C6D08BC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {04C80597-1F0F-4619-88B3-59F311C7A8A6}
+	EndGlobalSection
+EndGlobal
