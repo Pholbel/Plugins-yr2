@@ -4601,6 +4601,7 @@
       <Data key="dr_lname" value="Skywalker"/>
       <Data key="dr_fname" value="Anakin"/>
       </Provider>
+    </Assembly>
   <Assembly name="AMCBPlugIn" action="">
     <!-- License number (Certified Midwife) -->
     <Provider run="1">
