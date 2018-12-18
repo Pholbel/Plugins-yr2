@@ -48,6 +48,7 @@ namespace DPFRPlugIn
             if (nodes.Count > 0)
             {
                 StringBuilder builder = new StringBuilder();
+                bool ln = false;
                 
                 foreach (var n in nodes)
                 {
@@ -65,6 +66,7 @@ namespace DPFRPlugIn
                                 }
                             }
                             //TODO: skip if not matching license number
+                            if (vp[0].Contains("License Number") && vp[1].Contains()) { ln = true; }
                             builder.AppendFormat(TdPair, vp[0], vp[1]);
                         }
                         else if (m.Attributes.Contains("class") && m.Attributes["class"].Value.Contains("tbstriped"))
