@@ -48,7 +48,7 @@ namespace ABECPlugIn
                     return ParseResponse(response.Content);
                 }*/
                 
-                CheckLicenseDetails(response.Content);
+                //CheckLicenseDetails(response.Content);
                 return ParseResponse(response.Content);
             }
             catch (Exception e)
@@ -72,33 +72,19 @@ namespace ABECPlugIn
 
         private Result<string> ParseResponse(string response)
         {
-            MatchCollection fields1 = Regex.Matches(response, "(?<=(<td>)).*(?=</td)");
-            MatchCollection fields2 = Regex.Matches(response, "(?<=(<b>)).*(?=\n)");
-            List<string> headers1 = new List<string>(new string[] { "Name", "Address Line1", "Address Line2", "Phone #" });
-            //List<string> headers = new List<string>(new string[] {"Area", "License #", "Status", "Issued", "HSP", "Special Certification", "University", "Department", "Graduated"});
+            MatchCollection fields = Regex.Matches(response, "(?<=_0\">).*(?=</span>)");
+            List<string> headers = new List<string>(new string[] { "License Number", "Name", "Address Line1", "Address Line2", "Work Phone", "Exprie Date"});
 
-            if (fields1.Count > 3)
+            if (fields.Count == 7)
             {
                 StringBuilder builder = new StringBuilder();
 
-                for (int idx=3;idx<fields1.Count-5;idx++)
+                for (int idx=0;idx<headers.Count;idx++)
                 {
-                    string header = headers1[idx-3];
-                    string text = CleanString(fields1[idx].ToString());
+                    string header = headers[idx];
+                    string text = CleanString(fields[idx+1].ToString());
 
                     if (text == "") text = "N/A";
-
-                    builder.AppendFormat(TdPair, header, text);
-                    builder.AppendLine();
-                }
-
-                for (int idx=2;idx<fields2.Count-1;idx++)
-                {
-                    string exp = fields2[idx].ToString();
-                    if (exp.Contains("<u>")) { continue; }
-                    List<string> pair = exp.Split(':').ToList();
-                    string header = CleanString(pair[0]);
-                    string text = CleanString(pair[1]);
 
                     builder.AppendFormat(TdPair, header, text);
                     builder.AppendLine();
@@ -114,12 +100,8 @@ namespace ABECPlugIn
 
         private string CleanString(string str)
         {
-            str = str.Replace("<b>", "");
-            str = str.Replace("</b>", "");
             str = str.Replace("<u>", "");
-            str = str.Replace("<br>", "");
-            str = str.Replace("</td>", "");
-
+            str = str.Replace("</u>", "");
             return str;
         }
     }

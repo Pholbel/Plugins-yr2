@@ -4436,6 +4436,41 @@
       <Data key ="dr_fname" value="A"/>
     </Provider>
   </Assembly>
+  
+  <Assembly name ="ABECPlugIn" action ="">
+    <!--Test case for last name and license number -->
+    <Provider run="1">
+      <Data key ="dr_lname" value="Smith"/>
+      <Data key ="lic_no" value="2268"/>
+      <Data key ="lic_exp" value= "9/6/2019"/>
+    </Provider>
+    <!--Test case for last name and license number with missing phone # -->
+    <Provider run="1">
+      <Data key ="dr_lname" value="Smith"/>
+      <Data key ="lic_no" value="3201"/>
+      <Data key ="lic_exp" value="11/6/2019"/>
+    </Provider>
+    <!--Test case for license number -->
+    <Provider run="1">
+      <Data key ="lic_no" value="1973"/>
+      <Data key ="lic_exp" value="5/21/2019"/>
+    </Provider>
+    <!--Test case for first name -->
+    <Provider run="1">
+      <Data key ="dr_fname" value="LaTonya"/>
+      <Data key ="lic_no" value="2508"/>
+      <Data key ="lic_exp" value="7/10/2019"/>
+    </Provider>
+    <!--Test case for no provider -->
+    <Provider run ="1">
+      <Data key ="dr_lname" value="Judy"/>
+      <Data key ="dr_fname" value="Nick"/>
+    </Provider>
+    <!--Test case for multiple providers-->
+    <Provider run="0">
+      <Data key ="dr_lname" value="Smith"/>
+    </Provider>
+  </Assembly>
 
 
   <Assembly name ="MDPRplugin" action ="">

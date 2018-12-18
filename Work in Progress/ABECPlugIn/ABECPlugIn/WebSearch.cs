@@ -94,7 +94,14 @@ namespace ABECPlugIn
 
             //CHECK IF WE HAVE MULTIPLE PROVIDERS
 
-            MatchCollection providerList = Regex.Matches(response.Content, ">" + provider.LastName + "</a>", RegOpt);
+            MatchCollection providerList1 = Regex.Matches(response.Content, provider.LastName + "</span>", RegOpt);
+            MatchCollection providerList2 = Regex.Matches(response.Content, provider.FirstName + ".*</span>");
+            MatchCollection providerList3 = Regex.Matches(response.Content, "<u>" + provider.LicenseNumber + "</u>", RegOpt);
+            MatchCollection providerList;
+
+            if (providerList1.Count == 1) { providerList = providerList1; }
+            else if (providerList2.Count == 1) { providerList = providerList2; }
+            else { providerList = providerList3; }
 
             if (providerList.Count == 0)
             {
@@ -102,6 +109,7 @@ namespace ABECPlugIn
             }
             else if (providerList.Count == 1)
             {
+                /*
                 string baseSubUrl = "psychologist.php\\?id=";
                 string searchRegex =  baseSubUrl + "(?<QUERY>.*?)\">" + provider.LastName;
                 Match fields = Regex.Match(response.Content, searchRegex, RegOpt);
@@ -118,6 +126,7 @@ namespace ABECPlugIn
                 response = client.Execute(request);
 
                 allCookies.AddRange(response.Cookies);
+                */
 
                 if (response.StatusCode == HttpStatusCode.OK)
                 {

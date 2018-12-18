@@ -10,3 +10,4 @@ C:\Users\Dian\Documents\GitHub\Plugins-yr2\Work in Progress\ABECPlugIn\ABECPlugI
 C:\Users\Dian\Documents\GitHub\Plugins-yr2\Work in Progress\ABECPlugIn\ABECPlugIn\obj\Debug\ABECPlugIn.csproj.CopyComplete
 C:\Users\Dian\Documents\GitHub\Plugins-yr2\Work in Progress\ABECPlugIn\ABECPlugIn\obj\Debug\ABECPlugIn.dll
 C:\Users\Dian\Documents\GitHub\Plugins-yr2\Work in Progress\ABECPlugIn\ABECPlugIn\obj\Debug\ABECPlugIn.pdb
+C:\Users\Dian\Documents\GitHub\Plugins-yr2\Work in Progress\ABECPlugIn\ABECPlugIn\obj\Debug\ABECPlugIn.csprojAssemblyReference.cache
