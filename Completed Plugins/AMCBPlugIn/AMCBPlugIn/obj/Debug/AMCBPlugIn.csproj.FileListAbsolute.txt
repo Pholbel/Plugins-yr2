@@ -1,0 +1,14 @@
+D:\Dev\Verity\Plugins-yr2\Work in Progress\AMCBPlugIn\AMCBPlugIn\bin\Debug\AMCBPlugIn.dll
+D:\Dev\Verity\Plugins-yr2\Work in Progress\AMCBPlugIn\AMCBPlugIn\bin\Debug\AMCBPlugIn.pdb
+D:\Dev\Verity\Plugins-yr2\Work in Progress\AMCBPlugIn\AMCBPlugIn\bin\Debug\HtmlAgilityPack.dll
+D:\Dev\Verity\Plugins-yr2\Work in Progress\AMCBPlugIn\AMCBPlugIn\bin\Debug\Newtonsoft.Json.dll
+D:\Dev\Verity\Plugins-yr2\Work in Progress\AMCBPlugIn\AMCBPlugIn\bin\Debug\PdfMetamorphosis.dll
+D:\Dev\Verity\Plugins-yr2\Work in Progress\AMCBPlugIn\AMCBPlugIn\bin\Debug\PlugIn_NET4_5.dll
+D:\Dev\Verity\Plugins-yr2\Work in Progress\AMCBPlugIn\AMCBPlugIn\bin\Debug\RestSharp.dll
+D:\Dev\Verity\Plugins-yr2\Work in Progress\AMCBPlugIn\AMCBPlugIn\bin\Debug\ABCpdf.dll
+D:\Dev\Verity\Plugins-yr2\Work in Progress\AMCBPlugIn\AMCBPlugIn\bin\Debug\ABCpdf.xml
+D:\Dev\Verity\Plugins-yr2\Work in Progress\AMCBPlugIn\AMCBPlugIn\obj\Debug\AMCBPlugIn.csprojAssemblyReference.cache
+D:\Dev\Verity\Plugins-yr2\Work in Progress\AMCBPlugIn\AMCBPlugIn\obj\Debug\AMCBPlugIn.csproj.CoreCompileInputs.cache
+D:\Dev\Verity\Plugins-yr2\Work in Progress\AMCBPlugIn\AMCBPlugIn\obj\Debug\AMCBPlugIn.csproj.CopyComplete
+D:\Dev\Verity\Plugins-yr2\Work in Progress\AMCBPlugIn\AMCBPlugIn\obj\Debug\AMCBPlugIn.dll
+D:\Dev\Verity\Plugins-yr2\Work in Progress\AMCBPlugIn\AMCBPlugIn\obj\Debug\AMCBPlugIn.pdb
