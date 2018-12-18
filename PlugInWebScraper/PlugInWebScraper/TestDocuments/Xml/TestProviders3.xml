@@ -2580,38 +2580,46 @@
   </Assembly>
 
   <Assembly name ="DPFRPlugIn" action ="E">
+    
     <Provider run="0">
       <Data key ="lic_no" value="CC4021" />
-      <Data key ="orgName" value="Maine State Board of Counseling Professionals " />
+      <Data key ="lic_exp" value="12/31/2020" />
+      <Data key ="dr_lname" value="Hanley"/>
     </Provider>
     
     <Provider run="1">
       <Data key ="lic_no" value="AP30016646" />
       <Data key ="lic_exp" value="8/31/2015" />
-      <Data key ="orgName" value="Maine State Board of Fuel" />
+      <Data key ="dr_lname" value="Smith"/>
     </Provider>
+
     <Provider run="1">
       <Data key ="lic_no" value="JY20003659" />
       <Data key ="lic_exp" value="7/31/2003" />
-      <Data key ="orgName" value="Maine State Board of Fuel" />
+      <Data key ="dr_lname" value="Smith"/>
     </Provider>
+
     <Provider run="1">
       <Data key ="lic_no" value="MS20004953" />
       <Data key ="lic_exp" value="4/30/2011" />
-      <Data key ="orgName" value="Maine State Board of Fuel" />
+      <Data key ="dr_lname" value="Babin"/>
     </Provider>
+
     <Provider run="1">
       <Data key ="lic_no" value="MS30001318" />
-      <Data key ="orgName" value="Maine State Board of Fuel" />
+      <Data key ="lic_exp" value="12/31/1993" />
+      <Data key ="dr_lname" value="Young"/>
     </Provider>
+
     <Provider run="1">
       <Data key ="lic_no" value="AP30009244" />
-      <Data key ="lic_exp" value="1/1/2001" />
-      <Data key ="orgName" value="Maine State Board of Fuel" />
+      <Data key ="lic_exp" value="12/31/2001" />
+      <Data key ="dr_lname" value="Grant"/>
     </Provider>
-      <Provider run="1">
+
+    <!--Should fail due to no provider last name-->
+    <Provider run="1">
       <Data key ="lic_no" value="YY0000000" />
-      <Data key ="orgName" value="Maine State Board of Fuel" />
     </Provider>
 
   

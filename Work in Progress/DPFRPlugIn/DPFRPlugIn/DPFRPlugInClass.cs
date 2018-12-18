@@ -34,7 +34,7 @@ namespace DPFRPlugIn
                 if (response.IsValid)
                 {
                     WebParse webParse = new WebParse();
-                    Result<string> parseResult = webParse.Execute(response.Value);
+                    Result<string> parseResult = webParse.Execute(response.Value, provider);
 
                     if (parseResult.IsValid)
                     {

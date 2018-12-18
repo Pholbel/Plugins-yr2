@@ -114,14 +114,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DPFRPlugIn.dll" size="16896">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DPFRPlugIn.dll" size="17408">
       <assemblyIdentity name="DPFRPlugIn" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Sj7IMhxYg+X/ctOQULEKpuglb0Je2Kqysi+y+Wm6WDA=</dsig:DigestValue>
+        <dsig:DigestValue>sDGr9Tjy2isxqxfzjrwrEWn77OgF433xOTVPYi0FtoU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -421,7 +421,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>8b5Om3V6AwJsddaSwe63O8PDF0VGNHN5XLg8+OW1QPQ=</dsig:DigestValue>
+        <dsig:DigestValue>l5kOoJiihVT4d7ZsdxgW6/Emz2cfqsL86ZeNKjWmyZ8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -623,13 +623,13 @@
       <dsig:DigestValue>Z3zNIF+dbta1al8t0xFlg+pKb/3gi5/Tk29GTutLP0k=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="TestDocuments\Xml\TestProviders3.xml" size="158356" writeableType="applicationData">
+  <file name="TestDocuments\Xml\TestProviders3.xml" size="161358" writeableType="applicationData">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>hiAowmBNTKMuol5lwK6pp7+pjgVr8a78omRXLw85pig=</dsig:DigestValue>
+      <dsig:DigestValue>rNK+EnzxJ4Wx9kS9rvKPNuSKETThZeVSMmKht07G1C0=</dsig:DigestValue>
     </hash>
   </file>
   <file name="TestDocuments\Xml\TestProviders4.xml" size="215" writeableType="applicationData">

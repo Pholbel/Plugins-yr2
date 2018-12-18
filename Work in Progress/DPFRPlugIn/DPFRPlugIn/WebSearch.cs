@@ -40,7 +40,7 @@ namespace DPFRPlugIn
 
             // PARAMETERS AND COOKIES WE WILL GET WITH FIRST GET
             List<RestResponseCookie> allCookies = new List<RestResponseCookie>();
-            string viewState = "", viewState1 ="", viewState2="", viewState3="", viewState4 = "", viewState5 = "", viewState6 = "", viewState7 = "", viewState8 = "", viewState9 = "", viewState10 = "";
+            string viewState = "", viewState1 = "", viewState2 = "", viewState3 = "", viewState4 = "", viewState5 = "", viewState6 = "", viewState7 = "", viewState8 = "", viewState9 = "", viewState10 = "";
             string viewStateGenerator = "";
             string eventValidation = "";
             string lastFocus = "";
@@ -50,7 +50,7 @@ namespace DPFRPlugIn
             string baseUrl = "https://www.pfr.maine.gov/ALMSOnline/ALMSQuery/";
 
             //GET PARAMETERS AND COOKIES
-            RestClient client = new RestClient(baseUrl+"SearchIndividual.aspx");
+            RestClient client = new RestClient(baseUrl + "SearchIndividual.aspx");
             RestRequest request = new RestRequest(Method.GET);
             IRestResponse response = client.Execute(request);
 
@@ -108,7 +108,14 @@ namespace DPFRPlugIn
                 request.AddCookie(c.Name, c.Value);
             }
 
-            response = client.Execute(request);
+            if (provider.LicenseNumber == String.Empty || provider.LastName == String.Empty)
+            {
+                return Result<IRestResponse>.Failure(ErrorMsg.InvalidLicenseAndLastName);
+            }
+            else
+            {
+                response = client.Execute(request);
+            }
 
             //LAND HO!
 

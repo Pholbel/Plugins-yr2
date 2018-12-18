@@ -25,11 +25,11 @@ namespace DPFRPlugIn
             Sanction = SanctionType.None;
         }
 
-        public Result<string> Execute(IRestResponse response)
+        public Result<string> Execute(IRestResponse response, Provider provider)
         {
             try
             {
-                return ParseResponse(response.Content);
+                return ParseResponse(response.Content, provider);
             }
             catch (Exception e)
             {
@@ -37,7 +37,7 @@ namespace DPFRPlugIn
             }
         }
         
-        private Result<string> ParseResponse(string response)
+        private Result<string> ParseResponse(string response, Provider provider)
         {
             var doc = new HtmlDocument();
             doc.LoadHtml(response);
@@ -48,6 +48,10 @@ namespace DPFRPlugIn
             if (nodes.Count > 0)
             {
                 StringBuilder builder = new StringBuilder();
+                //get provider name
+                var rName = doc.DocumentNode.SelectSingleNode("//h2[contains(@class,'regulatorName')]");
+                var nameNode = rName.NextSibling.NextSibling;
+                builder.AppendFormat(TdPair, "Provider Name", nameNode.InnerText);
                 bool ln = false;
                 
                 foreach (var n in nodes)
@@ -65,9 +69,20 @@ namespace DPFRPlugIn
                                     vp.Add(k.InnerText);
                                 }
                             }
-                            //TODO: skip if not matching license number
-                            if (vp[0].Contains("License Number") && vp[1].Contains()) { ln = true; }
-                            builder.AppendFormat(TdPair, vp[0], vp[1]);
+                            //skip if not matching license number
+                            if (vp[0].Contains("License Number"))
+                            {
+                                if(vp[1].Contains(provider.LicenseNumber)) { ln = true; } else { ln = false; }
+                            }
+
+                            if (ln)
+                            {
+                                if (vp[0].Contains("Expiration"))
+                                {
+                                    Expiration = vp[1];
+                                }
+                                builder.AppendFormat(TdPair, vp[0], vp[1]);
+                            }
                         }
                         else if (m.Attributes.Contains("class") && m.Attributes["class"].Value.Contains("tbstriped"))
                         {
@@ -76,12 +91,16 @@ namespace DPFRPlugIn
                             List<string> values = new List<string>();
                             HtmlNode theaders = null;
                             string caption = m.ChildNodes["caption"].InnerText;
+
                             
 
                             if (m.ChildNodes["thead"] != null)
                             {
                                 theaders = m.ChildNodes["thead"].ChildNodes["tr"];
-                                builder.AppendFormat(TdPair, "Section:", caption);
+                                if (ln)
+                                {
+                                    builder.AppendFormat(TdPair, "Section:", caption);
+                                }
                             }
                             var tbody = m.ChildNodes["tbody"];
 
@@ -112,17 +131,28 @@ namespace DPFRPlugIn
                                 }
                             }
 
+                            //handle sanctions
+                            if (caption.Contains("Disciplinary Action") && !values[0].Contains("None"))
+                            {
+                                Sanction = SanctionType.Red;
+                            }
 
                             //handle table
                             for (var i = 0; i < values.Count; i++)
                             {
                                 if (headers.Count > 0)
                                 {
-                                    builder.AppendFormat(TdPair, headers[i % headers.Count], values[i]);
+                                    if (ln)
+                                    {
+                                        builder.AppendFormat(TdPair, headers[i % headers.Count], values[i]);
+                                    }
                                 }
                                 else
                                 {
-                                    builder.AppendFormat(TdPair, caption, values[i]);
+                                    if (ln)
+                                    {                                  
+                                        builder.AppendFormat(TdPair, caption, values[i]);
+                                    }
                                 }
                             }
                         }
