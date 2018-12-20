@@ -1,0 +1,14 @@
+C:\GitHub\Plugins-yr2\Work in Progress\MSCVPlugIn\MSCVPlugIn\bin\Debug\MSCVPlugIn.dll
+C:\GitHub\Plugins-yr2\Work in Progress\MSCVPlugIn\MSCVPlugIn\bin\Debug\MSCVPlugIn.pdb
+C:\GitHub\Plugins-yr2\Work in Progress\MSCVPlugIn\MSCVPlugIn\bin\Debug\HtmlAgilityPack.dll
+C:\GitHub\Plugins-yr2\Work in Progress\MSCVPlugIn\MSCVPlugIn\bin\Debug\Newtonsoft.Json.dll
+C:\GitHub\Plugins-yr2\Work in Progress\MSCVPlugIn\MSCVPlugIn\bin\Debug\PdfMetamorphosis.dll
+C:\GitHub\Plugins-yr2\Work in Progress\MSCVPlugIn\MSCVPlugIn\bin\Debug\PlugIn_NET4_5.dll
+C:\GitHub\Plugins-yr2\Work in Progress\MSCVPlugIn\MSCVPlugIn\bin\Debug\RestSharp.dll
+C:\GitHub\Plugins-yr2\Work in Progress\MSCVPlugIn\MSCVPlugIn\bin\Debug\ABCpdf.dll
+C:\GitHub\Plugins-yr2\Work in Progress\MSCVPlugIn\MSCVPlugIn\bin\Debug\ABCpdf.xml
+C:\GitHub\Plugins-yr2\Work in Progress\MSCVPlugIn\MSCVPlugIn\obj\Debug\MSCVPlugIn.csprojAssemblyReference.cache
+C:\GitHub\Plugins-yr2\Work in Progress\MSCVPlugIn\MSCVPlugIn\obj\Debug\MSCVPlugIn.csproj.CoreCompileInputs.cache
+C:\GitHub\Plugins-yr2\Work in Progress\MSCVPlugIn\MSCVPlugIn\obj\Debug\MSCVPlugIn.csproj.CopyComplete
+C:\GitHub\Plugins-yr2\Work in Progress\MSCVPlugIn\MSCVPlugIn\obj\Debug\MSCVPlugIn.dll
+C:\GitHub\Plugins-yr2\Work in Progress\MSCVPlugIn\MSCVPlugIn\obj\Debug\MSCVPlugIn.pdb
