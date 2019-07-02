@@ -2486,6 +2486,26 @@
 
 
   <Assembly name ="NursysPlugIn" action ="">
+
+<!-- July 1, 2019 plugin error -->
+
+<Provider run="1">
+      <Data key ="ss_no" value="123456789" />
+      <Data key ="dr_fname" value="Rebecca" />
+      <Data key ="dr_lname" value="Hankins-Farber" />
+      <Data key ="dob" value="11/27/1973" />
+      <Data key ="state" value="MI" />
+      <Data key ="lic_no" value="149992" />
+      <Data key ="lic_exp" value="4/30/2019 " />
+      <Data key ="drtitle" value="RN" />
+      <Data key ="email" value="test@domain.org" />
+      <Data key ="siteusername" value="echo" />
+      <Data key ="sitepwd" value="Echo2018!" />
+    </Provider>
+
+	<!--
+	
+
     <Provider run="1">
       <Data key ="ss_no" value="123456789" />
       <Data key ="dr_fname" value="MELISSA ANN" />
@@ -2577,6 +2597,9 @@
       <Data key ="siteusername" value="echo" />
       <Data key ="sitepwd" value="Echo2017!" />
     </Provider>
+
+	-->
+
   </Assembly>
 
   <Assembly name ="DPFRPlugIn" action ="E">
@@ -3076,12 +3099,35 @@
 
 
   <Assembly name ="DOCPlugIn" action ="E">
-    <Provider run="1">
+    <!--
+	<Provider run="1">
       <Data key ="lic_no" value="867736"/>
       <Data key ="drtitle" value="PNP"/>
       <Data key ="dr_fname" value="fgreagtarehg"/>
       <Data key ="dr_lname" value="ge5r34rge4"/>
       <Data key ="lic_exp" value="12/31/2018"/>
+    </Provider>
+	-->
+    <Provider run="1">
+      <Data key ="dr_fname" value="Stephen"/>
+      <Data key ="dr_lname" value="Smith"/>
+    </Provider>
+    <Provider run="1">
+      <Data key ="dr_fname" value="Adrian"/>
+      <Data key ="dr_lname" value="Hernandez"/>
+    </Provider>
+    <Provider run="1">
+      <Data key ="dr_fname" value="Timothy"/>
+      <Data key ="dr_lname" value="Gormley"/>
+    </Provider>
+    <Provider run="1">
+      <Data key ="dr_fname" value="Techonweb"/>
+    </Provider>
+    <Provider run="1">
+      <Data key ="dr_lname" value="Techonweb"/>
+    </Provider>
+    <Provider run="1">
+      <Data key ="dr_lname" value="CHORNOLETSKYY"/>
     </Provider>
   </Assembly>
 

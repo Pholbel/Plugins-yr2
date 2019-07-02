@@ -181,7 +181,6 @@ C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\
 C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\ABBHEPlugIn.dll.config
 C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\ABCpdf.xml
 C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\ControlzEx.pdb
-C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\IDBPPlugIn.pdb
 C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\MahApps.Metro.pdb
 C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\MahApps.Metro.xml
 C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
@@ -274,8 +273,7 @@ C:\Users\ucsd\Desktop\gitMDPR\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\obj\
 C:\Users\ucsd\Desktop\gitMDPR\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\obj\Debug\PlugInWebScraper.csproj.CopyComplete
 C:\Users\ucsd\Desktop\gitMDPR\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\obj\Debug\PlugInWebScraper.exe
 C:\Users\ucsd\Desktop\gitMDPR\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\obj\Debug\PlugInWebScraper.pdb
-C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\MBBHTPlugIn.pdb
-C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\NVADGPlugIn.pdb
-C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\Newtonsoft.Json.dll
-C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\DPFRPlugIn.dll
-C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\DPFRPlugIn.pdb
+C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\NursysPlugIn.pdb
+C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\NursysPlugIn.dll.config
+C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\DOCPlugIn.dll
+C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\DOCPlugIn.pdb

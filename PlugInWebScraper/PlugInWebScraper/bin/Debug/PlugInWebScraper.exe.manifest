@@ -114,14 +114,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DPFRPlugIn.dll" size="17408">
-      <assemblyIdentity name="DPFRPlugIn" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DOCPlugIn.dll" size="10240">
+      <assemblyIdentity name="DOCPlugIn" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>sDGr9Tjy2isxqxfzjrwrEWn77OgF433xOTVPYi0FtoU=</dsig:DigestValue>
+        <dsig:DigestValue>rFtxR2VBWY3/LZVtZC/tCdVo3VNXBz743wcysRC4Yvs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -366,6 +366,18 @@
     </dependentAssembly>
   </dependency>
   <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="NursysPlugIn.dll" size="70656">
+      <assemblyIdentity name="NursysPlugIn" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>kuX+uKVPGxuzv+VDIV4yQilsk7QaJpf07b31akGCYrM=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="NVADGPlugIn.dll" size="13312">
       <assemblyIdentity name="NVADGPlugIn" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
@@ -421,7 +433,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>l5kOoJiihVT4d7ZsdxgW6/Emz2cfqsL86ZeNKjWmyZ8=</dsig:DigestValue>
+        <dsig:DigestValue>GiGUAcnWOEU65G+dbkb7kx4e/jDUbsF2Qm1jrGT9Lg0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -623,13 +635,13 @@
       <dsig:DigestValue>Z3zNIF+dbta1al8t0xFlg+pKb/3gi5/Tk29GTutLP0k=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="TestDocuments\Xml\TestProviders3.xml" size="161358" writeableType="applicationData">
+  <file name="TestDocuments\Xml\TestProviders3.xml" size="162674" writeableType="applicationData">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>rNK+EnzxJ4Wx9kS9rvKPNuSKETThZeVSMmKht07G1C0=</dsig:DigestValue>
+      <dsig:DigestValue>jTdLQOhg6okCZ7qc6dX4tDVzTN5CjFToci1vQaUgwUI=</dsig:DigestValue>
     </hash>
   </file>
   <file name="TestDocuments\Xml\TestProviders4.xml" size="215" writeableType="applicationData">

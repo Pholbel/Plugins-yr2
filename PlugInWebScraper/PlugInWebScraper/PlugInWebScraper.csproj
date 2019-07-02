@@ -77,9 +77,6 @@
     <Reference Include="AKSMLBPlugIn">
       <HintPath>..\..\..\..\PlugIn\AKSMLBPlugIn\AKSMLBPlugIn\bin\Debug\AKSMLBPlugIn.dll</HintPath>
     </Reference>
-    <Reference Include="ALBMEPlugIn">
-      <HintPath>..\..\..\..\PlugIn\ALBMEPlugIn\bin\Debug\ALBMEPlugIn.dll</HintPath>
-    </Reference>
     <Reference Include="AMAPlugIn">
       <HintPath>..\..\..\..\PlugIn\AMAPlugIn\AMAPlugin\AMAPlugIn\bin\Debug\AMAPlugIn.dll</HintPath>
     </Reference>
@@ -122,9 +119,8 @@
     <Reference Include="DLTCPlugIn">
       <HintPath>..\..\..\..\PlugIn\DLTCPlugIn\DLTCPlugIn\bin\Debug\DLTCPlugIn.dll</HintPath>
     </Reference>
-    <Reference Include="DPFRPlugIn, Version=1.0.6905.35975, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Work in Progress\DPFRPlugIn\DPFRPlugIn\bin\Debug\DPFRPlugIn.dll</HintPath>
+    <Reference Include="DOCPlugIn">
+      <HintPath>..\..\Work in Progress\DOCPlugIn\bin\Debug\DOCPlugIn.dll</HintPath>
     </Reference>
     <Reference Include="EPLSPlugIn">
       <HintPath>..\..\..\..\PlugIn\EPLSPlugIn\bin\Debug\EPLSPlugIn.dll</HintPath>
@@ -208,9 +204,8 @@
     <Reference Include="NCPDPlugIn">
       <HintPath>..\..\..\..\PlugIn\NCPDPlugIn\NCPDPlugIn\bin\Debug\NCPDPlugIn.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Third Party Libraries\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\..\Downloads\NursysPlugIn\NursysPlugIn - Copy\NursysPlugIn\bin\Debug\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="NHMBPlugIn">
       <HintPath>..\..\..\..\PlugIn\NHMBPlugIn\NHMBPlugIn\bin\Debug\NHMBPlugIn.dll</HintPath>
@@ -225,7 +220,7 @@
       <HintPath>..\..\..\..\PlugIn\NSOPWPlugIn\NSOPWPlugIn\bin\Debug\NSOPWPlugIn.dll</HintPath>
     </Reference>
     <Reference Include="NursysPlugIn">
-      <HintPath>..\..\..\..\PlugIn\NursysPlugIn\NursysPlugIn\bin\Debug\NursysPlugIn.dll</HintPath>
+      <HintPath>..\..\..\..\Downloads\NursysPlugIn\NursysPlugIn - Copy\NursysPlugIn\bin\Debug\NursysPlugIn.dll</HintPath>
     </Reference>
     <Reference Include="NVADGPlugIn">
       <HintPath>..\..\Work in Progress\NVADGPlugIn\NVADGPlugIn\bin\Debug\NVADGPlugIn.dll</HintPath>
