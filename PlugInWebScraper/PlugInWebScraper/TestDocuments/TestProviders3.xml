@@ -3486,5 +3486,45 @@
       <Data key ="lic_exp" value="4/29/2019"/>
     </Provider>
   </Assembly>
+  
+  <Assembly name ="MSCVPlugIn" action ="">
+    <!-- Search by Licsense Number -->
+    <Provider run="1">
+      <Data key ="lic_no" value="1129"/>
+      <Data key ="lic_exp" value="2/8/2019"/>
+    </Provider>
+    <Provider run="1">
+      <Data key ="lic_no" value="2243"/>
+      <Data key ="lic_exp" value="2/8/2019"/>
+    </Provider>
+    <!-- Search by Last Name -->
+    <Provider run="1">
+      <Data key ="dr_lname" value ="Ashley"/>
+      <Data key ="lic_no" value=""/>
+      <Data key ="lic_exp" value="2/8/2019"/>
+    </Provider>
+    <!-- Search by Lisense Number AND Last Name -->
+    <Provider run="1">
+      <Data key ="dr_lname" value ="Brooks"/>
+      <Data key ="lic_no" value="0001"/>
+      <Data key ="lic_exp" value="2/8/2019"/>
+    </Provider>
+    <!-- Sanction -->
+    <Provider run="1">
+      <Data key ="lic_no" value="0505"/>
+      <Data key ="lic_exp" value="2/8/2019"/>
+    </Provider>
+    <!-- Multiple providers found -->
+    <Provider run="1">
+      <Data key ="lic_no" value="0000"/>
+      <Data key ="lic_exp" value="2/13/2014"/>
+    </Provider>
+    <!-- No record found -->
+    <Provider run="1">
+      <Data key ="lic_no" value="3362"/>
+      <Data key ="dr_lname" value="smith"/>
+      <Data key ="lic_exp" value="5/14/2019"/>
+    </Provider>
+  </Assembly>
 </TestData>
 

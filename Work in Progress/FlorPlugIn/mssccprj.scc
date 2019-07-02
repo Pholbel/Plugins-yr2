@@ -1,0 +1,5 @@
+SCC = This is a Source Code Control file
+
+[FlorPlugIn.csproj]
+SCC_Aux_Path = "\\ssafe\vss"
+SCC_Project_Name = "$/Echo/PSV/PlugIn/FlorPlugIn", EDXAAAAA
