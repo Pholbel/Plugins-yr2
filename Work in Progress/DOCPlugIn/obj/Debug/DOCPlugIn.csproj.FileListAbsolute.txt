@@ -1,0 +1,16 @@
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\DOCPlugIn\obj\Debug\DOCPlugIn.csprojAssemblyReference.cache
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\DOCPlugIn\obj\Debug\DOCPlugIn.csproj.CoreCompileInputs.cache
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\DOCPlugIn\bin\Debug\DOCPlugIn.dll
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\DOCPlugIn\bin\Debug\DOCPlugIn.pdb
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\DOCPlugIn\bin\Debug\CAQHData.dll
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\DOCPlugIn\bin\Debug\HtmlAgilityPack.dll
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\DOCPlugIn\bin\Debug\Newtonsoft.Json.dll
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\DOCPlugIn\bin\Debug\PdfMetamorphosis.dll
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\DOCPlugIn\bin\Debug\PlugIn_NET4_5.dll
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\DOCPlugIn\bin\Debug\RestSharp.dll
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\DOCPlugIn\bin\Debug\SautinSoft.PdfFocus.dll
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\DOCPlugIn\bin\Debug\ABCpdf.dll
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\DOCPlugIn\bin\Debug\ABCpdf.xml
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\DOCPlugIn\obj\Debug\DOCPlugIn.csproj.CopyComplete
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\DOCPlugIn\obj\Debug\DOCPlugIn.dll
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\DOCPlugIn\obj\Debug\DOCPlugIn.pdb
