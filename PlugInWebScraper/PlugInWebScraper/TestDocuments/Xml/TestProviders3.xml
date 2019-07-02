@@ -3256,18 +3256,34 @@
 
 
   <Assembly name ="FlorPlugIn" action ="E">
+
     <Provider run="1">
       <Data key ="lic_no" value="PMD12825"/>
     </Provider>
     <Provider run="1">
       <Data key ="lic_no" value="ME104414"/>
     </Provider>
+
     <Provider run="1">
       <Data key ="dr_fname" value="Elizabeth"/>
       <Data key ="dr_lname" value="Smith"/>
       <Data key ="lic_no" value="RN766302"/>
       <Data key="lic_exp" value="4/30/2020"/>
     </Provider>
+
+<!-- two qualifications -->
+    <Provider run="1">
+      <Data key ="lic_no" value="APRN9235462"/>
+    </Provider>
+
+
+<!-- more than two qualifications -->
+    <Provider run="1">
+      <Data key ="dr_fname" value="Kelly"/>
+      <Data key ="dr_lname" value="Verbal"/>
+      <Data key ="lic_no" value="APRN3411832"/>
+    </Provider>
+
   </Assembly>
 
 

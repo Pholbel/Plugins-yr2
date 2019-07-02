@@ -119,9 +119,6 @@
     <Reference Include="DLTCPlugIn">
       <HintPath>..\..\..\..\PlugIn\DLTCPlugIn\DLTCPlugIn\bin\Debug\DLTCPlugIn.dll</HintPath>
     </Reference>
-    <Reference Include="DOCPlugIn">
-      <HintPath>..\..\Work in Progress\DOCPlugIn\bin\Debug\DOCPlugIn.dll</HintPath>
-    </Reference>
     <Reference Include="EPLSPlugIn">
       <HintPath>..\..\..\..\PlugIn\EPLSPlugIn\bin\Debug\EPLSPlugIn.dll</HintPath>
     </Reference>
@@ -130,7 +127,7 @@
     </Reference>
     <Reference Include="FlorPlugIn, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\PlugIn\FlorPlugIn\bin\Debug\FlorPlugIn.dll</HintPath>
+      <HintPath>..\..\Work in Progress\FlorPlugIn\bin\Debug\FlorPlugIn.dll</HintPath>
     </Reference>
     <Reference Include="GASOSPlugin">
       <HintPath>..\..\..\..\PlugIn\GASOSPlugin\bin\Debug\GASOSPlugin.dll</HintPath>

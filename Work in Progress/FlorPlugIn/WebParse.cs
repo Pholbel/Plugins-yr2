@@ -76,49 +76,31 @@ namespace FlorPlugIn
                 List<string> h_list = new List<string>();
                 List<string> v_list = new List<string>();
 
-                string previousHeader = string.Empty;
-                bool containsInt = false;
-                bool qualificationsDoubled = false;
                 int i;
-                int k;
-                //added logic because some providers were having multiple "Qualifications values being returned"
-                //this updated logic will handle it and after the for loop add the last remaining key value pair if there were two qualification values
-                for ( i= 0; i < headerNodes.Count(); i++)
+                HtmlNode blankHeader = new HtmlNode(HtmlNodeType.Element, doc,0);
+                int qidx = 0;
+
+                //set index of qualifications header and blank header
+                for (var j = 0; j < headerNodes.Count; j++)
                 {
-                    if (valueNodes.Count > i)
+                    if (headerNodes[j].InnerText.Contains("Qualifications"))
                     {
-                        containsInt = valueNodes[i].InnerText.Any(char.IsDigit);
-                        if (!String.IsNullOrEmpty(previousHeader) && previousHeader.Contains("Qualifications"))
-                        {                     
-                            if (!containsInt)
-                            {
-                                qualificationsDoubled = true;
-                                h_list.Add(previousHeader);
-                                v_list.Add(valueNodes[i].InnerText);
-                            }
-
-                        }
-                        else if (qualificationsDoubled)
-                        {
-                            k = i - 1;
-                            h_list.Add(headerNodes[k].InnerText);
-                            v_list.Add(valueNodes[i].InnerText);
-                            
-                        }
-                        else
-                        {
-                            h_list.Add(headerNodes[i].InnerText);
-                            v_list.Add(valueNodes[i].InnerText);
-                        }
-
-                        previousHeader = headerNodes[i].InnerText;
+                        qidx = j+1;
+                    }
+                    if (headerNodes[j].InnerText == string.Empty)
+                    {
+                        blankHeader = headerNodes[j];
                     }
                 }
 
-                if (qualificationsDoubled && headerNodes.Count > 0)
+                //coerce lengths of keys and values to be equal
+                while (headerNodes.Count < valueNodes.Count)
                 {
-                    i = headerNodes.Count() - 1;
-                    k = valueNodes.Count() - 1;
+                    headerNodes.Insert(qidx, blankHeader);
+                }
+                
+                for ( i= 0; i < valueNodes.Count(); i++)
+                {
                     h_list.Add(headerNodes[i].InnerText);
                     v_list.Add(valueNodes[i].InnerText);
                 }

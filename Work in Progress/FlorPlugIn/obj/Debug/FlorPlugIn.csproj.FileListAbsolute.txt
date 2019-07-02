@@ -14,3 +14,20 @@ C:\AzureTfs\Echo PSV\PlugIn\FlorPlugIn\obj\Debug\FlorPlugIn.Properties.Resources
 C:\AzureTfs\Echo PSV\PlugIn\FlorPlugIn\obj\Debug\FlorPlugIn.csproj.GenerateResource.Cache
 C:\AzureTfs\Echo PSV\PlugIn\FlorPlugIn\obj\Debug\FlorPlugIn.dll
 C:\AzureTfs\Echo PSV\PlugIn\FlorPlugIn\obj\Debug\FlorPlugIn.pdb
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\FlorPlugIn\bin\Debug\FlorPlugIn.dll.config
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\FlorPlugIn\bin\Debug\FlorPlugIn.dll
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\FlorPlugIn\bin\Debug\FlorPlugIn.pdb
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\FlorPlugIn\bin\Debug\ABCpdf.dll
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\FlorPlugIn\bin\Debug\HtmlAgilityPack.dll
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\FlorPlugIn\bin\Debug\Newtonsoft.Json.dll
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\FlorPlugIn\bin\Debug\PdfMetamorphosis.dll
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\FlorPlugIn\bin\Debug\RestSharp.dll
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\FlorPlugIn\bin\Debug\ABCpdf.xml
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\FlorPlugIn\bin\Debug\PlugIn_NET4_5.pdb
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\FlorPlugIn\obj\Debug\FlorPlugIn.csprojAssemblyReference.cache
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\FlorPlugIn\obj\Debug\FlorPlugIn.Properties.Resources.resources
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\FlorPlugIn\obj\Debug\FlorPlugIn.csproj.GenerateResource.cache
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\FlorPlugIn\obj\Debug\FlorPlugIn.csproj.CoreCompileInputs.cache
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\FlorPlugIn\obj\Debug\FlorPlugIn.csproj.CopyComplete
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\FlorPlugIn\obj\Debug\FlorPlugIn.dll
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\FlorPlugIn\obj\Debug\FlorPlugIn.pdb
