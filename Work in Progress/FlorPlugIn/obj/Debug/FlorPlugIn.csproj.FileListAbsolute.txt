@@ -1,0 +1,16 @@
+C:\AzureTfs\Echo PSV\PlugIn\FlorPlugIn\bin\Debug\FlorPlugIn.dll.config
+C:\AzureTfs\Echo PSV\PlugIn\FlorPlugIn\bin\Debug\FlorPlugIn.dll
+C:\AzureTfs\Echo PSV\PlugIn\FlorPlugIn\bin\Debug\FlorPlugIn.pdb
+C:\AzureTfs\Echo PSV\PlugIn\FlorPlugIn\bin\Debug\ABCpdf.dll
+C:\AzureTfs\Echo PSV\PlugIn\FlorPlugIn\bin\Debug\HtmlAgilityPack.dll
+C:\AzureTfs\Echo PSV\PlugIn\FlorPlugIn\bin\Debug\Newtonsoft.Json.dll
+C:\AzureTfs\Echo PSV\PlugIn\FlorPlugIn\bin\Debug\PdfMetamorphosis.dll
+C:\AzureTfs\Echo PSV\PlugIn\FlorPlugIn\bin\Debug\PlugIn_NET4_5.dll
+C:\AzureTfs\Echo PSV\PlugIn\FlorPlugIn\bin\Debug\RestSharp.dll
+C:\AzureTfs\Echo PSV\PlugIn\FlorPlugIn\bin\Debug\ABCpdf.xml
+C:\AzureTfs\Echo PSV\PlugIn\FlorPlugIn\bin\Debug\PlugIn_NET4_5.pdb
+C:\AzureTfs\Echo PSV\PlugIn\FlorPlugIn\obj\Debug\FlorPlugIn.csprojResolveAssemblyReference.cache
+C:\AzureTfs\Echo PSV\PlugIn\FlorPlugIn\obj\Debug\FlorPlugIn.Properties.Resources.resources
+C:\AzureTfs\Echo PSV\PlugIn\FlorPlugIn\obj\Debug\FlorPlugIn.csproj.GenerateResource.Cache
+C:\AzureTfs\Echo PSV\PlugIn\FlorPlugIn\obj\Debug\FlorPlugIn.dll
+C:\AzureTfs\Echo PSV\PlugIn\FlorPlugIn\obj\Debug\FlorPlugIn.pdb
