@@ -275,6 +275,5 @@ C:\Users\ucsd\Desktop\gitMDPR\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\obj\
 C:\Users\ucsd\Desktop\gitMDPR\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\obj\Debug\PlugInWebScraper.pdb
 C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\NursysPlugIn.pdb
 C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\NursysPlugIn.dll.config
-C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\FlorPlugIn.dll
-C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\FlorPlugIn.pdb
-C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\FlorPlugIn.dll.config
+C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\WMHPLBPlugIn.dll
+C:\Users\username\Repos\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\WMHPLBPlugIn.pdb

@@ -126,18 +126,6 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="FlorPlugIn.dll" size="14848">
-      <assemblyIdentity name="FlorPlugIn" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
-      <hash>
-        <dsig:Transforms>
-          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-        </dsig:Transforms>
-        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>XufeMTK35UqVAFh/AyGosXFrFW72Ek/OKX+8Kpv0Kd8=</dsig:DigestValue>
-      </hash>
-    </dependentAssembly>
-  </dependency>
-  <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="HtmlAgilityPack.dll" size="134656">
       <assemblyIdentity name="HtmlAgilityPack" version="1.4.9.0" publicKeyToken="BD319B19EAF3B43A" language="neutral" processorArchitecture="msil" />
       <hash>
@@ -421,7 +409,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>CpDMCheCHPX4P5pr2BZjVgiVCGN6SYvZzdDU93QneNo=</dsig:DigestValue>
+        <dsig:DigestValue>bBhZ7dFvk1xjjyVcYxruh9Oj5AsHQ94Sh5WMNhEtK7E=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -558,6 +546,18 @@
     </dependentAssembly>
   </dependency>
   <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WMHPLBPlugIn.dll" size="4096">
+      <assemblyIdentity name="WMHPLBPlugIn" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>xUc37yGf1jJ8NyUtcUIV8qJgfrQH/sTp5EeIieVMrms=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WNARPlugIn.dll" size="20480">
       <assemblyIdentity name="WNARPlugIn" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
@@ -623,13 +623,13 @@
       <dsig:DigestValue>Z3zNIF+dbta1al8t0xFlg+pKb/3gi5/Tk29GTutLP0k=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="TestDocuments\Xml\TestProviders3.xml" size="163025" writeableType="applicationData">
+  <file name="TestDocuments\Xml\TestProviders3.xml" size="163843" writeableType="applicationData">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>I+V68JM/R261wTfByBakrzi8JNQzENNKmB+J3totvSA=</dsig:DigestValue>
+      <dsig:DigestValue>yru4BvT2TEUuOxc6igh8NVDNpawuv9q7HU7dep+hVNI=</dsig:DigestValue>
     </hash>
   </file>
   <file name="TestDocuments\Xml\TestProviders4.xml" size="215" writeableType="applicationData">

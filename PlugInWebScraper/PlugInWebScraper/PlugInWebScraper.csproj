@@ -125,10 +125,6 @@
     <Reference Include="FDHPlugIn">
       <HintPath>..\..\..\..\PlugIn\FDHPlugIn\FDHPlugIn\bin\Debug\FDHPlugIn.dll</HintPath>
     </Reference>
-    <Reference Include="FlorPlugIn, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Work in Progress\FlorPlugIn\bin\Debug\FlorPlugIn.dll</HintPath>
-    </Reference>
     <Reference Include="GASOSPlugin">
       <HintPath>..\..\..\..\PlugIn\GASOSPlugin\bin\Debug\GASOSPlugin.dll</HintPath>
     </Reference>
@@ -306,6 +302,10 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="WMHPLBPlugIn, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Work in Progress\WMHPLBPlugIn\WMHPLBPlugIn\bin\Debug\WMHPLBPlugIn.dll</HintPath>
+    </Reference>
     <Reference Include="WNARPlugIn">
       <HintPath>..\..\..\..\PlugIn\WNARPlugIn\WNARPlugIn\bin\Debug\WNARPlugIn.dll</HintPath>
     </Reference>

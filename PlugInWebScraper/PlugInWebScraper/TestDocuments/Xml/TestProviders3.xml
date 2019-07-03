@@ -4718,6 +4718,34 @@
       <Data key="dr_fname" value="Hermione"/>
     </Provider>
   </Assembly>
+
+  <Assembly name ="WMHPLBPlugIn" action ="E">
+
+    <!-- Active  -->
+    <Provider run="1">
+      <Data key ="lic_no" value="CSW-275"/>
+      <Data key ="dr_fname" value="Kayla"/>
+      <Data key ="dr_lname" value="Bergstrom"/>
+      <Data key ="lic_exp" value="4/4/2020"/>
+    </Provider>
+
+    <!-- Expired -->
+    <Provider run="1">
+      <Data key ="lic_no" value="LCSW-691"/>
+      <Data key ="dr_fname" value="Jeremiah"/>
+      <Data key ="dr_lname" value="Volk"/>
+      <Data key ="lic_exp" value="6/30/2020"/>
+    </Provider>
+
+    <!-- Discipline -->
+    <Provider run="1">
+      <Data key ="lic_no" value="LAT-031"/>
+      <Data key ="dr_fname" value="Jane"/>
+      <Data key ="dr_lname" value="Warren"/>
+      <Data key ="lic_exp" value="9/8/2019"/>
+    </Provider>
+
+  </Assembly>
  
 </TestData>
 
