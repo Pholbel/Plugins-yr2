@@ -39,7 +39,7 @@ namespace WMHPLBPlugIn
             if (fields.IsValid)
             {
                 WebSearch webSearch = new WebSearch(provider);
-                Result<ValueRange> response = webSearch.Execute();
+                Result<List<String>> response = webSearch.Execute();
 
                 if (response.IsValid)
                 {

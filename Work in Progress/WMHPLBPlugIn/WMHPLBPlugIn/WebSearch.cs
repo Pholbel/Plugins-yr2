@@ -34,7 +34,7 @@ namespace WMHPLBPlugIn
             this.provider = _provider;
         }
 
-        public Result<ValueRange> Execute()
+        public Result<List<String>> Execute()
         {
             try
             {
@@ -42,11 +42,11 @@ namespace WMHPLBPlugIn
             }
             catch (Exception ex)
             {
-                return Result<ValueRange>.Exception(ex);
+                return Result<List<String>>.Exception(ex);
             }
         }
 
-        private Result<ValueRange> Search()
+        private Result<List<String>> Search()
         {
 
             /*----------------------------------------------------------------------------------------------------*/
@@ -83,11 +83,37 @@ namespace WMHPLBPlugIn
             SpreadsheetsResource.ValuesResource.GetRequest request =
                     service.Spreadsheets.Values.Get(spreadsheetId, range);
 
+            
+
 
             // GET all values from spreadsheet
-            ValueRange response = request.Execute();
+            try
+            {
+                ValueRange response = request.Execute();
 
-            return Result<ValueRange>.Success(response);
+                // Filter results to target
+                List<String> targetRow = new List<String>();
+                for (var i = 0; i < response.Values.Count; i++)
+                {
+                    if (response.Values[i][3].ToString().Equals(provider.LicenseNumber) && 
+                        response.Values[i][1].ToString().Contains(provider.FirstName) &&
+                        response.Values[i][0].ToString().Contains(provider.LastName))
+                    {
+                        foreach (var val in response.Values[i])
+                        {
+                            targetRow.Add(val.ToString());
+                        }
+                    }
+                }
+
+                // done
+                return Result<List<String>>.Success(targetRow);
+            }
+            catch (Exception e)
+            {
+                // failure
+                return Result<List<String>>.Exception(e);
+            }
 
         }
 

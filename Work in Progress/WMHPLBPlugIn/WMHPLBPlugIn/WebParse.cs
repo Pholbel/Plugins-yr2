@@ -36,28 +36,10 @@ namespace WMHPLBPlugIn
             Sanction = SanctionType.None;
         }
 
-        public Result<string> Execute(ValueRange response)
+        public Result<string> Execute(List<String> response)
         {
             try
             {
-                /*
-                MatchCollection physicians = Regex.Matches(response.Content, "id=\"ctl00_cphMain_rptrPhysician_ctl00_lblLicense\"", RegOpt);
-                MatchCollection assistants = Regex.Matches(response.Content, "id=\"ctl00_cphMain_rptrAssistant_ctl00_lblLicense\"", RegOpt);
-
-                if (physicians.Count > 1 || assistants.Count > 1 || (physicians.Count > 0 && assistants.Count > 0))
-                {
-                    return Result<string>.Failure(ErrorMsg.MultipleProvidersFound);
-                }
-                else if (Regex.Match(response.Content, "No Physicians Match That License", RegOpt).Success 
-                    && Regex.Match(response.Content, "No Physician Assistants Match That License", RegOpt).Success)
-                {
-                    return Result<string>.Failure(ErrorMsg.NoResultsFound);
-                }
-                else // Returned successful query
-                {
-                    CheckLicenseDetails(response.Content);
-                    return ParseResponse(response.Content);
-                }*/
                 return ParseResponse(response);
             }
             catch (Exception e)
@@ -66,45 +48,44 @@ namespace WMHPLBPlugIn
             }
         }
 
-        private void CheckLicenseDetails(string response)
+        private Result<string> ParseResponse(List<String> response)
         {
-            Match exp = Regex.Match(response, "Expiration date: </span>( |\t|\r|\v|\f|\n)*<span.*?>(?<EXP>.*?)</span>", RegOpt);
-            if (exp.Success)
+            List<String> headers = new List<String>();
+            headers.Add("LASTNAME");
+            headers.Add("FIRSTNAME");
+            headers.Add("INITIAL");
+            headers.Add("LICENSE #");
+            headers.Add("DATE ISSUED");
+            headers.Add("EXPIRATION DATE");
+            headers.Add("License/Certificate Status");
+            headers.Add("Disciplined");
+
+            try
             {
-                Expiration = exp.Groups["EXP"].ToString();
+
+                // check discipline
+                if (string.Equals(response[response.Count-1], "Yes", StringComparison.OrdinalIgnoreCase))
+                {
+                    Sanction = SanctionType.Red;
+                } else
+                {
+                    Sanction = SanctionType.None;
+                }
+
+                StringBuilder builder = new StringBuilder();
+
+                for (var i = 0; i < response.Count; i++)
+                {
+                    builder.AppendFormat(TdPair, headers[i], response[i]);
+                    builder.AppendLine();
+                }
+
+                return Result<string>.Success(builder.ToString());
             }
-
-            //Does not support sanctions
-
-        }
-
-        private Result<string> ParseResponse(ValueRange response)
-        {
-            //MatchCollection fields = Regex.Matches(response, "(?<=(id=\"ctl.*\">)).*(?=</s)");
-            //List<string> headers = new List<string>(new string[] {"First Name", "Middle Name", "Last Name", "License Type", "License Number", "Title", "Effective Date", "Expiration Date", "Status", "Finding"});
-
-            //if (fields.Count > 0)
-            //{
-            //    StringBuilder builder = new StringBuilder();
-
-            //    for (int idx=0;idx<fields.Count;idx++)
-            //    {
-            //        string header = headers[idx % headers.Count];
-            //        string text = fields[idx].ToString();
-
-            //        builder.AppendFormat(TdPair, header, text);
-            //        builder.AppendLine();
-            //    }
-
-
-            //    return Result<string>.Success(builder.ToString());
-            //}
-            //else // Error parsing table
-            //{
-            //    return Result<string>.Failure(ErrorMsg.CannotAccessDetailsPage);
-            //}
-
-            return Result<string>.Success("success");
+            catch
+            {
+                return Result<string>.Failure(ErrorMsg.Custom("Error reading results"));
+            }
         }
     }
 }

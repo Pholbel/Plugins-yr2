@@ -481,7 +481,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>6/HdWcq/nfvJIwYUU6F6ilfEwVG4n6SmW6tEAENzAPE=</dsig:DigestValue>
+        <dsig:DigestValue>OIn7ooCQD9OBgEA7/qDLS6daFNGsk8Zw7hyJtHg2tgA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -618,14 +618,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WMHPLBPlugIn.dll" size="9728">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WMHPLBPlugIn.dll" size="10752">
       <assemblyIdentity name="WMHPLBPlugIn" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>SklB/gRCnqtdJckaEnXzKTbKsv1N4qa4AJ5m0EAjvo8=</dsig:DigestValue>
+        <dsig:DigestValue>nvqZAI/E2SQUAUT3ztNVqC+GDJw25q58hN/NHlbie6s=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
