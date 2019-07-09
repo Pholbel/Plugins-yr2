@@ -126,6 +126,18 @@
     </dependentAssembly>
   </dependency>
   <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="FlorPlugIn.dll" size="15872">
+      <assemblyIdentity name="FlorPlugIn" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>3gUv6uDL/np2QtQCjD71YP4lMeadx0A/4umITcnsUh4=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Google.Apis.dll" size="72192">
       <assemblyIdentity name="Google.Apis" version="1.40.2.0" publicKeyToken="4B01FA6E34DB77AB" language="neutral" processorArchitecture="msil" />
       <hash>
@@ -182,18 +194,6 @@
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
         <dsig:DigestValue>4b0eu/W4uxMat0TRAHyr05npYX1ZNcZ/rk3qBPcV3ak=</dsig:DigestValue>
-      </hash>
-    </dependentAssembly>
-  </dependency>
-  <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Google.Apis.Sheets.v4.dll" size="172544">
-      <assemblyIdentity name="Google.Apis.Sheets.v4" version="1.40.2.1635" publicKeyToken="4B01FA6E34DB77AB" language="neutral" processorArchitecture="msil" />
-      <hash>
-        <dsig:Transforms>
-          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-        </dsig:Transforms>
-        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>G18fPJrBcwRTkpTMTmhmSPVyoKUmwQefYP9Pcr9yDkM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -481,7 +481,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>OIn7ooCQD9OBgEA7/qDLS6daFNGsk8Zw7hyJtHg2tgA=</dsig:DigestValue>
+        <dsig:DigestValue>hPCoKNSXS6V6GhfluRwXMdKZH56HlJQo1EL4y0S2358=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -618,18 +618,6 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WMHPLBPlugIn.dll" size="10752">
-      <assemblyIdentity name="WMHPLBPlugIn" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
-      <hash>
-        <dsig:Transforms>
-          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-        </dsig:Transforms>
-        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>nvqZAI/E2SQUAUT3ztNVqC+GDJw25q58hN/NHlbie6s=</dsig:DigestValue>
-      </hash>
-    </dependentAssembly>
-  </dependency>
-  <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WNARPlugIn.dll" size="20480">
       <assemblyIdentity name="WNARPlugIn" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
@@ -695,13 +683,13 @@
       <dsig:DigestValue>Z3zNIF+dbta1al8t0xFlg+pKb/3gi5/Tk29GTutLP0k=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="TestDocuments\Xml\TestProviders3.xml" size="163843" writeableType="applicationData">
+  <file name="TestDocuments\Xml\TestProviders3.xml" size="163846" writeableType="applicationData">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>yru4BvT2TEUuOxc6igh8NVDNpawuv9q7HU7dep+hVNI=</dsig:DigestValue>
+      <dsig:DigestValue>IN8ySQ3JJB1+ZWiu+sFQ4J5531wDsEABhZwnaSgObl0=</dsig:DigestValue>
     </hash>
   </file>
   <file name="TestDocuments\Xml\TestProviders4.xml" size="215" writeableType="applicationData">

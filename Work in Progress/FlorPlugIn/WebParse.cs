@@ -77,8 +77,11 @@ namespace FlorPlugIn
                 List<string> v_list = new List<string>();
 
                 int i;
-                HtmlNode blankHeader = new HtmlNode(HtmlNodeType.Element, doc,0);
+                HtmlNode qHeader = new HtmlNode(HtmlNodeType.Element, doc,0);
                 int qidx = 0;
+                int addridx = 0;
+                int addrcnt = 1;
+                char[] white = { ' ' , '\r', '\n' };
 
                 //set index of qualifications header and blank header
                 for (var j = 0; j < headerNodes.Count; j++)
@@ -86,17 +89,24 @@ namespace FlorPlugIn
                     if (headerNodes[j].InnerText.Contains("Qualifications"))
                     {
                         qidx = j+1;
+                        headerNodes[j].InnerHtml = "Qualification";
                     }
                     if (headerNodes[j].InnerText == string.Empty)
                     {
-                        blankHeader = headerNodes[j];
+                        qHeader = headerNodes[j];
                     }
                 }
+
+                //set qheader text and address headers texts
+                qHeader.InnerHtml = "Qualification";
+
+                
+
 
                 //coerce lengths of keys and values to be equal
                 while (headerNodes.Count < valueNodes.Count)
                 {
-                    headerNodes.Insert(qidx, blankHeader);
+                    headerNodes.Insert(qidx, qHeader);
                 }
                 
                 for ( i= 0; i < valueNodes.Count(); i++)
@@ -105,6 +115,38 @@ namespace FlorPlugIn
                     v_list.Add(valueNodes[i].InnerText);
                 }
 
+                //remove empty header value pairs
+                for (var x = 0; x < h_list.Count; x++)
+                {
+                    if (h_list[x].Trim(white) == string.Empty && v_list[x].Trim(white) == string.Empty)
+                    {
+                        h_list.RemoveAt(x); v_list.RemoveAt(x);
+                        x--;
+                    }
+                }
+
+                //find first address line
+                for (var k = 0; k < h_list.Count; k++)
+                {
+                    if (h_list[k].Contains("Address"))
+                    {
+                        addridx = k;
+                    }
+                }
+                
+                //add header address lines
+                while (h_list[addridx].Trim(white) == string.Empty || h_list[addridx].Contains("Address"))
+                {
+                    if (!h_list[addridx].Contains("Record"))
+                    {
+                        h_list[addridx] = "Address Line " + addrcnt.ToString();
+                    }
+                    addridx++;
+                    addrcnt++;
+                }
+
+
+                // Gather results
                 if (v_list.Count > 0)
                 {
                     StringBuilder builder = new StringBuilder();
