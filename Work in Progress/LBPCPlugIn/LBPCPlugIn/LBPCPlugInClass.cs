@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -20,6 +21,7 @@ namespace LBPCPlugIn
             Initialize(dr, true, new SPMConfig() { AcceptAllCertificatePolicy = true, Expect100Continue = false });
             string message = String.Empty;
             string output = String.Empty;
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Ssl3 | SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12;
 
             Result<string> fields = Validate();
 
@@ -30,7 +32,7 @@ namespace LBPCPlugIn
 
                 if (response.IsValid)
                 {
-                    WebParse webParse = new WebParse();
+                    WebParse webParse = new WebParse(response.Type, provider);
                     Result<string> parseResult = webParse.Execute(response.Value);
 
                     if (parseResult.IsValid)
@@ -85,7 +87,7 @@ namespace LBPCPlugIn
             }
             else
             {
-                return Result<string>.Success(String.Empty);
+                return Result<string>.Success(String.Empty, string.Empty);
             }
         }
 

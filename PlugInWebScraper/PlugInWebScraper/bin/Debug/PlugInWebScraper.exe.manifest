@@ -258,14 +258,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LBPCPlugIn.dll" size="12800">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LBPCPlugIn.dll" size="11264">
       <assemblyIdentity name="LBPCPlugIn" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>sWQCcXjyxZCpUkMs8T1SbRpJDivAAP3+iLfBxRkqX0A=</dsig:DigestValue>
+        <dsig:DigestValue>J52ulS90zmYB2a8wJH0F8huNGbgG+QJTdUW712SzIFY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -481,7 +481,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>0f9SnJQ1EWFkGrfcssfErbdocpGRLdC3z99+AjyE4BA=</dsig:DigestValue>
+        <dsig:DigestValue>JTw7Mo1hEe1ZvYycAcdlAH1muOFOO2q+wItk9zwKAy4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -683,13 +683,13 @@
       <dsig:DigestValue>Z3zNIF+dbta1al8t0xFlg+pKb/3gi5/Tk29GTutLP0k=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="TestDocuments\Xml\TestProviders3.xml" size="164711" writeableType="applicationData">
+  <file name="TestDocuments\Xml\TestProviders3.xml" size="165307" writeableType="applicationData">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>JoGAcfn/nOwk+UnDvuPUP7OPdJOz97EXvd6TQuIDyCI=</dsig:DigestValue>
+      <dsig:DigestValue>4vekp4Go2tBmlOsWPoX1YwtcFIALdEji4I7kjQGLIj0=</dsig:DigestValue>
     </hash>
   </file>
   <file name="TestDocuments\Xml\TestProviders4.xml" size="215" writeableType="applicationData">

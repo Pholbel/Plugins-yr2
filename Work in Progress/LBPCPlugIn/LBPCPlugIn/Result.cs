@@ -11,6 +11,7 @@ namespace LBPCPlugIn
         public bool IsValid { get; private set; }
         public string Message { get; private set; }
         public T Value { get; private set; }
+        public string Type { get; private set; }
 
         public static Result<T> Exception(Exception exception)
         {
@@ -18,7 +19,8 @@ namespace LBPCPlugIn
             {
                 IsValid = false,
                 Message = exception.Message,
-                Value = default(T)
+                Value = default(T),
+                Type = string.Empty
             };
         }
 
@@ -28,17 +30,19 @@ namespace LBPCPlugIn
             {
                 IsValid = false,
                 Message = message,
-                Value = default(T)
+                Value = default(T),
+                Type = string.Empty
             };
         }
 
-        public static Result<T> Success(T value)
+        public static Result<T> Success(T value, string type)
         {
             return new Result<T>()
             {
                 IsValid = true,
                 Message = String.Empty,
-                Value = value
+                Value = value,
+                Type = type
             };
         }
     }
