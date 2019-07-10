@@ -1,0 +1,16 @@
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\LBPCPlugIn\LBPCPlugIn\bin\Debug\LBPCPlugIn.dll
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\LBPCPlugIn\LBPCPlugIn\bin\Debug\LBPCPlugIn.pdb
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\LBPCPlugIn\LBPCPlugIn\bin\Debug\CAQHData.dll
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\LBPCPlugIn\LBPCPlugIn\bin\Debug\HtmlAgilityPack.dll
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\LBPCPlugIn\LBPCPlugIn\bin\Debug\Newtonsoft.Json.dll
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\LBPCPlugIn\LBPCPlugIn\bin\Debug\PdfMetamorphosis.dll
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\LBPCPlugIn\LBPCPlugIn\bin\Debug\PlugIn_NET4_5.dll
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\LBPCPlugIn\LBPCPlugIn\bin\Debug\RestSharp.dll
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\LBPCPlugIn\LBPCPlugIn\bin\Debug\SautinSoft.PdfFocus.dll
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\LBPCPlugIn\LBPCPlugIn\bin\Debug\ABCpdf.dll
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\LBPCPlugIn\LBPCPlugIn\bin\Debug\ABCpdf.xml
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\LBPCPlugIn\LBPCPlugIn\obj\Debug\LBPCPlugIn.csprojAssemblyReference.cache
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\LBPCPlugIn\LBPCPlugIn\obj\Debug\LBPCPlugIn.csproj.CoreCompileInputs.cache
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\LBPCPlugIn\LBPCPlugIn\obj\Debug\LBPCPlugIn.csproj.CopyComplete
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\LBPCPlugIn\LBPCPlugIn\obj\Debug\LBPCPlugIn.dll
+C:\Users\username\Repos\Plugins-yr2\Work in Progress\LBPCPlugIn\LBPCPlugIn\obj\Debug\LBPCPlugIn.pdb

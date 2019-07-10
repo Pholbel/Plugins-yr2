@@ -4746,6 +4746,38 @@
     </Provider>
 
   </Assembly>
+
+<Assembly name ="LBPCPlugIn" action ="E">
+
+    <!-- Active  -->
+    <Provider run="1">
+      <Data key ="drtitle" value="LPC" />
+      <Data key ="dr_fname" value="Michael"/>
+      <Data key ="dr_lname" value="Ables"/>
+    </Provider>
+
+    <!-- Expired -->
+    <Provider run="1">
+      <Data key ="drtitle" value="LMFT" />
+      <Data key ="dr_fname" value="Amy"/>
+      <Data key ="dr_lname" value="Adams"/>
+    </Provider>
+
+    <!-- Discipline 
+    <Provider run="1">
+      <Data key ="drtitle" value="MD" />
+      <Data key ="dr_fname" value="Jane"/>
+      <Data key ="dr_lname" value="Warren"/>
+    </Provider>  -->
+
+    <!-- No Address -->
+    <Provider run="1">
+      <Data key ="drtitle" value="LMFT" />
+      <Data key ="dr_fname" value="Leroy"/>
+      <Data key ="dr_lname" value="Adamson"/>
+    </Provider>
+
+  </Assembly>
  
 </TestData>
 

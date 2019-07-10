@@ -125,9 +125,6 @@
     <Reference Include="FDHPlugIn">
       <HintPath>..\..\..\..\PlugIn\FDHPlugIn\FDHPlugIn\bin\Debug\FDHPlugIn.dll</HintPath>
     </Reference>
-    <Reference Include="FlorPlugIn">
-      <HintPath>..\..\Work in Progress\FlorPlugIn\bin\Debug\FlorPlugIn.dll</HintPath>
-    </Reference>
     <Reference Include="GASOSPlugin">
       <HintPath>..\..\..\..\PlugIn\GASOSPlugin\bin\Debug\GASOSPlugin.dll</HintPath>
     </Reference>
@@ -169,6 +166,9 @@
     </Reference>
     <Reference Include="IResponsePlugIn">
       <HintPath>..\..\..\..\..\..\..\Projects\Echo PSV\PlugIn\IResponsePlugIn\IResponsePlugIn\bin\Debug\IResponsePlugIn.dll</HintPath>
+    </Reference>
+    <Reference Include="LBPCPlugIn">
+      <HintPath>..\..\Work in Progress\LBPCPlugIn\LBPCPlugIn\bin\Debug\LBPCPlugIn.dll</HintPath>
     </Reference>
     <Reference Include="MABDEPlugIn, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
