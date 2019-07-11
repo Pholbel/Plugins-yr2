@@ -49,8 +49,6 @@ namespace LBPCPlugIn
 
         private Result<string> CParseResponse(string response)
         {
-            char[] white = { ' ', '\r' };
-            //TODO: parse results page 
             try
             {
                 HtmlDocument doc = new HtmlDocument();
@@ -58,6 +56,8 @@ namespace LBPCPlugIn
                 List<string> h_list = new List<string>();
                 List<string> v_list = new List<string>();
                 StringBuilder builder = new StringBuilder();
+                char[] white = { ' ', '\r' };
+
 
                 // isolate data
                 var pro = doc.DocumentNode.SelectSingleNode("//div[@class='pro']");
@@ -88,6 +88,74 @@ namespace LBPCPlugIn
                     }
                 }
 
+                // formulate data
+                for (var i = 0; i < h_list.Count; i++)
+                {
+                    builder.AppendFormat(TdPair, h_list[i], v_list[i]);
+                    builder.AppendLine();
+                }
+
+                // done!
+                return Result<string>.Success(builder.ToString(), type);
+            }
+            catch (Exception e) // Error parsing table
+            {
+                return Result<string>.Exception(e);
+            }
+        }
+
+        private Result<string> DParseResponse(string response)
+        {
+            try
+            {
+                // set sanction
+                Sanction = SanctionType.Red;
+
+                // local declarations
+                HtmlDocument doc = new HtmlDocument();
+                doc.LoadHtml(response);
+                List<string> h_list = new List<string>();
+                List<string> v_list = new List<string>();
+                StringBuilder builder = new StringBuilder();
+
+                // first add headers
+                var headersNodes = doc.DocumentNode.SelectNodes("//th");
+                foreach (var header in headersNodes)
+                {
+                    h_list.Add(header.InnerText);
+                }
+
+                // find table element hosting entries
+                var rows = doc.DocumentNode.SelectNodes("//tr");
+
+                // parse through table to isolate row with target
+                foreach (var row in rows)
+                {
+                    bool fn = Regex.IsMatch(row.InnerHtml, Regex.Escape(provider.FirstName), RegexOptions.IgnoreCase);
+                    bool ln = Regex.IsMatch(row.InnerHtml, Regex.Escape(provider.LastName), RegexOptions.IgnoreCase);
+                    if (fn && ln)
+                    {
+                        // parse row and add to list 
+                        foreach (var node in row.ChildNodes)
+                        {
+                            if (node.Name.Contains("td"))
+                            {
+                                if (node.InnerHtml.Contains("href"))
+                                {
+                                    string query = node.ChildNodes["a"].Attributes["href"].Value;
+                                    string url = "https://www.lpcboard.org" + query;
+                                    v_list.Add(url);
+                                }
+                                else
+                                {
+                                    v_list.Add(node.InnerText);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                // formulate data
                 for (var i = 0; i < h_list.Count; i++)
                 {
                     builder.AppendFormat(TdPair, h_list[i], v_list[i]);
@@ -99,20 +167,6 @@ namespace LBPCPlugIn
             catch (Exception e) // Error parsing table
             {
                 return Result<string>.Exception(e);
-            }
-        }
-
-        private Result<string> DParseResponse(string response)
-        {
-            // parse displinary action page for matching person
-
-            if (true)
-            {
-                return Result<string>.Success("<tr><td>" + provider.FirstName + " " + provider.LastName + "</td><td>I've been disciplined!</td></tr>", type);
-            }
-            else // Error parsing table
-            {
-                return Result<string>.Failure(ErrorMsg.CannotAccessDetailsPage);
             }
         }
     }

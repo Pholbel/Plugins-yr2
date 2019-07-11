@@ -37,25 +37,27 @@ namespace LBPCPlugIn
             string baseUrl = "https://www.lpcboard.org/";
             string orgName = provider.GetData("orgName").ToUpper();
 
-            if (!provider.GetData("drtitle").Equals(string.Empty))
-            {
+            
                 if (orgName.Contains("COUNSELORS"))
                 {
-                    return CSearch(baseUrl + "licensee-search-results");
-                }
+                    if (!provider.GetData("drtitle").Equals(string.Empty))
+                    {
+                        return CSearch(baseUrl + "licensee-search-results");
+                    }
+                    else
+                    {
+                        return Result<IRestResponse>.Failure("invalid or missing field 'drtitle'");
+                    }
+                }   
                 else if (orgName.Contains("DISCIPLINARY"))
                 {
-                    return DSearch(baseUrl + "disciplinary-action");
+                    return DSearch(baseUrl + "?action=licensee.snip_disciplines.snip&sortBy=date&order=DESC");
                 }
                 else
                 {
                     return Result<IRestResponse>.Failure("invalid field for 'orgName'");
                 }
-            }
-            else
-            {
-                return Result<IRestResponse>.Failure("invalid or missing field 'drtitle'");
-            }
+            
 
         }
 
