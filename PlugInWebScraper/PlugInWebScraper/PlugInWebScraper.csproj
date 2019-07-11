@@ -80,6 +80,9 @@
     <Reference Include="AMAPlugIn">
       <HintPath>..\..\..\..\PlugIn\AMAPlugIn\AMAPlugin\AMAPlugIn\bin\Debug\AMAPlugIn.dll</HintPath>
     </Reference>
+    <Reference Include="ARDCPlugIn">
+      <HintPath>..\..\Work in Progress\ARDCPlugIn\ARDCPlugIn\bin\Debug\ARDCPlugIn.dll</HintPath>
+    </Reference>
     <Reference Include="ARSMBPlugIn">
       <HintPath>..\..\..\..\PlugIn\ARSMBPlugIn\ARSMBPlugIn\bin\Debug\ARSMBPlugIn.dll</HintPath>
     </Reference>
@@ -166,9 +169,6 @@
     </Reference>
     <Reference Include="IResponsePlugIn">
       <HintPath>..\..\..\..\..\..\..\Projects\Echo PSV\PlugIn\IResponsePlugIn\IResponsePlugIn\bin\Debug\IResponsePlugIn.dll</HintPath>
-    </Reference>
-    <Reference Include="LBPCPlugIn">
-      <HintPath>..\..\Work in Progress\LBPCPlugIn\LBPCPlugIn\bin\Debug\LBPCPlugIn.dll</HintPath>
     </Reference>
     <Reference Include="MABDEPlugIn, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

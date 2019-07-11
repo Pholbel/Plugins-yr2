@@ -4796,5 +4796,56 @@
 
   </Assembly>
  
+<Assembly name ="ARDCPlugIn" action ="E">
+
+    <!-- Active, license number -->
+    <Provider run="1">
+      <Data key ="lic_no" value="LO-0933100" />
+    </Provider>  
+
+    <!-- Expired, license number -->
+    <Provider run="1">
+      <Data key ="lic_no" value="ALM-003275" />
+    </Provider>  
+
+    <!-- Discipline, license number -->
+    <Provider run="1">
+      <Data key ="lic_no" value="LPT-000973" />
+    </Provider>  
+
+    <!-- license number, board, and type -->
+    <Provider run="1">
+      <Data key ="lic_no" value="OTH-007750" />
+      <Data key ="drtitle" value="Occupational Therapist" />
+      <Data key ="orgName" value="Arizona Board of Occupational Therapy Examiners"/>
+    </Provider>  
+
+    <!-- No Address -->
+    <Provider run="1">
+      <Data key ="lic_no" value="LO-0926815" />
+    </Provider>  
+
+
+
+    <!-- Should fail because no license number provided -->
+    <Provider run="1">
+      <Data key ="drtitle" value="Physical Therapist" />
+      <Data key ="orgName" value="Arizona State Board of Physical Therapy"/>
+    </Provider>  
+
+    <!-- Should fail because type provided, but not board-->
+    <Provider run="1">
+      <Data key ="lic_no" value="OPT-002329" />
+      <Data key ="drtitle" value="Optometrist" />
+    </Provider>  
+
+    <!-- Should fail because board provided but no type-->
+    <Provider run="1">
+      <Data key ="lic_no" value="SBA-000827" />
+      <Data key ="orgName" value="Arizona State Board of Barbers"/>
+    </Provider>  
+
+  </Assembly>
+
 </TestData>
 
