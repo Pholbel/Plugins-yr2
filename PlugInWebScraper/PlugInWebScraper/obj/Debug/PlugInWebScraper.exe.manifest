@@ -66,14 +66,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ARDCPlugIn.dll" size="12800">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ARDCPlugIn.dll" size="11776">
       <assemblyIdentity name="ARDCPlugIn" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>8Jvtb2stzL9gW5xsfasYsCBYMFD2t81hgxMtMoSY2Io=</dsig:DigestValue>
+        <dsig:DigestValue>+r4NrDcckFdT0MKA4iXNTh7TP44CBcJWKUrEywxFlB4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -481,7 +481,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>TfPlDgTR6mDBMhANyDTHA8OUsJ8TmZ7wst/khvAIin8=</dsig:DigestValue>
+        <dsig:DigestValue>6CxHke6+1+IXdoHtDz9k/90/5P1kCpyJiIK2e3H82ZU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
