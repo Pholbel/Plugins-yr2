@@ -4847,5 +4847,39 @@
 
   </Assembly>
 
+<Assembly name ="ABRPlugIn" action ="E">
+
+    <!-- Active, fname, lname -->
+    <Provider run="1">
+      <Data key ="dr_fname" value="Adam" />
+      <Data key ="dr_lname" value="Williams" />
+    </Provider>  
+
+    <!-- Expired, fname, lname -->
+    <Provider run="1">
+      <Data key ="dr_fname" value="Jonathan" />
+      <Data key ="dr_lname" value="Smith" />
+    </Provider>  
+
+    <!-- fname, lname, state -->
+    <Provider run="1">
+      <Data key ="dr_fname" value="Jonathan" />
+      <Data key ="dr_lname" value="Jackson" />
+      <Data key ="state" value="NH" />
+    </Provider>  
+
+    <!-- multiple providers -->
+    <Provider run="1">
+      <Data key ="dr_lname" value="Williams" />
+    </Provider>  
+
+    <!-- Should fail because no lname provided -->
+    <Provider run="1">
+      <Data key ="dr_fname" value="Timothy" />
+      <Data key ="state" value="CA" />
+    </Provider>  
+
+  </Assembly>
+
 </TestData>
 

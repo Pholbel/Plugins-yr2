@@ -74,14 +74,14 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\Projects\Echo PSV\Third Party Libraries\ABCpdf.dll</HintPath>
     </Reference>
+    <Reference Include="ABRPlugIn">
+      <HintPath>..\..\Work in Progress\ABRPlugIn\ABRPlugIn\bin\Debug\ABRPlugIn.dll</HintPath>
+    </Reference>
     <Reference Include="AKSMLBPlugIn">
       <HintPath>..\..\..\..\PlugIn\AKSMLBPlugIn\AKSMLBPlugIn\bin\Debug\AKSMLBPlugIn.dll</HintPath>
     </Reference>
     <Reference Include="AMAPlugIn">
       <HintPath>..\..\..\..\PlugIn\AMAPlugIn\AMAPlugin\AMAPlugIn\bin\Debug\AMAPlugIn.dll</HintPath>
-    </Reference>
-    <Reference Include="ARDCPlugIn">
-      <HintPath>..\..\Work in Progress\ARDCPlugIn\ARDCPlugIn\bin\Debug\ARDCPlugIn.dll</HintPath>
     </Reference>
     <Reference Include="ARSMBPlugIn">
       <HintPath>..\..\..\..\PlugIn\ARSMBPlugIn\ARSMBPlugIn\bin\Debug\ARSMBPlugIn.dll</HintPath>

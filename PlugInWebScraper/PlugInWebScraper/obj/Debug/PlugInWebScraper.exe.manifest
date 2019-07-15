@@ -66,14 +66,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ARDCPlugIn.dll" size="11776">
-      <assemblyIdentity name="ARDCPlugIn" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ABRPlugIn.dll" size="12800">
+      <assemblyIdentity name="ABRPlugIn" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>+r4NrDcckFdT0MKA4iXNTh7TP44CBcJWKUrEywxFlB4=</dsig:DigestValue>
+        <dsig:DigestValue>zBiVcqlrYbc0HWKO79Fo7ppi3OEKlcabBO3MaO1rhSM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -481,7 +481,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>6CxHke6+1+IXdoHtDz9k/90/5P1kCpyJiIK2e3H82ZU=</dsig:DigestValue>
+        <dsig:DigestValue>b3cuXPu7mIlq99vklLHC3exbbygKilkCDSJDrt4dczU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -683,13 +683,13 @@
       <dsig:DigestValue>Z3zNIF+dbta1al8t0xFlg+pKb/3gi5/Tk29GTutLP0k=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="TestDocuments\Xml\TestProviders3.xml" size="167065" writeableType="applicationData">
+  <file name="TestDocuments\Xml\TestProviders3.xml" size="168004" writeableType="applicationData">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>Ejq/8V6JrXcr1H1zlKUpSdCu+cZAad+Bfw30xqSCGVs=</dsig:DigestValue>
+      <dsig:DigestValue>qkMiDvgA86kdDeCXBwEDsbiWDU9N9VUj7eVZXGbFNRk=</dsig:DigestValue>
     </hash>
   </file>
   <file name="TestDocuments\Xml\TestProviders4.xml" size="215" writeableType="applicationData">
