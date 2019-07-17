@@ -69,28 +69,58 @@ namespace ABRPlugIn
 
         private Result<string> ParseResponse(string response)
         {
-            MatchCollection fields = Regex.Matches(response, "(?<=(id=\"ctl.*\">)).*(?=</s)");
-            List<string> headers = new List<string>(new string[] {"First Name", "Middle Name", "Last Name", "License Type", "License Number", "Title", "Effective Date", "Expiration Date", "Status", "Finding"});
-
-            if (fields.Count > 0)
+            try
             {
-                StringBuilder builder = new StringBuilder();
+                // get div with result
+                HtmlDocument doc = new HtmlDocument();
+                doc.LoadHtml(response);
 
-                for (int idx=0;idx<fields.Count;idx++)
+                var startNode = doc.DocumentNode.SelectNodes("//comment()[contains(., 'End Pages')]").First();
+                var endNode = doc.DocumentNode.SelectNodes("//comment()[contains(., 'Pages')]").Reverse().Skip(1).FirstOrDefault();
+                int startNodeIndex = startNode.ParentNode.ChildNodes.IndexOf(startNode);
+                int endNodeIndex = endNode.ParentNode.ChildNodes.IndexOf(endNode);
+                var nodes = startNode.ParentNode.ChildNodes.Where((n, index) => index >= startNodeIndex && index <= endNodeIndex).Select(n => n);
+                HtmlNode resultTab = nodes.Where((n) => n.Name.Contains("div")).FirstOrDefault();
+
+                // gather data
+                string fullName = Regex.Match(resultTab.InnerHtml, "(?<=strong><span.*>).*(?=</span></strong>)", RegOpt).ToString();
+                string practiceLocations = Regex.Match(resultTab.InnerHtml, "(?<=Locations.*>).*(?=<br>.*<strong)", RegOpt).ToString();
+                string participatingS = string.Empty;
+                Match participating = Regex.Match(resultTab.InnerHtml, "Participating", RegOpt);
+                if (participating.Success)
                 {
-                    string header = headers[idx % headers.Count];
-                    string text = fields[idx].ToString();
+                    participatingS = participating.ToString();
+                }
+                var headerMatches = Regex.Matches(resultTab.InnerHtml, "(?<=<th.*;.>)[\\w,\\s]*(?=)", RegOpt);
+                var valueMatches = Regex.Matches(resultTab.InnerHtml, "(?<=td>)[^<]*(?=</td>)", RegOpt);
 
-                    builder.AppendFormat(TdPair, header, text);
-                    builder.AppendLine();
+                // form return table
+                StringBuilder builder = new StringBuilder();
+                builder.AppendFormat(TdPair, "Full Name", fullName);
+                builder.AppendFormat(TdPair, "Practice Locations", practiceLocations);
+                if (participatingS != string.Empty)
+                {
+                    builder.AppendFormat(TdPair, "Participating in MOC", "yes");
+                }
+                else
+                {
+                    builder.AppendFormat(TdPair, "Participating in MOC", "no");
+                }
+                for (var i = 0; i < valueMatches.Count; i++)
+                {
+                    // if a license is expired
+                    if (valueMatches[i].ToString().Contains("Expired")) Sanction = SanctionType.Red;
+
+                    // append key value pairs
+                    builder.AppendFormat(TdPair, headerMatches[i % headerMatches.Count].ToString(), valueMatches[i].ToString());
                 }
 
 
                 return Result<string>.Success(builder.ToString());
             }
-            else // Error parsing table
+            catch (Exception e)
             {
-                return Result<string>.Failure(ErrorMsg.CannotAccessDetailsPage);
+                return Result<string>.Exception(e);
             }
         }
     }

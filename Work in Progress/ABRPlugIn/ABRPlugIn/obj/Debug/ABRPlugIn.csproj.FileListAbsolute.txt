@@ -14,3 +14,17 @@ C:\Users\username\Repos\Plugins-yr2\Work in Progress\ABRPlugIn\ABRPlugIn\obj\Deb
 C:\Users\username\Repos\Plugins-yr2\Work in Progress\ABRPlugIn\ABRPlugIn\obj\Debug\ABRPlugIn.csproj.CopyComplete
 C:\Users\username\Repos\Plugins-yr2\Work in Progress\ABRPlugIn\ABRPlugIn\obj\Debug\ABRPlugIn.dll
 C:\Users\username\Repos\Plugins-yr2\Work in Progress\ABRPlugIn\ABRPlugIn\obj\Debug\ABRPlugIn.pdb
+C:\REPOS\Plugins-yr2\Work in Progress\ABRPlugIn\ABRPlugIn\bin\Debug\ABRPlugIn.dll
+C:\REPOS\Plugins-yr2\Work in Progress\ABRPlugIn\ABRPlugIn\bin\Debug\ABRPlugIn.pdb
+C:\REPOS\Plugins-yr2\Work in Progress\ABRPlugIn\ABRPlugIn\bin\Debug\CAQHData.dll
+C:\REPOS\Plugins-yr2\Work in Progress\ABRPlugIn\ABRPlugIn\bin\Debug\HtmlAgilityPack.dll
+C:\REPOS\Plugins-yr2\Work in Progress\ABRPlugIn\ABRPlugIn\bin\Debug\Newtonsoft.Json.dll
+C:\REPOS\Plugins-yr2\Work in Progress\ABRPlugIn\ABRPlugIn\bin\Debug\PdfMetamorphosis.dll
+C:\REPOS\Plugins-yr2\Work in Progress\ABRPlugIn\ABRPlugIn\bin\Debug\PlugIn_NET4_5.dll
+C:\REPOS\Plugins-yr2\Work in Progress\ABRPlugIn\ABRPlugIn\bin\Debug\RestSharp.dll
+C:\REPOS\Plugins-yr2\Work in Progress\ABRPlugIn\ABRPlugIn\bin\Debug\SautinSoft.PdfFocus.dll
+C:\REPOS\Plugins-yr2\Work in Progress\ABRPlugIn\ABRPlugIn\bin\Debug\ABCpdf.dll
+C:\REPOS\Plugins-yr2\Work in Progress\ABRPlugIn\ABRPlugIn\bin\Debug\ABCpdf.xml
+C:\REPOS\Plugins-yr2\Work in Progress\ABRPlugIn\ABRPlugIn\obj\Debug\ABRPlugIn.csprojResolveAssemblyReference.cache
+C:\REPOS\Plugins-yr2\Work in Progress\ABRPlugIn\ABRPlugIn\obj\Debug\ABRPlugIn.dll
+C:\REPOS\Plugins-yr2\Work in Progress\ABRPlugIn\ABRPlugIn\obj\Debug\ABRPlugIn.pdb

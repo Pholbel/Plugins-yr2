@@ -66,14 +66,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ABRPlugIn.dll" size="12800">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ABRPlugIn.dll" size="11776">
       <assemblyIdentity name="ABRPlugIn" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>zBiVcqlrYbc0HWKO79Fo7ppi3OEKlcabBO3MaO1rhSM=</dsig:DigestValue>
+        <dsig:DigestValue>NA7cvELxOP/ZhouljUMsohd4Qv8pWDWWYymBK0d4DXE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -414,18 +414,6 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="NursysPlugIn.dll" size="70656">
-      <assemblyIdentity name="NursysPlugIn" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
-      <hash>
-        <dsig:Transforms>
-          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-        </dsig:Transforms>
-        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>kuX+uKVPGxuzv+VDIV4yQilsk7QaJpf07b31akGCYrM=</dsig:DigestValue>
-      </hash>
-    </dependentAssembly>
-  </dependency>
-  <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="NVADGPlugIn.dll" size="13312">
       <assemblyIdentity name="NVADGPlugIn" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
@@ -481,7 +469,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>b3cuXPu7mIlq99vklLHC3exbbygKilkCDSJDrt4dczU=</dsig:DigestValue>
+        <dsig:DigestValue>/v2liY5Hvxipq+/5gQwJhcpFEXPJJuniaiHnxjTp4co=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
