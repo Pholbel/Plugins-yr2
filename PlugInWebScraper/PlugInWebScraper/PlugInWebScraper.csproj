@@ -170,6 +170,9 @@
     <Reference Include="IResponsePlugIn">
       <HintPath>..\..\..\..\..\..\..\Projects\Echo PSV\PlugIn\IResponsePlugIn\IResponsePlugIn\bin\Debug\IResponsePlugIn.dll</HintPath>
     </Reference>
+    <Reference Include="KDPLPlugIn">
+      <HintPath>..\..\Work in Progress\KDPLPlugIn\KDPLPlugIn\bin\Debug\KDPLPlugIn.dll</HintPath>
+    </Reference>
     <Reference Include="MABDEPlugIn, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\PlugIn\MABDEPlugIn\MABDEPlugIn\bin\Debug\MABDEPlugIn.dll</HintPath>

@@ -4881,5 +4881,36 @@
 
   </Assembly>
 
+
+  <Assembly name ="KDPLPlugIn" action ="E">
+
+    <!-- Active, fname, lname, licno, orgname -->
+    <Provider run="1">
+      <Data key ="dr_fname" value="John" />
+      <Data key ="dr_lname" value="Allen" />
+      <Data key ="lic_no" value="249586" />
+      <Data key ="orgName" value="Kentucky Board of Chiropractic Examiners" />
+    </Provider>
+
+    <!-- Expired, fname, lname, licno, orgname -->
+    <Provider run="1">
+      <Data key ="lic_no" value="170545" />
+      <Data key ="orgName" value="Kentucky Board of Examiners of Psychology" />
+    </Provider>
+
+    <!-- No Matches Found. -->
+    <Provider run="1">
+      <Data key ="lic_no" value="asdf" />
+      <Data key ="orgName" value="Kentucky Board of Licensure for Massage Therapy" />
+    </Provider>
+
+    <!-- Multiple Providers Found -->
+    <Provider run="1">
+      <Data key ="lic_no" value="Smith" />
+      <Data key ="orgName" value="Kentucky Board of Licensed Professional Counselors" />
+    </Provider>
+
+  </Assembly>
+
 </TestData>
 

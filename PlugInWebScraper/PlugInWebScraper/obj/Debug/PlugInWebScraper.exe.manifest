@@ -270,6 +270,18 @@
     </dependentAssembly>
   </dependency>
   <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="KDPLPlugIn.dll" size="13824">
+      <assemblyIdentity name="KDPLPlugIn" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>EZIlTd/eHKR3A5y6j2kLezq4nv+I22gdzznbXKxNJaM=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MahApps.Metro.dll" size="1097216">
       <assemblyIdentity name="MahApps.Metro" version="1.6.5.1" language="neutral" processorArchitecture="msil" />
       <hash>
@@ -469,7 +481,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>/v2liY5Hvxipq+/5gQwJhcpFEXPJJuniaiHnxjTp4co=</dsig:DigestValue>
+        <dsig:DigestValue>3+aD7FbGPzkhk06yw/ti19yfPLPcSjfVbFD9C61oT+U=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -671,13 +683,13 @@
       <dsig:DigestValue>Z3zNIF+dbta1al8t0xFlg+pKb/3gi5/Tk29GTutLP0k=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="TestDocuments\Xml\TestProviders3.xml" size="168004" writeableType="applicationData">
+  <file name="TestDocuments\Xml\TestProviders3.xml" size="169022" writeableType="applicationData">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>qkMiDvgA86kdDeCXBwEDsbiWDU9N9VUj7eVZXGbFNRk=</dsig:DigestValue>
+      <dsig:DigestValue>+k0NJW8OMrRvr1cgso4HmyWkFW+IwES9KcpdBg9gu7I=</dsig:DigestValue>
     </hash>
   </file>
   <file name="TestDocuments\Xml\TestProviders4.xml" size="215" writeableType="applicationData">

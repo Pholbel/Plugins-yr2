@@ -1,0 +1,14 @@
+C:\REPOS\Plugins-yr2\Work in Progress\KDPLPlugIn\KDPLPlugIn\bin\Debug\KDPLPlugIn.dll
+C:\REPOS\Plugins-yr2\Work in Progress\KDPLPlugIn\KDPLPlugIn\bin\Debug\KDPLPlugIn.pdb
+C:\REPOS\Plugins-yr2\Work in Progress\KDPLPlugIn\KDPLPlugIn\bin\Debug\CAQHData.dll
+C:\REPOS\Plugins-yr2\Work in Progress\KDPLPlugIn\KDPLPlugIn\bin\Debug\HtmlAgilityPack.dll
+C:\REPOS\Plugins-yr2\Work in Progress\KDPLPlugIn\KDPLPlugIn\bin\Debug\Newtonsoft.Json.dll
+C:\REPOS\Plugins-yr2\Work in Progress\KDPLPlugIn\KDPLPlugIn\bin\Debug\PdfMetamorphosis.dll
+C:\REPOS\Plugins-yr2\Work in Progress\KDPLPlugIn\KDPLPlugIn\bin\Debug\PlugIn_NET4_5.dll
+C:\REPOS\Plugins-yr2\Work in Progress\KDPLPlugIn\KDPLPlugIn\bin\Debug\RestSharp.dll
+C:\REPOS\Plugins-yr2\Work in Progress\KDPLPlugIn\KDPLPlugIn\bin\Debug\SautinSoft.PdfFocus.dll
+C:\REPOS\Plugins-yr2\Work in Progress\KDPLPlugIn\KDPLPlugIn\bin\Debug\ABCpdf.dll
+C:\REPOS\Plugins-yr2\Work in Progress\KDPLPlugIn\KDPLPlugIn\bin\Debug\ABCpdf.xml
+C:\REPOS\Plugins-yr2\Work in Progress\KDPLPlugIn\KDPLPlugIn\obj\Debug\KDPLPlugIn.csprojResolveAssemblyReference.cache
+C:\REPOS\Plugins-yr2\Work in Progress\KDPLPlugIn\KDPLPlugIn\obj\Debug\KDPLPlugIn.dll
+C:\REPOS\Plugins-yr2\Work in Progress\KDPLPlugIn\KDPLPlugIn\obj\Debug\KDPLPlugIn.pdb
