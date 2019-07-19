@@ -4883,6 +4883,8 @@
 
 
   <Assembly name ="KDPLPlugIn" action ="E">
+    
+    <!-- Must include license number and orgName -->
 
     <!-- Active, fname, lname, licno, orgname -->
     <Provider run="1">
@@ -4906,7 +4908,7 @@
 
     <!-- Multiple Providers Found -->
     <Provider run="1">
-      <Data key ="lic_no" value="Smith" />
+      <Data key ="dr_lname" value="Smith" />
       <Data key ="orgName" value="Kentucky Board of Licensed Professional Counselors" />
     </Provider>
 

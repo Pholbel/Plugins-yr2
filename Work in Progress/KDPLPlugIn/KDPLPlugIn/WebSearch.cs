@@ -50,6 +50,7 @@ namespace KDPLPlugIn
             string lastFocus = "";
             string eventTarget = "";
             string eventArgument = "";
+            string boardKey = "";
             string baseUrl = "http://oop.ky.gov/";
 
             //GET PARAMETERS AND COOKIES
@@ -61,7 +62,7 @@ namespace KDPLPlugIn
 
             if (response.StatusCode == HttpStatusCode.OK)
             {
-                GetBoardValues(ref boards, response);
+                GetBoardValues(ref boards, ref boardKey, response);
                 GetViewStates(ref viewState, ref viewStateGenerator, ref eventValidation, ref lastFocus, ref eventTarget, ref eventArgument, response);
             }
             else
@@ -83,7 +84,7 @@ namespace KDPLPlugIn
             request.AddParameter("__VIEWSTATE", viewState);
             request.AddParameter("__VIEWSTATEGENERATOR", viewStateGenerator);
             request.AddParameter("__EVENTVALIDATION", eventValidation);
-            request.AddParameter(_param_prefix + "chkBoards$2", boards[provider.GetData("orgName")]);
+            request.AddParameter(_param_prefix + "chkBoards$" + boardKey, boards[provider.GetData("orgName")]);
             request.AddParameter(_param_prefix + "TFname", provider.FirstName);
             request.AddParameter(_param_prefix + "TLname", provider.LastName);
             request.AddParameter(_param_prefix + "TLicno", provider.LicenseNumber);
@@ -109,32 +110,35 @@ namespace KDPLPlugIn
             if (noMatchesFound.Success) { return Result<IRestResponse>.Failure(ErrorMsg.NoResultsFound); }
 
             //CHECK IF WE HAVE MULTIPLE PROVIDERS
-            HtmlDocument doc = new HtmlDocument();
-            doc.LoadHtml(response.Content);
-            HtmlDocument tableParent = new HtmlDocument();
-            tableParent.LoadHtml(doc.GetElementbyId("ContentPlaceHolder2_LData").LastChild.InnerHtml);
-            var table = tableParent.DocumentNode.SelectSingleNode("//table[@class='tablestyle13']");
-
-            if (table.ChildNodes.Count > 4)
+            Match totalMatches = Regex.Match(response.Content, "(?<=Total Matches Found\\s:\\s)\\d*(?=</b>)", RegOpt);
+            if (Convert.ToInt32(totalMatches.ToString()) > 1)
             {
-                return Result<IRestResponse>.Failure(ErrorMsg.MultipleProvidersFound);
+                // multiple matches
+                return Result<IRestResponse>.Failure("<td>Must include License Number and Board Name</td><td></td>");
             } 
             else
             {
+                // only one match
                 return Result<IRestResponse>.Success(response);
             }
 
         }
 
-        private void GetBoardValues(ref Dictionary<string, string> boards, IRestResponse response)
+        private void GetBoardValues(ref Dictionary<string, string> boards, ref string boardKey, IRestResponse response)
         {
             MatchCollection values = Regex.Matches(response.Content, "(?<=ContentPlaceHolder2_chkBoards_\\d.*value=\")\\d*(?=\")", RegOpt);
             MatchCollection keys = Regex.Matches(response.Content, "(?<=for=.ContentPlaceHolder2_chkBoards_\\d*.>)[\\s\\w]*", RegOpt);
 
             for (var i = 0; i < keys.Count; i++)
             {
+                if (keys[i].ToString() == provider.GetData("orgName"))
+                {
+                    boardKey = i.ToString();
+                }
                 boards.Add(keys[i].ToString(), values[i].ToString());
             }
+
+           
         }
 
         private void GetViewStates(ref string viewState, ref string viewStateGenerator, ref string eventValidation, ref string lastFocus, ref string eventTarget, ref string eventArgument, IRestResponse response)

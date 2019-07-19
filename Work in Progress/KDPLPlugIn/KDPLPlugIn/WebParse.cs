@@ -69,29 +69,52 @@ namespace KDPLPlugIn
 
         private Result<string> ParseResponse(string response)
         {
-            MatchCollection fields = Regex.Matches(response, "(?<=(id=\"ctl.*\">)).*(?=</s)");
-            List<string> headers = new List<string>(new string[] {"First Name", "Middle Name", "Last Name", "License Type", "License Number", "Title", "Effective Date", "Expiration Date", "Status", "Finding"});
+            // DECLARATIONS
+            HtmlDocument doc = new HtmlDocument();
+            HtmlDocument parent = new HtmlDocument();
+            HtmlDocument table = new HtmlDocument();
+            List<string> hList = new List<string>();
+            List<string> vList = new List<string>();
+            StringBuilder builder = new StringBuilder();
 
-            if (fields.Count > 0)
+            // GET ROWS WITH HEADERS AND VALUES
+            doc.LoadHtml(response);
+            parent.LoadHtml(doc.GetElementbyId("ContentPlaceHolder2_LData").InnerHtml);
+            table.LoadHtml(parent.DocumentNode.SelectNodes("//table[@class='tablestyle13']").Last().InnerHtml);
+            var rows = table.DocumentNode.SelectNodes("//tr");
+
+            // ISOLATE HEADERS AND DATA
+            foreach (var row in rows)
             {
-                StringBuilder builder = new StringBuilder();
-
-                for (int idx=0;idx<fields.Count;idx++)
+                if (row.ChildNodes.Count > 1)
                 {
-                    string header = headers[idx % headers.Count];
-                    string text = fields[idx].ToString();
-
-                    builder.AppendFormat(TdPair, header, text);
-                    builder.AppendLine();
+                    if (row.Attributes.Count > 0 && row.Attributes["class"].Value.Contains("trstyle3"))
+                    {
+                        foreach (var header in row.ChildNodes)   // is the header row
+                        {
+                            if (header.InnerText != string.Empty) hList.Add(header.InnerText);
+                        }
+                    }
+                    else
+                    {
+                        foreach (var value in row.ChildNodes)   // is the value row
+                        {
+                            vList.Add(value.InnerText);
+                        }
+                    }
                 }
-
-
-                return Result<string>.Success(builder.ToString());
             }
-            else // Error parsing table
+
+            // FORM THE DATA
+            for (var i = 0; i < hList.Count; i++)
             {
-                return Result<string>.Failure(ErrorMsg.CannotAccessDetailsPage);
+                if (hList[i].Contains("Disciplinary") && vList[i].Contains("Yes")) Sanction = SanctionType.Red;
+                builder.AppendFormat(TdPair, hList[i], vList[i]);
+                builder.AppendLine();
             }
+
+
+            return Result<string>.Success(builder.ToString());
         }
     }
 }
