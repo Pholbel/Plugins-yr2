@@ -4914,5 +4914,45 @@
 
   </Assembly>
 
+  <Assembly name ="OSBNPlugIn" action ="E">
+
+    <!-- Search by License Number Or Last name, first name (opt), city (opt), zip (opt) -->
+
+    <!-- Active, licno -->
+    <Provider run="1">
+      <Data key ="lic_no" value="201401181RN" />
+    </Provider>
+
+    <!-- Expired, fname, lname, city, zip -->
+    <Provider run="1">
+      <Data key ="dr_fname" value="Ashley" />
+      <Data key ="dr_lname" value="Williams" />
+      <Data key ="req_zip" value="97224" />
+      <Data key ="city" value="Jamestown" />
+    </Provider>
+    
+    <!-- Discipline -->
+    <Provider run="1">
+      <Data key ="lic_no" value="200712609CNA" />
+    </Provider>
+
+    <!-- Multiple Licenses -->
+    <Provider run="1">
+      <Data key ="lic_no" value="200440718RN" />
+    </Provider>
+
+    <!-- No Matches Found. -->
+    <Provider run="1">
+      <Data key ="dr_fname" value="Clark" />
+      <Data key ="dr_lname" value="Kent" />
+    </Provider>
+
+    <!-- Multiple Providers Found -->
+    <Provider run="1">
+      <Data key ="dr_lname" value="Johnson" />
+    </Provider>
+
+  </Assembly>
+
 </TestData>
 

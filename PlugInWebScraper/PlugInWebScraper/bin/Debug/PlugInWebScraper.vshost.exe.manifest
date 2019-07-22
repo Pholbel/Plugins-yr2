@@ -270,18 +270,6 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="KDPLPlugIn.dll" size="14848">
-      <assemblyIdentity name="KDPLPlugIn" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
-      <hash>
-        <dsig:Transforms>
-          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-        </dsig:Transforms>
-        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>uqKs1F+tlA5AnMG6w/PznuePbnciq+VA5QWiOq2MogI=</dsig:DigestValue>
-      </hash>
-    </dependentAssembly>
-  </dependency>
-  <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MahApps.Metro.dll" size="1097216">
       <assemblyIdentity name="MahApps.Metro" version="1.6.5.1" language="neutral" processorArchitecture="msil" />
       <hash>
@@ -450,6 +438,18 @@
     </dependentAssembly>
   </dependency>
   <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="OSBNPlugIn.dll" size="12800">
+      <assemblyIdentity name="OSBNPlugIn" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>fuYRtsL+GOtPp31GsLLRmBp9TcFAWsoW5vyRBKkEuYc=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PdfMetamorphosis.dll" size="577536">
       <assemblyIdentity name="PdfMetamorphosis" version="5.7.8.12" publicKeyToken="F77041E5CAA5FC2F" language="neutral" processorArchitecture="msil" />
       <hash>
@@ -481,7 +481,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>BBJepCpAh1IWQLycU4LbzA6bXVnqC1UFZG/S44xPcq4=</dsig:DigestValue>
+        <dsig:DigestValue>v7Zxsd1X/opPzzoA79fLFn/OGaiFJQzWAyWSyaXMS+k=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -683,13 +683,13 @@
       <dsig:DigestValue>Z3zNIF+dbta1al8t0xFlg+pKb/3gi5/Tk29GTutLP0k=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="TestDocuments\Xml\TestProviders3.xml" size="169084" writeableType="applicationData">
+  <file name="TestDocuments\Xml\TestProviders3.xml" size="170185" writeableType="applicationData">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>rtR224cYItg1cJJj/Fhg1408AHnJ/mfcCiA12GMlfvc=</dsig:DigestValue>
+      <dsig:DigestValue>N9EEnJhLYlhmtBKUZxdL3k8uPxnloYl6t3g3msNGQ2k=</dsig:DigestValue>
     </hash>
   </file>
   <file name="TestDocuments\Xml\TestProviders4.xml" size="215" writeableType="applicationData">

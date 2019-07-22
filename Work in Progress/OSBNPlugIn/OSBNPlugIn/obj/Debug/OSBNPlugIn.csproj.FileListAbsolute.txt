@@ -1,0 +1,14 @@
+C:\REPOS\Plugins-yr2\Work in Progress\OSBNPlugIn\OSBNPlugIn\bin\Debug\OSBNPlugIn.dll
+C:\REPOS\Plugins-yr2\Work in Progress\OSBNPlugIn\OSBNPlugIn\bin\Debug\OSBNPlugIn.pdb
+C:\REPOS\Plugins-yr2\Work in Progress\OSBNPlugIn\OSBNPlugIn\bin\Debug\CAQHData.dll
+C:\REPOS\Plugins-yr2\Work in Progress\OSBNPlugIn\OSBNPlugIn\bin\Debug\HtmlAgilityPack.dll
+C:\REPOS\Plugins-yr2\Work in Progress\OSBNPlugIn\OSBNPlugIn\bin\Debug\Newtonsoft.Json.dll
+C:\REPOS\Plugins-yr2\Work in Progress\OSBNPlugIn\OSBNPlugIn\bin\Debug\PdfMetamorphosis.dll
+C:\REPOS\Plugins-yr2\Work in Progress\OSBNPlugIn\OSBNPlugIn\bin\Debug\PlugIn_NET4_5.dll
+C:\REPOS\Plugins-yr2\Work in Progress\OSBNPlugIn\OSBNPlugIn\bin\Debug\RestSharp.dll
+C:\REPOS\Plugins-yr2\Work in Progress\OSBNPlugIn\OSBNPlugIn\bin\Debug\SautinSoft.PdfFocus.dll
+C:\REPOS\Plugins-yr2\Work in Progress\OSBNPlugIn\OSBNPlugIn\bin\Debug\ABCpdf.dll
+C:\REPOS\Plugins-yr2\Work in Progress\OSBNPlugIn\OSBNPlugIn\bin\Debug\ABCpdf.xml
+C:\REPOS\Plugins-yr2\Work in Progress\OSBNPlugIn\OSBNPlugIn\obj\Debug\OSBNPlugIn.csprojResolveAssemblyReference.cache
+C:\REPOS\Plugins-yr2\Work in Progress\OSBNPlugIn\OSBNPlugIn\obj\Debug\OSBNPlugIn.dll
+C:\REPOS\Plugins-yr2\Work in Progress\OSBNPlugIn\OSBNPlugIn\obj\Debug\OSBNPlugIn.pdb

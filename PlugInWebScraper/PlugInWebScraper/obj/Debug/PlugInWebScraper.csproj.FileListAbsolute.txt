@@ -350,5 +350,5 @@ C:\REPOS\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\obj\Debug\PlugInWebScrape
 C:\REPOS\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\obj\Debug\PlugInWebScraper.csproj.GenerateResource.Cache
 C:\REPOS\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\obj\Debug\PlugInWebScraper.exe.manifest
 C:\REPOS\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\obj\Debug\PlugInWebScraper.application
-C:\REPOS\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\KDPLPlugIn.dll
-C:\REPOS\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\KDPLPlugIn.pdb
+C:\REPOS\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\OSBNPlugIn.dll
+C:\REPOS\Plugins-yr2\PlugInWebScraper\PlugInWebScraper\bin\Debug\OSBNPlugIn.pdb

@@ -170,9 +170,6 @@
     <Reference Include="IResponsePlugIn">
       <HintPath>..\..\..\..\..\..\..\Projects\Echo PSV\PlugIn\IResponsePlugIn\IResponsePlugIn\bin\Debug\IResponsePlugIn.dll</HintPath>
     </Reference>
-    <Reference Include="KDPLPlugIn">
-      <HintPath>..\..\Work in Progress\KDPLPlugIn\KDPLPlugIn\bin\Debug\KDPLPlugIn.dll</HintPath>
-    </Reference>
     <Reference Include="MABDEPlugIn, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\PlugIn\MABDEPlugIn\MABDEPlugIn\bin\Debug\MABDEPlugIn.dll</HintPath>
@@ -256,6 +253,9 @@
     </Reference>
     <Reference Include="ORDBPlugIn">
       <HintPath>..\..\..\..\PlugIn\ORDBPlugIn\bin\Debug\ORDBPlugIn.dll</HintPath>
+    </Reference>
+    <Reference Include="OSBNPlugIn">
+      <HintPath>..\..\Work in Progress\OSBNPlugIn\OSBNPlugIn\bin\Debug\OSBNPlugIn.dll</HintPath>
     </Reference>
     <Reference Include="PdfMetamorphosis">
       <HintPath>..\..\..\..\Third Party Libraries\PdfMetamorphosis.dll</HintPath>
