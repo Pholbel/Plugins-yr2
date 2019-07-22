@@ -85,6 +85,11 @@ namespace OSBNPlugIn
             
             if (response.StatusCode == HttpStatusCode.OK)
             {
+                // CHECK FOR NO RESULTS
+                if (Regex.Match(response.Content, "No results returned", RegOpt).Success)
+                {
+                    return Result<IRestResponse>.Failure(ErrorMsg.NoResultsFound);
+                }
 
                 // CHECK FOR MULTIPLE PROVIDERS
                 HtmlDocument doc = new HtmlDocument();
@@ -92,7 +97,7 @@ namespace OSBNPlugIn
                 HtmlNode table = doc.GetElementbyId("ctl00_MainContent_gvSearchResult");
                 if (table.ChildNodes.Count > 4)
                 {
-                    return Result<IRestResponse>.Failure(ErrorMsg.MultipleProvidersFound);
+                    return Result<IRestResponse>.Failure("error: multiple providers found");
                 }
 
                 // SUCCESSFUL SEARCH, NOW GO TO DETAILS PAGE
